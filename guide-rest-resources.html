@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Recursos (Resources) - Servicios Web RESTful - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w970" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w970-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w970-collapse" class="collapse navbar-collapse"><ul id="w971" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-954" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-954" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-955" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-955" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-956" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-956" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-957" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-957" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-958" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-958" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-959" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-959" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-960" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-960" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-961" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-961" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-962" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-962" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-963" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-963" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item active" href="#navigation-964" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-964" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item active" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-965" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-965" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-966" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-966" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-967" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-967" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-968" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-968" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-969" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-969" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Recursos <span id="recursos"></span><a href="#recursos" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#fields">Campos (fields)</a></li>
+<li><a href="#links">Enlaces (Links)</a></li>
+<li><a href="#collections">Colecciones</a></li></ol></div>
+<p>Las APIs RESTful lo son todos para acceder y manipular <em>recursos (resources)</em>. Puedes observar los recursos en el paradigma MVC en <a href="guide-structure-models.html">Modelos (models)</a> .</p>
+<p>Mientras que no hay restricción a cómo representar un recurso, en YII usualmente, puedes representar recursos como objetos de la clase <span class="broken-link">yii\base\Model</span> o sus clases hijas (p.e. <span class="broken-link">yii\db\ActiveRecord</span>), por las siguientes razones:</p>
+<ul>
+<li><span class="broken-link">yii\base\Model</span> implementa el interface <span class="broken-link">yii\base\Arrayable</span> , el cual te permite personalizar como exponer los datos de los recursos a travès de las APIs RESTful.</li>
+<li><span class="broken-link">yii\base\Model</span> soporta <a href="guide-input-validation.html">Validación de entrada (input validation)</a>, lo cual es muy usado en las APIs RESTful para soportar la entrada de datos.</li>
+<li><span class="broken-link">yii\db\ActiveRecord</span> provee un poderoso soporte para el acceso a datos en bases de datos y su manipulación, lo que lo le hace servir perfectamente si sus recursos de datos están en bases de datos.</li>
+</ul>
+<p>En esta sección, vamos principalmente a describir como la clase con recursos que extiende de <span class="broken-link">yii\base\Model</span> (o sus clases hijas) puede especificar qué datos puede ser devueltos vía las APIs RESTful. Si la clase de los recursos no extiende de <span class="broken-link">yii\base\Model</span>, entonces todas las variables públicas miembro serán devueltas.</p>
+<h2>Campos (fields)  <span id="fields"></span><a href="#fields" class="hashlink">&para;</a></h2><p>Cuando incluimos un recurso en una respuesta de la API RESTful, el recurso necesita ser serializado en una cadena.
+Yii divide este proceso en dos pasos. Primero, el recurso es convertido en un array por <span class="broken-link">yii\rest\Serializer</span>.
+Segundo, el array es serializado en una cadena en  el formato requerido (p.e. JSON, XML) por <span class="broken-link">yii\web\ResponseFormatterInterface</span>. El primer paso es en el que debes de concentrarte principalmente cuando desarrolles una clase de un recurso.</p>
+<p>Sobreescribiendo <span class="broken-link">yii\base\Model::fields()</span> y/o <span class="broken-link">yii\base\Model::extraFields()</span>,
+puedes especificar qué datos, llamados <em>fields</em>, en el recursos, pueden ser colocados en el array que le representa.
+La diferencia entre estos dos métodos es que el primero especifica el conjunto de campos por defecto que deben ser incluidos en el array que los representa, mientras que el último especifica campos adicionales que deben de ser incluidos en el array si una petición del usuario final para ellos vía el parámetro de consulta <code>expand</code>. Por ejemplo,</p>
+<pre><code class="hljs less"><span class="hljs-comment">// devuelve todos los campos declarados en fields()</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users</span>
+
+<span class="hljs-comment">// sólo devuelve los campos id y email, provistos por su declaración en fields()</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users?fields=id,email</span>
+
+<span class="hljs-comment">// devuelve todos los campos en fields() y el campo profile siempre y cuando esté declarado en extraFields()</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users?expand=profile</span>
+
+<span class="hljs-comment">// sólo devuelve los campos id, email y profile, siempre y cuando ellos estén declarados en fields() y extraFields()</span>
+<span class="hljs-attribute">http</span>:<span class="hljs-comment">//localhost/users?fields=id,email&amp;expand=profile</span>
+</code></pre>
+<h3>Sobreescribiendo <code>fields()</code>  <span id="overriding-fields"></span><a href="#overriding-fields" class="hashlink">&para;</a></h3><p>Por defecto, <span class="broken-link">yii\base\Model::fields()</span> devuelve todos los atributos de los modelos como si fueran campos, mientras <span class="broken-link">yii\db\ActiveRecord::fields()</span> sólo devuelve los atributos que tengan datos en la base de datos.</p>
+<p>Puedes sobreescribir <code>fields()</code> para añadir, quitar, renombrar o redefinir campos. El valor de retorno de <code>fields()</code> ha de estar en un array. Las claves del array son los nombres de los campos y los valores del array son las correspondientes definiciones de los campos que pueden ser tanto nombres de propiedades/atributos o funciones anónimas que devuelven los correspondientes valores del los campos. En el caso especial de que el nombre de un campo sea el mismo que su definición puedes omitir la clave en el array. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// explícitamente lista cada campo, siendo mejor usarlo cuando quieras asegurarte que los cambios</span>
+<span class="hljs-comment">// en una tabla de la base de datos o en un atributo del modelo no provoque el cambio de tu campo (para mantener la compatibilidad anterior).</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// el nombre de campo es el mismo nombre del atributo</span>
+        <span class="hljs-string">'id'</span>,
+        <span class="hljs-comment">// el nombre del campo es "email", su atributo se denomina "email_address"</span>
+        <span class="hljs-string">'email'</span> =&gt; <span class="hljs-string">'email_address'</span>,
+        <span class="hljs-comment">// el nombre del campo es "name", su valor es definido está definido por una función anónima de retrollamada (callback)</span>
+        <span class="hljs-string">'name'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;first_name . <span class="hljs-string">' '</span> . <span class="hljs-variable">$this</span>-&gt;last_name;
+        },
+    ];
+}
+
+<span class="hljs-comment">// el ignorar algunos campos, es mejor usarlo cuando heredas de una implementación padre</span>
+<span class="hljs-comment">// y pones en la lista negra (blacklist) algunos campos sensibles</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-variable">$fields</span> = <span class="hljs-keyword">parent</span>::fields();
+
+    <span class="hljs-comment">// quita los campos con información sensible</span>
+    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$fields</span>[<span class="hljs-string">'auth_key'</span>], <span class="hljs-variable">$fields</span>[<span class="hljs-string">'password_hash'</span>], <span class="hljs-variable">$fields</span>[<span class="hljs-string">'password_reset_token'</span>]);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$fields</span>;
+}
+</code></pre>
+<blockquote class="warning"><p><strong>Warning: </strong>Dado que, por defecto, todos los atributos de un modelo pueden ser incluidos en la devolución del API, debes
+examinar tus datos para estar seguro de que no contiene información sensible. Si se da este tipo de información,
+debes sobreescribir <code>fields()</code> para filtrarlos. En el ejemplo anterior, escogemos
+quitar <code>auth_key</code>, <code>password_hash</code> y <code>password_reset_token</code>.</p>
+</blockquote>
+<h3>Sobreescribiendo <code>extraFields()</code>  <span id="overriding-extra-fields"></span><a href="#overriding-extra-fields" class="hashlink">&para;</a></h3><p>Por defecto, <span class="broken-link">yii\base\Model::extraFields()</span> no devuelve nada, mientras que <span class="broken-link">yii\db\ActiveRecord::extraFields()</span> devuelve los nombres de las relaciones que tienen datos (populated) obtenidos de la base de datos.</p>
+<p>El formato de devolución de los datos de <code>extraFields()</code> es el mismo que el de <code>fields()</code>. Usualmente, <code>extraFields()</code> es principalmente usado para especificar campos cuyos valores sean objetos. Por ejemplo, dado la siguiente declaración de campo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'id'</span>, <span class="hljs-string">'email'</span>];
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extraFields</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'profile'</span>];
+}
+</code></pre>
+<p>la petición <code>http://localhost/users?fields=id,email&amp;expand=profile</code> puede devolver los siguientes datos en formato JSON :</p>
+<pre><code class="hljs php language-php">[
+    {
+        <span class="hljs-string">"id"</span>: <span class="hljs-number">100</span>,
+        <span class="hljs-string">"email"</span>: <span class="hljs-string">"100@example.com"</span>,
+        <span class="hljs-string">"profile"</span>: {
+            <span class="hljs-string">"id"</span>: <span class="hljs-number">100</span>,
+            <span class="hljs-string">"age"</span>: <span class="hljs-number">30</span>,
+        }
+    },
+    ...
+]
+</code></pre>
+<h2>Enlaces (Links)  <span id="links"></span><a href="#links" class="hashlink">&para;</a></h2><p><a href="http://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>, es una abreviación de Hipermedia es el Motor del Estado de la Aplicación (Hypermedia as the Engine of Application State), promueve que las APIs RESTfull devuelvan información que permita a los clientes descubrir las acciones que soportan los recursos devueltos. El sentido de HATEOAS es devolver un conjunto de hiperenlaces con relación a la información, cuando los datos de los recursos son servidos por las APIs.</p>
+<p>Las clases con recursos pueden soportar HATEOAS implementando el interfaz <span class="broken-link">yii\web\Linkable</span> . El interfaz contiene sólo un método <span class="broken-link">yii\web\Linkable::getLinks()</span> el cual debe de de devolver una lista de  <span class="broken-link">yii\web\Link</span>.
+Típicamente, debes devolver al menos un enlace <code>self</code> representando la URL al mismo recurso objeto. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Link</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Linkable</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Linkable</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLinks</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            Link::REL_SELF =&gt; Url::to([<span class="hljs-string">'user/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$this</span>-&gt;id], <span class="hljs-keyword">true</span>),
+        ];
+    }
+}
+</code></pre>
+<p>Cuando un objeto <code>User</code> es devuelto en una respuesta, puede contener un elemento  <code>_links</code> representando los enlaces relacionados con el usuario, por ejemplo,</p>
+<pre><code class="hljs php">{
+    <span class="hljs-string">"id"</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-string">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">"_links"</span> =&gt; {
+        <span class="hljs-string">"self"</span>: {
+            <span class="hljs-string">"href"</span>: <span class="hljs-string">"https://example.com/users/100"</span>
+        }
+    }
+}
+</code></pre>
+<h2>Colecciones  <span id="collections"></span><a href="#collections" class="hashlink">&para;</a></h2><p>Los objetos de los recursos pueden ser agrupados en  <em>collections</em>. Cada colección contiene una lista de recursos objeto del mismo tipo.</p>
+<p>Las colecciones pueden ser representadas como arrays pero, es usualmente más deseable representarlas como <a href="guide-output-data-providers.html">proveedores de datos (data providers)</a>. Esto es así porque los proveedores de datos soportan paginación y ordenación de los recursos, lo cual es comunmente necesario en las colecciones devueltas con las APIs RESTful. Por ejemplo, la siguiente acción devuelve un proveedor de datos sobre los recursos post:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rest</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ActiveDataProvider([
+            <span class="hljs-string">'query'</span> =&gt; Post::find(),
+        ]);
+    }
+}
+</code></pre>
+<p>Cuando un proveedor de datos está enviando una respuesta con el API RESTful, <span class="broken-link">yii\rest\Serializer</span> llevará la actual página de los recursos y los serializa como un array de recursos objeto. Adicionalmente, <span class="broken-link">yii\rest\Serializer</span>
+puede incluir también la información de paginación a través de las cabeceras HTTP siguientes:</p>
+<ul>
+<li><code>X-Pagination-Total-Count</code>: Número total de recursos;</li>
+<li><code>X-Pagination-Page-Count</code>: Número de páginas;</li>
+<li><code>X-Pagination-Current-Page</code>: Página actual (iniciando en 1);</li>
+<li><code>X-Pagination-Per-Page</code>: Número de recursos por página;</li>
+<li><code>Link</code>: Un conjunto de enlaces de navegación permitiendo al cliente recorrer los recursos página a página.</li>
+</ul>
+<p>Un ejemplo se puede ver en la sección <a href="guide-rest-quick-start.html#trying-it-out">Inicio rápido (Quick Start)</a>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

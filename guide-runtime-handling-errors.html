@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Gestión de errores - Gestión de las peticiones - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w916" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w916-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w916-collapse" class="collapse navbar-collapse"><ul id="w917" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-900" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-900" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-901" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-901" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-902" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-902" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item active" href="#navigation-903" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-903" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item active" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-904" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-904" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-905" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-905" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-906" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-906" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-907" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-907" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-908" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-908" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-909" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-909" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-910" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-910" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-911" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-911" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-912" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-912" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-913" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-913" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-914" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-914" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-915" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-915" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Gestión de Errores <span id="gestion-de-errores"></span><a href="#gestion-de-errores" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#using-error-handler">Uso del Gestor de Errores</a></li>
+<li><a href="#customizing-error-display">Personalizar la Visualización de Errores</a></li></ol></div>
+<p>Yii incluye un <span class="broken-link">yii\web\ErrorHandler</span> que permite una gestión de errores mucho más práctica que
+anteriormente. En particular, el gestor de errores de Yii hace lo siguiente para mejorar la gestión de errores:</p>
+<ul>
+<li>Todos los errores no fatales (ej. advertencias (warning), avisos (notices)) se convierten en excepciones capturables.</li>
+<li>Las excepciones y los errores fatales de PHP se muestran con una pila de llamadas (call stack) de información
+detallada y lineas de código fuente.</li>
+<li>Soporta el uso de <a href="guide-structure-controllers.html#actions">acciones de controlador</a> dedicadas para mostrar errores.</li>
+<li>Soporta diferentes formatos de respuesta (response) de errores.</li>
+</ul>
+<p>El <span class="broken-link">yii\web\ErrorHandler</span> esta habilitado de forma predeterminada. Se puede deshabilitar definiendo la
+constante <code>YII_ENABLE_ERROR_HANDLER</code> con valor <code>false</code> en el <a href="guide-structure-entry-scripts.html">script de entrada (entry script)</a> de la aplicación.</p>
+<h2>Uso del Gestor de Errores  <span id="using-error-handler"></span><a href="#using-error-handler" class="hashlink">&para;</a></h2><p>El <span class="broken-link">yii\web\ErrorHandler</span> se registra como un <a href="guide-structure-application-components.html">componente de aplicación</a> llamado <code>errorHandler</code>.
+Se puede configurar en la configuración de la aplicación como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'errorHandler'</span> =&gt; [
+            <span class="hljs-string">'maxSourceLines'</span> =&gt; <span class="hljs-number">20</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Con la anterior configuración, el numero del lineas de código fuente que se mostrará en las páginas de excepciones será como máximo de 20.</p>
+<p>Como se ha mencionado, el gestor de errores convierte todos los errores de PHP no fatales en excepciones capturables.
+Esto significa que se puede usar el siguiente código para tratar los errores PHP:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">ErrorException</span>;
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-number">10</span>/<span class="hljs-number">0</span>;
+} <span class="hljs-keyword">catch</span> (ErrorException <span class="hljs-variable">$e</span>) {
+    Yii::warning(<span class="hljs-string">"Division by zero."</span>);
+}
+
+<span class="hljs-comment">// la ejecución continua ...</span>
+</code></pre>
+<p>Si se quiere mostrar una página de error que muestra al usuario que su petición no es válida o no es la esperada, se
+puede simplemente lanzar una excepción de tipo <span class="broken-link">yii\web\HttpException</span>, como podría ser
+<span class="broken-link">yii\web\NotFoundHttpException</span>. El gestor de errores establecerá correctamente el código de estado HTTP de la
+respuesta y usará la vista de error apropiada para mostrar el mensaje.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">NotFoundHttpException</span>;
+
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NotFoundHttpException();
+</code></pre>
+<h2>Personalizar la Visualización de Errores  <span id="customizing-error-display"></span><a href="#customizing-error-display" class="hashlink">&para;</a></h2><p>El <span class="broken-link">yii\web\ErrorHandler</span> ajusta la visualización del error conforme al valor de la constante <code>YII_DEBUG</code>.
+Cuando <code>YII_DEBUG</code> es <code>true</code> (es decir, en modo depuración (debug)), el gestor de errores mostrara las
+excepciones con una pila detallada de información y con lineas de código fuente para ayudar a depurar. Y cuando la variable <code>YII_DEBUG</code> es <code>false</code>,
+solo se mostrará el mensaje de error para prevenir la revelación de información sensible de la aplicación.</p>
+<blockquote class="info"><p><strong>Info: </strong>Si una excepción es descendiente de <span class="broken-link">yii\base\UserException</span>, no se mostrará la pila de llamadas
+independientemente del valor de <code>YII_DEBUG</code>. Esto es debido a que se considera que estas excepciones se deben a
+errores cometidos por los usuarios y los desarrolladores no necesitan corregirlas.</p>
+</blockquote>
+<p>De forma predeterminada, el <span class="broken-link">yii\web\ErrorHandler</span> muestra los errores usando dos <a href="guide-structure-views.html">vistas</a>:</p>
+<ul>
+<li><code>@yii/views/errorHandler/error.php</code>: se usa cuando deben mostrarse los errores SIN la información de la pila de
+llamadas. Cuando <code>YII_DEBUG</code> es falos, este es el único error que se mostrara.</li>
+<li><code>@yii/views/errorHandler/exception.php</code>: se usa cuando los errores deben mostrarse CON la información de la pila de llamadas.</li>
+</ul>
+<p>Se pueden configurar las propiedades <span class="broken-link">yii\web\ErrorHandler::errorView</span> y <span class="broken-link">yii\web\ErrorHandler::exceptionView</span>
+el gestor de errores para usar nuestros propias vistas para personalizar la visualización de los errores.</p>
+<h3>Uso de Acciones de Error  <span id="using-error-actions"></span><a href="#using-error-actions" class="hashlink">&para;</a></h3><p>Una mejor manera de personalizar la visualización de errores es usar un <a href="guide-structure-controllers.html">acción</a> de error
+dedicada. Para hacerlo, primero se debe configurar la propiedad <span class="broken-link">yii\web\ErrorHandler::errorAction</span> del
+componente <code>errorHandler</code> como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'errorHandler'</span> =&gt; [
+            <span class="hljs-string">'errorAction'</span> =&gt; <span class="hljs-string">'site/error'</span>,
+        ],
+    ]
+];
+</code></pre>
+<p>La propiedad <span class="broken-link">yii\web\ErrorHandler::errorAction</span> vincula una <a href="guide-structure-controllers.html#routes">ruta</a> a
+una acción. La configuración anterior declara que cuando un error tiene que mostrarse sin la pila de información de
+llamadas, se debe ejecutar la acción <code>site/error</code>.</p>
+<p>Se puede crear una acción <code>site/error</code> como se hace a continuación,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actions</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'error'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\ErrorAction'</span>,
+            ],
+        ];
+    }
+}
+</code></pre>
+<p>El código anterior define la acción <code>error</code> usando la clase <span class="broken-link">yii\web\ErrorAction</span> que renderiza un error usando la
+vista llamada <code>error</code>.</p>
+<p>Además, usando <span class="broken-link">yii\web\ErrorAction</span>, también se puede definir la acción <code>error</code> usando un método de acción como en el siguiente ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionError</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-variable">$exception</span> = Yii::<span class="hljs-variable">$app</span>-&gt;errorHandler-&gt;exception;
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$exception</span> !== <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'error'</span>, [<span class="hljs-string">'exception'</span> =&gt; <span class="hljs-variable">$exception</span>]);
+    }
+}
+</code></pre>
+<p>Ahora se debe crear un archivo de vista ubicado en <code>views/sites/error.php</code>. En este archivo de vista, se puede acceder
+a las siguientes variables si se define el error como un <span class="broken-link">yii\web\ErrorAction</span>:</p>
+<ul>
+<li><code>name</code>: el nombre del error;</li>
+<li><code>message</code>: el mensaje del error;</li>
+<li><code>exception</code>: el objeto de excepción a través del cual se puede obtener más información útil, tal como el código de
+estado HTTP, el código de error, la pila de llamadas del error, etc.</li>
+</ul>
+<blockquote class="info"><p><strong>Info: </strong>Tanto la <a href="guide-start-installation.html">plantilla de aplicación básica</a> como la <a href="guide-tutorial-advanced-app.html">plantilla de aplicación avanzada</a>,
+ya incorporan la acción de error y la vista de error.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Note: </strong>Si necesitas redireccionar en un gestor de error, hazlo de la siguiente manera:
+<code>`</code>php
+Yii::$app-&gt;getResponse()-&gt;redirect($url)-&gt;send();
+return;
+<code>`</code></p>
+</blockquote>
+<h3>Personalizar el Formato de Respuesta de Error  <span id="error-format"></span><a href="#error-format" class="hashlink">&para;</a></h3><p>El gestor de errores muestra los errores de siguiente la configuración del formato de las
+<a href="guide-runtime-responses.html">respuestas</a>. Si el [[yii\web\Response::format response format]] es <code>html</code>, se usará la vista de
+error o excepción para mostrar los errores tal y como se ha descrito en la anterior subsección. Para otros tipos de
+formatos de respuesta, el gestor de errores asignara la representación del array de la excepción a la propiedad
+<span class="broken-link">yii\web\Response::data</span> que posteriormente podrá convertirse al formato deseado. Por ejemplo, si el formato de
+respuesta es <code>json</code>, obtendremos la siguiente respuesta:</p>
+<pre><code class="hljs http"><span class="hljs-status">HTTP/1.1 <span class="hljs-number">404</span> Not Found</span>
+<span class="hljs-attribute">Date</span>: <span class="hljs-string">Sun, 02 Mar 2014 05:31:43 GMT</span>
+<span class="hljs-attribute">Server</span>: <span class="hljs-string">Apache/2.2.26 (Unix) DAV/2 PHP/5.4.20 mod_ssl/2.2.26 OpenSSL/0.9.8y</span>
+<span class="hljs-attribute">Transfer-Encoding</span>: <span class="hljs-string">chunked</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=UTF-8</span>
+
+<span class="json">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Not Found Exception"</span></span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"The requested resource was not found."</span></span>,
+    "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span>
+</span>}
+</span></code></pre>
+<p>Se puede personalizar el formato de respuestas de error respondiendo al evento <code>beforeSend</code> del componente <code>response</code>
+en la configuración de la aplicación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'response'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\Response'</span>,
+            <span class="hljs-string">'on beforeSend'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+                <span class="hljs-variable">$response</span> = <span class="hljs-variable">$event</span>-&gt;sender;
+                <span class="hljs-keyword">if</span> (<span class="hljs-variable">$response</span>-&gt;data !== <span class="hljs-keyword">null</span>) {
+                    <span class="hljs-variable">$response</span>-&gt;data = [
+                        <span class="hljs-string">'success'</span> =&gt; <span class="hljs-variable">$response</span>-&gt;isSuccessful,
+                        <span class="hljs-string">'data'</span> =&gt; <span class="hljs-variable">$response</span>-&gt;data,
+                    ];
+                    <span class="hljs-variable">$response</span>-&gt;statusCode = <span class="hljs-number">200</span>;
+                }
+            },
+        ],
+    ],
+];
+</code></pre>
+<p>El código anterior reformateará la respuesta de error como en el siguiente ejemplo:</p>
+<pre><code class="hljs http"><span class="hljs-status">HTTP/1.1 <span class="hljs-number">200</span> OK</span>
+<span class="hljs-attribute">Date</span>: <span class="hljs-string">Sun, 02 Mar 2014 05:31:43 GMT</span>
+<span class="hljs-attribute">Server</span>: <span class="hljs-string">Apache/2.2.26 (Unix) DAV/2 PHP/5.4.20 mod_ssl/2.2.26 OpenSSL/0.9.8y</span>
+<span class="hljs-attribute">Transfer-Encoding</span>: <span class="hljs-string">chunked</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=UTF-8</span>
+
+<span class="json">{
+    "<span class="hljs-attribute">success</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Not Found Exception"</span></span>,
+        "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"The requested resource was not found."</span></span>,
+        "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-number">404</span>
+    </span>}
+</span>}
+</span></code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

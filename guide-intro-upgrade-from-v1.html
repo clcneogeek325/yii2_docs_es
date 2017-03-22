@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Actualizar desde Yii 1.1 - Introducción - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w592" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w592-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w592-collapse" class="collapse navbar-collapse"><ul id="w593" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item active" href="#navigation-576" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-576" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item active" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-577" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-577" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-578" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-578" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-579" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-579" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-580" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-580" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-581" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-581" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-582" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-582" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-583" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-583" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-584" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-584" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-585" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-585" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-586" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-586" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-587" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-587" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-588" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-588" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-589" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-589" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-590" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-590" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-591" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-591" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Actualizar desde Yii 1.1 <span id="actualizar-desde-yii-11"></span><a href="#actualizar-desde-yii-11" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#instalacion">Instalación</a></li>
+<li><a href="#requerimientos-de-php">Requerimientos de PHP</a></li>
+<li><a href="#namespace">Namespace</a></li>
+<li><a href="#componentes-y-objetos">Componentes y Objetos</a></li>
+<li><a href="#configuracion-de-objetos">Configuración de objetos</a></li>
+<li><a href="#eventos">Eventos</a></li>
+<li><a href="#alias">Alias</a></li>
+<li><a href="#vistas">Vistas</a></li>
+<li><a href="#modelos">Modelos</a></li>
+<li><a href="#controladores">Controladores</a></li>
+<li><a href="#widgets">Widgets</a></li>
+<li><a href="#temas">Temas</a></li>
+<li><a href="#aplicaciones-de-consola">Aplicaciones de Consola</a></li>
+<li><a href="#i18n">I18N</a></li>
+<li><a href="#filtros-de-acciones">Filtros de Acciones</a></li>
+<li><a href="#assets">Assets</a></li>
+<li><a href="#helpers">Helpers</a></li>
+<li><a href="#formularios">Formularios</a></li>
+<li><a href="#constructor-de-consultas">Constructor de Consultas</a></li>
+<li><a href="#active-record">Active Record</a></li>
+<li><a href="#active-record-behaviors">Active Record Behaviors</a></li>
+<li><a href="#user-e-identityinterface">User e IdentityInterface</a></li>
+<li><a href="#manejo-de-urls">Manejo de URLs</a></li>
+<li><a href="#utilizar-yii-11-y-2x-juntos">Utilizar Yii 1.1 y 2.x juntos</a></li></ol></div>
+<p>Existen muchas diferencias entre las versiones 1.1 y 2.0 de Yii ya que el framework fue completamente reescrito
+en su segunda versión.
+Como resultado, actualizar desde la versión 1.1 no es tan trivial como actualizar entre versiones menores. En esta
+guía encontrarás las diferencias más grandes entre estas dos versiones.</p>
+<p>Si no has utilizado Yii 1.1 antes, puedes saltarte con seguridad esta sección e ir directamente a "<a href="guide-start-installation.html">Comenzando con Yii</a>".</p>
+<p>Es importante anotar que Yii 2.0 introduce más características de las que van a ser cubiertas en este resumen. Es altamente recomendado
+que leas a través de toda la guía definitiva para aprender acerca de todas ellas. Hay muchas posibilidades de que algo que hayas desarrollado anteriormente para extender Yii, sea ahora parte del núcleo de la librería.</p>
+<h2>Instalación <span id="instalacion"></span><a href="#instalacion" class="hashlink">&para;</a></h2><p>Yii 2.0 adopta íntegramente <a href="https://getcomposer.org/">Composer</a>, el administrador de paquetes de facto de PHP.
+Tanto la instalación del núcleo del framework como las extensiones se manejan a través de Composer. Por favor consulta
+la sección <a href="guide-start-installation.html">Comenzando con la Aplicación Básica</a> para aprender a instalar Yii 2.0. Si quieres crear extensiones
+o transformar extensiones de Yii 1.1 para que sean compatibles con Yii 2.0, consulta
+la sección <a href="guide-structure-extensions.html#creating-extensions">Creando Extensiones</a> de la guía.</p>
+<h2>Requerimientos de PHP <span id="requerimientos-de-php"></span><a href="#requerimientos-de-php" class="hashlink">&para;</a></h2><p>Yii 2.0 requiere PHP 5.4 o mayor, lo que es un gran progreso ya que Yii 1.1 funcionaba con PHP 5.2.
+Como resultado, hay muchas diferencias a nivel del lenguaje a las que deberías prestar atención.
+Abajo hay un resumen de los mayores cambios en relación a PHP:</p>
+<ul>
+<li><a href="http://php.net/manual/es/language.namespaces.php">Namespaces</a>.</li>
+<li><a href="http://php.net/manual/es/functions.anonymous.php">Funciones anónimas</a>.</li>
+<li>La sintaxis corta de Arrays <code>[...elementos...]</code> es utilizada en vez de <code>array(...elementos...)</code>.</li>
+<li>Etiquetas cortas de <code>echo</code>. Ahora en las vistas se usa <code>&lt;?=</code>. Esto se puede utilizar desde PHP 5.4.</li>
+<li><a href="http://php.net/manual/es/book.spl.php">SPL - Biblioteca estándar de PHP</a>.</li>
+<li><a href="http://php.net/manual/es/language.oop5.late-static-bindings.php">Enlace estático en tiempo de ejecución</a>.</li>
+<li><a href="http://php.net/manual/es/book.datetime.php">Fecha y Hora</a>.</li>
+<li><a href="http://php.net/manual/es/language.oop5.traits.php">Traits</a>.</li>
+<li><a href="http://php.net/manual/es/book.intl.php">intl</a>. Yii 2.0 utiliza la extensión <code>intl</code> de PHP
+como soporte para internacionalización.</li>
+</ul>
+<h2>Namespace <span id="namespace"></span><a href="#namespace" class="hashlink">&para;</a></h2><p>El cambio más obvio en Yii 2.0 es el uso de namespaces. Casi todas las clases del núcleo
+utilizan namespaces, ej., <code>yii\web\Request</code>. El prefijo "C" no se utiliza más en los nombre de clases.
+El esquema de nombres sigue la estructura de directorios. Por ejemplo, <code>yii\web\Request</code>
+indica que el archivo de la clase correspondiente <code>web/Request.php</code> está bajo el directorio de Yii framework.</p>
+<p>(Puedes utilizar cualquier clase del núcleo sin necesidad de incluir el archivo que la contiene, gracias
+al autoloader de Yii.)</p>
+<h2>Componentes y Objetos <span id="componentes-y-objetos"></span><a href="#componentes-y-objetos" class="hashlink">&para;</a></h2><p>Yii 2.0 parte la clase <code>CComponent</code> de 1.1 en dos clases: <span class="broken-link">yii\base\Object</span> y <span class="broken-link">yii\base\Component</span>.
+La clase <span class="broken-link">yii\base\Object</span> es una clase base que permite definir <a href="guide-concept-properties.html">propiedades de object</a>
+a través de getters y setters. La clase <span class="broken-link">yii\base\Component</span> extiende de <span class="broken-link">yii\base\Object</span> y soporta
+<a href="guide-concept-events.html">eventos</a> y <a href="guide-concept-behaviors.html">comportamientos</a>.</p>
+<p>Si tu clase no necesita utilizar las características de eventos o comportamientos, puedes considerar usar
+<span class="broken-link">yii\base\Object</span> como clase base. Esto es frecuente en el caso de que las clases que representan sean
+estructuras de datos básicas.</p>
+<h2>Configuración de objetos <span id="configuracion-de-objetos"></span><a href="#configuracion-de-objetos" class="hashlink">&para;</a></h2><p>La clase <span class="broken-link">yii\base\Object</span> introduce una manera uniforme de configurar objetos. Cualquier clase descendiente
+de <span class="broken-link">yii\base\Object</span> debería declarar su constructor (si fuera necesario) de la siguiente manera para que
+puede ser adecuadamente configurado:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Object</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">(<span class="hljs-variable">$param1</span>, <span class="hljs-variable">$param2</span>, <span class="hljs-variable">$config</span> = [])</span>
+    </span>{
+        <span class="hljs-comment">// ... se aplica la inicialización antes de la configuración</span>
+
+        <span class="hljs-keyword">parent</span>::__construct(<span class="hljs-variable">$config</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+
+        <span class="hljs-comment">// ... se aplica la inicialización después de la configuración</span>
+    }
+}
+</code></pre>
+<p>En el ejemplo de arriba, el último parámetro del constructor debe tomar un array de configuración que
+contiene pares clave-valor para la inicialización de las propiedades al final del mismo.
+Puedes sobrescribir el método <span class="broken-link">yii\base\Object::init()</span> para realizar el trabajo de inicialización
+que debe ser hecho después de que la configuración haya sido aplicada.</p>
+<p>Siguiendo esa convención, podrás crear y configurar nuevos objetos utilizando
+un array de configuración:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$object</span> = Yii::createObject([
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'MyClass'</span>,
+    <span class="hljs-string">'property1'</span> =&gt; <span class="hljs-string">'abc'</span>,
+    <span class="hljs-string">'property2'</span> =&gt; <span class="hljs-string">'cde'</span>,
+], [<span class="hljs-variable">$param1</span>, <span class="hljs-variable">$param2</span>]);
+</code></pre>
+<p>Se puede encontrar más detalles acerca del tema en la sección <a href="guide-concept-configurations.html">Configuración</a>.</p>
+<h2>Eventos <span id="eventos"></span><a href="#eventos" class="hashlink">&para;</a></h2><p>En Yii 1, los eventos eran creados definiendo un método <code>on</code> (ej., <code>onBeforeSave</code>). En Yii 2, puedes utilizar cualquier nombre de evento.
+Ahora puedes disparar un evento utilizando el método <span class="broken-link">yii\base\Component::trigger()</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$event</span> = <span class="hljs-keyword">new</span> \yii\base\Event;
+<span class="hljs-variable">$component</span>-&gt;trigger(<span class="hljs-variable">$eventName</span>, <span class="hljs-variable">$event</span>);
+</code></pre>
+<p>Para conectar un manejador a un evento, utiliza el método <span class="broken-link">yii\base\Component::on()</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$component</span>-&gt;on(<span class="hljs-variable">$eventName</span>, <span class="hljs-variable">$handler</span>);
+<span class="hljs-comment">// Para desconectar el manejador, utiliza:</span>
+<span class="hljs-comment">// $component-&gt;off($eventName, $handler);</span>
+</code></pre>
+<p>Hay muchas mejoras en lo que respecta a eventos. Para más detalles, consulta la sección <a href="guide-concept-events.html">Eventos</a>.</p>
+<h2>Alias <span id="alias"></span><a href="#alias" class="hashlink">&para;</a></h2><p>Yii 2.0 extiende el uso de alias tanto para archivos/directorios como URLs. Yii 2.0 ahora requiere que cada
+alias comience con el carácter <code>@</code>, para diferenciarlos de rutas o URLs normales.
+Por ejemplo, el alias <code>@yii</code> corresponde al directorio donde Yii se encuentra instalado. Los alias
+están soportados en la mayor parte del núcleo. Por ejemplo, <span class="broken-link">yii\caching\FileCache::cachePath</span> puede tomar tanto
+una ruta de directorios normal como un alias.</p>
+<p>Un alias está estrechamente relacionado con un namespace de la clase. Se recomienda definir un alias
+por cada namespace raíz, y así poder utilizar el autoloader de Yii sin otra configuración.
+Por ejemplo, debido a que <code>@yii</code> se refiere al directorio de instalación, una clase
+como <code>yii\web\Request</code> puede ser auto-cargada. Si estás utilizando una librería de terceros,
+como Zend Framework, puedes definir un alias <code>@Zend</code> que se refiera al directorio de instalación
+de ese framework. Una vez realizado esto, Yii será capaz de auto-cargar cualquier clase de Zend Framework también.</p>
+<p>Se puede encontrar más detalles del tema en la sección <a href="guide-concept-aliases.html">Alias</a>.</p>
+<h2>Vistas <span id="vistas"></span><a href="#vistas" class="hashlink">&para;</a></h2><p>El cambio más significativo con respecto a las vistas en Yii 2 es que la variable especial <code>$this</code> dentro de una vista
+ya no se refiere al controlador o widget actual. En vez de eso, <code>$this</code> ahora se refiere al objeto de la <em>vista</em>, un concepto nuevo
+introducido en Yii 2.0. El objeto <em>vista</em> es del tipo <span class="broken-link">yii\web\View</span>, que representa la parte de las vistas
+en el patrón MVC. Si quieres acceder al controlador o al widget correspondiente desde la propia vista, puedes utilizar <code>$this-&gt;context</code>.</p>
+<p>Para renderizar una vista parcial (partial) dentro de otra vista, se utiliza <code>$this-&gt;render()</code>, no <code>$this-&gt;renderPartial()</code>. La llamada a <code>render</code> además tiene que ser mostrada explícitamente a través de <code>echo</code>,
+ya que el método <code>render()</code> devuelve el resultado de la renderización en vez de mostrarlo directamente. Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'_item'</span>, [<span class="hljs-string">'item'</span> =&gt; <span class="hljs-variable">$item</span>]);
+</code></pre>
+<p>Además de utilizar PHP como el lenguaje principal de plantillas (templates), Yii 2.0 está también equipado con soporte
+oficial de otros dos motores de plantillas populares: Smarty y Twig. El motor de plantillas de Prado ya no está soportado.
+Para utilizar esos motores, necesitas configurar el componente <code>view</code> de la aplicación, definiendo la propiedad <span class="broken-link">yii\base\View::$renderers</span>.
+Por favor consulta la sección <a href="guide-tutorial-template-engines.html">Motores de Plantillas</a>
+para más detalles.</p>
+<h2>Modelos <span id="modelos"></span><a href="#modelos" class="hashlink">&para;</a></h2><p>Yii 2.0 utiliza <span class="broken-link">yii\base\Model</span> como modelo base, algo similar a <code>CModel</code> en 1.1.
+La clase <code>CFormModel</code> ha sido descartada por completo. Ahora, en Yii 2 debes extender de <span class="broken-link">yii\base\Model</span> para crear clases de modelos basados en formularios.</p>
+<p>Yii 2.0 introduce un nuevo método llamado <span class="broken-link">yii\base\Model::scenarios()</span> para declarar escenarios soportados,
+y para indicar bajo que escenario un atributo necesita ser validado, puede ser considerado seguro o no, etc. Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scenarios</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'backend'</span> =&gt; [<span class="hljs-string">'email'</span>, <span class="hljs-string">'role'</span>],
+        <span class="hljs-string">'frontend'</span> =&gt; [<span class="hljs-string">'email'</span>, <span class="hljs-string">'!role'</span>],
+    ];
+}
+</code></pre>
+<p>En el ejemplo anterior, se declaran dos escenarios: <code>backend</code> y <code>frontend</code>. Para el escenario <code>backend</code> son considerados seguros
+ambos atributos, <code>email</code> y <code>role</code>, y pueden ser asignados masivamente. Para el escenario <code>frontend</code>, <code>email</code> puede ser asignado
+masivamente mientras <code>role</code> no. Tanto <code>email</code> como <code>role</code> deben ser validados utilizando reglas (rules).</p>
+<p>El método <span class="broken-link">yii\base\Model::rules()</span> aún es utilizado para declara reglas de validación.
+Ten en cuenta que dada la introducción de <span class="broken-link">yii\base\Model::scenarios()</span>, ya no existe el validador <code>unsafe</code>.</p>
+<p>En la mayoría de los casos, no necesitas sobrescribir <span class="broken-link">yii\base\Model::scenarios()</span> si el método <span class="broken-link">yii\base\Model::rules()</span>
+especifica completamente los escenarios que existirán, y si no hay necesidad de declarar atributos inseguros (<code>unsafe</code>).</p>
+<p>Para aprender más detalles de modelos, consulta la sección <a href="guide-structure-models.html">Modelos</a>.</p>
+<h2>Controladores <span id="controladores"></span><a href="#controladores" class="hashlink">&para;</a></h2><p>Yii 2.0 utiliza <span class="broken-link">yii\web\Controller</span> como controlador base, similar a <code>CWebController</code> en Yii 1.1.
+<span class="broken-link">yii\base\Action</span> es la clase base para clases de acciones.</p>
+<p>El impacto más obvio de estos cambios en tu código es que que cada acción del controlador debe devolver el contenido
+que quieres mostrar en vez de mostrarlo directamente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+</span>{
+    <span class="hljs-variable">$model</span> = \app\models\Post::findOne(<span class="hljs-variable">$id</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'view'</span>, [<span class="hljs-string">'model'</span> =&gt; <span class="hljs-variable">$model</span>]);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \yii\web\NotFoundHttpException;
+    }
+}
+</code></pre>
+<p>Por favor, consulta la sección <a href="guide-structure-controllers.html">Controladores</a> para más detalles acerca de los controladores.</p>
+<h2>Widgets <span id="widgets"></span><a href="#widgets" class="hashlink">&para;</a></h2><p>Yii 2.0 utiliza <span class="broken-link">yii\base\Widget</span> como clase base de los widgets, similar a <code>CWidget</code> en Yii 1.1.</p>
+<p>Para obtener mejor soporte del framework en IDEs, Yii 2.0 introduce una nueva sintaxis para utilizar widgets.
+Los métodos estáticos <span class="broken-link">yii\base\Widget::begin()</span>, <span class="broken-link">yii\base\Widget::end()</span>, y <span class="broken-link">yii\base\Widget::widget()</span>
+fueron incorporados, y deben utilizarse así:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">Menu</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>;
+
+<span class="hljs-comment">// Ten en cuenta que debes pasar el resultado a "echo" para mostrarlo</span>
+<span class="hljs-keyword">echo</span> Menu::widget([<span class="hljs-string">'items'</span> =&gt; <span class="hljs-variable">$items</span>]);
+
+<span class="hljs-comment">// Pasando un array para inicializar las propiedades del objeto</span>
+<span class="hljs-variable">$form</span> = ActiveForm::begin([
+    <span class="hljs-string">'options'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'form-horizontal'</span>],
+    <span class="hljs-string">'fieldConfig'</span> =&gt; [<span class="hljs-string">'inputOptions'</span> =&gt; [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'input-xlarge'</span>]],
+]);
+... campos del formulario aquí ...
+ActiveForm::end();
+</code></pre>
+<p>Consulta la sección <a href="guide-structure-widgets.html">Widgets</a> para más detalles.</p>
+<h2>Temas <span id="temas"></span><a href="#temas" class="hashlink">&para;</a></h2><p>Los temas funcionan completamente diferente en Yii 2.0. Ahora están basados en un mecanismo de mapeo de rutas,
+que mapea la ruta de un archivo de la vista de origen a uno con un tema aplicado. Por ejemplo, si el mapeo de ruta de un tema es
+<code>['/web/views' =&gt; '/web/themes/basic']</code>, entonces la versión con el tema aplicado del archivo
+<code>/web/views/site/index.php</code> será <code>/web/themes/basic/site/index.php</code>. Por esta razón, ahora los temas pueden ser
+aplicados a cualquier archivo de la vista, incluso una vista renderizada fuera del contexto de un controlador o widget.</p>
+<p>Además, el componente <code>CThemeManager</code> ya no existe. En cambio, <code>theme</code> es una propiedad configurable del componente <code>view</code>
+de la aplicación.</p>
+<p>Consulta la sección <a href="guide-output-theming.html">Temas</a> para más detalles.</p>
+<h2>Aplicaciones de Consola <span id="aplicaciones-de-consola"></span><a href="#aplicaciones-de-consola" class="hashlink">&para;</a></h2><p>Las aplicaciones de consola ahora están organizadas en controladores, tal como aplicaciones Web. Estos controladores
+deben extender de <span class="broken-link">yii\console\Controller</span>, similar a <code>CConsoleCommand</code> en 1.1.</p>
+<p>Para correr un comando de consola, utiliza <code>yii &lt;ruta&gt;</code>, donde <code>&lt;ruta&gt;</code> se refiere a la ruta del controlador
+(ej. <code>sitemap/index</code>). Los argumentos anónimos adicionales son pasados como parámetros al método de la acción correspondiente
+del controlador, mientras que los argumentos especificados son pasados de acuerdo a las declaraciones en <span class="broken-link">yii\console\Controller::options()</span>.</p>
+<p>Yii 2.0 soporta la generación automática de información de ayuda de los comandos a través de los bloques de comentarios del archivo.</p>
+<p>Por favor consulta la sección <a href="guide-tutorial-console.html">Comandos de Consola</a> para más detalles.</p>
+<h2>I18N <span id="i18n"></span><a href="#i18n" class="hashlink">&para;</a></h2><p>Yii 2.0 remueve el formateador de fecha y números previamente incluido en favor del <a href="http://pecl.php.net/package/intl">módulo de PHP PECL intl</a>.</p>
+<p>La traducción de mensajes ahora es ejecutada vía el componente <code>i18n</code> de la aplicación.
+Este componente maneja un grupo de mensajes origen, lo que te permite utilizar diferentes mensajes
+basados en categorías.</p>
+<p>Por favor, consulta la sección <a href="guide-tutorial-i18n.html">Internacionalización</a> para más información.</p>
+<h2>Filtros de Acciones <span id="filtros-de-acciones"></span><a href="#filtros-de-acciones" class="hashlink">&para;</a></h2><p>Los filtros de acciones son implementados a través de comportamientos. Para definir un
+nuevo filtro personalizado, se debe extender de <span class="broken-link">yii\base\ActionFilter</span>. Para utilizar el filtro, conecta la clase del filtro
+al controlador como un comportamiento. Por ejemplo, para utilizar el filtro <span class="broken-link">yii\filters\AccessControl</span>, deberías tener
+el siguiente código en el controlador:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">'access'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\filters\AccessControl'</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                [<span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>, <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'admin'</span>], <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'@'</span>]],
+            ],
+        ],
+    ];
+}
+</code></pre>
+<p>Consulta la sección <a href="guide-structure-filters.html">Filtrando</a> para una mayor información acerca del tema.</p>
+<h2>Assets <span id="assets"></span><a href="#assets" class="hashlink">&para;</a></h2><p>Yii 2.0 introduce un nuevo concepto llamado <em>asset bundle</em> que reemplaza el concepto de script package encontrado en Yii 1.1.</p>
+<p>Un asset bundle es una colección de archivos assets (ej. archivos JavaScript, archivos CSS, imágenes, etc.) dentro de un directorio.
+Cada asset bundle está representado por una clase que extiende de <span class="broken-link">yii\web\AssetBundle</span>.
+Al registrar un asset bundle a través de <span class="broken-link">yii\web\AssetBundle::register()</span>, haces que los assets de dicho bundle sean accesibles
+vía Web. A diferencia de Yii 1, la página que registra el bundle contendrá automáticamente las referencias a los archivos
+JavaScript y CSS especificados en el bundle.</p>
+<p>Por favor, consulta la sección <a href="guide-structure-assets.html">Manejando Assets</a> para más detalles.</p>
+<h2>Helpers <span id="helpers"></span><a href="#helpers" class="hashlink">&para;</a></h2><p>Yii 2.0 introduce muchos helpers estáticos comúnmente utilizados, incluyendo:</p>
+<ul>
+<li><span class="broken-link">yii\helpers\Html</span></li>
+<li><span class="broken-link">yii\helpers\ArrayHelper</span></li>
+<li><span class="broken-link">yii\helpers\StringHelper</span></li>
+<li><span class="broken-link">yii\helpers\FileHelper</span></li>
+<li><span class="broken-link">yii\helpers\Json</span></li>
+</ul>
+<p>Por favor, consulta la sección <a href="guide-helper-overview.html">Información General de Helpers</a> para más detalles.</p>
+<h2>Formularios <span id="formularios"></span><a href="#formularios" class="hashlink">&para;</a></h2><p>Yii 2.0 introduce el concepto de <em>campo</em> (field) para construir formularios utilizando <span class="broken-link">yii\widgets\ActiveForm</span>. Un campo
+es un contenedor que consiste en una etiqueta, un input, un mensaje de error y/o texto de ayuda.
+Un campo es representado como un objeto <span class="broken-link">yii\widgets\ActiveField</span>.
+Utilizando estos campos, puedes crear formularios más legibles que antes:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-variable">$form</span> = yii\widgets\ActiveForm::begin(); <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'username'</span>) <span class="hljs-preprocessor">?&gt;</span>
+    <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$form</span>-&gt;field(<span class="hljs-variable">$model</span>, <span class="hljs-string">'password'</span>)-&gt;passwordInput() <span class="hljs-preprocessor">?&gt;</span>
+    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">form</span>-<span class="hljs-title">group</span>"&gt;
+        &lt;?= <span class="hljs-title">Html</span>::<span class="hljs-title">submitButton</span>('<span class="hljs-title">Login</span>') ?&gt;
+    &lt;/<span class="hljs-title">div</span>&gt;
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">ActiveForm</span>::<span class="hljs-title">end</span>(); ?&gt;
+</span></code></pre>
+<p>Por favor, consulta la sección <a href="guide-input-forms.html">Creando Formularios</a> para más detalles.</p>
+<h2>Constructor de Consultas <span id="constructor-de-consultas"></span><a href="#constructor-de-consultas" class="hashlink">&para;</a></h2><p>En Yii 1.1, la generación de consultas a la base de datos estaba dividida en varias clases, incluyendo <code>CDbCommand</code>,
+<code>CDbCriteria</code>, y <code>CDbCommandBuilder</code>. Yii 2.0 representa una consulta a la base de datos en términos de un objeto <span class="broken-link">yii\db\Query</span>
+que puede ser convertido en una declaración SQL con la ayuda de <span class="broken-link">yii\db\QueryBuilder</span> detrás de la escena.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$query</span> = <span class="hljs-keyword">new</span> \yii\db\Query();
+<span class="hljs-variable">$query</span>-&gt;select(<span class="hljs-string">'id, name'</span>)
+      -&gt;from(<span class="hljs-string">'user'</span>)
+      -&gt;limit(<span class="hljs-number">10</span>);
+
+<span class="hljs-variable">$command</span> = <span class="hljs-variable">$query</span>-&gt;createCommand();
+<span class="hljs-variable">$sql</span> = <span class="hljs-variable">$command</span>-&gt;sql;
+<span class="hljs-variable">$rows</span> = <span class="hljs-variable">$command</span>-&gt;queryAll();
+</code></pre>
+<p>Lo mejor de todo, dichos métodos de generación de consultas pueden ser también utilizados mientras se trabaja con <a href="guide-db-active-record.html">Active Record</a>.</p>
+<p>Consulta la sección <a href="guide-db-query-builder.html">Constructor de Consultas</a> para más detalles.</p>
+<h2>Active Record <span id="active-record"></span><a href="#active-record" class="hashlink">&para;</a></h2><p>Yii 2.0 introduce muchísimos cambios con respecto a <a href="guide-db-active-record.html">Active Record</a>. Los dos más obvios se relacionan a
+la generación de consultas y al manejo de relaciones.</p>
+<p>La clase de Yii 1.1 <code>CDbCriteria</code> es reemplazada por <span class="broken-link">yii\db\ActiveQuery</span> en Yii 2. Esta clase extiende de <span class="broken-link">yii\db\Query</span>,
+y por lo tanto hereda todos los métodos de generación de consultas.
+Para comenzar a generar una consulta, llamas al método <span class="broken-link">yii\db\ActiveRecord::find()</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Recibe todos los clientes *activos* y ordenados por su ID:</span>
+<span class="hljs-variable">$customers</span> = Customer::find()
+    -&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-variable">$active</span>])
+    -&gt;orderBy(<span class="hljs-string">'id'</span>)
+    -&gt;all();
+</code></pre>
+<p>Para declarar una relación, simplemente define un método getter que devuelva un objeto <span class="broken-link">yii\db\ActiveQuery</span>.
+El nombre de la propiedad definida en el getter representa el nombre de la relación. Por ejemplo, el siguiente código declara
+una relación <code>orders</code> (en Yii 1.1, las relaciones se declaraban centralmente en el método <code>relations()</code>):</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Customer</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getOrders</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;hasMany(<span class="hljs-string">'Order'</span>, [<span class="hljs-string">'customer_id'</span> =&gt; <span class="hljs-string">'id'</span>]);
+    }
+}
+</code></pre>
+<p>Ahora puedes utilizar <code>$customer-&gt;orders</code> para acceder a las órdenes de la tabla relacionada. También puedes utilizar el siguiente
+código para realizar una consulta relacional 'sobre la marcha' con una condición personalizada:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$orders</span> = <span class="hljs-variable">$customer</span>-&gt;getOrders()-&gt;andWhere(<span class="hljs-string">'status=1'</span>)-&gt;all();
+</code></pre>
+<p>Cuando se utiliza la carga temprana (eager loading) de la relación, Yii 2.0 lo hace diferente de 1.1. En particular, en 1.1 una declaración JOIN
+sería creada para seleccionar tanto los registros de la tabla primaria como los relacionados. En Yii 2.0, dos declaraciones SQL son ejecutadas
+sin utilizar un JOIN: la primera trae todos los modelos primarios, mientras que la segunda trae los registros relacionados
+utilizando como condición la clave primaria de los primarios.</p>
+<p>En vez de devolver objetos <span class="broken-link">yii\db\ActiveRecord</span>, puedes conectar el método <span class="broken-link">yii\db\ActiveQuery::asArray()</span>
+mientras generas una consulta que devuelve un gran número de registros. Esto causará que el resultado de la consulta sea devuelto como
+arrays, lo que puede reducir significativamente la necesidad de tiempo de CPU y memoria si el número de registros es grande.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$customers</span> = Customer::find()-&gt;asArray()-&gt;all();
+</code></pre>
+<p>Otro cambio es que ya no puedes definir valores por defecto a los atributos a través de propiedades públicas.
+Si lo necesitaras, debes definirlo en el método <code>init</code> de la clase del registro en cuestión.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">parent</span>::init();
+    <span class="hljs-variable">$this</span>-&gt;status = <span class="hljs-keyword">self</span>::STATUS_NEW;
+}
+</code></pre>
+<p>Anteriormente, solía haber algunos problemas al sobrescribir el constructor de una clase ActiveRecord en 1.1. Estos ya no están presentes en
+Yii 2.0. Ten en cuenta que al agregar parámetros al constructor podrías llegar a tener que sobrescribir <span class="broken-link">yii\db\ActiveRecord::instantiate()</span>.</p>
+<p>Hay muchos otros cambios y mejoras con respecto a ActiveRecord. Por favor, consulta
+la sección <a href="guide-db-active-record.html">Active Record</a> para más detalles.</p>
+<h2>Active Record Behaviors <span id="active-record-behaviors"></span><a href="#active-record-behaviors" class="hashlink">&para;</a></h2><p>En 2.0, hemos eliminado la clase del comportamiento base <code>CActiveRecordBehavior</code>. Si desea crear un comportamiento Active Record, usted tendrá que extender directamente de <code>yii\base\Behavior</code>. Si la clase de comportamiento debe responder a algunos eventos propios, usted tiene que sobrescribir los métodos <code>events()</code> como se muestra a continuación,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Behavior</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyBehavior</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Behavior</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">events</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            ActiveRecord::EVENT_BEFORE_VALIDATE =&gt; <span class="hljs-string">'beforeValidate'</span>,
+        ];
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">beforeValidate</span><span class="hljs-params">(<span class="hljs-variable">$event</span>)</span>
+    </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<h2>User e IdentityInterface <span id="user-e-identityinterface"></span><a href="#user-e-identityinterface" class="hashlink">&para;</a></h2><p>La clase <code>CWebUser</code> de 1.1 es reemplazada por <span class="broken-link">yii\web\User</span>, y la clase <code>CUserIdentity</code> ha dejado de existir.
+En cambio, ahora debes implementar <span class="broken-link">yii\web\IdentityInterface</span> el cual es mucho más directo de usar.
+El template de proyecto avanzado provee un ejemplo así.</p>
+<p>Consulta las secciones <a href="guide-security-authentication.html">Autenticación</a>, <a href="guide-security-authorization.html">Autorización</a>, y <a href="https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide-es/README.md">Template de Proyecto Avanzado</a> para más detalles.</p>
+<h2>Manejo de URLs <span id="manejo-de-urls"></span><a href="#manejo-de-urls" class="hashlink">&para;</a></h2><p>El manejo de URLs en Yii 2 es similar al de 1.1. Una mejora mayor es que el manejador actual ahora soporta parámetros opcionales.
+Por ejemplo, si tienes una regla declarada como a continuación, entonces coincidirá tanto con <code>post/popular</code> como con <code>post/1/popular</code>.
+En 1.1, tendrías que haber creado dos reglas diferentes para obtener el mismo resultado</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'post/&lt;page:\d+&gt;/&lt;tag&gt;'</span>,
+    <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+    <span class="hljs-string">'defaults'</span> =&gt; [<span class="hljs-string">'page'</span> =&gt; <span class="hljs-number">1</span>],
+]
+</code></pre>
+<p>Por favor, consulta la sección <a href="guide-runtime-routing.html">Documentación del Manejo de URLs</a> para más detalles.</p>
+<p>Un cambio importante en la convención de nombres para rutas es que los nombres en CamelCase de controladores
+y acciones ahora son convertidos a minúsculas y cada palabra separada por un guión, por ejemplo el id del controlador
+<code>CamelCaseController</code> será <code>camel-case</code>.
+Consulta la sección acerca de <a href="guide-structure-controllers.html#controller-ids">IDs de controladores</a> y <a href="structure-controllers.md#action-ids">IDs de acciones</a> para más detalles.</p>
+<h2>Utilizar Yii 1.1 y 2.x juntos <span id="utilizar-yii-11-y-2x-juntos"></span><a href="#utilizar-yii-11-y-2x-juntos" class="hashlink">&para;</a></h2><p>Si tienes código en Yii 1.1 que quisieras utilizar junto con Yii 2.0, por favor consulta
+la sección <a href="guide-tutorial-yii-integration.html">Utilizando Yii 1.1 y 2.0 juntos</a>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

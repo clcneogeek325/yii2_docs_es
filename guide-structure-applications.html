@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Aplicaciones - Estructura de una aplicación - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w844" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w844-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w844-collapse" class="collapse navbar-collapse"><ul id="w845" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-828" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-828" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-829" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-829" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item active" href="#navigation-830" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-830" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item active" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-831" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-831" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-832" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-832" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-833" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-833" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-834" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-834" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-835" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-835" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-836" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-836" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-837" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-837" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-838" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-838" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-839" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-839" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-840" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-840" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-841" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-841" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-842" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-842" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-843" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-843" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Aplicaciones <span id="aplicaciones"></span><a href="#aplicaciones" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#application-configurations">Configuraciones de las Aplicaciones</a></li>
+<li><a href="#application-properties">Propiedades de la Aplicación</a></li>
+<li><a href="#application-events">Eventos de la Aplicación</a></li>
+<li><a href="#application-lifecycle">Ciclo de Vida de una Aplicación</a></li></ol></div>
+<p>Las <code>Applications</code> (aplicaciones) son objetos que gobiernan la estructura total y el ciclo de vida de las aplicaciones
+hechas en Yii.
+Cada aplicación Yii contiene un objeto <code>Application</code> que es creado en el <a href="guide-structure-entry-scripts.html">script de entrada</a>
+y es globalmente accesible a través de la expresión <code>\Yii::$app</code>.</p>
+<blockquote class="info"><p><strong>Info: </strong>Dependiendo del contexto, cuando decimos "una aplicación", puede significar tanto un objeto Application
+  o un sistema desarrollado en Yii.</p>
+</blockquote>
+<p>Hay dos tipos de aplicaciones: <span class="broken-link">yii\web\Application</span> y
+<span class="broken-link">yii\console\Application</span>. Como el nombre lo indica, la primera maneja principalmente
+Web requests mientras que la última maneja requests (peticiones) de la línea de comandos.</p>
+<h2>Configuraciones de las Aplicaciones  <span id="application-configurations"></span><a href="#application-configurations" class="hashlink">&para;</a></h2><p>Cuando un <a href="guide-structure-entry-scripts.html">script de entrada</a> crea una aplicación, cargará
+una <a href="guide-concept-configurations.html">configuración</a> y la aplicará a la aplicación, como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">require</span>(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/autoload.php'</span>);
+<span class="hljs-keyword">require</span>(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../vendor/yiisoft/yii2/Yii.php'</span>);
+
+<span class="hljs-comment">// carga la configuración de la aplicación</span>
+<span class="hljs-variable">$config</span> = <span class="hljs-keyword">require</span>(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/../config/web.php'</span>);
+
+<span class="hljs-comment">// instancia y configura la aplicación</span>
+(<span class="hljs-keyword">new</span> yii\web\Application(<span class="hljs-variable">$config</span>))-&gt;run();
+</code></pre>
+<p>Principalmente, las <a href="guide-concept-configurations.html">configuraciones</a> de una aplicación especifican
+como inicializar las propiedades de un objeto <code>application</code>. Debido a que estas configuraciones
+suelen ser complejas, son usualmente guardadas en <a href="guide-concept-configurations.html#configuration-files">archivos de configuración</a>,
+como en el archivo <code>web.php</code> del ejemplo anterior.</p>
+<h2>Propiedades de la Aplicación  <span id="application-properties"></span><a href="#application-properties" class="hashlink">&para;</a></h2><p>Hay muchas propiedades importantes en la aplicación que deberían configurarse en en la configuración de la aplicación.
+Estas propiedades suelen describir el entorno en el cual la aplicación está corriendo.
+Por ejemplo, las aplicaciones necesitan saber cómo cargar <a href="guide-structure-controllers.html">controladores</a>,
+dónde guardar archivos temporales, etc. A continuación, resumiremos esas propiedades.</p>
+<h3>Propiedades Requeridas  <span id="required-properties"></span><a href="#required-properties" class="hashlink">&para;</a></h3><p>En cualquier aplicación, debes configurar al menos dos propiedades: <span class="broken-link">yii\base\Application::id</span>
+y <span class="broken-link">yii\base\Application::basePath</span>.</p>
+<h4><span class="broken-link">yii\base\Application::id</span>  <span id="id"></span><a href="#id" class="hashlink">&para;</a></h4><p>La propiedad <span class="broken-link">yii\base\Application::id</span> especifica un ID único que diferencia una aplicación de otras.
+Es mayormente utilizada a nivel programación. A pesar de que no es un requerimiento, para una mejor interoperabilidad,
+se recomienda utilizar sólo caracteres alfanuméricos.</p>
+<h4><span class="broken-link">yii\base\Application::basePath</span>  <span id="basePath"></span><a href="#basePath" class="hashlink">&para;</a></h4><p>La propiedad <span class="broken-link">yii\base\Application::basePath</span> especifica el directorio raíz de una aplicación.
+Es el directorio que alberga todos los archivos protegidos de un sistema. Bajo este directorio,
+tendrás normalmente sub-directorios como <code>models</code>, <code>views</code>, <code>controllers</code>, que contienen el código fuente
+correspondiente al patrón MVC.</p>
+<p>Puedes configurar la propiedad <span class="broken-link">yii\base\Application::basePath</span> usando la ruta a un directorio
+o un <a href="guide-concept-aliases.html">alias</a>. En ambas formas, el directorio debe existir, o se lanzará una excepción.
+La ruta será normalizada utilizando la función <code>realpath()</code>.</p>
+<p>La propiedad <span class="broken-link">yii\base\Application::basePath</span> es utilizada a menudo derivando otras rutas
+(ej. la ruta <code>runtime</code>). Por esta razón, un alias llamado <code>@app</code> está predefinido para representar esta ruta.
+Rutas derivadas pueden ser entonces creadas a partir de este alias (ej. <code>@app/runtime</code> para referirse al directorio <code>runtime</code>).</p>
+<h3>Propiedades Importantes  <span id="important-properties"></span><a href="#important-properties" class="hashlink">&para;</a></h3><p>Las propiedades descritas en esta subsección a menudo necesita ser configurada porque difieren entre las
+diferentes aplicaciones.</p>
+<h4><span class="broken-link">yii\base\Application::aliases</span>  <span id="aliases"></span><a href="#aliases" class="hashlink">&para;</a></h4><p>Esta propiedad te permite definir un grupo de <a href="guide-concept-aliases.html">alias</a> en términos de un array (matriz).
+Las claves del array son los nombres de los alias, y los valores su correspondiente definición.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@name1'</span> =&gt; <span class="hljs-string">'path/to/path1'</span>,
+        <span class="hljs-string">'@name2'</span> =&gt; <span class="hljs-string">'path/to/path2'</span>,
+    ],
+]
+</code></pre>
+<p>Esta propiedad está provista de tal manera que puedas definir alias en términos de configuraciones de la aplicación
+en vez de llamadas al método <span class="broken-link">Yii::setAlias()</span>.</p>
+<h4><span class="broken-link">yii\base\Application::bootstrap</span>  <span id="bootstrap"></span><a href="#bootstrap" class="hashlink">&para;</a></h4><p>Esta es una propiedad importante. Te permite definir un array de los componentes que deben ejecutarse
+durante el <span class="broken-link">yii\base\Application::bootstrap()</span> de la aplicación.
+Por ejemplo, si quieres personalizar las <a href="guide-runtime-url-handling.html">reglas de URL</a> de un <a href="guide-structure-modules.html">módulo</a>,
+podrías listar su ID como un elemento de este array.</p>
+<p>Cada componente listado en esta propiedad puede ser especificado en cualquiera de los siguientes formatos:</p>
+<ul>
+<li>el ID de un componente como está especificado vía <a href="#components"><code>components</code></a>.</li>
+<li>el ID de un módulo como está especificado vía <a href="#modules"><code>modules</code></a>.</li>
+<li>un nombre de clase.</li>
+<li>un array de configuración.</li>
+</ul>
+<p>Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'bootstrap'</span> =&gt; [
+        <span class="hljs-comment">// un ID de componente o de módulo</span>
+        <span class="hljs-string">'demo'</span>,
+
+        <span class="hljs-comment">// un nombre de clase</span>
+        <span class="hljs-string">'app\components\TrafficMonitor'</span>,
+
+        <span class="hljs-comment">// un array de configuración</span>
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\Profiler'</span>,
+            <span class="hljs-string">'level'</span> =&gt; <span class="hljs-number">3</span>,
+        ]
+    ],
+]
+</code></pre>
+<p>Durante el proceso de <code>bootstrapping</code>, cada componente será instanciado. Si la clase del componente
+implementa <span class="broken-link">yii\base\BootstrapInterface</span>, también se llamará a su método <span class="broken-link">yii\base\BootstrapInterface::bootstrap()</span>.</p>
+<p>Otro ejemplo práctico se encuentra en la configuración del <a href="guide-start-installation.html">Template de Aplicación Básica</a>,
+donde los módulos <code>debug</code> y <code>gii</code> son configurados como componentes <code>bootstrap</code> cuando la aplicación está
+corriendo en un entorno de desarrollo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (YII_ENV_DEV) {
+    <span class="hljs-comment">// ajustes en la configuración del entorno 'dev' (desarrollo)</span>
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'bootstrap'</span>][] = <span class="hljs-string">'debug'</span>;
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'modules'</span>][<span class="hljs-string">'debug'</span>] = <span class="hljs-string">'yii\debug\Module'</span>;
+
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'bootstrap'</span>][] = <span class="hljs-string">'gii'</span>;
+    <span class="hljs-variable">$config</span>[<span class="hljs-string">'modules'</span>][<span class="hljs-string">'gii'</span>] = <span class="hljs-string">'yii\gii\Module'</span>;
+}
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Agregar demasiados componentes <code>bootstrap</code> degradará la performance de tu aplicación debido a que
+  por cada request, se necesita correr el mismo grupo de componentes. Por lo tanto, utiliza componentes <code>bootstrap</code> con criterio.</p>
+</blockquote>
+<h4><span class="broken-link">yii\web\Application::catchAll</span>  <span id="catchAll"></span><a href="#catchAll" class="hashlink">&para;</a></h4><p>Esta propiedad está solamente soportada por <span class="broken-link">yii\web\Application</span>. Especifica
+la <a href="guide-structure-controllers.html">acción de controlador</a> que debería manejar todos los requests (peticiones) del usuario.
+Es mayormente utilizada cuando una aplicación está en "modo de mantenimiento" y necesita que todas las peticiones
+sean capturadas por una sola acción.</p>
+<p>La configuración es un array cuyo primer elemento especifica la ruta de la acción.
+El resto de los elementos del array (pares clave-valor) especifica los parámetros a ser enviados a la acción.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'catchAll'</span> =&gt; [
+        <span class="hljs-string">'offline/notice'</span>,
+        <span class="hljs-string">'param1'</span> =&gt; <span class="hljs-string">'value1'</span>,
+        <span class="hljs-string">'param2'</span> =&gt; <span class="hljs-string">'value2'</span>,
+    ],
+]
+</code></pre>
+<h4><span class="broken-link">yii\base\Application::components</span>  <span id="components"></span><a href="#components" class="hashlink">&para;</a></h4><p>Esta es la propiedad más importante. Te permite registrar una lista de componentes llamados <a href="guide-#structure-application-components.html">componentes de aplicación</a>
+que puedes utilizar en otras partes de tu aplicación. Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'cache'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\FileCache'</span>,
+        ],
+        <span class="hljs-string">'user'</span> =&gt; [
+            <span class="hljs-string">'identityClass'</span> =&gt; <span class="hljs-string">'app\models\User'</span>,
+            <span class="hljs-string">'enableAutoLogin'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+]
+</code></pre>
+<p>Cada componente de la aplicación es un par clave-valor del array. La clave representa el ID del componente,
+mientras que el valor representa el nombre de la clase del componente o una <a href="guide-concept-configurations.html">configuración</a>.</p>
+<p>Puedes registrar cualquier componente en una aplicación, y el componente puede ser globalmente accedido utilizando
+la expresión <code>\Yii::$app-&gt;ComponentID</code>.</p>
+<p>Por favor, lee la sección <a href="guide-structure-application-components.html">Componentes de la Aplicación</a> para mayor detalle.</p>
+<h4><span class="broken-link">yii\base\Application::controllerMap</span>  <span id="controllerMap"></span><a href="#controllerMap" class="hashlink">&para;</a></h4><p>Esta propiedad te permite mapear un ID de controlador a una clase de controlador arbitraria. Por defecto, Yii mapea
+ID de controladores a clases de controladores basado en una <a href="#controllerNamespace">convención</a> (ej. el ID <code>post</code> será mapeado
+a <code>app\controllers\PostController</code>). Configurando esta propiedad, puedes saltear esa convención
+para controladores específicos. En el siguiente ejemplo, <code>account</code> será mapeado a
+<code>app\controllers\UserController</code>, mientras que <code>article</code> será mapeado a <code>app\controllers\PostController</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        <span class="hljs-string">'account'</span> =&gt; <span class="hljs-string">'app\controllers\UserController'</span>,
+        <span class="hljs-string">'article'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\controllers\PostController'</span>,
+            <span class="hljs-string">'enableCsrfValidation'</span> =&gt; <span class="hljs-keyword">false</span>,
+        ],
+    ],
+]
+</code></pre>
+<p>Las claves de este array representan los ID de los controladores, mientras que los valores representan
+los nombres de clase de dichos controladores o una <a href="guide-concept-configurations.html">configuración</a>.</p>
+<h4><span class="broken-link">yii\base\Application::controllerNamespace</span>  <span id="controllerNamespace"></span><a href="#controllerNamespace" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el <code>namespace</code> bajo el cual las clases de los controladores deben ser ubicados. Por defecto es
+<code>app\controllers</code>. Si el ID es <code>post</code>, por convención el controlador correspondiente (sin
+<code>namespace</code>) será <code>PostController</code>, y el nombre completo (cualificado) de la clase <code>app\controllers\PostController</code>.</p>
+<p>Las clases de controladores pueden ser ubicados también en sub-directorios del directorio correspondiente a este <code>namespace</code>.
+Por ejemplo, dado el ID de controlador <code>admin/post</code>, el nombre completo de la clase sería <code>app\controllers\admin\PostController</code>.</p>
+<p>Es importante que el nombre completo de la clase del controlador sea <a href="guide-concept-autoloading.html">auto-cargable</a>
+y el <code>namespace</code> actual de la clase coincida con este valor. De otro modo, recibirás
+un error "Page Not Found" ("Página no Encontrada") cuando accedas a la aplicación.</p>
+<p>En caso de que quieras romper con la convención cómo se comenta arriba, puedes configurar la propiedad <a href="#controllerMap">controllerMap</a>.</p>
+<h4><span class="broken-link">yii\base\Application::language</span>  <span id="language"></span><a href="#language" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el idioma en el cual la aplicación debería mostrar el contenido a los usuarios.
+El valor por defecto de esta propiedad es <code>en</code>, referido a English. Deberías configurar esta propiedad
+si tu aplicación necesita soporte multi-idioma.</p>
+<p>El valor de esta propiedad determina varios aspectos de la <a href="guide-tutorial-i18n.html">internacionalización</a>,
+incluido la traducción de mensajes, formato de fecha y números, etc. Por ejemplo, el widget <span class="broken-link">yii\jui\DatePicker</span>
+utilizará el valor de esta propiedad para determinar en qué idioma el calendario debe ser mostrado y cómo dar formato
+a la fecha.</p>
+<p>Se recomienda que especifiques el idioma en términos de una <a href="http://es.wikipedia.org/wiki/Código_de_idioma_IETF">Código de idioma IETF</a>.
+Por ejemplo, <code>en</code> se refiere a English, mientras que <code>en-US</code> se refiere a English (United States).</p>
+<p>Se pueden encontrar más detalles de este aspecto en la sección <a href="guide-tutorial-i18n.html">Internacionalización</a>.</p>
+<h4><span class="broken-link">yii\base\Application::modules</span>  <span id="modules"></span><a href="#modules" class="hashlink">&para;</a></h4><p>Esta propiedad especifica los <a href="guide-structure-modules.html">módulos</a> que contiene la aplicación.</p>
+<p>Esta propiedad toma un array con los nombre de clases de los módulos o <a href="guide-concept-configurations.html">configuraciones</a> con las claves siendo
+los IDs de los módulos. Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-comment">// módulo "booking" especificado con la clase del módulo</span>
+        <span class="hljs-string">'booking'</span> =&gt; <span class="hljs-string">'app\modules\booking\BookingModule'</span>,
+
+        <span class="hljs-comment">// módulo "comment" especificado usando un array de configuración</span>
+        <span class="hljs-string">'comment'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\modules\comment\CommentModule'</span>,
+            <span class="hljs-string">'db'</span> =&gt; <span class="hljs-string">'db'</span>,
+        ],
+    ],
+]
+</code></pre>
+<p>Por favor consulta la sección <a href="guide-structure-modules.html">Módulos</a> para más detalles.</p>
+<h4><span class="broken-link">yii\base\Application::name</span>  <span id="name"></span><a href="#name" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el nombre de la aplicación que será mostrado a los usuarios. Al contrario de
+<span class="broken-link">yii\base\Application::id</span>, que debe tomar un valor único, el valor de esta propiedad existe principalmente
+para propósito de visualización y no tiene porqué ser única.</p>
+<p>No siempre necesitas configurar esta propiedad si en tu aplicación no va a ser utilizada.</p>
+<h4><span class="broken-link">yii\base\Application::params</span>  <span id="params"></span><a href="#params" class="hashlink">&para;</a></h4><p>Esta propiedad especifica un array con parámetros accesibles desde cualquier lugar de tu aplicación.
+En vez de usar números y cadenas fijas por todos lados en tu código, es una buena práctica definirlos como
+parámetros de la aplicación en un solo lugar y luego utilizarlos donde los necesites. Por ejemplo, podrías definir el tamaño
+de las imágenes en miniatura de la siguiente manera:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'params'</span> =&gt; [
+        <span class="hljs-string">'thumbnail.size'</span> =&gt; [<span class="hljs-number">128</span>, <span class="hljs-number">128</span>],
+    ],
+]
+</code></pre>
+<p>Entonces, cuando necesites acceder a esa configuración en tu aplicación, podrías hacerlo utilizando el código siguiente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$size</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'thumbnail.size'</span>];
+<span class="hljs-variable">$width</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'thumbnail.size'</span>][<span class="hljs-number">0</span>];
+</code></pre>
+<p>Más adelante, si decides cambiar el tamaño de las miniaturas, sólo necesitas modificarlo en la configuración de la aplicación
+sin necesidad de tocar el código que lo utiliza.</p>
+<h4><span class="broken-link">yii\base\Application::sourceLanguage</span>  <span id="sourceLanguage"></span><a href="#sourceLanguage" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el idioma en el cual la aplicación está escrita. El valor por defecto es <code>'en-US'</code>,
+referido a English (United States). Deberías configurar esta propiedad si el contenido de texto en tu código no está en inglés.</p>
+<p>Como la propiedad <a href="#language">language</a>, deberías configurar esta propiedad siguiendo el <a href="http://es.wikipedia.org/wiki/Código_de_idioma_IETF">Código de idioma IETF</a>.
+Por ejemplo, <code>en</code> se refiere a English, mientras que <code>en-US</code> se refiere a English (United States).</p>
+<p>Puedes encontrar más detalles de esta propiedad en la sección <a href="guide-tutorial-i18n.html">Internacionalización</a>.</p>
+<h4><span class="broken-link">yii\base\Application::timeZone</span>  <span id="timeZone"></span><a href="#timeZone" class="hashlink">&para;</a></h4><p>Esta propiedad es provista como una forma alternativa de definir el <code>time zone</code> de PHP por defecto en tiempo de ejecución.
+Configurando esta propiedad, escencialmente estás llamando a la función de PHP <a href="http://php.net/manual/es/function.date-default-timezone-set.php">date_default_timezone_set()</a>.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'timeZone'</span> =&gt; <span class="hljs-string">'America/Los_Angeles'</span>,
+]
+</code></pre>
+<h4><span class="broken-link">yii\base\Application::version</span>  <span id="version"></span><a href="#version" class="hashlink">&para;</a></h4><p>Esta propiedad especifica la versión de la aplicación. Es por defecto <code>'1.0'</code>. No hay total necesidad de configurarla
+si tu no la usarás en tu código.</p>
+<h3>Propiedades Útiles  <span id="useful-properties"></span><a href="#useful-properties" class="hashlink">&para;</a></h3><p>Las propiedades especificadas en esta sub-sección no son configuradas normalmente ya que sus valores por defecto
+estipulan convenciones comunes. De cualquier modo, aún puedes configurarlas en caso de que quieras romper con la convención.</p>
+<h4><span class="broken-link">yii\base\Application::charset</span>  <span id="charset"></span><a href="#charset" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el <code>charset</code> que la aplicación utiliza. El valor por defecto es <code>'UTF-8'</code>, que debería ser mantenido
+tal cual para la mayoría de las aplicaciones a menos que estés trabajando con sistemas legados que utilizan muchos datos no-unicode.</p>
+<h4><span class="broken-link">yii\base\Application::defaultRoute</span>  <span id="defaultRoute"></span><a href="#defaultRoute" class="hashlink">&para;</a></h4><p>Esta propiedad especifica la <a href="guide-runtime-routing.html">ruta</a> que una aplicación debería utilizar si el <code>request</code>
+no especifica una. La ruta puede consistir el ID de un sub-módulo, el ID de un controlador, y/o el ID de una acción.
+Por ejemplo, <code>help</code>, <code>post/create</code>, <code>admin/post/create</code>. Si el ID de la acción no se especifica, tomará el valor por defecto
+especificado en <span class="broken-link">yii\base\Controller::defaultAction</span>.</p>
+<p>Para <span class="broken-link">yii\web\Application</span>, el valor por defecto de esta propiedad es <code>'site'</code>, lo que significa que el
+controlador <code>SiteController</code> y su acción por defecto serán usados. Como resultado, si accedes a la aplicación sin
+especificar una ruta, mostrará el resultado de <code>app\controllers\SiteController::actionIndex()</code>.</p>
+<p>Para <span class="broken-link">yii\console\Application</span>, el valor por defecto es <code>'help'</code>, lo que significa que el comando
+<span class="broken-link">yii\console\controllers\HelpController::actionIndex()</span> debería ser utilizado. Como resultado, si corres el comando <code>yii</code>
+sin proveer ningún argumento, mostrará la información de ayuda.</p>
+<h4><span class="broken-link">yii\base\Application::extensions</span>  <span id="extensions"></span><a href="#extensions" class="hashlink">&para;</a></h4><p>Esta propiedad especifica la lista de <a href="guide-structure-extensions.html">extensiones</a> que se encuentran instaladas y son utilizadas
+por la aplicación.
+Por defecto, tomará el array devuelto por el archivo <code>@vendor/yiisoft/extensions.php</code>. El archivo <code>extensions.php</code>
+es generado y mantenido automáticamente cuando utilizas <a href="https://getcomposer.org">Composer</a> para instalar extensiones.
+Por lo tanto, en la mayoría de los casos no necesitas configurarla.</p>
+<p>En el caso especial de que quieras mantener las extensiones a mano, puedes configurar la propiedad como se muestra a continuación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'extensions'</span> =&gt; [
+        [
+            <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'nombre de la extensión'</span>,
+            <span class="hljs-string">'version'</span> =&gt; <span class="hljs-string">'número de versión'</span>,
+            <span class="hljs-string">'bootstrap'</span> =&gt; <span class="hljs-string">'BootstrapClassName'</span>,  <span class="hljs-comment">// opcional, puede ser también un array de configuración</span>
+            <span class="hljs-string">'alias'</span> =&gt; [  <span class="hljs-comment">// opcional</span>
+                <span class="hljs-string">'@alias1'</span> =&gt; <span class="hljs-string">'to/path1'</span>,
+                <span class="hljs-string">'@alias2'</span> =&gt; <span class="hljs-string">'to/path2'</span>,
+            ],
+        ],
+
+        <span class="hljs-comment">// ... más extensiones como las de arriba ...</span>
+
+    ],
+]
+</code></pre>
+<p>Como puedes ver, la propiedad toma un array de especificaciones de extensiones. Cada extensión es especificada mediante un array
+que consiste en los elementos <code>name</code> y <code>version</code>. Si una extensión necesita ser ejecutada durante el proceso de <a href="guide-runtime-bootstrapping.html"><code>bootstrap</code></a>,
+un elemento <code>bootstrap</code> puede ser especificado con un nombre de clase o un array de <a href="guide-concept-configurations.html">configuración</a>.
+Una extensión también puede definir algunos <a href="guide-concept-aliases.html">alias</a>.</p>
+<h4><span class="broken-link">yii\base\Application::layout</span>  <span id="layout"></span><a href="#layout" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el valor del <code>layout</code> por defecto que será utilizado al renderizar una <a href="guide-structure-views.html">vista</a>.
+El valor por defecto es <code>'main'</code>, y se refiere al archivo <code>main.php</code> bajo el <a href="#layoutPath"><code>layout path</code></a> definido.
+Si tanto el <a href="#layoutPath"><code>layout path</code></a> y el <a href="#viewPath"><code>view path</code></a> están utilizando los valores por defecto,
+el archivo <code>layout</code> puede ser representado con el alias <code>@app/views/layouts/main.php</code>.</p>
+<p>Puedes configurar esta propiedad con el valor <code>false</code> si quieres desactivar el <code>layout</code> por defecto, aunque esto sería un
+caso muy raro.</p>
+<h4><span class="broken-link">yii\base\Application::layoutPath</span>  <span id="layoutPath"></span><a href="#layoutPath" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el lugar por defecto donde deben buscarse los archivos <code>layout</code>. El valor por defecto
+es el sub-directorio <code>layouts</code> bajo el <a href="#viewPath"><code>view path</code></a>. Si el <a href="#viewPath"><code>view path</code></a> usa su valor por defecto,
+el <code>layout path</code> puede ser representado con el alias <code>@app/views/layouts</code>.</p>
+<p>Puedes configurarlo como un directorio o utilizar un <a href="guide-concept-aliases.html">alias</a>.</p>
+<h4><span class="broken-link">yii\base\Application::runtimePath</span>  <span id="runtimePath"></span><a href="#runtimePath" class="hashlink">&para;</a></h4><p>Esta propiedad especifica dónde serán guardados los archivos temporales, como archivos de log y de cache, pueden ser generados.
+El valor por defecto de esta propiedad es el alias <code>@app/runtime</code>.</p>
+<p>Puedes configurarlo como un directorio o utilizar un <a href="guide-concept-aliases.html">alias</a>. Ten en cuenta que el
+directorio debe tener permisos de escritura por el proceso que corre la aplicación. También este directorio debe estar protegido
+de ser accedido por usuarios finales, ya que los archivos generados pueden tener información sensible.</p>
+<p>Para simplificar el acceso a este directorio, Yii trae predefinido el alias <code>@runtime</code> para él.</p>
+<h4><span class="broken-link">yii\base\Application::viewPath</span>  <span id="viewPath"></span><a href="#viewPath" class="hashlink">&para;</a></h4><p>Esta propiedad especifica dónde están ubicados los archivos de la vista. El valor por defecto de esta propiedad está
+representado por el alias <code>@app/views</code>. Puedes configurarlo como un directorio o utilizar un <a href="guide-concept-aliases.html">alias</a>.</p>
+<h4><span class="broken-link">yii\base\Application::vendorPath</span>  <span id="vendorPath"></span><a href="#vendorPath" class="hashlink">&para;</a></h4><p>Esta propiedad especifica el directorio <code>vendor</code> que maneja <a href="https://getcomposer.org">Composer</a>. Contiene
+todas las librerías de terceros utilizadas por tu aplicación, incluyendo el núcleo de Yii. Su valor por defecto
+está representado por el alias <code>@app/vendor</code>.</p>
+<p>Puedes configurarlo como un directorio o utilizar un <a href="guide-concept-aliases.html">alias</a>. Cuando modificas esta propiedad,
+asegúrate de ajustar la configuración de Composer en concordancia.</p>
+<p>Para simplificar el acceso a esta ruta, Yii trae predefinido el alias <code>@vendor</code>.</p>
+<h4><span class="broken-link">yii\console\Application::enableCoreCommands</span>  <span id="enableCoreCommands"></span><a href="#enableCoreCommands" class="hashlink">&para;</a></h4><p>Esta propiedad está sólo soportada por <span class="broken-link">yii\console\Application</span>.
+Especifica si los comandos de consola incluidos en Yii deberían estar habilitados o no.
+Por defecto está definido como <code>true</code>.</p>
+<h2>Eventos de la Aplicación  <span id="application-events"></span><a href="#application-events" class="hashlink">&para;</a></h2><p>Una aplicación dispara varios eventos durante su ciclo de vida al manejar un <code>request</code>. Puedes conectar
+manejadores a dichos eventos en la configuración de la aplicación como se muestra a continuación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'on beforeRequest'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-comment">// ...</span>
+    },
+]
+</code></pre>
+<p>El uso de la sintáxis <code>on nombreEvento</code> es descrita en la sección <a href="guide-concept-configurations.html#configuration-format">Configuraciones</a>.</p>
+<p>Alternativamente, puedes conectar manejadores de eventos durante el <a href="guide-runtime-bootstrapping.html"><code>proceso de bootstrapping</code></a>
+después de que la instancia de la aplicación es creada. Por ejemplo:</p>
+<pre><code class="hljs php language-php">\Yii::<span class="hljs-variable">$app</span>-&gt;on(\yii\base\Application::EVENT_BEFORE_REQUEST, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+    <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<h3><span class="broken-link">yii\base\Application::EVENT_BEFORE_REQUEST</span>  <span id="beforeRequest"></span><a href="#beforeRequest" class="hashlink">&para;</a></h3><p>Este evento es disparado <em>before</em> (antes) de que la aplicación maneje el <code>request</code>. El nombre del evento es <code>beforeRequest</code>.</p>
+<p>Cuando este evento es disparado, la instancia de la aplicación ha sido configurada e inicializada. Por lo tanto es un
+buen lugar para insertar código personalizado vía el mecanismo de eventos para interceptar dicho manejo del <code>request</code>.
+Por ejemplo, en el manejador del evento, podrías definir dinámicamente la propiedad <span class="broken-link">yii\base\Application::language</span>
+basada en algunos parámetros.</p>
+<h3><span class="broken-link">yii\base\Application::EVENT_BEFORE_REQUEST</span>  <span id="afterRequest"></span><a href="#afterRequest" class="hashlink">&para;</a></h3><p>Este evento es disparado <em>after</em> (después) de que una aplicación finaliza el manejo de un <code>request</code> pero <em>before</em> (antes) de enviar el <code>response</code> (respuesta).
+El nombre del evento es <code>afterRequest</code>.</p>
+<p>Cuando este evento es disparado, el manejo del <code>request</code> está finalizado y puedes aprovechar para realizar algún
+post-proceso del mismo o personalizar el <code>response</code> (respuesta).</p>
+<p>Ten en cuenta que el componente <span class="broken-link">yii\web\Response</span> también dispara algunos eventos mientras está enviando el contenido
+a los usuarios finales. Estos eventos son disparados <em>after</em> (después) de este evento.</p>
+<h3><span class="broken-link">yii\base\Application::EVENT_BEFORE_REQUEST</span>  <span id="beforeAction"></span><a href="#beforeAction" class="hashlink">&para;</a></h3><p>Este evento es disparado <em>before</em> (antes) de ejecutar cualquier <a href="guide-structure-controllers.html">acción de controlador</a>.
+El nombre de este evento es <code>beforeAction</code>.</p>
+<p>El parámetro evento es una instancia de <span class="broken-link">yii\base\ActionEvent</span>. Un manejador de eventos puede definir
+la propiedad <span class="broken-link">yii\base\ActionEvent::isValid</span> como <code>false</code> para detener la ejecución de una acción.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'on beforeAction'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-keyword">if</span> (..alguna condición..) {
+            <span class="hljs-variable">$event</span>-&gt;isValid = <span class="hljs-keyword">false</span>;
+        } <span class="hljs-keyword">else</span> {
+        }
+    },
+]
+</code></pre>
+<p>Ten en cuenta que el mismo evento <code>beforeAction</code> también es disparado por <a href="guide-structure-modules.html">módulos</a>
+y [controladores)(structure-controllers.md). Los objectos aplicación son los primeros en disparar este evento,
+seguidos por módulos (si los hubiera), y finalmente controladores. Si un manejador de eventos define <span class="broken-link">yii\base\ActionEvent::isValid</span>
+como <code>false</code>, todos los eventos siguientes NO serán disparados.</p>
+<h3><span class="broken-link">yii\base\Application::EVENT_BEFORE_REQUEST</span>  <span id="afterAction"></span><a href="#afterAction" class="hashlink">&para;</a></h3><p>Este evento es disparado <em>after</em> (después) de ejecutar cualquier <a href="guide-structure-controllers.html">acción de controlador</a>.
+El nombre de este evento es <code>afterAction</code>.</p>
+<p>El parámetro evento es una instancia de <span class="broken-link">yii\base\ActionEvent</span>. A través de la
+propiedad <span class="broken-link">yii\base\ActionEvent::result</span>, un manejador de eventos puede acceder o modificar el resultado de una acción.
+Por ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'on afterAction'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+        <span class="hljs-keyword">if</span> (..alguna condición...) {
+            <span class="hljs-comment">// modificar $event-&gt;result</span>
+        } <span class="hljs-keyword">else</span> {
+        }
+    },
+]
+</code></pre>
+<p>Ten en cuenta que el mismo evento <code>afterAction</code> también es disparado por <a href="guide-structure-modules.html">módulo</a>
+y [controladores)(structure-controllers.md). Estos objetos disparan el evento en orden inverso
+que los de <code>beforeAction</code>. Esto quiere decir que los controladores son los primeros en dispararlo,
+seguido por módulos (si los hubiera), y finalmente aplicaciones.</p>
+<h2>Ciclo de Vida de una Aplicación  <span id="application-lifecycle"></span><a href="#application-lifecycle" class="hashlink">&para;</a></h2><p>Cuando un <a href="guide-structure-entry-scripts.html">script de entrada</a> está siendo ejecutado para manejar un <code>request</code>,
+una aplicación experimenta el siguiente ciclo de vida:</p>
+<ol>
+<li>El script de entrada carga el array de configuración de la aplicación.</li>
+<li>El script de entrada crea una nueva instancia de la aplicación:<ul>
+<li>Se llama a <span class="broken-link">yii\base\Application::preInit()</span>, que configura algunas propiedades
+ de alta prioridad de la aplicación, como <span class="broken-link">yii\base\Application::basePath</span>.</li>
+<li>Registra el <span class="broken-link">yii\base\Application::errorHandler</span>.</li>
+<li>Configura las propiedades de la aplicación.</li>
+<li>Se llama a <span class="broken-link">yii\base\Application::init()</span> con la subsiguiente llamada a
+ <span class="broken-link">yii\base\Application::bootstrap()</span> para correr componentes <code>bootstrap</code>.</li>
+</ul>
+</li>
+<li>El script de entrada llama a <span class="broken-link">yii\base\Application::run()</span> para correr la aplicación:<ul>
+<li>Dispara el evento <span class="broken-link">yii\base\Application::EVENT_BEFORE_REQUEST</span>.</li>
+<li>Maneja el <code>request</code>: lo resuelve en una <a href="guide-runtime-routing.html">route (ruta)</a> con los parámetros asociados;
+ crea el módulo, controlador y objetos acción como se especifica en dicha ruta; y entonces ejecuta la acción.</li>
+<li>Dispara el evento <span class="broken-link">yii\base\Application::EVENT_AFTER_REQUEST</span>.</li>
+<li>Envía el <code>response</code> (respuesta) al usuario.</li>
+</ul>
+</li>
+<li>El script de entrada recibe el estado de salida de la aplicación y completa el proceso del <code>request</code>.</li>
+</ol>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

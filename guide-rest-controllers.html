@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Controladores - Servicios Web RESTful - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w448" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w448-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w448-collapse" class="collapse navbar-collapse"><ul id="w449" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-432" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-432" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-433" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-433" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-434" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-434" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-435" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-435" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-436" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-436" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-437" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-437" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-438" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-438" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-439" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-439" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-440" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-440" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-441" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-441" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item active" href="#navigation-442" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-442" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item active" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-443" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-443" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-444" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-444" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-445" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-445" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-446" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-446" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-447" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-447" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Controladores <span id="controladores"></span><a href="#controladores" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-controller">Creando Clases de Controlador</a></li>
+<li><a href="#filters">Filtros</a></li>
+<li><a href="#extending-active-controller">Extendiendo ActiveController</a></li></ol></div>
+<p>Después de crear las clases de recursos y especificar cómo debe ser el formato de datos de recursos, el siguiente paso
+es crear acciones del controlador para exponer los recursos a los usuarios finales a través de las APIs RESTful.</p>
+<p>Yii ofrece dos clases controlador base para simplificar tu trabajo de crear acciones REST:
+<span class="broken-link">yii\rest\Controller</span> y <span class="broken-link">yii\rest\ActiveController</span>. La diferencia entre estos dos controladores
+es que este último proporciona un conjunto predeterminado de acciones que están específicamente diseñado para trabajar con
+los recursos representados como <a href="guide-db-active-record.html">Active Record</a>. Así que si estás utilizando <a href="guide-db-active-record.html">Active Record</a>
+y te sientes cómodo con las acciones integradas provistas, podrías considerar extender tus controladores
+de <span class="broken-link">yii\rest\ActiveController</span>, lo que te permitirá crear potentes APIs RESTful con un mínimo de código.</p>
+<p>Ambos <span class="broken-link">yii\rest\Controller</span> y <span class="broken-link">yii\rest\ActiveController</span> proporcionan las siguientes características,
+algunas de las cuales se describen en detalle en las siguientes secciones:</p>
+<ul>
+<li>Método de Validación HTTP;</li>
+<li><a href="guide-rest-response-formatting.html">Negociación de contenido y formato de datos</a>;</li>
+<li><a href="guide-rest-authentication.html">Autenticación</a>;</li>
+<li><a href="guide-rest-rate-limiting.html">Límite de Rango</a>.</li>
+</ul>
+<p><span class="broken-link">yii\rest\ActiveController</span> además provee de las siguientes características:</p>
+<ul>
+<li>Un conjunto de acciones comunes necesarias: <code>index</code>, <code>view</code>, <code>create</code>, <code>update</code>, <code>delete</code>, <code>options</code>;</li>
+<li>La autorización del usuario de acuerdo a la acción y recurso solicitado.</li>
+</ul>
+<h2>Creando Clases de Controlador  <span id="creating-controller"></span><a href="#creating-controller" class="hashlink">&para;</a></h2><p>Al crear una nueva clase de controlador, una convención para nombrar la clase del controlador es utilizar
+el nombre del tipo de recurso en singular. Por ejemplo, para servir información de usuario,
+el controlador puede ser nombrado como <code>UserController</code>.</p>
+<p>Crear una nueva acción es similar a crear una acción para una aplicación Web. La única diferencia
+es que en lugar de renderizar el resultado utilizando una vista llamando al método <code>render()</code>, para las acciones REST
+regresas directamente los datos. El <span class="broken-link">yii\rest\Controller::serializer</span> y el
+<span class="broken-link">yii\web\Response</span> se encargarán de la conversión de los datos originales
+al formato solicitado. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+</span>{
+    <span class="hljs-keyword">return</span> User::findOne(<span class="hljs-variable">$id</span>);
+}
+</code></pre>
+<h2>Filtros  <span id="filters"></span><a href="#filters" class="hashlink">&para;</a></h2><p>La mayoría de las características API REST son proporcionadas por <span class="broken-link">yii\rest\Controller</span> son implementadas en los términos de <a href="guide-structure-filters.html">filtros</a>.
+En particular, los siguientes filtros se ejecutarán en el orden en que aparecen:</p>
+<ul>
+<li><span class="broken-link">yii\filters\ContentNegotiator</span>: soporta la negociación de contenido, que se explica en
+la sección <a href="guide-rest-response-formatting.html">Formateo de respuestas</a>;</li>
+<li><span class="broken-link">yii\filters\VerbFilter</span>: soporta métodos de validación HTTP;</li>
+<li><span class="broken-link">yii\filters\auth\AuthMethod</span>: soporta la autenticación de usuarios, que se explica en
+la sección <a href="guide-rest-authentication.html">Autenticación</a>;</li>
+<li><span class="broken-link">yii\filters\RateLimiter</span>: soporta la limitación de rango, que se explica en
+la sección <a href="guide-rest-rate-limiting.html">Límite de Rango</a>.</li>
+</ul>
+<p>Estos filtros se declaran nombrándolos en el método <span class="broken-link">yii\rest\Controller::behaviors()</span>.
+Puede sobrescribir este método para configurar filtros individuales, desactivar algunos de ellos, o añadir los tuyos.
+Por ejemplo, si sólo deseas utilizar la autenticación básica HTTP, puede escribir el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">auth</span>\<span class="hljs-title">HttpBasicAuth</span>;
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-variable">$behaviors</span> = <span class="hljs-keyword">parent</span>::behaviors();
+    <span class="hljs-variable">$behaviors</span>[<span class="hljs-string">'authenticator'</span>] = [
+        <span class="hljs-string">'class'</span> =&gt; HttpBasicAuth::className(),
+    ];
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$behaviors</span>;
+}
+</code></pre>
+<h2>Extendiendo <code>ActiveController</code>  <span id="extending-active-controller"></span><a href="#extending-active-controller" class="hashlink">&para;</a></h2><p>Si tu clase controlador extiende de <span class="broken-link">yii\rest\ActiveController</span>, debe establecer
+su propiedad <span class="broken-link">yii\rest\ActiveController::modelClass</span> con el nombre de la clase del recurso
+que planeas servir a través de este controlador. La clase debe extender de <span class="broken-link">yii\db\ActiveRecord</span>.</p>
+<h3>Personalizando Acciones  <span id="customizing-actions"></span><a href="#customizing-actions" class="hashlink">&para;</a></h3><p>Por defecto, <span class="broken-link">yii\rest\ActiveController</span> provee de las siguientes acciones:</p>
+<ul>
+<li><span class="broken-link">yii\rest\IndexAction</span>: listar recursos página por página;</li>
+<li><span class="broken-link">yii\rest\ViewAction</span>: devolver el detalle de un recurso específico;</li>
+<li><span class="broken-link">yii\rest\CreateAction</span>: crear un nuevo recurso;</li>
+<li><span class="broken-link">yii\rest\UpdateAction</span>: actualizar un recurso existente;</li>
+<li><span class="broken-link">yii\rest\DeleteAction</span>: eliminar un recurso específico;</li>
+<li><span class="broken-link">yii\rest\OptionsAction</span>: devolver los métodos HTTP soportados.</li>
+</ul>
+<p>Todas esta acciones se declaran a través de método <span class="broken-link">yii\rest\ActiveController::actions()</span>.
+Puedes configurar estas acciones o desactivar alguna de ellas sobrescribiendo el método <code>actions()</code>, como se muestra a continuación,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actions</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-variable">$actions</span> = <span class="hljs-keyword">parent</span>::actions();
+
+    <span class="hljs-comment">// disable the "delete" and "create" actions</span>
+    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$actions</span>[<span class="hljs-string">'delete'</span>], <span class="hljs-variable">$actions</span>[<span class="hljs-string">'create'</span>]);
+
+    <span class="hljs-comment">// customize the data provider preparation with the "prepareDataProvider()" method</span>
+    <span class="hljs-variable">$actions</span>[<span class="hljs-string">'index'</span>][<span class="hljs-string">'prepareDataProvider'</span>] = [<span class="hljs-variable">$this</span>, <span class="hljs-string">'prepareDataProvider'</span>];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$actions</span>;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareDataProvider</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// prepare and return a data provider for the "index" action</span>
+}
+</code></pre>
+<p>Por favor, consulta las referencias de clases de acciones individuales para aprender las opciones de configuración disponibles para cada una.</p>
+<h3>Realizando Comprobación de Acceso  <span id="performing-access-check"></span><a href="#performing-access-check" class="hashlink">&para;</a></h3><p>Al exponer los recursos a través de RESTful APIs, a menudo es necesario comprobar si el usuario actual tiene permiso
+para acceder y manipular el/los recurso solicitado/s. Con <span class="broken-link">yii\rest\ActiveController</span>, esto puede lograrse
+sobrescribiendo el método <span class="broken-link">yii\rest\ActiveController::checkAccess()</span> como a continuación, </p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * Checks the privilege of the current user.
+ *
+ * This method should be overridden to check whether the current user has the privilege
+ * to run the specified action against the specified data model.
+ * If the user does not have access, a [[ForbiddenHttpException]] should be thrown.
+ *
+ * <span class="hljs-doctag">@param</span> string $action the ID of the action to be executed
+ * <span class="hljs-doctag">@param</span> \yii\base\Model $model the model to be accessed. If `null`, it means no specific model is being accessed.
+ * <span class="hljs-doctag">@param</span> array $params additional parameters
+ * <span class="hljs-doctag">@throws</span> ForbiddenHttpException if the user does not have access
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAccess</span><span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$model</span> = null, <span class="hljs-variable">$params</span> = [])</span>
+</span>{
+    <span class="hljs-comment">// check if the user can access $action and $model</span>
+    <span class="hljs-comment">// throw ForbiddenHttpException if access should be denied</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$action</span> === <span class="hljs-string">'update'</span> || <span class="hljs-variable">$action</span> === <span class="hljs-string">'delete'</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;author_id !== \Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;id)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \yii\web\ForbiddenHttpException(sprintf(<span class="hljs-string">'You can only %s articles that you\'ve created.'</span>, <span class="hljs-variable">$action</span>));
+    }
+}
+</code></pre>
+<p>El método <code>checkAccess()</code> será llamado por defecto en las acciones predeterminadas de <span class="broken-link">yii\rest\ActiveController</span>. Si creas
+nuevas acciones y también deseas llevar a cabo la comprobación de acceso, debe llamar a este método de forma explícita en las nuevas acciones.</p>
+<blockquote class="tip"><p><strong>Tip: </strong>Puedes implementar <code>checkAccess()</code> mediante el uso del <a href="guide-security-authorization.html">Componente Role-Based Access Control (RBAC)</a>.</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

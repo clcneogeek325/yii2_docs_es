@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Routing y Creación de las URL - Gestión de las peticiones - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w556" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w556-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w556-collapse" class="collapse navbar-collapse"><ul id="w557" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-540" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-540" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-541" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-541" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-542" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-542" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item active" href="#navigation-543" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-543" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item active" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-544" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-544" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-545" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-545" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-546" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-546" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-547" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-547" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-548" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-548" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-549" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-549" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-550" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-550" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-551" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-551" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-552" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-552" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-553" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-553" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-554" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-554" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-555" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-555" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Enrutamiento y Creación de URLS <span id="enrutamiento-y-creacion-de-urls"></span><a href="#enrutamiento-y-creacion-de-urls" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#url-formats">Formatos de URL</a></li>
+<li><a href="#routing">Enrutamiento</a></li>
+<li><a href="#creating-urls">Creación de URLs</a></li>
+<li><a href="#using-pretty-urls">Uso de URLs Amigables</a></li>
+<li><a href="#performance-consideration">Consideración del Rendimiento</a></li></ol></div>
+<p>Cuando una aplicación Yii empieza a procesar una URL solicitada, lo primero que hace es convertir la URL en una 
+<a href="guide-structure-controllers.html#routes">ruta</a>. Luego se usa la ruta para instanciar la 
+<a href="guide-structure-controllers.html">acción de controlador</a> correspondiente para gestionar la petición. A este proceso se 
+le llama <em>enrutamiento</em>.</p>
+<p>El proceso inverso se llama <em>creación de URLs</em>, y crea una URL a partir de una ruta dada y unos parámetros de consulta (query) asociados. Cuando posteriormente se solicita la URL creada, el proceso de enrutamiento puede resolverla y 
+convertirla en la ruta original con los parámetros asociados.</p>
+<p>La principal pieza encargada del enrutamiento y de la creación de URLs es <span class="broken-link">yii\web\UrlManager</span>, que se 
+registra como el componente de aplicación <code>urlManager</code>. El <span class="broken-link">yii\web\UrlManager</span> proporciona el método 
+<span class="broken-link">yii\web\UrlManager::parseRequest()</span> para convertir una petición entrante en una ruta y sus 
+parámetros asociados y el método <span class="broken-link">yii\web\UrlManager::createUrl()</span> para crear una URL a partir de una 
+ruta dada y sus parámetros asociados.</p>
+<p>Configurando el componente <code>urlManager</code> en la configuración de la aplicación, se puede dotar a la aplicación de 
+reconocimiento arbitrario de formatos de URL sin modificar el código de la aplicación existente.  Por ejemplo, se 
+puede usar el siguiente código para crear una URL para la acción <code>post/view</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// Url::to() llama a UrlManager::createUrl() para crear una URL</span>
+<span class="hljs-variable">$url</span> = Url::to([<span class="hljs-string">'post/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+</code></pre>
+<p>Dependiendo de la configuración de <code>urlManager</code>, la URL generada puede asemejarse a alguno de los siguientes (u otro) 
+formato. Y si la URL creada se solicita posteriormente, se seguirá convirtiendo en la ruta original y los valores de 
+los parámetros.</p>
+<pre><code class="hljs ">/index.php?r=post/view&amp;id=100
+/index.php/post/100
+/posts/100
+</code></pre>
+<h2>Formatos de URL  <span id="url-formats"></span><a href="#url-formats" class="hashlink">&para;</a></h2><p>El <span class="broken-link">yii\web\UrlManager</span> soporta dos formatos de URL: el formato predeterminado de URL y el formato URL 
+amigable (pretty URL).</p>
+<p>El formato de URL predeterminado utiliza un parámetro de consulta llamado <code>r</code> para representar la ruta y los 
+parámetros normales de la petición para representar los parámetros asociados con la ruta. Por ejemplo, la URL 
+<code>/index.php?r=post/view&amp;id=100</code> representa la ruta <code>post/view</code> y 100 es el valor del parámetro <code>id</code> de la consulta. 
+El formato predeterminado de URL no requiere ningún tipo de configuración para <span class="broken-link">yii\web\UrlManager</span> y 
+funciona en cualquier configuración de servidor Web.</p>
+<p>El formato de URL amigable utiliza la ruta adicional a continuación del nombre del script de entrada (entry script) 
+para representar la ruta y los parámetros de consulta. Por ejemplo, La ruta en la URL <code>/index.php/post/100</code> es 
+<code>/post/100</code> que puede representar la ruta <code>post/view</code> y el parámetro de consulta <code>id</code> 100 con una 
+<span class="broken-link">yii\web\UrlManager::rules</span> apropiada. Para poder utilizar el formato de URL amigable, se tendrán que 
+diseñar una serie de <span class="broken-link">yii\web\UrlManager::rules</span> de acuerdo con el requerimiento actual acerca de como 
+deben mostrarse las URLs.</p>
+<p>Se puede cambiar entre los dos formatos de URL conmutando la propiedad 
+<span class="broken-link">yii\web\UrlManager::enablePrettyUrl</span> del <span class="broken-link">yii\web\UrlManager</span> sin cambiar ningún 
+otro código de aplicación.</p>
+<h2>Enrutamiento  <span id="routing"></span><a href="#routing" class="hashlink">&para;</a></h2><p>El Enrutamiento involucra dos pasos. El primero, la petición (request) entrante se convierte en una ruta y sus 
+parámetros de consulta asociados. En el segundo paso, se crea la correspondiente 
+<a href="guide-structure-controllers.html">acción de controlador</a> para la ruta convertida para que gestione la petición.</p>
+<p>Cuando se usa el formato predefinido de URL, convertir una petición en una ruta es tan simple como obtener los valores 
+del parámetro de consulta <code>GET</code> llamado <code>r</code>.</p>
+<p>Cuando se usa el formato de URL amigable, el <span class="broken-link">yii\web\UrlManager</span> examinará las 
+<span class="broken-link">yii\web\UrlManager::rules</span> registradas para encontrar alguna que pueda convertir la petición en una ruta. 
+Si no se encuentra tal regla, se lanzará una excepción de tipo <span class="broken-link">yii\web\NotFoundHttpException</span>.</p>
+<p>Una vez que la petición se ha convertido en una ruta, es el momento de crear la acción de controlador identificada 
+por la ruta. La ruta se desglosa en múltiples partes a partir de las barras que contenga. Por ejemplo, <code>site/index</code> 
+será desglosado en <code>site</code> e <code>index</code>. Cada parte is un ID que puede hacer referencia a un modulo, un controlador o una 
+acción. Empezando por la primera parte de la ruta, la aplicación, sigue los siguientes pasos para generar 
+(si los hay), controladores y acciones:</p>
+<ol>
+<li>Establece la aplicación como el modulo actual.</li>
+<li>Comprueba si el <span class="broken-link">yii\base\Module::controllerMap</span> del modulo actual contiene un ID actual. Si lo 
+tiene, se creará un objeto controlador de acuerdo con la configuración del controlador encontrado en el mapa, y 
+se seguirá el Paso 5 para gestionar la parte restante de la ruta. </li>
+<li>Comprueba si el ID hace referencia a un modulo listado en la propiedad <span class="broken-link">yii\base\Module::modules</span> del 
+módulo actual. Si está listado, se crea un modulo de acuerdo con la configuración encontrada en el listado de 
+módulos, y se seguirá el Paso 2 para gestionar la siguiente parte de la ruta bajo el contexto de la creación de un 
+nuevo módulo.</li>
+<li>Trata el ID como si se tratara de un ID de controlador y crea un objeto controlador. Sigue el siguiente paso con la    parte restante de la ruta.</li>
+<li>El controlador busca el ID en su <span class="broken-link">yii\base\Controller::actions()</span>. Si lo encuentra, crea una acción de    acuerdo con la configuración encontrada en el mapa. De otra forma, el controlador intenta crear una acción en linea    definida por un método de acción correspondiente al ID actual.</li>
+</ol>
+<p>Si ocurre algún error entre alguno de los pasos anteriores, se lanzará una excepción de tipo 
+<span class="broken-link">yii\web\NotFoundHttpException</span>, indicando el fallo de proceso de enrutamiento.</p>
+<h3>Ruta Predeterminada  <span id="default-route"></span><a href="#default-route" class="hashlink">&para;</a></h3><p>Cuando una petición se convierte en una ruta vacía, se usa la llamada <em>ruta predeterminada</em>. Por defecto, la ruta 
+predeterminada es <code>site/index</code>, que hace referencia a la acción <code>index</code> del controlador <code>site</code>. Se puede personalizar 
+configurando la propiedad <span class="broken-link">yii\web\Application::defaultRoute</span> de la aplicación en la configuración de 
+aplicación como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'defaultRoute'</span> =&gt; <span class="hljs-string">'main/index'</span>,
+];
+</code></pre>
+<h3>Ruta <code>catchAll</code>  <span id="catchall-route"></span><a href="#catchall-route" class="hashlink">&para;</a></h3><p>A veces, se puede querer poner la aplicación Web en modo de mantenimiento temporalmente y mostrar la misma pagina de 
+información para todas las peticiones. Hay varias maneras de lograr este objetivo. Pero una de las maneras más simples 
+es configurando la propiedad <span class="broken-link">yii\web\Application::catchAll</span> como en el siguiente ejemplo de configuración de 
+aplicación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ...</span>
+	<span class="hljs-string">'catchAll'</span> =&gt; [<span class="hljs-string">'site/offline'</span>],
+];
+</code></pre>
+<p>Con la anterior configuración, se usar la acción <code>site/offline</code> para gestionar todas las peticiones entrantes.</p>
+<p>La propiedad <code>catchAll</code> debe tener un array cuyo primer elemento especifique una ruta, y el resto de elementos 
+(pares nombre-valor) especifiquen los parámetros <a href="guide-structure-controllers.html#action-parameters">ligados a la acción</a>.</p>
+<h2>Creación de URLs  <span id="creating-urls"></span><a href="#creating-urls" class="hashlink">&para;</a></h2><p>Yii proporciona un método auxiliar (helper method) <span class="broken-link">yii\helpers\Url::to()</span> para crear varios tipos de URLs a partir 
+de las rutas dadas y sus parámetros de consulta asociados. Por ejemplo, </p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// crea una URL para la ruta: /index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>]);
+
+<span class="hljs-comment">// crea una URL para la ruta con parámetros: /index.php?r=post/view&amp;id=100</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>]);
+
+<span class="hljs-comment">// crea una URL interna: /index.php?r=post/view&amp;id=100#contentecho </span>
+Url::to([<span class="hljs-string">'post/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'#'</span> =&gt; <span class="hljs-string">'content'</span>]);
+
+<span class="hljs-comment">// crea una URL absoluta: http://www.example.com/index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>], <span class="hljs-keyword">true</span>);
+
+<span class="hljs-comment">// crea una URL absoluta usando el esquema https: https://www.example.com/index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>], <span class="hljs-string">'https'</span>);
+</code></pre>
+<p>Hay que tener en cuenta que en el anterior ejemplo, asumimos que se está usando el formato de URL predeterminado. 
+Si habilita el formato de URL amigable, las URLs creadas serán diferentes, de acuerdo con las 
+<span class="broken-link">yii\web\UrlManager::rules</span> que se usen.</p>
+<p>La ruta que se pasa al método <span class="broken-link">yii\helpers\Url::to()</span> es context sensitive. Esto quiere decir que puede ser una ruta 
+<em>relativa</em> o una ruta <em>absoluta</em> que serán tipificadas de acuerdo con las siguientes reglas:</p>
+<ul>
+<li>Si una ruta es una cadena vacía, se usará la <span class="broken-link">yii\web\Controller::route</span> solicitada actualmente. </li>
+<li>Si la ruta no contiene ninguna barra <code>/</code>, se considerará que se trata de un ID de acción del controlador actual y se 
+le antepondrá el valor <span class="broken-link">\yii\web\Controller::uniqueId</span> del controlador actual. </li>
+<li>Si la ruta no tiene barra inicial, se considerará que se trata de una ruta relativa al modulo actual y se le 
+antepondrá el valor <span class="broken-link">\yii\base\Module::uniqueId</span> del modulo actual.</li>
+</ul>
+<p>Por ejemplo, asumiendo que el modulo actual es <code>admin</code> y el controlador actual es <code>post</code>,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// la ruta solicitada: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">''</span>]);
+
+<span class="hljs-comment">// una ruta relativa solo con ID de acción: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'index'</span>]);
+
+<span class="hljs-comment">// una ruta relativa: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'post/index'</span>]);
+
+<span class="hljs-comment">// una ruta absoluta: /index.php?r=post/index</span>
+<span class="hljs-keyword">echo</span> Url::to([<span class="hljs-string">'/post/index'</span>]);
+</code></pre>
+<p>El método <span class="broken-link">yii\helpers\Url::to()</span> se implementa llamando a los métodos 
+<span class="broken-link">yii\web\UrlManager::createUrl()</span> y <span class="broken-link">yii\web\UrlManager::createAbsoluteUrl()</span> del 
+<span class="broken-link">yii\web\UrlManager</span>. En las próximas sub-secciones, explicaremos como configurar el 
+<span class="broken-link">yii\web\UrlManager</span> para personalizar el formato de las URLs generadas.</p>
+<p>El método <span class="broken-link">yii\helpers\Url::to()</span> también soporta la creación de URLs NO relacionadas con rutas particulares. 
+En lugar de pasar un array como su primer paramento, se debe pasar una cadena de texto. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// la URL solicitada actualmente: /index.php?r=admin/post/index</span>
+<span class="hljs-keyword">echo</span> Url::to();
+
+<span class="hljs-comment">// una URL con alias: http://example.comYii::setAlias('@example', 'http://example.com/');</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'@example'</span>);
+
+<span class="hljs-comment">// una URL absoluta: http://example.com/images/logo.gif</span>
+<span class="hljs-keyword">echo</span> Url::to(<span class="hljs-string">'/images/logo.gif'</span>, <span class="hljs-keyword">true</span>);```
+</code></pre>
+<p>Además del método <code>to()</code>, la clase auxiliar <span class="broken-link">yii\helpers\Url</span> también proporciona algunos otros métodos de creación 
+de URLs. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Url</span>;
+
+<span class="hljs-comment">// URL de la página inicial: /index.php?r=site/index</span>
+<span class="hljs-keyword">echo</span> Url::home();
+
+<span class="hljs-comment">// la URL base, útil si la aplicación se desarrolla en una sub-carpeta de la carpeta raíz (root) Web</span>
+<span class="hljs-keyword">echo</span> Url::base();
+
+<span class="hljs-comment">// la URL canónica de la actual URL solicitada// visitar https://en.wikipedia.org/wiki/Canonical_link_element</span>
+<span class="hljs-keyword">echo</span> Url::canonical();
+
+<span class="hljs-comment">// recuerda la actual URL solicitada y la recupera más tarde requestsUrl::remember();</span>
+<span class="hljs-keyword">echo</span> Url::previous();
+</code></pre>
+<h2>Uso de URLs Amigables  <span id="using-pretty-urls"></span><a href="#using-pretty-urls" class="hashlink">&para;</a></h2><p>Para utilizar URLs amigables, hay que configurar el componente <code>ulrManager</code> en la configuración de la aplicación como 
+en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+            ],
+        ],
+    ],
+]
+</code></pre>
+<p>La propiedad <span class="broken-link">yii\web\UrlManager::enablePrettyUrl</span> es obligatoria ya que alterna el formato de URL 
+amigable. El resto de propiedades son opcionales. Sin embargo, la anterior configuración es la más común.</p>
+<ul>
+<li><span class="broken-link">yii\web\UrlManager::showScriptName</span>: esta propiedad determina si el script de entrada debe ser 
+incluido en las URLs generadas. Por ejemplo, en lugar de crear una URL <code>/index.php/post/100</code>, estableciendo la 
+propiedad con valor <code>true</code>, la URL que se generará sera <code>/post/100</code>.</li>
+<li><span class="broken-link">yii\web\UrlManager::enableStrictParsing</span>: esta propiedad determina si se habilita la 
+conversión de petición estricta, si se habilita, la URL solicitada tiene que encajar al menos con uno de las 
+<span class="broken-link">yii\web\UrlManager::rules</span> para poder ser tratada como una petición valida, o se lanzará una 
+<span class="broken-link">yii\web\NotFoundHttpException</span>. Si la conversión estricta esta deshabilitada, cuando ninguna de las 
+<span class="broken-link">yii\web\UrlManager::rules</span> coincida con la URL solicitada, la parte de información de la URL se tratará 
+como si fuera la ruta solicitada.</li>
+<li><span class="broken-link">yii\web\UrlManager::rules</span>: esta propiedad contiene una lista de las reglas que especifican como convertir 
+y crear URLs. Esta es la propiedad principal con la que se debe trabajar para crear URLs que satisfagan el formato 
+de un requerimiento particular de la aplicación.</li>
+</ul>
+<blockquote class="note"><p><strong>Note: </strong>Para ocultar el nombre del script de entrada en las URLs generadas, además de establecer el 
+  <span class="broken-link">yii\web\UrlManager::showScriptName</span> a falso, puede ser necesaria la configuración del servidor Web 
+  para que identifique correctamente que script PHP debe ejecutarse cuando se solicita una URL que no lo especifique. 
+  Si se usa el servidor Web Apache, se puede utilizar la configuración recomendada descrita en la sección de 
+  <a href="guide-start-installation.html#recommended-apache-configuration">Instalación</a>.</p>
+</blockquote>
+<h3>Reglas de URL  <span id="url-rules"></span><a href="#url-rules" class="hashlink">&para;</a></h3><p>Una regla de URL es una instancia de <span class="broken-link">yii\web\UrlRule</span> o de una clase hija. Cada URL consiste en un patrón utilizado 
+para cotejar la parte de información de ruta de las URLs, una ruta, y algunos parámetros de consulta. Una URL puede 
+usarse para convertir una petición si su patrón coincide con la URL solicitada y una regla de URL pude usarse para 
+crear una URL si su ruta y sus nombres de parámetros coinciden con los que se hayan dado.</p>
+<p>Cuando el formato de URL amigables está habilitado, el <span class="broken-link">yii\web\UrlManager</span> utiliza las reglas de URL 
+declaradas en su propiedad <span class="broken-link">yii\web\UrlManager::rules</span> para convertir las peticiones entrantes y crear URLs. 
+En particular, para convertir una petición entrante, el <span class="broken-link">yii\web\UrlManager</span> examina las reglas en el 
+orden que se han declarado y busca la <em>primera</em> regla que coincida con la URL solicitada. La regla que coincide es la 
+que se usa para convertir la URL en una ruta y sus parámetros asociados. De igual modo, para crear una URL, el 
+<span class="broken-link">yii\web\UrlManager</span> busca la primera regla que coincida con la ruta dad y los parámetros y la utiliza 
+para crear una URL.</p>
+<p>Se pueden configurar las <span class="broken-link">yii\web\UrlManager::rules</span> como un array con claves, siendo los patrones y las reglas sus 
+correspondientes rutas. Cada pareja patrón-ruta construye una regla de URL. Por ejemplo, la siguiente configuración de 
+configuración de <span class="broken-link">yii\web\UrlManager::rules</span> declara dos reglas de URL. La primera regla coincide con una URL 
+<code>posts</code> y la mapea a la ruta <code>post/index</code>. La segunda regla coincide con una URL que coincida con la expresión regular 
+<code>post/(\d+)</code> y la mapea a la ruta <code>post/view</code> y el parámetro llamado <code>id</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'posts'</span> =&gt; <span class="hljs-string">'post/index'</span>, 
+    <span class="hljs-string">'post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/view'</span>,
+]
+</code></pre>
+<blockquote><p>Información; El patrón en una regla se usa para encontrar coincidencias en la parte de información de la URL. 
+  Por ejemplo, la parte de información de la ruta <code>/index.php/post/100?source=ad</code> es <code>post/100</code> 
+  (la primera barra y la ultima son ignoradas) que coincide con el patrón <code>post/(\d+)</code>.</p>
+</blockquote>
+<p>Entre la declaración de reglas de URL como pares de patrón-ruta, también se pueden declarar como arrays de 
+configuración. Cada array de configuración se usa para configurar un único objeto de tipo regla de URL. Este proceso 
+se necesita a menudo cuando se quieren configurar otras propiedades de la regla de URL. Por ejemplo,</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ... otras reglas de URL ...</span>
+    
+    [
+        <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+        <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+        <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.json'</span>,
+    ],
+]
+</code></pre>
+<p>De forma predeterminada si no se especifica la opción <code>class</code> en la configuración de una regla, se utilizará la clase 
+predeterminada <span class="broken-link">yii\web\UrlRule</span>.</p>
+<h3>Parameters Asociativos  <span id="named-parameters"></span><a href="#named-parameters" class="hashlink">&para;</a></h3><p>Una regla de URL puede asociarse a una determinado grupo de parámetros de consulta que se hayan sido especificados en 
+el patrón con el formato <code>&lt;ParamName:RegExp&gt;</code>, donde <code>ParamName</code> especifica el nombre del parámetro y <code>RegExp</code> es una 
+expresión regular opcional que se usa para encontrar los valores de los parámetros. Si no se especifica <code>RegExp</code> 
+significa que el parámetro debe ser una cadena de texto sin ninguna barra.</p>
+<blockquote class="note"><p><strong>Note: </strong>Solo se pueden especificar expresiones regulares para los parámetros. La parte restante del patrón se 
+  considera texto plano.</p>
+</blockquote>
+<p>Cuando se usa una regla para convertir una URL, esta rellenara los parámetros asociados con los valores que coincidan 
+con las partes correspondientes de la URL, y estos parámetros serán accesibles posteriormente mediante <code>$_GET</code> por el 
+componente de aplicación <code>request</code>. Cuando se usa una regla para crear una URL, esta obtendrá los valores de los 
+parámetros proporcionados y los insertara donde se hayan declarado los parámetros.</p>
+<p>Vamos a utilizar algunos ejemplos para ilustrar como funcionan los parámetros asociativos. Asumiendo que hemos 
+declarado las siguientes tres URLs:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'posts'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+    <span class="hljs-string">'post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/view'</span>,
+    <span class="hljs-string">'posts/&lt;year:\d{4}&gt;/&lt;category&gt;'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+]
+</code></pre>
+<p>Cuando se usen las reglas para convertir URLs:</p>
+<ul>
+<li><code>/index.php/posts</code> se convierte en la ruta <code>post/index</code> usando la primera regla;</li>
+<li><code>/index.php/posts/2014/php</code> se convierte en la ruta <code>post/index</code>, el parámetro <code>year</code> cuyo valor es 2014 y el 
+parámetro <code>category</code> cuyo valor es <code>php</code> usando la tercera regla;</li>
+<li><code>/index.php/post/100</code> se convierte en la ruta <code>post/view</code> y el parámetro <code>id</code> cuyo valor es 100 usando la segunda 
+regla;</li>
+<li><code>/index.php/posts/php</code> provocara una <span class="broken-link">yii\web\NotFoundHttpException</span> cuando 
+<span class="broken-link">yii\web\UrlManager::enableStrictParsing</span> sea <code>true</code>, ya que no coincide ninguno de los parámetros . Si 
+<span class="broken-link">yii\web\UrlManager::enableStrictParsing</span> es <code>false</code> (valor predeterminado), se devolverá como ruta la parte de 
+información <code>posts/php</code>.</li>
+</ul>
+<p>Y cuando las se usen las reglas para crear URLs:</p>
+<ul>
+<li><code>Url::to(['post/index'])</code> genera <code>/index.php/posts</code> usando la primera regla;</li>
+<li><code>Url::to(['post/index', 'year' =&gt; 2014, 'category' =&gt; 'php'])</code> genera <code>/index.php/posts/2014/php</code> usando la tercera 
+regla;</li>
+<li><code>Url::to(['post/view', 'id' =&gt; 100])</code> genera <code>/index.php/post/100</code> usando la segunda regla;</li>
+<li><code>Url::to(['post/view', 'id' =&gt; 100, 'source' =&gt; 'ad'])</code> genera <code>/index.php/post/100?source=ad</code> usando la segunda 
+ regla. Debido a que el parámetro <code>source</code> no se especifica en la regla, se añade como un parámetro de consulta en 
+ la URL generada.</li>
+<li><code>Url::to(['post/index', 'category' =&gt; 'php'])</code> genera <code>/index.php/post/index?category=php</code> no usa ninguna de las 
+ reglas. Hay que tener en cuenta que si no se aplica ninguna de las reglas, la URL se genera simplemente añadiendo 
+ la parte de información de la ruta y todos los parámetros como parte de la consulta.</li>
+</ul>
+<h3>Parametrización de Rutas  <span id="parameterizing-routes"></span><a href="#parameterizing-routes" class="hashlink">&para;</a></h3><p>Se pueden incrustar nombres de parámetros en la ruta de una regla de URL. Esto permite a la regla de URL poder ser 
+usada para que coincida con varias rutas. Por ejemplo, la siguiente regla incrusta los parámetros <code>controller</code> y 
+<code>action</code> en las rutas.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'&lt;controller:(post|comment)&gt;/&lt;id:\d+&gt;/&lt;action:(create|update|delete)&gt;'</span> =&gt; <span class="hljs-string">'&lt;controller&gt;/&lt;action&gt;'</span>,
+    <span class="hljs-string">'&lt;controller:(post|comment)&gt;/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'&lt;controller&gt;/view'</span>,
+    <span class="hljs-string">'&lt;controller:(post|comment)&gt;s'</span> =&gt; <span class="hljs-string">'&lt;controller&gt;/index'</span>,
+]
+</code></pre>
+<p>Para convertir una URL <code>index.php/comment/100/create</code>, se aplicará la primera regla, que establece el parámetro 
+<code>controller</code> a <code>comment</code> y el parámetro <code>action</code> a <code>create</code>. Por lo tanto la ruta <code>&lt;controller&gt;/&lt;action&gt;</code> se resuelve 
+como <code>comment/create</code>.</p>
+<p>Del mismo modo, para crear una URL para una ruta <code>comment/index</code>, se aplicará la tercera regla, que crea una URL 
+<code>/index.php/comments</code>.</p>
+<blockquote class="info"><p><strong>Info: </strong>Mediante la parametrización de rutas es posible reducir el numero de reglas de URL e incrementar 
+  significativamente el rendimiento del <span class="broken-link">yii\web\UrlManager</span>.</p>
+</blockquote>
+<p>De forma predeterminada, todos los parámetros declarados en una regla son requeridos. Si una URL solicitada no 
+contiene un parámetro en particular, o si se esta creando una URL sin un parámetro en particular, la regla no se 
+aplicará. Para establecer algunos parámetros como opcionales, se puede configurar la propiedad de 
+<span class="broken-link">yii\web\UrlRule::defaults</span> de una regla. Los parámetros listados en esta propiedad son opcionales y se 
+usarán los parámetros especificados cuando estos no se proporcionen.</p>
+<p>En la siguiente declaración de reglas, los parámetros <code>page</code> y <code>tag</code> son opcionales y cuando no se proporcionen, se 
+usarán los valores 1 y cadena vacía respectivamente.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ... otras reglas ...</span>
+    [
+        <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts/&lt;page:\d+&gt;/&lt;tag&gt;'</span>,
+        <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+        <span class="hljs-string">'defaults'</span> =&gt; [<span class="hljs-string">'page'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'tag'</span> =&gt; <span class="hljs-string">''</span>],
+    ],
+]
+</code></pre>
+<p>La regla anterior puede usarse para convertir o crear cualquiera de las siguientes URLs:</p>
+<ul>
+<li><code>/index.php/posts</code>: <code>page</code> es 1, <code>tag</code> es ''.</li>
+<li><code>/index.php/posts/2</code>: <code>page</code> es 2, <code>tag</code> es ''.</li>
+<li><code>/index.php/posts/2/news</code>: <code>page</code> es 2, <code>tag</code> es <code>'news'</code>.</li>
+<li><code>/index.php/posts/news</code>: <code>page</code> es 1, <code>tag</code> es <code>'news'</code>.</li>
+</ul>
+<p>Sin usar ningún parámetro opcional, se tendrían que crear 4 reglas para lograr el mismo resultado.</p>
+<h3>Reglas con Nombres de Servidor  <span id="rules-with-server-names"></span><a href="#rules-with-server-names" class="hashlink">&para;</a></h3><p>Es posible incluir nombres de servidores Web en los parámetros de las URLs. Esto es practico principalmente cuando una 
+aplicación debe tener distintos comportamientos paro diferentes nombres de servidores Web. Por ejemplo, las siguientes 
+reglas convertirán la URL <code>http://admin.example.com/login</code> en la ruta <code>admin/user/login</code> y 
+<code>http://www.example.com/login</code> en <code>site/login</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'http://admin.example.com/login'</span> =&gt; <span class="hljs-string">'admin/user/login'</span>,
+    <span class="hljs-string">'http://www.example.com/login'</span> =&gt; <span class="hljs-string">'site/login'</span>,
+]
+</code></pre>
+<p>También se pueden incrustar parámetros en los nombres de servidor para extraer información dinámica de ellas. Por 
+ejemplo, la siguiente regla convertirá la URL <code>http://en.example.com/posts</code> en la ruta <code>post/index</code> y el parámetro 
+<code>language=en</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'http://&lt;language:\w+&gt;.example.com/posts'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+]
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Las reglas con nombres de servidor NO deben incluir el subdirectorio del script de entrada (entry script) en 
+  sus patrones. Por ejemplo, is la aplicación se encuentra en <code>http://www.example.com/sandbox/blog</code>, entonces se debe 
+  usar el patrón <code>http://www.example.com/posts</code> en lugar de <code>http://www.example.com/sandbox/blog/posts</code>. Esto 
+  permitirá que la aplicación se pueda desarrollar en cualquier directorio sin la necesidad de cambiar el código de la 
+  aplicación.</p>
+</blockquote>
+<h3>Sufijos de URL  <span id="url-suffixes"></span><a href="#url-suffixes" class="hashlink">&para;</a></h3><p>Se puede querer añadir sufijos a las URLs para varios propósitos. Por ejemplo, se puede añadir <code>.html</code>a las URLs para 
+que parezcan URLs para paginas HTML estáticas; también se puede querer añadir <code>.json</code> a las URLs para indicar el tipo 
+de contenido que se espera encontrar en una respuesta (response). Se puede lograr este objetivo configurando la 
+propiedad <span class="broken-link">yii\web\UrlManager::suffix</span> como en el siguiente ejemplo de configuración de aplicación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.html'</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+            ],
+        ],
+    ],
+]
+</code></pre>
+<p>La configuración anterior permitirá al <span class="broken-link">yii\web\UrlManager</span> reconocer las URLs solicitadas y a su vez 
+crear URLs con el sufijo <code>.html</code>.</p>
+<blockquote class="tip"><p><strong>Tip: </strong>Se puede establecer <code>/</code> como el prefijo de URL para que las URLs finalicen con una barra.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Note: </strong>Cuando se configura un sufijo de URL, si una URL solicitada no tiene el sufijo, se considerará como una URL 
+  desconocida. Esta es una practica recomendada para SEO (optimización en motores de búsqueda).</p>
+</blockquote>
+<p>A veces, se pueden querer usar sufijos diferentes para URLs diferentes. Esto se puede conseguir configurando la 
+propiedad <span class="broken-link">yii\web\UrlRule::suffix</span> de una regla de URL individual. Cuando una regla de URL tiene la 
+propiedad establecida, anulará el sufijo estableciendo a nivel de <span class="broken-link">yii\web\UrlManager</span>. Por ejemplo, la 
+siguiente configuración contiene una regla de URL personalizada que usa el sufijo <code>.json</code> en lugar del sufijo global 
+<code>.html</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'urlManager'</span> =&gt; [
+            <span class="hljs-string">'enablePrettyUrl'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'showScriptName'</span> =&gt; <span class="hljs-keyword">false</span>,
+            <span class="hljs-string">'enableStrictParsing'</span> =&gt; <span class="hljs-keyword">true</span>,
+            <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.html'</span>,
+            <span class="hljs-string">'rules'</span> =&gt; [
+                <span class="hljs-comment">// ...</span>
+                [
+                    <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+                    <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+                    <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.json'</span>,
+                ],
+            ],
+        ],
+    ],
+]
+</code></pre>
+<h3>Métodos HTTP  <span id="http-methods"></span><a href="#http-methods" class="hashlink">&para;</a></h3><p>Cuando se implementan APIs RESTful, normalmente se necesita que ciertas URLs se conviertan en otras de acuerdo con el 
+método HTTP que se esté usando. Esto se puede hacer fácilmente prefijando los métodos HTTP soportados como los 
+patrones de las reglas. Si una regla soporta múltiples métodos HTTP, hay que separar los nombres de los métodos con 
+comas. Por ejemplo, la siguiente regla usa el mismo patrón <code>post/&lt;id:\d+&gt;</code> para dar soporte a diferentes métodos HTTP. 
+Una petición para <code>PUT post/100</code> se convertirá en <code>post/create</code>, mientras que una petición <code>GET post/100</code> se 
+convertirá en <code>post/view</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'PUT,POST post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/create'</span>,
+    <span class="hljs-string">'DELETE post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/delete'</span>,
+    <span class="hljs-string">'post/&lt;id:\d+&gt;'</span> =&gt; <span class="hljs-string">'post/view'</span>,
+]
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Si una regla de URL contiene algún método HTTP en su patrón, la regla solo se usará para aplicar conversiones. 
+  Se omitirá cuando se llame a <span class="broken-link">yii\web\UrlManager</span> para crear URLs.</p>
+</blockquote>
+<blockquote class="tip"><p><strong>Tip: </strong>Para simplificar el enrutamiento en APIs RESTful, Yii proporciona una clase de reglas de URL 
+  <span class="broken-link">yii\rest\UrlRule</span> especial que es bastante eficiente y soporta ciertas características como pluralización de IDs 
+  de controladores. Para conocer más detalles, se puede visitar la sección <a href="guide-rest-routing.html">Enrutamiento</a> acerca de 
+  el desarrollo de APIs RESTful.</p>
+</blockquote>
+<h3>Personalización de Reglas  <span id="customizing-rules"></span><a href="#customizing-rules" class="hashlink">&para;</a></h3><p>En los anteriores ejemplos, las reglas de URL se han declarado principalmente en términos de pares de patrón-ruta. 
+Este es un método de acceso directo que se usa a menudo. En algunos escenarios, se puede querer personalizar la regla 
+de URL configurando sus otras propiedades, tales como <span class="broken-link">yii\web\UrlRule::suffix</span>. Esto se puede hacer usando una 
+array completo de configuración para especificar una regla. El siguiente ejemplo se ha extraído de la subsección 
+<a href="#url-suffixes">Sufijos de URL</a>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ... otras reglas de URL ...</span>
+    
+    [
+        <span class="hljs-string">'pattern'</span> =&gt; <span class="hljs-string">'posts'</span>,
+        <span class="hljs-string">'route'</span> =&gt; <span class="hljs-string">'post/index'</span>,
+        <span class="hljs-string">'suffix'</span> =&gt; <span class="hljs-string">'.json'</span>,
+    ],
+]
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>De forma predeterminada si no se especifica una opción <code>class</code> para una configuración de regla, se 
+  usará la clase predeterminada <span class="broken-link">yii\web\UrlRule</span>.</p>
+</blockquote>
+<h3>Adición de Reglas Dinámicamente  <span id="adding-rules"></span><a href="#adding-rules" class="hashlink">&para;</a></h3><p>Las reglas de URL se pueden añadir dinámicamente en el <span class="broken-link">yii\web\UrlManager</span>. A menudo se necesita por 
+<a href="guide-structure-modules.html">módulos</a> redistribubles que se encargan de gestionar sus propias reglas de URL. Para que las 
+reglas añadidas dinámicamente tenga efecto durante el proceso de enrutamiento, se deben añadir durante la etapa 
+<a href="guide-runtime-bootstrapping.html">bootstrapping</a>. Para los módulos, esto significa que deben implementar 
+<span class="broken-link">yii\base\BootstrapInterface</span> y añadir las reglas en el método 
+<span class="broken-link">yii\base\BootstrapInterface::bootstrap()</span> como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bootstrap</span><span class="hljs-params">(<span class="hljs-variable">$app</span>)</span>
+</span>{
+    <span class="hljs-variable">$app</span>-&gt;getUrlManager()-&gt;addRules([
+        <span class="hljs-comment">// declaraciones de reglas aquí</span>
+    ], <span class="hljs-keyword">false</span>);
+}
+</code></pre>
+<p>Hay que tener en cuenta se deben añadir estos módulos en <span class="broken-link">yii\web\Application::bootstrap</span> para que puedan participar 
+en el proceso de <a href="guide-runtime-bootstrapping.html">bootstrapping</a></p>
+<h3>Creación de Clases de Reglas  <span id="creating-rules"></span><a href="#creating-rules" class="hashlink">&para;</a></h3><p>A pesar del hecho de que de forma predeterminada la clase <span class="broken-link">yii\web\UrlRule</span> lo suficientemente flexible para la 
+mayoría de proyectos, hay situaciones en las que se tiene que crear una clase de reglas propia. Por ejemplo, en un 
+sitio Web de un concesionario de coches, se puede querer dar soporte a las URL con el siguiente formato 
+<code>/Manufacturer/Model</code>, donde tanto <code>Manufacturer</code> como <code>Model</code> tengan que coincidir con algún dato almacenado una 
+tabla de la base de datos. De forma predeterminada, la clase regla no puede gestionar estas reglas ya que se base en 
+patrones estáticos declarados.</p>
+<p>Podemos crear la siguiente clase de reglas de URL para solucionar el problema.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">UrlRuleInterface</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Object</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CarUrlRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Object</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UrlRuleInterface</span>
+</span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createUrl</span><span class="hljs-params">(<span class="hljs-variable">$manager</span>, <span class="hljs-variable">$route</span>, <span class="hljs-variable">$params</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$route</span> === <span class="hljs-string">'car/index'</span>) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$params</span>[<span class="hljs-string">'manufacturer'</span>], <span class="hljs-variable">$params</span>[<span class="hljs-string">'model'</span>])) {
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$params</span>[<span class="hljs-string">'manufacturer'</span>] . <span class="hljs-string">'/'</span> . <span class="hljs-variable">$params</span>[<span class="hljs-string">'model'</span>];
+            } <span class="hljs-keyword">elseif</span> (<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$params</span>[<span class="hljs-string">'manufacturer'</span>])) {
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$params</span>[<span class="hljs-string">'manufacturer'</span>];
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;  <span class="hljs-comment">// no se aplica esta regla</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseRequest</span><span class="hljs-params">(<span class="hljs-variable">$manager</span>, <span class="hljs-variable">$request</span>)</span>
+    </span>{
+        <span class="hljs-variable">$pathInfo</span> = <span class="hljs-variable">$request</span>-&gt;getPathInfo();
+        <span class="hljs-keyword">if</span> (preg_match(<span class="hljs-string">'%^(\w+)(/(\w+))?$%'</span>, <span class="hljs-variable">$pathInfo</span>, <span class="hljs-variable">$matches</span>)) {
+            <span class="hljs-comment">// comprueba $matches[1] y $matches[3] para ver</span>
+            <span class="hljs-comment">// si coincide con un *manufacturer* y un *model* en la base de datos</span>
+            <span class="hljs-comment">// Si coinciden, establece $params['manufacturer'] y/o $params['model']</span>
+            <span class="hljs-comment">// y devuelve ['car/index', $params]</span>
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;  <span class="hljs-comment">// no se aplica la regla</span>
+    }
+}
+</code></pre>
+<p>Y usa la nueva clase de regla en la configuración de <span class="broken-link">yii\web\UrlManager::rules</span>:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-comment">// ... otras reglas ...</span>
+    
+    [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\components\CarUrlRule'</span>, 
+        <span class="hljs-comment">// ... configura otras propiedades ...</span>
+    ],
+]
+</code></pre>
+<h2>Consideración del Rendimiento  <span id="performance-consideration"></span><a href="#performance-consideration" class="hashlink">&para;</a></h2><p>Cuando se desarrolla una aplicación Web compleja, es importante optimizar las reglas de URL para que tarden el mínimo 
+tiempo posible en convertir las peticiones y crear URLs.</p>
+<p>Usando rutas parametrizadas se puede reducir el numero de reglas de URL que a su vez significa una mejor en el 
+rendimiento.</p>
+<p>Cuando se convierten o crean URLs, el <span class="broken-link">yii\web\UrlManager</span> examina las reglas de URL en el orden en que 
+han sido declaradas. Por lo tanto, se debe tener en cuenta el orden de las reglas de URL y anteponer las reglas más 
+especificas y/o las que se usen más a menudo.</p>
+<p>Si algunas URLs comparten el mismo prefijo en sus patrones o rutas, se puede considerar usar <span class="broken-link">yii\web\GroupUrlRule</span> 
+ya que puede ser más eficiente al ser examinado por <span class="broken-link">yii\web\UrlManager</span> como un grupo. Este suele ser 
+el caso cuando una aplicación se compone por módulos, y cada uno tiene su propio conjunto de reglas con un ID de 
+módulo para sus prefijos más comunes.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

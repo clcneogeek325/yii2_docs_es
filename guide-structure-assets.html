@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Assets - Estructura de una aplicación - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w682" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w682-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w682-collapse" class="collapse navbar-collapse"><ul id="w683" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-666" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-666" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-667" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-667" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item active" href="#navigation-668" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-668" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item active" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-669" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-669" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-670" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-670" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-671" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-671" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-672" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-672" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-673" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-673" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-674" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-674" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-675" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-675" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-676" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-676" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-677" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-677" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-678" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-678" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-679" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-679" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-680" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-680" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-681" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-681" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Assets <span id="assets"></span><a href="#assets" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#asset-bundles">Asset Bundles</a></li>
+<li><a href="#defining-asset-bundles">Definición de Asset Bundles</a></li>
+<li><a href="#using-asset-bundles">Uso de Asset Bundles</a></li>
+<li><a href="#common-asset-bundles">Los Asset Bundles más Comunes</a></li>
+<li><a href="#asset-conversion">Conversión de Assets</a></li>
+<li><a href="#combining-compressing-assets">Combinación y Compresión de Assets</a></li></ol></div>
+<p>Un asset en Yii es un archivo al que se puede hacer referencia en una página Web. Puede ser un archivo CSS, un archivo
+JavaScript, una imagen o un archivo de video, etc. Los assets se encuentran en los directorios públicos de la web y se
+sirven directamente por los servidores Web.</p>
+<p>A menudo es preferible gestionar los assets mediante programación. Por ejemplo, cuando se usa el widget
+<span class="broken-link">yii\jui\DatePicker</span> en una página, éste incluirá automáticamente los archivos CSS y JavaScript requeridos, en vez
+de tener que buscar los archivos e incluirlos manualmente. Y cuando se actualice el widget a una nueva versión, ésta
+usará de forma automática la nueva versión de los archivos asset.
+En este tutorial, se describirá la poderosa capacidad que proporciona la gestión de assets en Yii.</p>
+<h2>Asset Bundles  <span id="asset-bundles"></span><a href="#asset-bundles" class="hashlink">&para;</a></h2><p>Yii gestiona los assets en unidades de <em>asset bundle</em>. Un asset bundle es simplemente un conjunto de assets
+localizados en un directorio. Cuando se registra un asset bundle en una <a href="guide-structure-views.html">vista</a>, éste incluirá los
+archivos CSS y JavaScript del bundle en la página Web renderizada.</p>
+<h2>Definición de Asset Bundles  <span id="defining-asset-bundles"></span><a href="#defining-asset-bundles" class="hashlink">&para;</a></h2><p>Los asset bundles son descritos como clases PHP que extienden a <span class="broken-link">yii\web\AssetBundle</span>. El nombre del bundle es
+simplemente su correspondiente nombre de la classe PHP que debe ser <a href="guide-concept-autoloading.html">autocargable</a>. En una
+clase asset bundle, lo más habitual es especificar donde se encuentran los archivos asset, que archivos CSS y
+JavaScript contiene el bundle, y como depende este bundle de otros bundles.</p>
+<p>El siguiente código define el asset bundle principal que se usa en
+<a href="guide-start-installation.html">la plantilla de aplicación básica</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$basePath</span> = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$baseUrl</span> = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$css</span> = [
+        <span class="hljs-string">'css/site.css'</span>,
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$js</span> = [
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$depends</span> = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>La anterior clase <code>AppAsset</code> especifica que los archivos asset se encuentran en el directorio <code>@webroot</code> que
+corresponde a la URL <code>@web</code>; el bundle contiene un único archivo CSS <code>css/site.css</code> y ningún archivo JavaScript;
+el bundle depende de otros dos bundles: <span class="broken-link">yii\web\YiiAsset</span> y <span class="broken-link">yii\bootstrap\BootstrapAsset</span>.
+A continuación se explicarán más detalladamente las propiedades del <span class="broken-link">yii\web\AssetBundle</span>:</p>
+<ul>
+<li><span class="broken-link">yii\web\AssetBundle::sourcePath</span>: especifica el directorio raíz que contiene los archivos asset en el
+bundle.  Si no, se deben especificar las propiedades <span class="broken-link">yii\web\AssetBundle::basePath</span> y
+<span class="broken-link">yii\web\AssetBundle::baseUrl</span>, en su lugar. Se pueden usar <a href="guide-concept-aliases.html">alias de ruta</a>.</li>
+<li><span class="broken-link">yii\web\AssetBundle::basePath</span>: especifica el directorio Web público que contiene los archivos assets de
+este bundle. Cuando se especifica la propiedad <span class="broken-link">yii\web\AssetBundle::sourcePath</span>, el <a href="#asset-manager">gestor de
+assets</a> publicará los assets de este bundle en un directorio  Web público  y sobrescribirá la
+propiedad en consecuencia. Se debe establecer esta propiedad si los archivos asset ya se encuentran en un directorio
+Web público y no necesitan ser publicados. Se pueden usar <a href="guide-concept-aliases.html">alias de ruta</a>.</li>
+<li><span class="broken-link">yii\web\AssetBundle::baseUrl</span>: especifica la URL correspondiente al directorio
+<span class="broken-link">yii\web\AssetBundle::basePath</span>. Como en <span class="broken-link">yii\web\AssetBundle::basePath</span>, si se especifica la
+propiedad <span class="broken-link">yii\web\AssetBundle::sourcePath</span>, el <a href="#asset-manager">gestor de assets</a> publicara los assets
+y sobrescribirá esta propiedad en consecuencia. Se pueden usar <a href="guide-concept-aliases.html">alias de ruta</a>.</li>
+<li><span class="broken-link">yii\web\AssetBundle::js</span>: un array lista los archivos JavaScript que contiene este bundle. Tenga en cuenta que
+solo deben usarse las barras invertidas "/" como separadores de directorios. Cada archivo Javascript se puede
+especificar en uno de los siguientes formatos:<ul>
+<li>una ruta relativa que represente un archivo local JavaScript (ej. <code>js/main.js</code>). La ruta actual del fichero
+se puede determinar anteponiendo <span class="broken-link">yii\web\AssetManager::basePath</span> a la ruta relativa, y la URL actual de un
+archivo puede ser determinada anteponiendo <span class="broken-link">yii\web\AssetManager::baseUrl</span> a la ruta relativa.</li>
+<li>una URL absoluta que represente un archivo JavaScript externo. Por ejemplo,
+  <code>http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code> o
+  <code>//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js</code>.</li>
+</ul>
+</li>
+<li><span class="broken-link">yii\web\AssetBundle::css</span>: un array que lista los archivos CSS que contiene este bundle. El formato de este
+array es el mismo que el de <span class="broken-link">yii\web\AssetBundle::js</span>.</li>
+<li><span class="broken-link">yii\web\AssetBundle::depends</span>: un array que lista los nombres de los asset bundles de los que depende este
+asset bundle (para explicarlo brevemente).</li>
+<li><span class="broken-link">yii\web\AssetBundle::jsOptions</span>: especifica las opciones que se enviarán al método
+<span class="broken-link">yii\web\View::registerJsFile()</span> cuando se le llame para registrar <em>todos</em> los archivos JavaScript de este bundle.</li>
+<li><span class="broken-link">yii\web\AssetBundle::cssOptions</span>: especifica las opciones que se enviarán al método
+<span class="broken-link">yii\web\View::registerCssFile()</span> cuando se le llame para registrar <em>todos</em> los archivos CSS de este bundle.</li>
+<li><span class="broken-link">yii\web\AssetBundle::publishOptions</span>: especifica las opciones que se enviarán al método
+<span class="broken-link">yii\web\AssetManager::publish()</span> cuando se le llame para publicar los archivos de los assets fuente a un
+directorio Web.
+Solo se usa si se especifica la propiedad <span class="broken-link">yii\web\AssetBundle::sourcePath</span>.</li>
+</ul>
+<h3>Ubicación de los Assets  <span id="asset-locations"></span><a href="#asset-locations" class="hashlink">&para;</a></h3><p>Según la localización de los assets, se pueden clasificar como:</p>
+<ul>
+<li>assets fuente (source assets): los assets se encuentran junto con el código fuente PHP, al que no se puede acceder
+directamente a través de la Web. Para usar los assets fuente en una página, deben ser copiados en un directorio
+público y transformados en los llamados assets publicados. El proceso se llama <em>publicación de assets</em> que será
+descrito a continuación.</li>
+<li>assets publicados (published assets): los archivos assets se encuentran en el directorio Web y son accesibles vía Web.</li>
+<li>assets externos (external assets): los archivos assets se encuentran en un servidor Web diferente al de la aplicación.</li>
+</ul>
+<p>Cuando se define una clase asset bundle, si se especifica la propiedad <span class="broken-link">yii\web\AssetBundle::sourcePath</span>,
+significa que cualquier asset listado que use rutas relativas será considerado como un asset fuente. Si no se
+especifica la propiedad, significa que los assets son assets publicados (se deben especificar
+<span class="broken-link">yii\web\AssetBundle::basePath</span> y
+<span class="broken-link">yii\web\AssetBundle::baseUrl</span> para hacerle saber a Yii dónde se encuentran.)</p>
+<p>Se recomienda ubicar los assets que correspondan a la aplicación en un directorio Web para evitar publicaciones de
+assets innecesarias. Por esto en el anterior ejemplo <code>AppAsset</code> especifica <span class="broken-link">yii\web\AssetBundle::basePath</span>
+en vez de <span class="broken-link">yii\web\AssetBundle::sourcePath</span>.</p>
+<p>Para las <a href="guide-structure-extensions.html">extensiones</a>, por el hecho de que sus assets se encuentran junto con el código
+fuente, en directorios que no son accesibles para la Web, se tiene que especificar la propiedad
+<span class="broken-link">yii\web\AssetBundle::sourcePath</span> cuando se definan clases asset bundle para ellas.</p>
+<blockquote class="note"><p><strong>Note: </strong>No se debe usar <code>@webroot/assets</code> como <span class="broken-link">yii\web\AssetBundle::sourcePath</span>. Este directorio se usa
+  por defecto por el <span class="broken-link">yii\web\AssetManager</span> para guardar los archivos asset publicados temporalmente y
+  pueden ser eliminados.</p>
+</blockquote>
+<h3>Dependencias de los Asset  <span id="asset-dependencies"></span><a href="#asset-dependencies" class="hashlink">&para;</a></h3><p>Cuando se incluyen múltiples archivos CSS o JavaScript en una página Web, tienen que cumplir ciertas órdenes para
+evitar problemas de sobrescritura. Por ejemplo, si se usa un widget jQuery UI en una página Web, tenemos que
+asegurarnos de que el archivo JavaScript jQuery se incluya antes que el archivo JavaScript jQuery UI. A esto se le
+llama ordenar las dependencias entre archivos.</p>
+<p>Las dependencias de los assets se especifican principalmente a través de la propiedad <span class="broken-link">yii\AssetBundle::depends</span>.
+En el ejemplo <code>AppAsset</code>, el asset bundle depende de otros dos asset bundles <span class="broken-link">yii\web\YiiAsset</span> y
+<span class="broken-link">yii\bootstrap\BootstrapAsset</span>, que significa que los archivos CSS y JavaScript en <code>AppAsset</code> se incluirán <em>después</em>
+que los archivos de los dos bundles dependientes.</p>
+<p>Las dependencias son transitivas. Esto significa, que si un bundle A depende de un bundle B que depende de C, A
+dependerá de C, también.</p>
+<h3>Opciones de los Assets  <span id="asset-options"></span><a href="#asset-options" class="hashlink">&para;</a></h3><p>Se pueden especificar las propiedades <span class="broken-link">yii\web\AssetBundle::cssOptions</span> y
+<span class="broken-link">yii\web\AssetBundle::jsOptions</span> para personalizar la forma en que los archivos CSS y JavaScript serán
+incluidos en una página. Los valores de estas propiedades serán enviadas a los métodos
+<span class="broken-link">yii\web\View::registerCssFile()</span> y <span class="broken-link">yii\web\View::registerJsFile()</span>, respectivamente cuando las
+<a href="guide-structure-views.html">vistas</a> los llamen para incluir los archivos CSS y JavaScript.</p>
+<blockquote class="note"><p><strong>Note: </strong>Las opciones que se especifican en una clase bundle se aplican a <em>todos</em> los archivos CSS/JavaScript de un
+  bundle. Si se quiere usar diferentes opciones para diferentes archivos, se deben crear assets bundles separados y
+  usar un conjunto de opciones para cada bundle.</p>
+</blockquote>
+<p>Por ejemplo, para incluir una archivo CSS condicionalmente para navegadores que como IE9 o anteriores, se puede usar la
+ siguiente opción:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-variable">$cssOptions</span> = [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'lte IE9'</span>];
+</code></pre>
+<p>Esto provoca que un archivo CSS dentro de un bundle sea incluido usando los siguientes tags HTML:</p>
+<pre><code class="hljs xml language-html"><span class="hljs-comment">&lt;!--[if lte IE9]&gt;
+&lt;link rel="stylesheet" href="path/to/foo.css"&gt;
+&lt;![endif]--&gt;</span>
+</code></pre>
+<p>Para envolver el tag del enlace con <code>&lt;noscript&gt;</code> se puede usar el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-variable">$cssOptions</span> = [<span class="hljs-string">'noscript'</span> =&gt; <span class="hljs-keyword">true</span>];
+</code></pre>
+<p>Para incluir un archivo JavaScript en la sección cabecera (head) de una página (por defecto, los archivos JavaScript se
+ incluyen al final de la sección cuerpo(body)), se puede usar el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-variable">$jsOptions</span> = [<span class="hljs-string">'position'</span> =&gt; \yii\web\View::POS_HEAD];
+</code></pre>
+<p>Por defecto, cuando un asset bundle está siendo publicado, todos los contenidos del directorio especificado por <span class="broken-link">yii\web\AssetBundle::sourcePath</span>
+serán publicados. Puedes personalizar este comportamiento configurando la propiedad <span class="broken-link">yii\web\AssetBundle::publishOptions</span>. Por
+ejemplo, públicar solo uno o unos pocos subdirectorios de <span class="broken-link">yii\web\AssetBundle::sourcePath</span>, puedes hacerlo de la siguiente manera en la clase
+asset bundle:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">AssetBundle</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FontAwesomeAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$sourcePath</span> = <span class="hljs-string">'@bower/font-awesome'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$css</span> = [
+        <span class="hljs-string">'css/font-awesome.min.css'</span>,
+    ];
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        <span class="hljs-variable">$this</span>-&gt;publishOptions[<span class="hljs-string">'beforeCopy'</span>] = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$from</span>, <span class="hljs-variable">$to</span>)</span> </span>{
+            <span class="hljs-variable">$dirname</span> = basename(dirname(<span class="hljs-variable">$from</span>));
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$dirname</span> === <span class="hljs-string">'fonts'</span> || <span class="hljs-variable">$dirname</span> === <span class="hljs-string">'css'</span>;
+        };
+    }
+}
+</code></pre>
+<p>El ejemplo anterior define un asset bundle para el <a href="http://fontawesome.io/">"fontawesome" package</a>. Especificando
+la opción de publicación <code>beforeCopy</code>, solo los subdirectorios <code>fonts</code> y <code>css</code> serán publicados.</p>
+<h3>Bower y NPM Assets  <span id="bower-npm-assets"></span><a href="#bower-npm-assets" class="hashlink">&para;</a></h3><p>La mayoría de paquetes JavaScript/CSS se gestionan con <a href="http://bower.io/">Bower</a> y/o <a href="https://www.npmjs.org/">NPM</a>.
+Si tu aplicación o extensión usa estos paquetes, se recomienda seguir los siguientes pasos para gestionar los assets en
+ la librería:</p>
+<ol>
+<li>Modificar el archivo <code>composer.json</code> de tu aplicación o extensión e introducir el paquete en la lista <code>require</code>.
+Se debe usar <code>bower-asset/PackageName</code> (para paquetes Bower) o <code>npm-asset/PackageName</code> (para paquetes NPM) para
+referenciar la librería.</li>
+<li>Crear una clase asset bundle y listar los archivos JavaScript/CSS que se planea usar en la aplicación o extensión.
+Se debe especificar la propiedad <span class="broken-link">yii\web\AssetBundle::sourcePath</span> como <code>@bower\PackageName</code> o
+<code>@npm\PackageName</code>. Esto se debe a que Composer instalará el paquete Bower o NPM en el correspondiente directorio de
+ este alias.</li>
+</ol>
+<blockquote class="note"><p><strong>Note: </strong>Algunos paquetes pueden distribuir sus archivos en subdirectorios. Si es el caso, se debe especificar el
+  subdirectorio como valor del <span class="broken-link">yii\web\AssetBundle::sourcePath</span>. Por ejemplo, <span class="broken-link">yii\web\JqueryAsset</span>
+  usa <code>@bower/jquery/dist</code> en vez de <code>@bower/jquery</code>.</p>
+</blockquote>
+<h2>Uso de Asset Bundles  <span id="using-asset-bundles"></span><a href="#using-asset-bundles" class="hashlink">&para;</a></h2><p>Para usar un asset bundle, debe registrarse con una <a href="guide-structure-views.html">vista</a> llamando al método
+<span class="broken-link">yii\web\AssetBundle::register()</span>. Por ejemplo, en plantilla de vista se puede registrar un asset bundle como en el
+siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">assets</span>\<span class="hljs-title">AppAsset</span>;
+AppAsset::register(<span class="hljs-variable">$this</span>);  <span class="hljs-comment">// $this representa el objeto vista</span>
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>El método <span class="broken-link">yii\web\AssetBundle::register()</span> devuelve un objeto asset bundle que contiene la
+  información acerca de los assets publicados, tales como <span class="broken-link">yii\web\AssetBundle::basePath</span> o
+  <span class="broken-link">yii\web\AssetBundle::baseUrl</span>.</p>
+</blockquote>
+<p>Si se registra un asset bundle en otro lugar, se debe proporcionar la vista necesaria al objeto. Por ejemplo, para
+registrar un asset bundle en una clase <a href="guide-structure-widgets.html">widget</a>, se puede obtener el objeto vista mediante
+<code>$this-&gt;view</code>.</p>
+<p>Cuando se registra un asset bundle con una vista, por detrás, Yii registrará todos sus asset bundles dependientes.
+Y si un asset bundle se encuentra en un directorio inaccesible por la Web, éste será publicado a un directorio Web
+público. Después cuando la vista renderice una página, se generarán las etiquetas (tags) <code>&lt;link&gt;</code> y <code>&lt;script&gt;</code>  para
+los archivos CSS y JavaScript listados en los bundles registrados. El orden de estas etiquetas será determinado por
+las dependencias entre los bundles registrados y los otros assets listados en las propiedades
+<span class="broken-link">yii\web\AssetBundle::css</span> y <span class="broken-link">yii\web\AssetBundle::js</span>.</p>
+<h3>Personalización de Asset Bundles  <span id="customizing-asset-bundles"></span><a href="#customizing-asset-bundles" class="hashlink">&para;</a></h3><p>Yii gestiona los asset bundles a través de un componente de aplicación llamado <code>assetManager</code> que está implementado
+por <span class="broken-link">yii\web\AssetManager</span>. Configurando la propiedad <span class="broken-link">yii\web\AssetManager::bundles</span>, se puede personalizar el
+comportamiento (behavior) de un asset bundle. Por ejemplo, de forma predeterminada, el asset bundle <span class="broken-link">yii\web\Jquery</span>
+, utiliza el archivo <code>jquery.js</code> desde el paquete Bower instalado. Para mejorar la disponibilidad y el rendimiento se
+puede querer usar la versión alojada por Google. Ésta puede ser obtenida configurando <code>assetManager</code> en la
+configuración de la aplicación como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+                    <span class="hljs-string">'sourcePath'</span> =&gt; <span class="hljs-keyword">null</span>,   <span class="hljs-comment">// no publicar el bundle</span>
+                    <span class="hljs-string">'js'</span> =&gt; [
+                        <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+                    ]
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Del mismo modo, se pueden configurar múltiples asset bundles a través de <span class="broken-link">yii\web\AssetManager::bundles</span>. Las claves
+del array deben ser los nombres de clase (sin la primera barra invertida) de los asset bundles, y los valores del array
+ deben ser las correspondientes <a href="guide-concept-configurations.html">configuraciones de arrays</a>.</p>
+<blockquote class="tip"><p><strong>Tip: </strong>Se puede elegir condicionalmente que assets se van a usar en un asset bundle. El siguiente ejemplo
+muestra como usar <code>jquery.js</code> en el entorno de desarrollo y <code>jquery.min.js</code> en los otros casos:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; [
+    <span class="hljs-string">'js'</span> =&gt; [
+        YII_ENV_DEV ? <span class="hljs-string">'jquery.js'</span> : <span class="hljs-string">'jquery.min.js'</span>
+    ]
+],
+</code></pre>
+</blockquote>
+<p>Se puede deshabilitar uno o más asset bundles asociando <code>false</code> a los nombres de los asset bundles que se quieran
+deshabilitar. Cuando se registra un asset bundle deshabilitado con una vista, ninguno de sus bundles dependientes será
+registrado, y la vista tampoco incluirá ningún asset del bundle en la página que se renderice.
+Por ejemplo, para deshabilitar <span class="broken-link">yii\web\JqueryAsset</span>, se puede usar la siguiente configuración:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'yii\web\JqueryAsset'</span> =&gt; <span class="hljs-keyword">false</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Además se pueden deshabilitar <em>todos</em> los asset bundles asignando <code>false</code> a <span class="broken-link">yii\web\AssetManager::bundles</span>.</p>
+<h3>Mapeo de Assets (Asset Mapping)  <span id="asset-mapping"></span><a href="#asset-mapping" class="hashlink">&para;</a></h3><p>A veces se puede querer "arreglar" rutas de archivos incorrectos/incompatibles usadas en múltiples asset bundles.
+Por ejemplo, el bundle A usa <code>jquery.min.js</code> con versión 1.11.1, y el bundle B usa <code>jquery.js</code> con versión 2.11.1.
+Mientras que se puede solucionar el problema personalizando cada bundle, una forma más fácil, es usar la
+característica <em>asset map</em> para mapear los assets incorrectos a los deseados. Para hacerlo, se tiene que configurar la
+propiedad <span class="broken-link">yii\web\AssetManager::assetMap</span> como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'assetMap'</span> =&gt; [
+                <span class="hljs-string">'jquery.js'</span> =&gt; <span class="hljs-string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'</span>,
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Las claves de <span class="broken-link">yii\web\AssetManager::assetMap</span> son los nombres de los assets que se quieren corregir,
+y los valores son las rutas de los assets deseados. Cuando se registra un asset bundle con una vista, cada archivo de
+asset relativo de <span class="broken-link">yii\web\AssetBundle::css</span> y <span class="broken-link">yii\web\AssetBundle::js</span> serán contrastados con este mapa.
+Si se detecta que alguna de estas claves es la última parte de un archivo asset (prefijado con
+<span class="broken-link">yii\web\AssetBundle::sourcePath</span>, si esta disponible), el correspondiente valor reemplazará el asset y será
+registrado con la vista.
+Por ejemplo, un archivo asset <code>mi/ruta/a/jquery.js</code> concuerda con la clave <code>jquery.js</code>.</p>
+<blockquote class="note"><p><strong>Note: </strong>Sólo los assets especificados usando rutas relativas están sujetos al mapeo de assets. Y las rutas de los
+assets destino deben ser tanto URLs absolutas o rutas relativas a <span class="broken-link">yii\web\AssetManager::basePath</span>.</p>
+</blockquote>
+<h3>Publicación de Asset  <span id="asset-publishing"></span><a href="#asset-publishing" class="hashlink">&para;</a></h3><p>Como se ha comentado anteriormente, si un asset bundle se encuentra en un directorio que no es accesible por la Web,
+este asset será copiado a un directorio Web cuando se registre el bundle con una vista. Este proceso se llama
+<em>publicación de assets</em>, y se efectúa automáticamente por el <span class="broken-link">yii\web\AssetManager</span>.</p>
+<p>De forma predeterminada, los assets se publican en el directorio <code>@webroot/assets</code> cuando corresponden a la URL
+<code>@web\assets</code>. Se puede personalizar esta ubicación configurando las propiedades
+<span class="broken-link">yii\web\AssetManager::basePath</span> y <span class="broken-link">yii\web\AssetManager::baseUrl</span>.</p>
+<p>En lugar de publicar los assets copiando archivos, se puede considerar usar enlaces simbólicos, si tu
+SO (sistema operativo) y servidor Web lo permiten. Esta característica se puede habilitar estableciendo el valor de
+<span class="broken-link">yii\web\AssetManager::linkAssets</span> en <code>true</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'linkAssets'</span> =&gt; <span class="hljs-keyword">true</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Con la anterior configuración, el gestor de assets creará un enlace simbólico a la ruta de origen del asset bundle
+cuando éste sea publicado. Esto es más rápido que copiar archivos y también asegura que siempre estén actualizados.</p>
+<h2>Los Asset Bundles más Comunes  <span id="common-asset-bundles"></span><a href="#common-asset-bundles" class="hashlink">&para;</a></h2><p>El código del núcleo de Yii tiene definidos varios asset bundles. Entre ellos, los siguientes bundles son los más
+usados y pueden referenciarse en códigos de aplicaciones o extensiones.</p>
+<ul>
+<li><span class="broken-link">yii\web\YiiAsset</span>: Principalmente incluye el archivo <code>yii.js</code> que implementa un mecanismo de organización de
+código JavaScript en los módulos. También proporciona soporte especial para los atributos <code>data-method</code> y
+<code>data-confirm</code> y otras característica útiles.</li>
+<li><span class="broken-link">yii\web\JqueryAsset</span>: Incluye el archivo <code>jquery.js</code> desde el paquete Bower jQuery.</li>
+<li><span class="broken-link">yii\bootstrap\BootstrapAsset</span>: Incluye el archivo CSS desde el framework Twitter Bootstrap.</li>
+<li><span class="broken-link">yii\bootstrap\BootstrapPluginAsset</span>: Incluye el archivo JavaScript desde el framework Twitter Bootstrap para dar
+soporte a los plugins JavaScript de Bootstrap.</li>
+<li><span class="broken-link">yii\jui\JuiAsset</span>: Incluye los archivos CSS y JavaScript desde la librería jQuery UI.</li>
+</ul>
+<p>Si el código depende de jQuery, jQuery UI o Bootstrap, se pueden usar estos asset bundles predefinidos en lugar de
+crear versiones propias. Si la configuración predeterminada de estos bundles no satisface las necesidades, se puede
+personalizar como se describe en la subsección <a href="#customizing-asset-bundles">Personalización de Asset Bundles</a>.</p>
+<h2>Conversión de Assets  <span id="asset-conversion"></span><a href="#asset-conversion" class="hashlink">&para;</a></h2><p>En lugar de escribir código CSS y/o JavaScript directamente, los desarrolladores a menudo escriben código usando una
+sintaxis extendida y usan herramientas especiales para convertirlos en CSS/JavaScript. Por ejemplo, para código CSS se
+puede usar <a href="http://lesscss.org">LESS</a> o <a href="http://sass-lang.com/">SCSS</a>; y para JavaScript se puede usar
+<a href="http://www.typescriptlang.org/">TypeScript</a>.</p>
+<p>Se pueden listar los archivos asset con sintaxis extendida (extended syntax) en <span class="broken-link">yii\web\AssetBundle::css</span> y
+<span class="broken-link">yii\web\AssetBundle::js</span> en un asset bundle. Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppAsset</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AssetBundle</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$basePath</span> = <span class="hljs-string">'@webroot'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$baseUrl</span> = <span class="hljs-string">'@web'</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$css</span> = [
+        <span class="hljs-string">'css/site.less'</span>,
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$js</span> = [
+        <span class="hljs-string">'js/site.ts'</span>,
+    ];
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$depends</span> = [
+        <span class="hljs-string">'yii\web\YiiAsset'</span>,
+        <span class="hljs-string">'yii\bootstrap\BootstrapAsset'</span>,
+    ];
+}
+</code></pre>
+<p>Cuando se registra uno de estos asset bundles en una vista, el <span class="broken-link">yii\web\AssetManager</span> ejecutará
+automáticamente las herramientas pre-procesadoras para convertir los assets de sintaxis extendidas reconocidas en
+CSS/JavaScript. Cuando la vista renderice finalmente una página, se incluirán los archivos CSS/JavaScript
+en la página, en lugar de los assets originales en sintaxis extendidas.</p>
+<p>Yii usa las extensiones de archivo para identificar que sintaxis extendida se está usando. De forma predeterminada se
+reconocen las siguientes sintaxis y extensiones de archivo.</p>
+<ul>
+<li><a href="http://lesscss.org/">LESS</a>: <code>.less</code></li>
+<li><a href="http://sass-lang.com/">SCSS</a>: <code>.scss</code></li>
+<li><a href="http://learnboost.github.io/stylus/">Stylus</a>: <code>.styl</code></li>
+<li><a href="http://coffeescript.org/">CoffeeScript</a>: <code>.coffee</code></li>
+<li><a href="http://www.typescriptlang.org/">TypeScript</a>: <code>.ts</code></li>
+</ul>
+<p>Yii se basa en las herramientas pre-procesadoras instalada para convertir los assets. Por ejemplo, para usar
+<a href="http://lesscss.org/">LESS</a> se debe instalar el comando pre-procesador <code>lessc</code>.</p>
+<p>Se pueden personalizar los comandos de los pre-procesadores y las sintaxis extendidas soportadas configurando
+<span class="broken-link">yii\web\AssetManager::converter</span> como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'converter'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetConverter'</span>,
+                <span class="hljs-string">'commands'</span> =&gt; [
+                    <span class="hljs-string">'less'</span> =&gt; [<span class="hljs-string">'css'</span>, <span class="hljs-string">'lessc {from} {to} --no-color'</span>],
+                    <span class="hljs-string">'ts'</span> =&gt; [<span class="hljs-string">'js'</span>, <span class="hljs-string">'tsc --out {to} {from}'</span>],
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>En el anterior ejemplo se especifican las sintaxis extendidas soportadas a través de la propiedad
+<span class="broken-link">yii\web\AssetConverter::commands</span>. Las claves del array son los nombres de extensión de archivo (sin el punto), y
+los valores del array las extensiones de archivo resultantes y los comandos para realizar la conversión de assets.
+Los tokens <code>{from}</code> y <code>{to}</code> en los comandos se reemplazarán por las rutas de origen de los archivos asset y las rutas
+de destino de los archivos asset.</p>
+<blockquote class="info"><p><strong>Info: </strong>Hay otras maneras de trabajar con las assets de sintaxis extendidas, además de la descrita
+  anteriormente. Por ejemplo, se pueden usar herramientas generadoras tales como <a href="http://gruntjs.com/">grunt</a> para
+  monitorear y convertir automáticamente los assets de sintaxis extendidas. En este caso, se deben listar los archivos
+  CSS/JavaScript resultantes en lugar de los archivos de originales.</p>
+</blockquote>
+<h2>Combinación y Compresión de Assets  <span id="combining-compressing-assets"></span><a href="#combining-compressing-assets" class="hashlink">&para;</a></h2><p>Una página web puede incluir muchos archivos CSS y/o JavaScript. Para reducir el número de peticiones (requests)
+HTTP y el tamaño total de descarga de estos archivos, una práctica común es combinar y comprimir uno o
+varios archivos, y después incluir los archivos comprimidos en las páginas Web.</p>
+<p>&gt;Información: La combinación y compresión de assets es habitualmente necesario cuando una aplicación se encuentra en
+modo de producción. En modo de desarrollo, es más conveniente usar los archivos CSS/JavaScript originales por temas
+relacionados con el debugging.</p>
+<p>En el siguiente ejemplo, se muestra una propuesta para combinar y comprimir archivos asset sin necesidad de modificar
+el código de la aplicación.</p>
+<ol>
+<li>Buscar todos los asset bundles en la aplicación que se quieran combinar y comprimir.</li>
+<li>Dividir estos bundles en uno o más grupos. Tenga en cuenta que cada bundle solo puede pertenecer a un único grupo.</li>
+<li>Combina/Comprime los archivos CSS de cada grupo en un único archivo. Hace lo mismo para los archivos JavaScript.</li>
+<li>Define un nuevo asset bundle para cada grupo:<ul>
+<li>Establece las propiedades <span class="broken-link">yii\web\AssetBundle::css</span> y <span class="broken-link">yii\web\AssetBundle::js</span> para que sean los
+archivos CSS y JavaScript combinados, respectivamente.</li>
+<li>Personaliza los asset bundles en cada grupo configurando sus propiedades <span class="broken-link">yii\web\AssetBundle::css</span> y
+<span class="broken-link">yii\web\AssetBundle::js</span> para que sean el nuevo asset bundle creado para el grupo.</li>
+</ul>
+</li>
+</ol>
+<p>Usando este propuesta, cuando se registre un asset bundle en una vista, se genera un registro automático del nuevo
+asset bundle para el grupo al que pertenece el bundle original. Y como resultado, los archivos combinados/comprimidos
+se incluyen en la página, en lugar de los originales.</p>
+<h3>Un Example  <span id="example"></span><a href="#example" class="hashlink">&para;</a></h3><p>Vamos a usar un ejemplo para explicar la propuesta anterior.</p>
+<p>Asumiendo que la aplicación tenga dos páginas X e Y. La página X utiliza el asset bundle A, B y C mientras que la
+página Y usa los asset bundles B, C y D.</p>
+<p>Hay dos maneras de dividir estos asset bundles. Uno es usar un único grupo que incluye todos los asset bundles,
+el otro es poner (A, B y C) en el Grupo X, y (B, C, D) en el grupo Y. ¿Cuál es mejor? El primero tiene la ventaja
+de que las dos páginas comparten los mismos archivos CSS y JavaScript combinados, que producen una caché HTTP más
+efectiva. Por otra parte, por el hecho de que un único grupo contenga todos los bundles, los archivos JavaScript serán
+más grandes y por tanto incrementan el tiempo de transmisión del archivo inicial. En este ejemplo, se usará la primera
+opción, ej., usar un único grupo que contenga todos los bundles.</p>
+<blockquote class="info"><p><strong>Info: </strong>Dividiendo los asset bundles en grupos no es una tarea trivial. Normalmente requiere un análisis de los
+  datos del tráfico real de varios assets en diferentes páginas. Al principio, se puede empezar con un
+  único grupo para simplificar.</p>
+</blockquote>
+<p>Se pueden usar herramientas existentes (ej. <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a>,
+<a href="https://github.com/yui/yuicompressor/">YUI Compressor</a>) para combinar y comprimir todos los bundles. Hay que tener en
+cuenta que los archivos deben ser combinados en el orden que satisfaga las dependencias entre los bundles.
+Por ejemplo, si el Bundle A depende del B que depende a su vez de C y D, entonces, se deben listar los archivos asset
+empezando por C y D, seguidos por B y finalmente A.</p>
+<p>Después de combinar y comprimir obtendremos un archivo CSS y un archivo JavaScript. Supongamos que se llaman
+<code>all-xyz.css</code> y <code>all-xyz.js</code>, donde <code>xyz</code> representa un timestamp o un hash que se usa para generar un nombre de
+archivo único para evitar problemas con la caché HTTP.</p>
+<p>Ahora estamos en el último paso. Configurar el <span class="broken-link">yii\web\AssetManager</span> como en el siguiente ejemplo en
+la configuración de la aplicación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; [
+                <span class="hljs-string">'all'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+                    <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+                    <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+                    <span class="hljs-string">'css'</span> =&gt; [<span class="hljs-string">'all-xyz.css'</span>],
+                    <span class="hljs-string">'js'</span> =&gt; [<span class="hljs-string">'all-xyz.js'</span>],
+                ],
+                <span class="hljs-string">'A'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'B'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'C'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+                <span class="hljs-string">'D'</span> =&gt; [<span class="hljs-string">'css'</span> =&gt; [], <span class="hljs-string">'js'</span> =&gt; [], <span class="hljs-string">'depends'</span> =&gt; [<span class="hljs-string">'all'</span>]],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<p>Como se ha explicado en la subsección <a href="#customizing-asset-bundles">Personalización de Asset Bundles</a>, la anterior
+configuración modifica el comportamiento predeterminado de cada bundle. En particular, el Bundle A, B, C y D ya no
+tendrán ningún archivo asset. Ahora todos dependen del bundle <code>all</code> que contiene los archivos combinados <code>all-xyz.css</code>
+y <code>all-xyz.js</code>. Por consiguiente, para la Página X, en lugar de incluir los archivos originales desde los bundles A, B
+y C, solo se incluirán los dos archivos combinados; pasa lo mismo con la Página Y.</p>
+<p>Hay un último truco para hacer que el enfoque anterior se adapte mejor. En lugar de modificar directamente el archivo
+de configuración de la aplicación, se puede poner el array del personalización del bundle en un archivo separado y que
+se incluya condicionalmente este archivo en la configuración de la aplicación. Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'assetManager'</span> =&gt; [
+            <span class="hljs-string">'bundles'</span> =&gt; <span class="hljs-keyword">require</span>(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/'</span> . (YII_ENV_PROD ? <span class="hljs-string">'assets-prod.php'</span> : <span class="hljs-string">'assets-dev.php'</span>)),
+        ],
+    ],
+];
+</code></pre>
+<p>Es decir, el array de configuración del asset bundle se guarda en <code>asset-prod.php</code> para el modo de producción, y
+<code>assets-del.php</code> para los otros modos.</p>
+<h3>Uso del Comando <code>asset</code>  <span id="using-asset-command"></span><a href="#using-asset-command" class="hashlink">&para;</a></h3><p>Yii proporciona un comando de consola llamado <code>asset</code> para automatizar el enfoque descrito.</p>
+<p>Para usar este comando, primero se debe crear un archivo de configuración para describir que asset bundle se deben
+combinar y cómo se deben agrupar. Se puede usar el sub-comando <code>asset/template</code> para generar una plantilla primero y
+después modificarla para que se adapte a nuestras necesidades.</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> asset/template assets.php
+</code></pre>
+<p>El comando genera un archivo llamado <code>assets.php</code> en el directorio actual. El contenido de este archivo es similar al
+siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-comment">/**
+ * Configuration file for the "yii asset" console command.
+ * Note that in the console environment, some path aliases like '<span class="hljs-doctag">@webroot</span>' and '<span class="hljs-doctag">@web</span>' may not exist.
+ * Please define these missing path aliases.
+ */</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// Ajustar comando/callback para comprimir los ficheros JavaScript:</span>
+    <span class="hljs-string">'jsCompressor'</span> =&gt; <span class="hljs-string">'java -jar compiler.jar --js {from} --js_output_file {to}'</span>,
+    <span class="hljs-comment">// Ajustar comando/callback para comprimir los ficheros CSS:</span>
+    <span class="hljs-string">'cssCompressor'</span> =&gt; <span class="hljs-string">'java -jar yuicompressor.jar --type css {from} -o {to}'</span>,
+    <span class="hljs-comment">// La lista de assets bundles para comprimir:</span>
+    <span class="hljs-string">'bundles'</span> =&gt; [
+        <span class="hljs-comment">// 'yii\web\YiiAsset',</span>
+        <span class="hljs-comment">// 'yii\web\JqueryAsset',</span>
+    ],
+    <span class="hljs-comment">// Asset bundle para la salida de compresión:</span>
+    <span class="hljs-string">'targets'</span> =&gt; [
+        <span class="hljs-string">'all'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\AssetBundle'</span>,
+            <span class="hljs-string">'basePath'</span> =&gt; <span class="hljs-string">'@webroot/assets'</span>,
+            <span class="hljs-string">'baseUrl'</span> =&gt; <span class="hljs-string">'@web/assets'</span>,
+            <span class="hljs-string">'js'</span> =&gt; <span class="hljs-string">'js/all-{hash}.js'</span>,
+            <span class="hljs-string">'css'</span> =&gt; <span class="hljs-string">'css/all-{hash}.css'</span>,
+        ],
+    ],
+    <span class="hljs-comment">// Configuración del Asset manager:</span>
+    <span class="hljs-string">'assetManager'</span> =&gt; [
+    ],
+];
+</code></pre>
+<p>Se debe modificar este archivo para especificar que bundles plantea combinar en la opción <code>bundles</code>. En la opción
+<code>targets</code> se debe especificar como se deben dividir entre los grupos. Se puede especificar uno o más grupos,
+como se ha comentado.</p>
+<blockquote class="note"><p><strong>Note: </strong>Debido a que los alias <code>@webroot</code> y <code>@web</code> no están disponibles en la aplicación de consola, se deben definir
+  explícitamente en la configuración.</p>
+</blockquote>
+<p>Los archivos JavaScript se combinan, comprimen y guardan en <code>js/all-{hash}.js</code> donde {hash} se reemplaza con el hash
+del archivo resultante.</p>
+<p>Las opciones <code>jsCompressor</code> y <code>cssCompressor</code> especifican los comandos de consola o llamadas PHP (PHP callbacks) para
+realizar la combinación/compresión de JavaScript y CSS. De forma predeterminada Yii usa
+<a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> para combinar los archivos JavaScript y
+<a href="https://github.com/yui/yuicompressor/">YUI Compressor</a> para combinar archivos CSS. Se deben instalar las herramientas
+manualmente o ajustar sus configuraciones para usar nuestras favoritas.</p>
+<p>Con el archivo de configuración, se puede ejecutar el comando <code>asset</code> para combinar y comprimir los archivos asset y
+después generar un nuevo archivo de configuración de asset bundles <code>asset-prod.php</code>:</p>
+<pre><code class="hljs nginx"><span class="hljs-title">yii</span> asset assets.php config/assets-prod.php
+</code></pre>
+<p>El archivo de configuración generado se puede incluir en la configuración de la aplicación, como se ha descrito en la
+anterior subsección.</p>
+<blockquote class="info"><p><strong>Info: </strong>Usar el comando <code>asset</code> no es la única opción de automatizar el proceso de combinación y compresión.
+  Se puede usar la excelente herramienta de ejecución de tareas <a href="http://gruntjs.com/">grunt</a> para lograr el mismo
+  objetivo.</p>
+</blockquote>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

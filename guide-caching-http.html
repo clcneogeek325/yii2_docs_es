@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Caché HTTP - Caché - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1006" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1006-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1006-collapse" class="collapse navbar-collapse"><ul id="w1007" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-990" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-990" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-991" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-991" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-992" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-992" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-993" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-993" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-994" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-994" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-995" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-995" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-996" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-996" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-997" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-997" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-998" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-998" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item active" href="#navigation-999" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-999" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item active" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1000" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1000" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1001" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1001" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1002" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1002" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1003" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1003" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1004" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1004" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1005" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1005" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Caché HTTP <span id="cache-http"></span><a href="#cache-http" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#last-modified">La Cabecera Last-Modified</a></li>
+<li><a href="#etag">La Cabecera ETag</a></li>
+<li><a href="#cache-control">La Cabecera Cache-Control</a></li>
+<li><a href="#session-cache-limiter">Limitador de la Sesión de Caché</a></li>
+<li><a href="#seo-implications">Implicaciones SEO</a></li></ol></div>
+<p>Además del almacenamiento de caché en el servidor que hemos descrito en secciones anteriores, las aplicaciones Web
+pueden hacer uso de la caché en el lado del cliente para así ahorrar tiempo y recursos para generar y transmitir el
+mismo contenido una y otra vez.</p>
+<p>Para usar la caché del lado del cliente, puedes configurar <span class="broken-link">yii\filters\HttpCache</span> como un filtro en el controlador
+para aquellas acciones cuyo resultado deba estar almacenado en la caché en el lado del cliente. <span class="broken-link">yii\filters\HttpCache</span>
+solo funciona en peticiones <code>GET</code> y <code>HEAD</code>. Puede manejar tres tipos de cabeceras (headers) HTTP relacionadas en este tipo de
+consultas:</p>
+<ul>
+<li><span class="broken-link">yii\filters\HttpCache::lastModified</span></li>
+<li><span class="broken-link">yii\filters\HttpCache::etagSeed</span></li>
+<li><span class="broken-link">yii\filters\HttpCache::cacheControlHeader</span></li>
+</ul>
+<h2>La Cabecera <code>Last-Modified</code>  <span id="last-modified"></span><a href="#last-modified" class="hashlink">&para;</a></h2><p>La cabecera <code>Last-Modified</code> usa un sello de tiempo para indicar si la página ha sido modificada desde que el cliente la
+almacena en la caché.</p>
+<p>Puedes configurar la propiedad <span class="broken-link">yii\filters\HttpCache::lastModified</span> para activar el envío de la cabecera <code>Last-Modified</code>.
+La propiedad debe ser una llamada de retorno (callable) PHP que devuelva un timestamp UNIX sobre el tiempo de modificación de
+la página. El formato de la función de llamada de retorno debe ser el siguiente,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> Action $action el objeto acción que se está controlando actualmente
+ * <span class="hljs-doctag">@param</span> array $params el valor de la propiedad "params"
+ * <span class="hljs-doctag">@return</span> int un sello de tiempo UNIX que representa el tiempo de modificación de la página
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$params</span>)</span>
+</span></code></pre>
+<p>El siguiente es un ejemplo haciendo uso de la cabecera <code>Last-Modified</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\filters\HttpCache'</span>,
+            <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'index'</span>],
+            <span class="hljs-string">'lastModified'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$params</span>)</span> </span>{
+                <span class="hljs-variable">$q</span> = <span class="hljs-keyword">new</span> \yii\db\Query();
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$q</span>-&gt;from(<span class="hljs-string">'post'</span>)-&gt;max(<span class="hljs-string">'updated_at'</span>);
+            },
+        ],
+    ];
+}
+</code></pre>
+<p>El código anterior establece que la memoria caché HTTP debe ser habilitada únicamente por la acción <code>index</code>. Se debe
+generar una cabecera HTTP <code>Last-Modified</code> basado en el último tiempo de actualización de los artículos. Cuando un
+navegador visita la página <code>index</code> la primera vez, la página será generada en el servidor y enviada al navegador; Si el
+navegador visita la misma página de nuevo y no ningún artículo modificado durante el período, el servidor no volverá a
+regenerar la página, y el navegador usará la versión caché del lado del cliente. Como resultado, la representación del
+lado del servidor y la transmisión del contenido de la página son ambos omitidos.</p>
+<h2>La Cabecera <code>ETag</code>  <span id="etag"></span><a href="#etag" class="hashlink">&para;</a></h2><p>La cabecera "Entity Tag" (o para abreviar <code>ETag</code>) usa un hash para representar el contenido de una página. Si la página
+ha sido cambiada, el hash también cambiará. Al comparar el hash guardado en el lado del cliente con el hash generado en
+el servidor, la caché puede determinar si la página ha cambiado y deber ser retransmitida.</p>
+<p>Puedes configurar la propiedad <span class="broken-link">yii\filters\HttpCache::etagSeed</span> para activar el envío de la cabecera <code>ETag</code>.
+La propiedad debe ser una función de retorno (callable) PHP que devuelva una semilla para la generación del hash de <code>ETag</code>.
+El formato de la función de retorno es el siguiente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@param</span> Action $action el objeto acción que se está controlando actualmente
+ * <span class="hljs-doctag">@param</span> array $params el valor de la propiedad "params"
+ * <span class="hljs-doctag">@return</span> string una cadena usada como semilla para la generación del hash de ETag
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$params</span>)</span>
+</span></code></pre>
+<p>El siguiente es un ejemplo de cómo usar la cabecera <code>ETag</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\filters\HttpCache'</span>,
+            <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'view'</span>],
+            <span class="hljs-string">'etagSeed'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$action</span>, <span class="hljs-variable">$params</span>)</span> </span>{
+                <span class="hljs-variable">$post</span> = <span class="hljs-variable">$this</span>-&gt;findModel(\Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;get(<span class="hljs-string">'id'</span>));
+                <span class="hljs-keyword">return</span> serialize([<span class="hljs-variable">$post</span>-&gt;title, <span class="hljs-variable">$post</span>-&gt;content]);
+            },
+        ],
+    ];
+}
+</code></pre>
+<p>El código anterior establece que la caché HTTP debe ser activada únicamente para la acción <code>view</code>. Debería generar una
+cabecera HTTP <code>ETag</code> basándose en el título y contenido del artículo consultado. Cuando un navegador visita la página
+<code>view</code> por primera vez, la página se generará en el servidor y será enviada al navegador; Si el navegador visita la
+misma página de nuevo y no ha ocurrido un cambio en el título o contenido del artículo, el servidor no volverá a generar
+la página, y el navegador usará la versión guardada en la caché del lado del cliente. Como resultado, la representación del
+lado del servidor y la transmisión del contenido de la página son ambos omitidos.</p>
+<p>ETags permiten estrategias de almacenamiento de caché más complejas y/o mucho más precisas que las cabeceras <code>Last-Modified</code>.
+Por ejemplo, un ETag puede ser invalidado si el sitio Web ha cambiado de tema (theme).</p>
+<p>La generación de un ETag que requiera muchos recursos puede echar por tierra el propósito de estar usando <code>HttpCache</code> e
+introducir una sobrecarga innecesaria, ya que debe ser re-evaluada en cada solicitud (request). Trata de encontrar una
+expresión sencilla para invalidar la caché si la página ha sido modificada.</p>
+<blockquote class="note"><p><strong>Note: </strong>En cumplimiento con <a href="http://tools.ietf.org/html/rfc7232#section-2.4">RFC 7232</a>,
+  <code>HttpCache</code> enviará ambas cabeceras <code>ETag</code> y <code>Last-Modified</code> si ambas están configuradas. Y si el clientes envía tanto la cabecera <code>If-None-Match</code> como la cabecera <code>If-Modified-Since</code>, solo la primera será respetada.</p>
+</blockquote>
+<h2>La Cabecera <code>Cache-Control</code>  <span id="cache-control"></span><a href="#cache-control" class="hashlink">&para;</a></h2><p>La cabecera <code>Cache-Control</code> especifica la directiva general de la caché para páginas. Puedes enviarla configurando la
+propiedad <span class="broken-link">yii\filters\HttpCache::cacheControlHeader</span> con el valor de la cabecera. Por defecto, la siguiente cabecera
+será enviada:</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">Cache</span>-Control: <span class="hljs-keyword">public</span>, <span class="hljs-keyword">max</span>-age=<span class="hljs-number">3600</span>
+</span></code></pre>
+<h2>Limitador de la Sesión de Caché  <span id="session-cache-limiter"></span><a href="#session-cache-limiter" class="hashlink">&para;</a></h2><p>Cuando una página utiliza la sesión, PHP enviará automáticamente cabeceras HTTP relacionadas con la caché tal y como se
+especifican en <code>session.cache_limiter</code> de la configuración INI de PHP. Estas cabeceras pueden interferir o deshabilitar
+el almacenamiento de caché que desees de <code>HttpCache</code>. Para evitar este problema, por defecto <code>HttpCache</code> deshabilitará
+automáticamente el envío de estas cabeceras. Si deseas modificar este comportamiento, tienes que configurar la propiedad
+<span class="broken-link">yii\filters\HttpCache::sessionCacheLimiter</span>. La propiedad puede tomar un valor de cadena, incluyendo <code>public</code>, <code>private</code>,
+<code>private_no_expire</code>, and <code>nocache</code>. Por favor, consulta el manual PHP acerca de <a href="http://www.php.net/manual/es/function.session-cache-limiter.php">session_cache_limiter()</a>
+para una mejor explicación sobre esos valores.</p>
+<h2>Implicaciones SEO  <span id="seo-implications"></span><a href="#seo-implications" class="hashlink">&para;</a></h2><p>Los robots de motores de búsqueda tienden a respetar las cabeceras de caché. Dado que algunos <code>crawlers</code> tienen limitado
+el número de páginas que pueden rastrear por dominios dentro de un cierto período de tiempo, la introducción de cabeceras
+de caché pueden ayudar a la indexación del sitio Web y reducir el número de páginas que deben ser procesadas.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

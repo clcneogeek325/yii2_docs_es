@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Trabajar con bases de datos - Primeros pasos - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1294" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1294-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1294-collapse" class="collapse navbar-collapse"><ul id="w1295" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1278" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1278" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item active" href="#navigation-1279" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1279" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item active" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-1280" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1280" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-1281" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1281" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1282" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1282" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-1283" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1283" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1284" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1284" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1285" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1285" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1286" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1286" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1287" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1287" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1288" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1288" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1289" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1289" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1290" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1290" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1291" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1291" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1292" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1292" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1293" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1293" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Trabajar con Bases de Datos <span id="trabajar-con-bases-de-datos"></span><a href="#trabajar-con-bases-de-datos" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#preparing-database">Preparar una Base de Datos</a></li>
+<li><a href="#configuring-db-connection">Configurar una conexión a la Base de Datos</a></li>
+<li><a href="#creating-active-record">Crear un Active Record</a></li>
+<li><a href="#creating-action">Crear una Acción</a></li>
+<li><a href="#creating-view">Crear una Vista</a></li>
+<li><a href="#trying-it-out">Probándolo</a></li>
+<li><a href="#summary">Resumen</a></li></ol></div>
+<p>En esta sección, explicaremos cómo crear una nueva página para mostrar datos de países traídos de una tabla de la
+base de datos llamada <code>country</code>. Para lograr este objetivo, configurarás una conexión a la base de datos,
+crearás una clase <a href="guide-db-active-record.html">Active Record</a>, una <a href="guide-structure-controllers.html">acción</a>
+y una <a href="guide-structure-views.html">vista</a>.</p>
+<p>A lo largo de este tutorial, aprenderás a</p>
+<ul>
+<li>configurar una conexión a la base de datos;</li>
+<li>definir una clase Active Record;</li>
+<li>realizar consultas a la base de datos utilizando la clase Active Record;</li>
+<li>mostrar datos en una vista con paginación incluida.</li>
+</ul>
+<p>Ten en cuenta que para finalizar esta sección, deberás tener al menos conocimientos básicos y experiencia con bases de datos.
+En particular, deberás ser capaz de crear una base de datos y saber ejecutar consultas SQL usando alguna herramienta de cliente de base de datos.</p>
+<h2>Preparar una Base de Datos  <span id="preparing-database"></span><a href="#preparing-database" class="hashlink">&para;</a></h2><p>Para empezar, crea una base de datos llamada <code>yii2basic</code> de la cual tomarás los datos en la aplicación.
+Puedes elegir entre una base de datos SQLite, MySQL, PostgreSQL, MSSQL u Oracle, dado que Yii incluye soporte para varios motores. Por simplicidad, usaremos MySQL en la siguiente descripción.</p>
+<p>A continuación, crea una tabla llamada <code>country</code> e inserta algunos datos de ejemplo. Puedes utilizar las siguientes declaraciones SQL.</p>
+<pre><code class="hljs sql language-sql"><span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`country`</span> (
+  <span class="hljs-string">`code`</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> PRIMARY <span class="hljs-keyword">KEY</span>,
+  <span class="hljs-string">`name`</span> <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">52</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+  <span class="hljs-string">`population`</span> <span class="hljs-built_in">INT</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'0'</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8;</span>
+
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'AU'</span>,<span class="hljs-string">'Australia'</span>,<span class="hljs-number">24016400</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'BR'</span>,<span class="hljs-string">'Brazil'</span>,<span class="hljs-number">205722000</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'CA'</span>,<span class="hljs-string">'Canada'</span>,<span class="hljs-number">35985751</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'CN'</span>,<span class="hljs-string">'China'</span>,<span class="hljs-number">1375210000</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'DE'</span>,<span class="hljs-string">'Germany'</span>,<span class="hljs-number">81459000</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'FR'</span>,<span class="hljs-string">'France'</span>,<span class="hljs-number">64513242</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'GB'</span>,<span class="hljs-string">'United Kingdom'</span>,<span class="hljs-number">65097000</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'IN'</span>,<span class="hljs-string">'India'</span>,<span class="hljs-number">1285400000</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'RU'</span>,<span class="hljs-string">'Russia'</span>,<span class="hljs-number">146519759</span>);</span>
+<span class="hljs-operator"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`country`</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'US'</span>,<span class="hljs-string">'United States'</span>,<span class="hljs-number">322976000</span>);</span>
+</code></pre>
+<p>Al final, tendrás una base de datos llamada <code>yii2basic</code>, y dentro de esta, una tabla llamada <code>country</code> con diez registros en ella.</p>
+<h2>Configurar una conexión a la Base de Datos  <span id="configuring-db-connection"></span><a href="#configuring-db-connection" class="hashlink">&para;</a></h2><p>Asegúrate de tener instalado la extensión de PHP <a href="http://www.php.net/manual/es/book.pdo.php">PDO</a> y el driver
+de PDO para el motor que estés utilizando (ej. <code>pdo_mysql</code> para MySQL). Este es un requisito básico si tu aplicación
+va a utilizar bases de datos relacionales.</p>
+<p>Abre el archivo <code>config/db.php</code> y ajusta el contenido dependiendo de la configuración a tu base de datos. Por defecto,
+el archivo contiene el siguiente contenido:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=yii2basic'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+];
+</code></pre>
+<p>El archivo <code>config/db.php</code> representa la típica <a href="guide-concept-configurations.html">configuración</a> basada en archivos. Este archivo de configuración en particular
+especifica los parámetros necesarios para crear e inicializar una instancia de <span class="broken-link">yii\db\Connection</span> a través de la cual puedes realizar
+consultas SQL contra la base de datos subyacente.</p>
+<p>La conexión a la base de datos realizada anteriormente puede ser accedida mediante <code>Yii::$app-&gt;db</code>.</p>
+<blockquote class="info"><p><strong>Info: </strong>El archivo <code>config/db.php</code> será incluido en el archivo principal de configuración <code>config/web.php</code>,
+  el cual especifica cómo la instancia de la <a href="guide-structure-applications.html">aplicación</a> debe ser inicializada.
+  Para más información, consulta la sección <a href="guide-concept-configurations.html">Configuraciones</a>.</p>
+</blockquote>
+<p>Si necesitas trabajar con bases de datos cuyo soporte no está incluído en Yii, revisa las siguientes extensiones:</p>
+<ul>
+<li><a href="https://github.com/edgardmessias/yii2-informix">Informix</a></li>
+<li><a href="https://github.com/edgardmessias/yii2-ibm-db2">IBM DB2</a></li>
+<li><a href="https://github.com/edgardmessias/yii2-firebird">Firebird</a></li>
+</ul>
+<h2>Crear un Active Record  <span id="creating-active-record"></span><a href="#creating-active-record" class="hashlink">&para;</a></h2><p>Para representar y extraer datos de la tabla <code>country</code>, crea una clase <a href="guide-db-active-record.html">Active Record</a>
+llamada <code>Country</code> y guárdala en el archivo <code>models/Country.php</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">ActiveRecord</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Country</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ActiveRecord</span>
+</span>{
+}
+</code></pre>
+<p>La clase <code>Country</code> extiende de <span class="broken-link">yii\db\ActiveRecord</span>. No necesitas escribir ningún código dentro de ella! Con tan sólo el código de arriba,
+Yii adivinará la tabla correspondiente a la clase desde su nombre.</p>
+<blockquote class="info"><p><strong>Info: </strong>Si no se puede realizar un emparejamiento entre el nombre de la clase y la tabla, puedes
+sobrescribir el método <span class="broken-link">yii\db\ActiveRecord::tableName()</span> para especificar explícitamente el nombre de la tabla asiciada.</p>
+</blockquote>
+<p>Utilizando la clase <code>Country</code>, puedes manipular los datos de la tabla <code>country</code> fácilmente, como se muestra en los siguiente ejemplos:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Country</span>;
+
+<span class="hljs-comment">// obtiene todos los registros de la tabla country ordenándolos por "name"</span>
+<span class="hljs-variable">$countries</span> = Country::find()-&gt;orderBy(<span class="hljs-string">'name'</span>)-&gt;all();
+
+<span class="hljs-comment">// obtiene el registro cuya clave primaria es "US"</span>
+<span class="hljs-variable">$country</span> = Country::findOne(<span class="hljs-string">'US'</span>);
+
+<span class="hljs-comment">// muestra "United States"</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$country</span>-&gt;name;
+
+<span class="hljs-comment">// cambia el nombre del país a "U.S.A." y lo guarda en la base de datos</span>
+<span class="hljs-variable">$country</span>-&gt;name = <span class="hljs-string">'U.S.A.'</span>;
+<span class="hljs-variable">$country</span>-&gt;save();
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>Active Record es una potente forma de acceder y manipular datos de una base de datos de una manera orientada a objetos.
+Puedes encontrar información más detallada acerca de <a href="guide-db-active-record.html">Active Record</a>. Además de Active Record, puedes utilizar un método de acceso de bajo nivel llamado <a href="guide-db-dao.html">Data Access Objects</a>.</p>
+</blockquote>
+<h2>Crear una Acción  <span id="creating-action"></span><a href="#creating-action" class="hashlink">&para;</a></h2><p>Para mostrar el país a los usuarios, necesitas crear una acción. En vez de hacerlo en el controlador <code>site</code>
+como lo hiciste en las secciones previas, tiene más sentido crear un nuevo controlador que englobe todas las
+acciones de manipulación de datos de la tabla country. Llama a este nuevo controlador <code>CountryController</code> y define
+una acción <code>index</code> en él, como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">Pagination</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Country</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CountryController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$query</span> = Country::find();
+
+        <span class="hljs-variable">$pagination</span> = <span class="hljs-keyword">new</span> Pagination([
+            <span class="hljs-string">'defaultPageSize'</span> =&gt; <span class="hljs-number">5</span>,
+            <span class="hljs-string">'totalCount'</span> =&gt; <span class="hljs-variable">$query</span>-&gt;count(),
+        ]);
+
+        <span class="hljs-variable">$countries</span> = <span class="hljs-variable">$query</span>-&gt;orderBy(<span class="hljs-string">'name'</span>)
+            -&gt;offset(<span class="hljs-variable">$pagination</span>-&gt;offset)
+            -&gt;limit(<span class="hljs-variable">$pagination</span>-&gt;limit)
+            -&gt;all();
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'index'</span>, [
+            <span class="hljs-string">'countries'</span> =&gt; <span class="hljs-variable">$countries</span>,
+            <span class="hljs-string">'pagination'</span> =&gt; <span class="hljs-variable">$pagination</span>,
+        ]);
+    }
+}
+</code></pre>
+<p>Guarda el código anterior en el archivo <code>controllers/CountryController.php</code>.</p>
+<p>La acción <code>index</code> llama a <code>Country::find()</code> para generar una consulta a la base de datos y traer todos los datos de la tabla <code>country</code>.
+Para limitar la cantidad de registros traídos en cada petición, la consulta es paginada con la ayuda de un objeto
+<span class="broken-link">yii\data\Pagination</span>. El objeto <code>Pagination</code> sirve para dos propósitos:</p>
+<ul>
+<li>Define las cláusulas <code>offset</code> y <code>limit</code> de la consulta SQL para así sólo devolver una sola página de datos
+(5 registros por página como máximo).</li>
+<li>Es utilizado en la vista para mostrar un paginador que consiste en una lista de botones que representan a cada página,
+tal como será explicado en la siguiente sub-sección.</li>
+</ul>
+<p>Al final, la acción <code>index</code> renderiza una vista llamada <code>index</code> y le pasa los datos de países así como la información
+de paginación relacionada.</p>
+<h2>Crear una Vista  <span id="creating-view"></span><a href="#creating-view" class="hashlink">&para;</a></h2><p>Bajo el directorio <code>views</code>, crea primero un sub-directorio llamado <code>country</code>. Este será usado para contener
+todas las vistas renderizadas por el controlador <code>country</code>. 
+Dentro del directorio <code>views/country</code>, crea un archivo llamado <code>index.php</code> con el siguiente contenido:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">helpers</span>\<span class="hljs-title">Html</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">widgets</span>\<span class="hljs-title">LinkPager</span>;
+<span class="hljs-preprocessor">?&gt;</span>
+&lt;h1&gt;Países&lt;/h1&gt;
+&lt;ul&gt;
+<span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$countries</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$country</span>): <span class="hljs-preprocessor">?&gt;</span>
+    &lt;li&gt;
+        <span class="hljs-preprocessor">&lt;?</span>= Html::encode(<span class="hljs-string">"{$country-&gt;name} ({$country-&gt;code})"</span>) <span class="hljs-preprocessor">?&gt;</span>:
+        <span class="hljs-preprocessor">&lt;?</span>= <span class="hljs-variable">$country</span>-&gt;population <span class="hljs-preprocessor">?&gt;</span>
+    &lt;/li&gt;
+<span class="hljs-preprocessor">&lt;?php</span> <span class="hljs-keyword">endforeach</span>; <span class="hljs-preprocessor">?&gt;</span>
+&lt;/ul&gt;
+
+<span class="hljs-preprocessor">&lt;?</span>= LinkPager::widget([<span class="hljs-string">'pagination'</span> =&gt; <span class="hljs-variable">$pagination</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>La vista consiste en dos partes. En la primera, los datos de países son recorridos y renderizados como una lista HTML.
+En la segunda parte, un widget <span class="broken-link">yii\widgets\LinkPager</span> es renderizado usando la información de paginación pasada desde la acción.
+El widget <code>LinkPager</code> muestra una lista de botones que representan las páginas disponibles. Haciendo click en cualquiera
+de ellas mostrará los datos de países de la página correspondiente.</p>
+<h2>Probándolo  <span id="trying-it-out"></span><a href="#trying-it-out" class="hashlink">&para;</a></h2><p>Para ver cómo funciona, utiliza a la siguiente URL en tu navegador:</p>
+<pre><code class="hljs less"><span class="hljs-attribute">http</span>:<span class="hljs-comment">//hostname/index.php?r=country%2Findex</span>
+</code></pre>
+<p><img src="images/start-country-list.png" alt="Lista de Países" /></p>
+<p>Verás una página que muestra cinco países. Y debajo de todos los países, verás un paginador con cuatro botones.
+Si haces click en el botón "2", verás que la página muestra otros cinco países de la base de datos.
+Observa más cuidadosamente y verás que la URL en el navegador cambia a</p>
+<pre><code class="hljs less"><span class="hljs-attribute">http</span>:<span class="hljs-comment">//hostname/index.php?r=country%2Findex&amp;page=2</span>
+</code></pre>
+<p>Entre bastidores, <span class="broken-link">yii\data\Pagination</span> está realizando su magia.</p>
+<ul>
+<li>Inicialmente, <span class="broken-link">yii\data\Pagination</span> representa la primera página, que agrega a la consulta SQL
+a la base de datos con la cláusula <code>LIMIT 5 OFFSET 0</code>. Como resultado, los primeros cinco países serán traídos y mostrados.</li>
+<li>El widget <span class="broken-link">yii\widgets\LinkPager</span> renderiza los botones de páginas usando las URLs
+creadas por <span class="broken-link">yii\data\Pagination::createUrl()</span>. Las URLs contendrán el parámetro <code>page</code>
+representando los números de páginas.</li>
+<li>Si haces click en el botón "2", se lanza y maneja una nueva petición a la ruta <code>country/index</code>.
+<span class="broken-link">yii\data\Pagination</span> lee el parámetro <code>page</code> y define el número de página actual como "2".
+Por consiguiente, la consulta a la base de datos tendrá la cláusula <code>LIMIT 5 OFFSET 5</code> y devolverá los
+siguientes cinco países para mostrar.</li>
+</ul>
+<h2>Resumen  <span id="summary"></span><a href="#summary" class="hashlink">&para;</a></h2><p>En esta sección has aprendido cómo trabajar con una base de datos. También has aprendido cómo traer y mostrar
+datos paginados con la ayuda de <span class="broken-link">yii\data\Pagination</span> y <span class="broken-link">yii\widgets\LinkPager</span>.</p>
+<p>En la siguiente sección, aprenderás a utilizar la poderosa herramienta de generación de código llamada <a href="guide-tool-gii.html">Gii</a>,
+para ayudarte a implementar rápidamente algunas características comunes, como crear operaciones de Alta-Baja-Modificación
+(ABM, o CRUD en inglés) de los datos guardados en la base de datos. De hecho, el código que acabas de escribir fue 
+generado automáticamente a través de esta herramienta.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

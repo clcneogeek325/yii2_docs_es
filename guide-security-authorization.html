@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Autorización - Seguridad - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w790" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w790-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w790-collapse" class="collapse navbar-collapse"><ul id="w791" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-774" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-774" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-775" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-775" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-776" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-776" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-777" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-777" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-778" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-778" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-779" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-779" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-780" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-780" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-781" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-781" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item active" href="#navigation-782" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-782" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item active" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-783" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-783" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-784" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-784" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-785" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-785" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-786" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-786" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-787" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-787" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-788" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-788" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-789" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-789" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Autorización <span id="autorizacion"></span><a href="#autorizacion" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#access-control-filter">Filtro de Control de Acceso</a></li>
+<li><a href="#rbac">Control de Acceso Basado en Roles (RBAC)</a></li></ol></div>
+<p>Autorización esl el proceso de verificación de que un usuario tenga sugifientes permisos para realizar algo. Yii provee
+dos métodos de autorización: Filtro de Control de Acceso y Control Basado en Roles (ACF y RBAC por sus siglas en inglés).</p>
+<h2>Filtro de Control de Acceso  <span id="access-control-filter"></span><a href="#access-control-filter" class="hashlink">&para;</a></h2><p>Filtro de Control de Acceso (ACF) es un único método de autorización implementado como <span class="broken-link">yii\filters\AccessControl</span>, el cual
+es mejor utilizado por aplicaciones que sólo requieran un control de acceso simple. Como su nombre lo indica, ACF es
+un <a href="guide-structure-filters.html">filtro</a> de acción que puede ser utilizado en un controlador o en un módulo. Cuando un usuario solicita
+la ejecución de una acción, ACF comprobará una lista de <span class="broken-link">yii\filters\AccessControl::rules</span>
+para determinar si el usuario tiene permitido acceder a dicha acción.</p>
+<p>El siguiente código muestra cómo utilizar ACF en el controlador <code>site</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'access'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+                <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'login'</span>, <span class="hljs-string">'logout'</span>, <span class="hljs-string">'signup'</span>],
+                <span class="hljs-string">'rules'</span> =&gt; [
+                    [
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'login'</span>, <span class="hljs-string">'signup'</span>],
+                        <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'?'</span>],
+                    ],
+                    [
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'logout'</span>],
+                        <span class="hljs-string">'roles'</span> =&gt; [<span class="hljs-string">'@'</span>],
+                    ],
+                ],
+            ],
+        ];
+    }
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>En el código anterior, ACF es adjuntado al controlador <code>site</code> en forma de behavior (comportamiento). Esta es la forma típica de utilizar
+un filtro de acción. La opción <code>only</code> especifica que el ACF debe ser aplicado solamente a las acciones <code>login</code>, <code>logout</code> y <code>signup</code>.
+Las acciones restantes en el controlador <code>site</code> no están sujetas al control de acceso. La opción <code>rules</code> lista
+las <span class="broken-link">yii\filters\AccessRule</span>, y se lee como a continuación:</p>
+<ul>
+<li>Permite a todos los usuarios invitados (sin autenticar) acceder a las acciones <code>login</code> y <code>signup</code>. La opción <code>roles</code>
+contiene el signo de interrogación <code>?</code>, que es un código especial para representar a los "invitados".</li>
+<li>Permite a los usuarios autenticados acceder a la acción <code>logout</code>. El signo <code>@</code> es otro código especial que representa
+a los "usuarios autenticados".</li>
+</ul>
+<p>ACF ejecuta la comprobación de autorización examinando las reglas de acceso una a una desde arriba hacia abajo hasta que encuentra
+una regla que aplique al contexto de ejecución actual. El valor <code>allow</code> de la regla que coincida será entonces utilizado
+para juzgar si el usuario está autorizado o no. Si ninguna de las reglas coincide, significa que el usuario NO está autorizado,
+y el ACF detendrá la ejecución de la acción.</p>
+<p>Cuando el ACF determina que un usuario no está autorizado a acceder a la acción actual, toma las siguientes medidas por defecto:</p>
+<ul>
+<li>Si el usuario es un invitado, llamará a <span class="broken-link">yii\web\User::loginRequired()</span> para redireccionar el navegador a la pantalla de login.</li>
+<li>Si el usuario está autenticado, lanzará una excepeción <span class="broken-link">yii\web\ForbiddenHttpException</span>.</li>
+</ul>
+<p>Puedes personalizar este comportamiento configurando la propiedad <span class="broken-link">yii\filters\AccessControl::denyCallback</span> como a continuación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+    ...
+    <span class="hljs-string">'denyCallback'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$rule</span>, <span class="hljs-variable">$action</span>)</span> </span>{
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> \<span class="hljs-keyword">Exception</span>(<span class="hljs-string">'No tienes los suficientes permisos para acceder a esta página'</span>);
+    }
+]
+</code></pre>
+<p>Las <span class="broken-link">yii\filters\AccessRule</span> soportan varias opciones. Abajo hay un resumen de las mismas.
+También puedes extender de <span class="broken-link">yii\filters\AccessRule</span> para crear tus propias clases de reglas de acceso personalizadas.</p>
+<ul>
+<li><p><span class="broken-link">yii\filters\AccessRule::allow</span>: especifica si la regla es de tipo "allow" (permitir) o "deny" (denegar).</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::actions</span>: especifica con qué acciones coinciden con esta regla. Esta debería ser
+un array de IDs de acciones. La comparación es sensible a mayúsculas. Si la opción está vacía o no definida,
+significa que la regla se aplica a todas las acciones.</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::controllers</span>: especifica con qué controladores coincide
+esta regla. Esta debería ser un array de IDs de controladores. Cada ID de controlador es prefijado con el ID del módulo (si existe).
+La comparación es sensible a mayúsculas. Si la opción está vacía o no definida, significa que la regla se aplica a todos los controladores.</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::roles</span>: especifica con qué roles de usuarios coincide esta regla.
+Son reconocidos dos roles especiales, y son comprobados vía <span class="broken-link">yii\web\User::isGuest</span>:</p>
+<ul>
+<li><code>?</code>: coincide con el usuario invitado (sin autenticar)</li>
+<li><code>@</code>: coincide con el usuario autenticado</li>
+</ul>
+<p>El utilizar otro nombre de rol invocará una llamada a <span class="broken-link">yii\web\User::can()</span>, que requiere habilitar RBAC
+(a ser descrito en la próxima subsección). Si la opción está vacía o no definida, significa que la regla se aplica a todos los roles.</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::ips</span>: especifica con qué <span class="broken-link">yii\web\Request::userIP</span> coincide esta regla.
+Una dirección IP puede contener el caracter especial <code>*</code> al final de manera que coincidan todas las IPs que comiencen igual.
+Por ejemplo, '192.168.*' coincide con las direcciones IP en el segmento '192.168.'. Si la opción está vacía o no definida,
+significa que la regla se aplica a todas las direcciones IP.</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::verbs</span>: especifica con qué método de la solicitud (por ej. <code>GET</code>, <code>POST</code>) coincide esta regla.
+La comparación no distingue minúsculas de mayúsculas.</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::matchCallback</span>: especifica una función PHP invocable que debe ser llamada para determinar
+si la regla debe ser aplicada.</p>
+</li>
+<li><p><span class="broken-link">yii\filters\AccessRule::denyCallback</span>: especifica una función PHP invocable que debe ser llamada cuando esta regla
+deniegue el acceso.</p>
+</li>
+</ul>
+<p>Debajo hay un ejemplo que muestra cómo utilizar la opción <code>matchCallback</code>, que te permite escribir lógica de comprabación de acceso
+arbitraria:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">filters</span>\<span class="hljs-title">AccessControl</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">behaviors</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">'access'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; AccessControl::className(),
+                <span class="hljs-string">'only'</span> =&gt; [<span class="hljs-string">'special-callback'</span>],
+                <span class="hljs-string">'rules'</span> =&gt; [
+                    [
+                        <span class="hljs-string">'actions'</span> =&gt; [<span class="hljs-string">'special-callback'</span>],
+                        <span class="hljs-string">'allow'</span> =&gt; <span class="hljs-keyword">true</span>,
+                        <span class="hljs-string">'matchCallback'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$rule</span>, <span class="hljs-variable">$action</span>)</span> </span>{
+                            <span class="hljs-keyword">return</span> date(<span class="hljs-string">'d-m'</span>) === <span class="hljs-string">'31-10'</span>;
+                        }
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    <span class="hljs-comment">// Callback coincidente llamado! Esta página sólo puede ser accedida cada 31 de Octubre</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionSpecialCallback</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'happy-halloween'</span>);
+    }
+}
+</code></pre>
+<h2>Control de Acceso Basado en Roles (RBAC)  <span id="rbac"></span><a href="#rbac" class="hashlink">&para;</a></h2><p>El Control de Acceso Basado en Roles (RBAC) provee una simple pero poderosa manera centralizada de control de acceso. Por favos consulta
+la <a href="http://en.wikipedia.org/wiki/Role-based_access_control">Wikipedia</a> para más detalles sobre comparar RBAC
+con otros mecanismos de control de acceso más tradicionales.</p>
+<p>Yii implementa una Jerarquía General RBAC, siguiendo el <a href="http://csrc.nist.gov/rbac/sandhu-ferraiolo-kuhn-00.pdf">modelo NIST RBAC</a>.
+Esto provee la funcionalidad RBAC a través de <a href="guide-structure-application-components.html">componente de la aplicación</a> <span class="broken-link">yii\rbac\ManagerInterface</span>.</p>
+<p>Utilizar RBAC envuelve dos cosas. La primera es construir los datos de autorización RBAC, y la segunda
+es utilizar esos datos de autorización para comprobar el acceso en los lugares donde se necesite.</p>
+<p>Para facilitar la próxima descripción, necesitamos primero instroducir algunos conceptos RBAC básicos.</p>
+<h3>Conceptos Básicos  <span id="basic-concepts"></span><a href="#basic-concepts" class="hashlink">&para;</a></h3><p>Un rol representa una colección de <em>permisos</em> (por ej. crear posts, actualizar posts). Un rol puede ser asignado
+a uno o varios usuarios. Para comprobar que un usuario cuenta con determinado permiso, podemos comprobar si el usuario tiene asignado
+un rol que cuente con dicho permiso.</p>
+<p>Asociado a cada rol o permiso, puede puede haber una <em>regla</em>. Una regla representa una porción de código que será
+ejecutada durante la comprobación de acceso para determinar si el rol o permiso correspondiente aplica al usuario actual.
+Por ejemplo, el permiso "actualizar post" puede tener una regla que compruebe que el usuario actual es el autor del post.
+Durante la comprobación de acceso, si el usuario NO es el autor del post, se considerará que el/ella no cuenta con el permiso "actualizar post".</p>
+<p>Tanto los roles como los permisos pueden ser organizados en una jerarquía. En particular, un rol puede consistir en otros roles o permisos;
+y un permiso puede consistir en otros permisos. Yii implementa una jerarquía de <em>orden parcial</em>, que incluye
+una jerarquía de <em>árbol</em> especial. Mientras que un rol puede contener un permiso, esto no sucede al revés.</p>
+<h3>Configurar RBAC  <span id="configuring-rbac"></span><a href="#configuring-rbac" class="hashlink">&para;</a></h3><p>Antes de definir todos los datos de autorización y ejecutar la comprobación de acceso, necesitamos configurar el
+componente de la aplicación <span class="broken-link">yii\base\Application::authManager</span>. Yii provee dos tipos de administradores de autorización:
+<span class="broken-link">yii\rbac\PhpManager</span> y <span class="broken-link">yii\rbac\DbManager</span>. El primero utiliza un archivo PHP para almacenar los datos
+de autorización, mientras que el segundo almacena dichos datos en una base de datos. Puedes considerar utilizar el primero si tu aplicación
+no requiere una administración de permisos y roles muy dinámica.</p>
+<h4>Utilizar <code>PhpManager</code>  <span id="using-php-manager"></span><a href="#using-php-manager" class="hashlink">&para;</a></h4><p>El siguiente código muestra cómo configurar <code>authManager</code> en la configuración de nuestra aplicación utilizando la clase <span class="broken-link">yii\rbac\PhpManager</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\PhpManager'</span>,
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<p>El <code>authManager</code> ahora puede ser accedido vía <code>\Yii::$app-&gt;authManager</code>.</p>
+<p>Por defecto, <span class="broken-link">yii\rbac\PhpManager</span> almacena datos RBAC en archivos bajo el directorio <code>@app/rbac</code>. Asegúrate de que el directorio
+y todos sus archivos son tienen permiso de escritura para el proceso del servidor Web si la jerarquía de permisos necesita ser modoficada en línea.</p>
+<h4>Utilizar <code>DbManager</code>  <span id="using-db-manager"></span><a href="#using-db-manager" class="hashlink">&para;</a></h4><p>El sigiente código muestra cómo configurar <code>authManager</code> en la configuración de la aplicación utilizando la clase <span class="broken-link">yii\rbac\DbManager</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\DbManager'</span>,
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>si estás utilizando el template yii2-basic-app, existe el archivo de configuración <code>config/console.php</code> donde
+  necesita declararse <code>authManager</code> adicionalmente a <code>config/web.php</code>.
+En el caso de yii2-advanced-app, <code>authManager</code> sólo debe declararse en <code>common/config/main.php</code>.</p>
+</blockquote>
+<p><code>DbManager</code> utiliza cuatro tablas de la BD para almacenar los datos:</p>
+<ul>
+<li><span class="broken-link">yii\rbac\DbManager::$itemTable</span>: la tabla para almacenar los ítems de autorización. Por defecto "auth_item".</li>
+<li><span class="broken-link">yii\rbac\DbManager::$itemChildTable</span>: la tabla para almacentar la jerarquía de los ítems de autorización. Por defecto "auth_item_child".</li>
+<li><span class="broken-link">yii\rbac\DbManager::$assignmentTable</span>: la tabla para almacenar las asignaciones de los ítems de autorización. Por defecto "auth_assignment".</li>
+<li><span class="broken-link">yii\rbac\DbManager::$ruleTable</span>: la tabla para almacenar las reglas. Por defecto "auth_rule".</li>
+</ul>
+<p>Antes de continuar, necesitas crear las tablas respectivas en la base de datos. Para hacerlo, puedes utilizar las migraciones contenidas en <code>@yii/rbac/migrations</code>:</p>
+<p><code>yii migrate --migrationPath=@yii/rbac/migrations</code></p>
+<p>El <code>authManager</code> puede ahora ser accedido vía <code>\Yii::$app-&gt;authManager</code>.</p>
+<h3>Construir los Datos de Autorización  <span id="generating-rbac-data"></span><a href="#generating-rbac-data" class="hashlink">&para;</a></h3><p>Construir los datos de autorización implica las siguientes tareas:</p>
+<ul>
+<li>definir roles y permisos;</li>
+<li>establecer relaciones entre roles y permisos;</li>
+<li>definir reglas;</li>
+<li>asociar reglas con roles y permisos;</li>
+<li>asignar roles a usuarios.</li>
+</ul>
+<p>Dependiendo de los requerimientos de flexibilidad en la autorización, las tareas se pueden lograr de diferentes maneras.</p>
+<p>Si la jerarquía de permisos no cambia en absoluto y tienes un número fijo de usuarios puede crear un
+<a href="guide-tutorial-console.html#create-command">comando de consola</a> que va a inicializar los datos de autorización una vez a través de las API que ofrece por <code>authManager</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">commands</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RbacController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionInit</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+        <span class="hljs-comment">// agrega el permiso "createPost"</span>
+        <span class="hljs-variable">$createPost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'createPost'</span>);
+        <span class="hljs-variable">$createPost</span>-&gt;description = <span class="hljs-string">'Create a post'</span>;
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$createPost</span>);
+
+        <span class="hljs-comment">// agrega el permiso "updatePost"</span>
+        <span class="hljs-variable">$updatePost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'updatePost'</span>);
+        <span class="hljs-variable">$updatePost</span>-&gt;description = <span class="hljs-string">'Update post'</span>;
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$updatePost</span>);
+
+        <span class="hljs-comment">// agrega el rol "author" y le asigna el permiso "createPost"</span>
+        <span class="hljs-variable">$author</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'author'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$author</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$author</span>, <span class="hljs-variable">$createPost</span>);
+
+        <span class="hljs-comment">// agrega el rol "admin" y le asigna el permiso "updatePost"</span>
+        <span class="hljs-comment">// más los permisos del rol "author"</span>
+        <span class="hljs-variable">$admin</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'admin'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$admin</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$updatePost</span>);
+        <span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$author</span>);
+
+        <span class="hljs-comment">// asigna roles a usuarios. 1 y 2 son IDs devueltos por IdentityInterface::getId()</span>
+        <span class="hljs-comment">// usualmente implementado en tu modelo User.</span>
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$author</span>, <span class="hljs-number">2</span>);
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$admin</span>, <span class="hljs-number">1</span>);
+    }
+}
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Si estas utilizando el template avanzado, necesitas poner tu <code>RbacController</code> dentro del directorio <code>console/controllers</code>
+  y cambiar el espacio de nombres a <code>console\controllers</code>.</p>
+</blockquote>
+<p>Después de ejecutar el comando <code>yii rbac/init</code>, obtendremos la siguiente jerarquía:</p>
+<p><img src="images/rbac-hierarchy-1.png" alt="Simple RBAC hierarchy" title="Simple RBAC hierarchy" /></p>
+<p>"Author" puede crear un post, "admin" puede actualizar posts y hacer todo lo que puede hacer "author".</p>
+<p>Si tu aplicación permite el registro de usuarios, necesitas asignar los roles necesarios para cada usuario nuevo. Por ejemplo, para que todos
+los usuarios registrados tengan el rol "author", en el template de aplicación avanzada debes modificar <code>frontend\models\SignupForm::signup()</code>
+como a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signup</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;validate()) {
+        <span class="hljs-variable">$user</span> = <span class="hljs-keyword">new</span> User();
+        <span class="hljs-variable">$user</span>-&gt;username = <span class="hljs-variable">$this</span>-&gt;username;
+        <span class="hljs-variable">$user</span>-&gt;email = <span class="hljs-variable">$this</span>-&gt;email;
+        <span class="hljs-variable">$user</span>-&gt;setPassword(<span class="hljs-variable">$this</span>-&gt;password);
+        <span class="hljs-variable">$user</span>-&gt;generateAuthKey();
+        <span class="hljs-variable">$user</span>-&gt;save(<span class="hljs-keyword">false</span>);
+
+        <span class="hljs-comment">// las siguientes tres líneas fueron agregadas</span>
+        <span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+        <span class="hljs-variable">$authorRole</span> = <span class="hljs-variable">$auth</span>-&gt;getRole(<span class="hljs-string">'author'</span>);
+        <span class="hljs-variable">$auth</span>-&gt;assign(<span class="hljs-variable">$authorRole</span>, <span class="hljs-variable">$user</span>-&gt;getId());
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$user</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+</code></pre>
+<p>Para aplicaciones que requieren un control de acceso complejo con una actualización constante en los datos de autorización, puede ser necesario
+desarrollar una interfaz especial (por ej. un panel de administración) utilizando las APIs ofrecidas por <code>authManager</code>.</p>
+<h3>Utilizar Reglas  <span id="using-rules"></span><a href="#using-rules" class="hashlink">&para;</a></h3><p>Como se había mencionado, las reglas agregan restricciones adicionales a los roles y permisos. Una regla es una clase extendida
+de <span class="broken-link">yii\rbac\Rule</span>. Debe implementar al método <span class="broken-link">yii\rbac\Rule::execute()</span>. En la jerarquía que creamos
+previamente, "author" no puede editar su propio post. Vamos a arreglarlo. Primero necesitamos una regla para comprobar que el usuario actual es el autor del post:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">rbac</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rbac</span>\<span class="hljs-title">Rule</span>;
+
+<span class="hljs-comment">/**
+ * Comprueba si authorID coincide con el usuario pasado como parámetro
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AuthorRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rule</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'isAuthor'</span>;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> string|int $user el ID de usuario.
+     * <span class="hljs-doctag">@param</span> Item $item el rol o permiso asociado a la regla
+     * <span class="hljs-doctag">@param</span> array $params parámetros pasados a ManagerInterface::checkAccess().
+     * <span class="hljs-doctag">@return</span> bool un valor indicando si la regla permite al rol o permiso con el que está asociado.
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">(<span class="hljs-variable">$user</span>, <span class="hljs-variable">$item</span>, <span class="hljs-variable">$params</span>)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$params</span>[<span class="hljs-string">'post'</span>]) ? <span class="hljs-variable">$params</span>[<span class="hljs-string">'post'</span>]-&gt;createdBy == <span class="hljs-variable">$user</span> : <span class="hljs-keyword">false</span>;
+    }
+}
+</code></pre>
+<p>La regla anterior comprueba si el <code>post</code> fue creado por <code>$user</code>. Crearemos un permiso especial, <code>updateOwnPost</code>, en el comando que hemos utilizado
+anteriormente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+<span class="hljs-comment">// agrega la regla</span>
+<span class="hljs-variable">$rule</span> = <span class="hljs-keyword">new</span> \app\rbac\AuthorRule;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$rule</span>);
+
+<span class="hljs-comment">// agrega el permiso "updateOwnPost" y le asocia la regla.</span>
+<span class="hljs-variable">$updateOwnPost</span> = <span class="hljs-variable">$auth</span>-&gt;createPermission(<span class="hljs-string">'updateOwnPost'</span>);
+<span class="hljs-variable">$updateOwnPost</span>-&gt;description = <span class="hljs-string">'Update own post'</span>;
+<span class="hljs-variable">$updateOwnPost</span>-&gt;ruleName = <span class="hljs-variable">$rule</span>-&gt;name;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$updateOwnPost</span>);
+
+<span class="hljs-comment">// "updateOwnPost" será utilizado desde "updatePost"</span>
+<span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$updateOwnPost</span>, <span class="hljs-variable">$updatePost</span>);
+
+<span class="hljs-comment">// permite a "author" editar sus propios posts</span>
+<span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$author</span>, <span class="hljs-variable">$updateOwnPost</span>);
+</code></pre>
+<p>Ahora tenemos la siguiente jerarquía:</p>
+<p><img src="images/rbac-hierarchy-2.png" alt="RBAC hierarchy with a rule" title="RBAC hierarchy with a rule" /></p>
+<h3>Comprobación de Acceso  <span id="access-check"></span><a href="#access-check" class="hashlink">&para;</a></h3><p>Con los datos de autorización listos, la comprobación de acceso se hace con una simple llamada al método <span class="broken-link">yii\rbac\ManagerInterface::checkAccess()</span>.
+Dado que la mayoría de la comprobación de acceso se hace sobre el usuario actual, para mayor comodidad Yii proporciona el atajo
+<span class="broken-link">yii\web\User::can()</span>, que puede ser utilizado como a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (\Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;can(<span class="hljs-string">'createPost'</span>)) {
+    <span class="hljs-comment">// crear el post</span>
+}
+</code></pre>
+<p>Si el usuario actual es Jane con <code>ID=1</code>, comenzamos desde <code>createPost</code> y tratamos de alcanzar a <code>Jane</code>:</p>
+<p><img src="images/rbac-access-check-1.png" alt="Access check" title="Access check" /></p>
+<p>Con el fin de comprobar si un usuario puede actualizar un post, necesitamos pasarle un parámetro adicional requerido por <code>AuthorRule</code>, descrito antes:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">if</span> (\Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;can(<span class="hljs-string">'updatePost'</span>, [<span class="hljs-string">'post'</span> =&gt; <span class="hljs-variable">$post</span>])) {
+    <span class="hljs-comment">// actualizar post</span>
+}
+</code></pre>
+<p>Aquí es lo que sucede si el usuario actual es John:</p>
+<p><img src="images/rbac-access-check-2.png" alt="Access check" title="Access check" /></p>
+<p>Comenzamos desde <code>updatePost</code> y pasamos por <code>updateOwnPost</code>. Con el fin de pasar la comprobación de acceso, <code>AuthorRule</code>
+debe devolver <code>true</code> desde su método <code>execute()</code>. El método recive <code>$params</code> desde la llamada al método <code>can()</code>, cuyo valor es
+<code>['post' =&gt; $post]</code>. Si todo está bien, vamos a obtener <code>author</code>, el cual es asignado a John.</p>
+<p>En caso de Jane es un poco más simple, ya que ella es un "admin":</p>
+<p><img src="images/rbac-access-check-3.png" alt="Access check" title="Access check" /></p>
+<h3>Utilizar Roles por Defecto  <span id="using-default-roles"></span><a href="#using-default-roles" class="hashlink">&para;</a></h3><p>Un rol por defecto es un rol que esta asignado <em>implícitamente</em> a <em>todos</em> los usuarios. La llamada a <span class="broken-link">yii\rbac\ManagerInterface::assign()</span>
+no es necesaria, y los datos de autorización no contienen su información de asignación.</p>
+<p>Un rol por defecto es usualmente asociado con una regla que determina si el rol aplica al usuario siendo verificado.</p>
+<p>Los roles por defecto se utilizan a menudo en aplicaciones que ya tienen algún tipo de asignación de roles. Por ejemplo, una aplicación
+puede tener una columna "grupo" en su tabla de usuario para representar a qué grupo de privilegio pertenece cada usuario.
+Si cada grupo privilegio puede ser conectado a un rol de RBAC, se puede utilizar la función de rol por defecto para asignar
+cada usuario a un rol RBAC automáticamente. Usemos un ejemplo para mostrar cómo se puede hacer esto.</p>
+<p>Suponga que en la tabla de usuario, usted tiene una columna <code>group</code> que utiliza 1 para representar el grupo administrador y 2 al grupo autor.
+Planeas tener dos roles RBAC, <code>admin</code> y <code>author</code>, para representar los permisos de estos dos grupos, respectivamente.
+Puede configurar los datos RBAC de la siguiente manera,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">rbac</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">rbac</span>\<span class="hljs-title">Rule</span>;
+
+<span class="hljs-comment">/**
+ * Comprueba si el grupo coincide
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserGroupRule</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rule</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'userGroup'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span><span class="hljs-params">(<span class="hljs-variable">$user</span>, <span class="hljs-variable">$item</span>, <span class="hljs-variable">$params</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (!Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;isGuest) {
+            <span class="hljs-variable">$group</span> = Yii::<span class="hljs-variable">$app</span>-&gt;user-&gt;identity-&gt;group;
+            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$item</span>-&gt;name === <span class="hljs-string">'admin'</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$group</span> == <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$item</span>-&gt;name === <span class="hljs-string">'author'</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-variable">$group</span> == <span class="hljs-number">1</span> || <span class="hljs-variable">$group</span> == <span class="hljs-number">2</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+
+<span class="hljs-variable">$auth</span> = Yii::<span class="hljs-variable">$app</span>-&gt;authManager;
+
+<span class="hljs-variable">$rule</span> = <span class="hljs-keyword">new</span> \app\rbac\UserGroupRule;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$rule</span>);
+
+<span class="hljs-variable">$author</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'author'</span>);
+<span class="hljs-variable">$author</span>-&gt;ruleName = <span class="hljs-variable">$rule</span>-&gt;name;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$author</span>);
+<span class="hljs-comment">// ... agrega permisos hijos a $author ...</span>
+
+<span class="hljs-variable">$admin</span> = <span class="hljs-variable">$auth</span>-&gt;createRole(<span class="hljs-string">'admin'</span>);
+<span class="hljs-variable">$admin</span>-&gt;ruleName = <span class="hljs-variable">$rule</span>-&gt;name;
+<span class="hljs-variable">$auth</span>-&gt;add(<span class="hljs-variable">$admin</span>);
+<span class="hljs-variable">$auth</span>-&gt;addChild(<span class="hljs-variable">$admin</span>, <span class="hljs-variable">$author</span>);
+<span class="hljs-comment">// ... agrega permisos hijos a $admin ...</span>
+</code></pre>
+<p>Tenga en cuenta que en el ejemplo anterior, dado que "author" es agregado como hijo de "admin", cuando implementes el método <code>execute()</code>
+de la clase de la regla, necesitas respetar esta jerarquía. Esto se debe a que cuando el nombre del rol es "author",
+el método <code>execute()</code> devolverá <code>true</code> si el grupo de usuario es tanto 1 como 2 (lo que significa que el usuario se encuentra en
+cualquiera de los dos grupos, "admin" o "author").</p>
+<p>Luego, configura <code>authManager</code> enumerando los dos roles en <span class="broken-link">yii\rbac\BaseManager::$defaultRoles</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'authManager'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\rbac\PhpManager'</span>,
+            <span class="hljs-string">'defaultRoles'</span> =&gt; [<span class="hljs-string">'admin'</span>, <span class="hljs-string">'author'</span>],
+        ],
+        <span class="hljs-comment">// ...</span>
+    ],
+];
+</code></pre>
+<p>Ahora si realizas una comprobación de acceso, tanto el rol <code>admin</code> y como el rol <code>author</code> serán comprobados evaluando
+las reglas asociadas con ellos. Si la regla devuelve <code>true</code>, significa que la regla aplica al usuario actual.
+Basado en la implementación de la regla anterior, esto significa que si el valor <code>group</code> en un usuario es 1, el rol <code>admin</code>
+se aplicaría al usuario; y si el valor de <code>group</code> es 2, se le aplicaría el rol <code>author</code>.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

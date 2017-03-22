@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Extensiones - Estructura de una aplicación - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1618" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1618-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1618-collapse" class="collapse navbar-collapse"><ul id="w1619" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1602" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1602" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-1603" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1603" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item active" href="#navigation-1604" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1604" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item active" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-1605" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1605" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1606" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1606" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-1607" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1607" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1608" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1608" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1609" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1609" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1610" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1610" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1611" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1611" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1612" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1612" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1613" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1613" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1614" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1614" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1615" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1615" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1616" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1616" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1617" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1617" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Extensiones <span id="extensiones"></span><a href="#extensiones" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#using-extensions">Uso de Extensiones</a></li>
+<li><a href="#creating-extensions">Creación de Extensiones</a></li>
+<li><a href="#core-extensions">Extensiones del Núcleo</a></li></ol></div>
+<p>Las extensiones son paquetes de software redistribuibles diseñados especialmente para ser usados en aplicaciones Yii y
+proporcionar características listas para ser usadas. Por ejemplo, la extensión <a href="guide-tool-debugger.html">yiisoft/yii2-debug</a>
+añade una practica barra de herramientas de depuración (debug toolbar) al final de cada página de la aplicación para
+ayudar a comprender más fácilmente como se han generado las páginas. Se pueden usar extensiones para acelerar el
+proceso de desarrollo. También se puede empaquetar código propio para compartir nuestro trabajo con otra gente.</p>
+<blockquote class="info"><p><strong>Info: </strong>Usamos el termino "extensión" para referirnos a los paquetes específicos de software Yii. Para
+  propósitos generales los paquetes de software pueden usarse sin Yii, nos referiremos a ellos usando los términos
+  "paquetes" (package) o "librerías" (library).</p>
+</blockquote>
+<h2>Uso de Extensiones  <span id="using-extensions"></span><a href="#using-extensions" class="hashlink">&para;</a></h2><p>Para usar una extension, primero tenemos que instalarla. La mayoría de extensiones se usan como paquetes
+<a href="https://getcomposer.org/">Composer</a> que se pueden instalar mediante los dos simples siguientes pasos:</p>
+<ol>
+<li>modificar el archivo <code>composer.json</code> de la aplicación y especificar que extensiones (paquetes Composer) se quieren
+instalar.</li>
+<li>ejecutar <code>composer install</code> para instalar las extensiones especificadas.</li>
+</ol>
+<p>Hay que tener en cuenta que es necesaria la instalación de <a href="https://getcomposer.org/">Composer</a> si no la tenemos
+instalada.</p>
+<p>De forma predeterminada, Composer instala los paquetes registrados en <a href="https://packagist.org/">Packagist</a> que es el
+repositorio más grande de paquetes Composer de código abierto (open source). Se pueden buscar extensiones en
+Packagist. También se puede crear un <a href="https://getcomposer.org/doc/05-repositories.md#repository">repositorio propio</a> y
+configurar Composer para que lo use. Esto es práctico cuando se desarrollan extensiones privadas que se quieran
+compartir a través de otros proyectos.</p>
+<p>Las extensiones instaladas por Composer se almacenan en el directorio <code>BasePath/vendor</code>, donde <code>BasePath</code> hace
+referencia a la <a href="guide-structure-applications.html#basePath">ruta base (base path)</a> de la aplicación. Ya que Composer es un
+gestor de dependencias, cuando se instala un paquete, también se instalarán todos los paquetes de los que dependa.</p>
+<p>Por ejemplo, para instalar la extensión <code>yiisoft/yii2-imagine</code>, modificamos el archivo <code>composer.json</code> como se muestra
+a continuación:</p>
+<pre><code class="hljs json language-json">{
+    // ...
+
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        // ... otras dependencias
+
+        "<span class="hljs-attribute">yiisoft/yii2-imagine</span>": <span class="hljs-value"><span class="hljs-string">"~2.0.0"</span>
+    </span>}
+</span>}
+</code></pre>
+<p>Después de la instalación, debemos encontrar el directorio <code>yiisoft/yii2-imagine</code> dentro del directorio
+<code>BasePath/vendor</code>. También debemos encontrar el directorio <code>imagine/imagine</code> que contiene sus paquetes dependientes
+instalados.</p>
+<blockquote class="info"><p><strong>Info: </strong>La extensión <code>yiisoft/yii2-imagine</code> es una extensión del núcleo (core) desarrollada y mantenida por el
+  equipo de desarrollo de Yii. Todas las extensiones del núcleo se hospedan en <a href="https://packagist.org/">Packagist</a> y
+  son nombradas como <code>yiisoft/yii2-xyz</code>, donde <code>zyz</code> varia según la extensión.</p>
+</blockquote>
+<p>Ahora ya podemos usar las extensiones instaladas como si fueran parte de nuestra aplicación. El siguiente ejemplo
+muestra como se puede usar la clase <code>yii\imagine\Image</code> proporcionada por la extensión <code>yiisoft/yii2-imagine</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">imagine</span>\<span class="hljs-title">Image</span>;
+
+<span class="hljs-comment">// genera una miniatura (thumbnail) de la imagen</span>
+Image::thumbnail(<span class="hljs-string">'@webroot/img/test-image.jpg'</span>, <span class="hljs-number">120</span>, <span class="hljs-number">120</span>)
+    -&gt;save(Yii::getAlias(<span class="hljs-string">'@runtime/thumb-test-image.jpg'</span>), [<span class="hljs-string">'quality'</span> =&gt; <span class="hljs-number">50</span>]);
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>Las clases de extensiones se cargan automáticamente gracias a
+  <a href="guide-concept-autoloading.html">autocarga de clases de Yii</a>.</p>
+</blockquote>
+<h3>Instalación Manual de Extensiones  <span id="installing-extensions-manually"></span><a href="#installing-extensions-manually" class="hashlink">&para;</a></h3><p>En algunas ocasiones excepcionales es posible que tengamos que instalar alguna o todas las extensiones manualmente, en lugar de utilizar Composer. Para lograrlo, debemos:</p>
+<ol>
+<li>descargar los archivos de la extensión y descomprimirlos en la carpeta <code>vendor</code>.</li>
+<li>instalar la clase de autocarga proporcionada por las extensiones, si existe.</li>
+<li>descargar e instalar todas las extensiones dependientes como siguiendo estas mismas instrucciones.</li>
+</ol>
+<p>Si una extensión no proporciona clase de autocarga pero sigue el estándar
+<a href="http://www.php-fig.org/psr/psr-4/">PSR-4</a>,  se puede usar la clase de autocarga proporcionada por Yii para cargar
+automáticamente las clases de las extensiones. Todo lo que se tiene que hacer es declarar un
+<a href="guide-concept-aliases.html#defining-aliases">alias de raíz (root)</a>  para las extensiones del directorio raíz. Por ejemplo,
+asumiendo que tenemos instalada una extensión en el directorio <code>vendor/mycompany/myext</code>, y las clases de extensión se
+encuentran en el namespace <code>myext</code>, entonces podemos incluir el siguiente código en nuestra configuración de
+aplicación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@myext'</span> =&gt; <span class="hljs-string">'@vendor/mycompany/myext'</span>,
+    ],
+]
+</code></pre>
+<h2>Creación de Extensiones  <span id="creating-extensions"></span><a href="#creating-extensions" class="hashlink">&para;</a></h2><p>Podemos considerar la creación de una extensión cuando tengamos la necesidad de compartir nuestro código. Cada
+extensión puede contener el código que se desee, puede ser una clase de ayuda (helper class), un widget, un módulo,
+etc.</p>
+<p>Se recomienda crear una extensión como <a href="https://getcomposer.org/">paquetes de Composer</a> para que sea se pueda
+instalarse más fácilmente por los otros usuarios, como se ha descrito en la anterior subsección.</p>
+<p>Más adelante se encuentran los pasos básicos que deben seguirse para crear una extensión como paquete Composer.</p>
+<ol>
+<li>Crear un proyecto para la extensión y alojarlo en un repositorio con VCS (Sistema de Control de Versiones), como
+puede ser <a href="https://github.com">github.com</a>. El trabajo de desarrollo y el mantenimiento debe efectuarse en este
+repositorio.</li>
+<li>En el directorio raíz del repositorio debe encontrarse el archivo <code>composer.json</code> que es requerido por Composer. Se
+pueden encontrar más detalles en la siguiente subsección.</li>
+<li>Registrar la extensión en un repositorio de Composer como puede ser <a href="https://packagist.org/">Packagist</a>, para que
+los otros usuarios puedan encontrarlo e instalarla mediante Composer.</li>
+</ol>
+<h3><code>composer.json</code>  <span id="composer-json"></span><a href="#composer-json" class="hashlink">&para;</a></h3><p>Cada paquete de Composer tiene que tener un archivo <code>composer.json</code> en su directorio raíz. El archivo contiene los
+metadatos relacionados con el paquete. Se pueden encontrar especificaciones completas acerca de este fichero en el
+<a href="https://getcomposer.org/doc/01-basic-usage.md#composer-json-project-setup">Manual de Composer</a>. El siguiente ejemplo
+muestra el archivo <code>composer.json</code> para la extensión <code>yiisoft/yii2-imagine</code>:</p>
+<pre><code class="hljs json language-json">{
+    // nombre del paquete
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"yiisoft/yii2-imagine"</span></span>,
+
+    // tipo de paquete
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"yii2-extension"</span></span>,
+
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"The Imagine integration for the Yii framework"</span></span>,
+    "<span class="hljs-attribute">keywords</span>": <span class="hljs-value">[<span class="hljs-string">"yii2"</span>, <span class="hljs-string">"imagine"</span>, <span class="hljs-string">"image"</span>, <span class="hljs-string">"helper"</span>]</span>,
+    "<span class="hljs-attribute">license</span>": <span class="hljs-value"><span class="hljs-string">"BSD-3-Clause"</span></span>,
+    "<span class="hljs-attribute">support</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">issues</span>": <span class="hljs-value"><span class="hljs-string">"https://github.com/yiisoft/yii2/issues?labels=ext%3Aimagine"</span></span>,
+        "<span class="hljs-attribute">forum</span>": <span class="hljs-value"><span class="hljs-string">"http://www.yiiframework.com/forum/"</span></span>,
+        "<span class="hljs-attribute">wiki</span>": <span class="hljs-value"><span class="hljs-string">"http://www.yiiframework.com/wiki/"</span></span>,
+        "<span class="hljs-attribute">irc</span>": <span class="hljs-value"><span class="hljs-string">"irc://irc.freenode.net/yii"</span></span>,
+        "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"https://github.com/yiisoft/yii2"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">authors</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Antonio Ramirez"</span></span>,
+            "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"amigo.cobos@gmail.com"</span>
+        </span>}
+    ]</span>,
+
+    // dependencias del paquete
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">yiisoft/yii2</span>": <span class="hljs-value"><span class="hljs-string">"~2.0.0"</span></span>,
+        "<span class="hljs-attribute">imagine/imagine</span>": <span class="hljs-value"><span class="hljs-string">"v0.5.0"</span>
+    </span>}</span>,
+
+    // especificaciones de la autocarga de clases
+    "<span class="hljs-attribute">autoload</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">psr-4</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">yii\\imagine\\</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+        </span>}
+    </span>}
+</span>}
+</code></pre>
+<h4>Nombre del Paquete <span id="package-name"></span><a href="#package-name" class="hashlink">&para;</a></h4><p>Cada paquete Composer debe tener un nombre de paquete que identifique de entre todos los otros paquetes. El formato
+del nombre del paquete es <code>nombreProveedor/nombreProyecto</code>. Por ejemplo, el nombre de paquete <code>yiisoft/yii2-imagine</code>,
+el nombre del proveedor es <code>yiisoft</code> y el nombre del proyecto es <code>yii2-imagine</code>.</p>
+<p>NO se puede usar el nombre de proveedor <code>yiisoft</code> ya que está reservado para el usarse para el código del núcleo
+(core) de Yii.</p>
+<p>Recomendamos usar el prefijo <code>yii2-</code> al nombre del proyecto para paquetes que representen extensiones de Yii 2, por
+ejemplo, <code>minombre/yii2-miwidget</code>. Esto permite ver a los usuarios más fácilmente si un paquete es una extensión de
+Yii 2.</p>
+<h4>Tipo de Paquete  <span id="package-type"></span><a href="#package-type" class="hashlink">&para;</a></h4><p>Es importante que se especifique el tipo del paquete de la extensión como <code>yii2-extension</code> para que el paquete pueda
+ser reconocido como una extensión de Yii cuando se esté instalando.</p>
+<p>Cuando un usuario ejecuta <code>composer install</code> para instalar una extensión, el archivo <code>vendor/yiisoft/extensions.php</code>
+se actualizará automáticamente para incluir la información acerca de la nueva extensión. Desde este archivo, las
+aplicaciones Yii pueden saber que extensiones están instaladas. (se puede acceder a esta información mediante
+<span class="broken-link">yii\base\Application::extensions</span>).</p>
+<h4>Dependencias  <span id="dependencies"></span><a href="#dependencies" class="hashlink">&para;</a></h4><p>La extensión depende de Yii (por supuesto). Por ello se debe añadir (<code>yiisoft/yii2</code>) a la lista en la entrada
+<code>required</code> del archivo <code>composer.json</code>. Si la extensión también depende de otras extensiones o de terceras
+(third-party) librerías, también se deberán listar. Debemos asegurarnos de anotar las restricciones de versión
+apropiadas (ej. <code>1.*</code>, <code>@stable</code>) para cada paquete dependiente. Se deben usar dependencias estables en versiones
+estables de nuestras extensiones.</p>
+<p>La mayoría de paquetes JavaScript/CSS se gestionan usando <a href="http://bower.io/">Bower</a> y/o <a href="https://www.npmjs.org/">NPM</a>,
+en lugar de Composer. Yii utiliza el <a href="https://github.com/francoispluchino/composer-asset-plugin">Composer asset plugin</a>
+ para habilitar la gestión de estos tipos de paquetes a través de Composer. Si la extensión depende de un paquete
+ Bower, se puede, simplemente, añadir la dependencia de el archivo <code>composer.json</code> como se muestra a continuación:</p>
+<pre><code class="hljs json language-json">{
+    // dependencias del paquete
+    "<span class="hljs-attribute">require</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">bower-asset/jquery</span>": <span class="hljs-value"><span class="hljs-string">"&gt;=1.11.*"</span>
+    </span>}
+</span>}
+</code></pre>
+<p>El código anterior declara que tela extensión depende del paquete Bower <code>jquery</code>. En general, se puede usar
+<code>bower-asset/NombrePaquete</code> para referirse al paquete en <code>composer.json</code>, y usar <code>npm-asset/NombrePaquete</code> para
+referirse a paquetes NPM. Cuando Composer instala un paquete Bower o NPM, de forma predeterminada los contenidos de
+los paquetes se instalarán en <code>@vendor/bower/NombrePaquete</code> y <code>@vendor/npm/Packages</code> respectivamente. Podemos hacer
+referencia a estos dos directorios usando los alias <code>@bower/NombrePaquete</code> and <code>@npm/NombrePaquete</code>.</p>
+<p>Para obtener más detalles acerca de la gestión de assets, puede hacerse referencia a la sección
+<a href="guide-structure-assets.html#bower-npm-assets">Assets</a>.</p>
+<h4>Autocarga de Clases  <span id="class-autoloading"></span><a href="#class-autoloading" class="hashlink">&para;</a></h4><p>Para que se aplique la autocarga a clases propias mediante la autocarga de clases de Yii o la autocarga de clases de
+Composer, debemos especificar la entrada <code>autoload</code> en el archivo <code>composer.json</code> como se puede ver a continuación:</p>
+<pre><code class="hljs json language-json">{
+    // ....
+
+    "<span class="hljs-attribute">autoload</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">psr-4</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">yii\\imagine\\</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+        </span>}
+    </span>}
+</span>}
+</code></pre>
+<p>Se pueden añadir una o más namespaces raíz y sus correspondientes rutas de archivo.</p>
+<p>Cuando se instala la extensión en una aplicación, Yii creara un <a href="guide-concept-aliases.html#extension-aliases">alias</a> para
+todos los namespaces raíz, que harán referencia al directorio correspondiente del namespace. Por ejemplo, la anterior
+declaración <code>autoload</code> corresponderá a un alias llamado <code>@yii/imagine</code>.</p>
+<h3>Prácticas Recomendadas  <span id="recommended-practices"></span><a href="#recommended-practices" class="hashlink">&para;</a></h3><p>Dado que las extensiones están destinadas a ser utilizadas por otras personas, a menudo es necesario hacer un esfuerzo
+extra durante el desarrollo. A continuación presentaremos algunas practicas comunes y recomendadas para la creación de
+extensiones de alta calidad.</p>
+<h4>Namespaces  <span id="namespaces"></span><a href="#namespaces" class="hashlink">&para;</a></h4><p>Para evitar colisiones de nombres y permitir que las clases usen la autocarga en extensiones propias, se deben usar
+namespaces y nombres de clase siguiendo el <a href="http://www.php-fig.org/psr/psr-4/">estándar PSR-4</a> o el
+<a href="http://www.php-fig.org/psr/psr-0/">estándar PSR-0</a>.</p>
+<p>Los namespaces de clases propias deben empezar por <code>NombreProveedor\NombreExtension</code> donde <code>NombreExtension</code> es
+similar al nombre del paquete pero este no debe contener el prefijo <code>yii2-</code>. Por ejemplo, para la extensión
+<code>yiisoft/yii2-imagine</code>, usamos <code>yii\imagine</code> como namespace para sus clases.</p>
+<p>No se puede usar <code>yii</code>, <code>yii2</code> o <code>yiisoft</code> como nombre de proveedor. Estos nombres están reservados para usarse en el
+código del núcleo de Yii.</p>
+<h4>Clases de Bootstrapping  <span id="bootstrapping-classes"></span><a href="#bootstrapping-classes" class="hashlink">&para;</a></h4><p>A veces, se puede querer que nuestras extensiones ejecuten algo de código durante el
+<a href="guide-runtime-bootstrapping.html">proceso de bootstrapping</a> de una aplicación. Por ejemplo, queremos que nuestra extensión
+responda a un evento <code>beginRequest</code> de la aplicación para ajustar alguna configuración de entorno. Aunque podemos
+indicar a los usuarios de la extensión que añadan nuestro gestor de eventos para que capture <code>beginRequest</code>, es mejor
+hacerlo automáticamente.</p>
+<p>Para llevarlo a cabo, podemos crear una <em>clase de bootstrpping</em> para implementar <span class="broken-link">yii\base\BootstrapInterface</span>. Por
+ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">myname</span>\<span class="hljs-title">mywidget</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">BootstrapInterface</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Application</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyBootstrapClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BootstrapInterface</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bootstrap</span><span class="hljs-params">(<span class="hljs-variable">$app</span>)</span>
+    </span>{
+        <span class="hljs-variable">$app</span>-&gt;on(Application::EVENT_BEFORE_REQUEST, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+             <span class="hljs-comment">// do something here</span>
+        });
+    }
+}
+</code></pre>
+<p>Entonces se tiene que añadir esta clase en la lista del archivo <code>composer.json</code> de la extensión propia como se muestra
+a continuación,</p>
+<pre><code class="hljs json language-json">{
+    // ...
+
+    "<span class="hljs-attribute">extra</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">bootstrap</span>": <span class="hljs-value"><span class="hljs-string">"myname\\mywidget\\MyBootstrapClass"</span>
+    </span>}
+</span>}
+</code></pre>
+<p>Cuando se instala la extensión en la aplicación, Yii automáticamente instancia la clase de bootstrapping y llama a su
+método <span class="broken-link">yii\base\BootstrapInterface::bootstrap()</span> durante el proceso de bootstrapping para cada petición.</p>
+<h4>Trabajar con Bases de Datos <span id="working-with-databases"></span><a href="#working-with-databases" class="hashlink">&para;</a></h4><p>Puede darse el caso en que la extensión necesite acceso a bases de datos. No se debe asumir que las aplicaciones que
+usen la extensión siempre usarán <code>Yii::$db</code> como conexión de BBDD. Se debe crear una propiedad <code>db</code> para las clases
+que requieran acceso a BBDD. La propiedad permitirá a los usuarios de nuestra extensión elegir que conexión quieren
+que use nuestra extensión. Como ejemplo, se puede hacer referencia a la clase <span class="broken-link">yii\caching\DbCache</span> y observar como
+declara y utiliza la propiedad <code>db</code>.</p>
+<p>Si nuestra extensión necesita crear tablas especificas en la BBDD o hacer cambios en el esquema de la BBDD, debemos:</p>
+<ul>
+<li>proporcionar <a href="guide-db-migrations.html">migraciones</a> para manipular el esquema de la BBDD, en lugar de utilizar archivos con
+sentencias SQL;</li>
+<li>intentar hacer las migraciones aplicables a varios Sistemas de Gestión de BBDD;</li>
+<li>evitar usar <a href="guide-db-active-record.html">Active Record</a> en las migraciones.</li>
+</ul>
+<h4>Uso de Assets  <span id="using-assets"></span><a href="#using-assets" class="hashlink">&para;</a></h4><p>Si nuestra aplicación es un widget o un módulo, hay posibilidades de que requiera <a href="guide-structure-assets.html">assets</a> para
+poder funcionar. Por ejemplo, un modulo puede mostrar algunas páginas de que contengan archivos JavaScript y/o CSS.
+Debido a que los archivos de las extensiones se encuentran en la misma ubicación y no son accesibles por la Web cuando
+se instalan en una aplicación, hay dos maneras de hacer los assets accesibles vía Web:</p>
+<ul>
+<li>pedir a los usuarios que copien manualmente los archivos assets en un directorio público de la Web.</li>
+<li>declarar un <a href="guide-structure-assets.html">asset bundle</a> dejar que el mecanismo de publicación se encargue automáticamente de
+copiar los archivos que se encuentren en el asset bundle a un directorio Web público.</li>
+</ul>
+<p>Recomendamos el uso de la segunda propuesta para que la extensión sea más fácil de usar para usuarios. Se puede hacer
+referencia a la sección <a href="guide-structure-assets.html">Assets</a> para encontrar más detalles acerca de como trabajar con ellos.</p>
+<h4>Internacionalización y Localización  <span id="i18n-l10n"></span><a href="#i18n-l10n" class="hashlink">&para;</a></h4><p>Puede que las extensiones propias se usen en aplicaciones que den soporte a diferentes idiomas! Por ello, si nuestra
+extensión muestra contenido a los usuarios finales, se debe intentar <a href="guide-tutorial-i18n.html">internacionalizar y localizar</a>
+la extensión. En particular,</p>
+<ul>
+<li>Si la extensión muestra mensajes destinados a usuarios finales, los mensajes deben mostrarse usando <code>Yii::t()</code> para
+que puedan ser traducidos. Los mensajes dirigidos a desarrolladores (como mensajes de excepciones internas) no
+necesitan ser traducidos.</li>
+<li>Si la extensión muestra números, fechas, etc., deben ser formateados usando <span class="broken-link">yii\i18n\Formatter</span> siguiendo las
+reglas de formato adecuadas.</li>
+</ul>
+<p>Se pueden encontrar más detalles en la sección <a href="guide-tutorial-i18n.html">internacionalización</a>.</p>
+<h4>Testing  <span id="testing"></span><a href="#testing" class="hashlink">&para;</a></h4><p>Para conseguir que las aplicaciones propias se ejecuten sin problemas y no causen problemas a otros usuarios, deben
+ejecutarse test a las extensiones antes de ser publicadas al público.</p>
+<p>Se recomienda crear varios casos de prueba (test cases) para probar el código de nuestra extensión en lugar de
+ejecutar pruebas manuales. Cada vez que se vaya a lanzar una nueva versión, simplemente podemos ejecutar estos casos
+de prueba para asegurarnos de que todo está correcto. Yii proporciona soporte para testing que puede ayudar a escribir
+pruebas unitarias (unit tests), pruebas de aceptación (acceptance tests) y pruebas de funcionalidad
+(functionality tests), más fácilmente. Se pueden encontrar más detalles en la sección <a href="guide-test-overview.html">Testing</a>.</p>
+<h4>Versiones  <span id="versioning"></span><a href="#versioning" class="hashlink">&para;</a></h4><p>Se debe asignar un número de versión cada vez que se lance una nueva distribución. (ej. <code>1.0.1</code>). Recomendamos
+seguir la práctica <a href="http://semver.org/lang/es/">Versionamiento Semántico</a> para determinar que números se deben usar.</p>
+<h4>Lanzamientos  <span id="releasing"></span><a href="#releasing" class="hashlink">&para;</a></h4><p>Para dar a conocer nuestra extensión a terceras personas, debemos lanzara al público.</p>
+<p>Si es la primera vez que se realiza un lanzamiento de una extensión, debemos registrarla en un repositorio Composer
+como puede ser <a href="https://packagist.org/">Packagist</a>. Después de estos, todo lo que tenemos que hacer es crear una
+etiqueta (tag) (ej. <code>v1.0.1</code>) en un repositorio con VCS (Sistema de Control de Versiones) y notificarle al
+repositorio Composer el nuevo lanzamiento. Entonces la gente podrá encontrar el nuevo lanzamiento y instalar o
+actualizar la extensión a mediante el repositorio Composer.</p>
+<p>En los lanzamientos de una extensión, además de archivos de código, también se debe considerar la inclusión los puntos
+mencionados a continuación para facilitar a otra gente el uso de nuestra extensión:</p>
+<ul>
+<li>Un archivo léame (readme) en el directorio raíz: describe que hace la extensión y como instalarla y utilizarla.
+Recomendamos que se escriba en formato <a href="http://daringfireball.net/projects/markdown/">Markdown</a> y llamarlo
+<code>readme.md</code>.</li>
+<li>Un archivo de registro de cambios (changelog) en el directorio raíz: enumera que cambios se realizan en cada
+lanzamiento. El archivo puede escribirse en formato Markdown y llamarlo <code>changelog.md</code>.</li>
+<li>Un archivo de actualización (upgrade) en el directorio raíz: da instrucciones de como actualizar desde lanzamientos
+antiguos de la extensión. El archivo puede escribirse en formato Markdown y llamarlo <code>upgrade.md</code>.</li>
+<li>Tutoriales, demostraciones, capturas de pantalla, etc: son necesarios si nuestra extensión proporciona muchas
+características que no pueden ser detalladas completamente en el archivo <code>readme</code>.</li>
+<li>Documentación de API: el código debe documentarse debidamente para que otras personas puedan leerlo y entenderlo
+fácilmente. Más información acerca de documentación de código en
+<a href="https://github.com/yiisoft/yii2/blob/master/framework/base/Object.php">archivo de Objetos de clase</a></li>
+</ul>
+<blockquote class="info"><p><strong>Info: </strong>Los comentarios de código pueden ser escritos en formato Markdown. La extensión <code>yiisoft/yii2-apidoc</code>
+  proporciona una herramienta para generar buena documentación de API basándose en los comentarios del código.</p>
+</blockquote>
+<blockquote class="info"><p><strong>Info: </strong>Aunque no es un requerimiento, se recomienda que la extensión se adhiera a ciertos estilos de
+  codificación. Se puede hacer referencia a
+  <a href="https://github.com/yiisoft/yii2/wiki/Core-framework-code-style">estilo de código del núcleo del framework</a> para
+  obtener más detalles.</p>
+</blockquote>
+<h2>Extensiones del Núcleo  <span id="core-extensions"></span><a href="#core-extensions" class="hashlink">&para;</a></h2><p>Yii proporciona las siguientes extensiones del núcleo que son desarrolladas y mantenidas por el equipo de desarrollo
+de Yii. Todas ellas están registradas en <a href="https://packagist.org/">Packagist</a> y pueden ser instaladas fácilmente como
+se describe en la subsección <a href="#using-extensions">Uso de Extensiones</a></p>
+<ul>
+<li><a href="https://github.com/yiisoft/yii2-apidoc">yiisoft/yii2-apidoc</a>:proporciona un generador de documentación de APIs
+extensible y de de alto rendimiento.</li>
+<li><a href="https://github.com/yiisoft/yii2-authclient">yiisoft/yii2-authclient</a>:proporciona un conjunto de clientes de
+autorización tales como el cliente OAuth2 de Facebook, el cliente GitHub OAuth2.</li>
+<li><a href="https://github.com/yiisoft/yii2-bootstrap">yiisoft/yii2-bootstrap</a>: proporciona un conjunto de widgets que
+encapsulan los componentes y plugins de <a href="http://getbootstrap.com/">Bootstrap</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-codeception">yiisoft/yii2-codeception</a>: proporciona soporte de testing basado en
+<a href="http://codeception.com/">Codeception</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-debug">yiisoft/yii2-debug</a>: proporciona soporte de depuración para aplicaciones
+Yii. Cuando se usa esta extensión, aparece una barra de herramientas de depuración en la parte inferior de cada
+página. La extensión también proporciona un conjunto de páginas para mostrar información detallada de depuración.</li>
+<li><a href="https://github.com/yiisoft/yii2-elasticsearch">yiisoft/yii2-elasticsearch</a>: proporciona soporte para usar
+<a href="http://www.elasticsearch.org/">Elasticsearch</a>. Incluye soporte básico para realizar consultas/búsquedas y también
+implementa patrones de <a href="guide-db-active-record.html">Active Record</a> que permiten y permite guardar los <code>active records</code> en
+Elasticsearch.</li>
+<li><a href="https://github.com/yiisoft/yii2-faker">yiisoft/yii2-faker</a>: proporciona soporte para usar
+<a href="https://github.com/fzaninotto/Faker">Faker</a> y generar datos automáticamente.</li>
+<li><a href="https://github.com/yiisoft/yii2-gii">yiisoft/yii2-gii</a>: proporciona un generador de código basado den Web altamente
+extensible y que puede usarse para generar modelos, formularios, módulos, CRUD, etc. rápidamente.</li>
+<li><a href="https://github.com/yiisoft/yii2-httpclient">yiisoft/yii2-httpclient</a>:
+provides an HTTP client.</li>
+<li><a href="https://github.com/yiisoft/yii2-imagine">yiisoft/yii2-imagine</a>: proporciona funciones comunes de manipulación de
+imágenes basadas en <a href="http://imagine.readthedocs.org/">Imagine</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-jui">yiisoft/yii2-jui</a>: proporciona un conjunto de widgets que encapsulan las
+iteraciones y widgets de <a href="http://jqueryui.com/">JQuery UI</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-mongodb">yiisoft/yii2-mongodb</a>: proporciona soporte para utilizar
+<a href="http://www.mongodb.org/">MongoDB</a>. incluye características como consultas básicas, Active Record, migraciones,
+caching, generación de código, etc.</li>
+<li><a href="https://github.com/yiisoft/yii2-redis">yiisoft/yii2-redis</a>: proporciona soporte para utilizar
+<a href="http://redis.io/">redis</a>. incluye características como consultas básicas, Active Record, caching, etc.</li>
+<li><a href="https://github.com/yiisoft/yii2-smarty">yiisoft/yii2-smarty</a>: proporciona un motor de plantillas basado en
+<a href="http://www.smarty.net/">Smarty</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-sphinx">yiisoft/yii2-sphinx</a>: proporciona soporte para utilizar
+<a href="http://sphinxsearch.com">Sphinx</a>. incluye características como consultas básicas, Active Record, code generation,
+etc.</li>
+<li><a href="https://github.com/yiisoft/yii2-swiftmailer">yiisoft/yii2-swiftmailer</a>: proporciona características de envío de
+correos electrónicos basadas en <a href="http://swiftmailer.org/">swiftmailer</a>.</li>
+<li><a href="https://github.com/yiisoft/yii2-twig">yiisoft/yii2-twig</a>: proporciona un motor de plantillas basado en
+<a href="http://twig.sensiolabs.org/">Twig</a>.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

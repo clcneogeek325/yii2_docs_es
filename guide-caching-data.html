@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Caché de datos - Caché - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w610" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w610-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w610-collapse" class="collapse navbar-collapse"><ul id="w611" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-594" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-594" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-595" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-595" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-596" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-596" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-597" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-597" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-598" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-598" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-599" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-599" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-600" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-600" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-601" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-601" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-602" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-602" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item active" href="#navigation-603" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-603" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item active" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-604" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-604" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-605" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-605" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-606" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-606" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-607" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-607" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-608" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-608" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-609" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-609" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Almacenamiento de Datos en Caché <span id="almacenamiento-de-datos-en-cache"></span><a href="#almacenamiento-de-datos-en-cache" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#cache-components">Componentes de Caché</a></li>
+<li><a href="#cache-apis">API de Caché</a></li>
+<li><a href="#query-caching">Consultas en Caché</a></li></ol></div>
+<p>El almacenamiento de datos en caché trata del almacenamiento de alguna variable PHP en caché y recuperarla más tarde del mismo. También es la base de algunas de las características avanzadas de almacenamiento en caché, tales como <a href="#query-caching">el almacenamiento en caché de consultas a la base de datos</a> y <a href="guide-caching-page.html">el almacenamiento en caché de contenido</a>.</p>
+<p>El siguiente código muestra el típico patrón de uso para el almacenamiento en caché, donde la variable <code>$cache</code> se refiere al <a href="#cache-components">componente caché</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// intenta recuperar $data de la caché</span>
+<span class="hljs-variable">$data</span> = <span class="hljs-variable">$cache</span>-&gt;get(<span class="hljs-variable">$key</span>);
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$data</span> === <span class="hljs-keyword">false</span>) {
+
+    <span class="hljs-comment">// $data no ha sido encontrada en la caché, calcularla desde cero</span>
+
+    <span class="hljs-comment">// guardar $data en caché para así recuperarla la próxima vez</span>
+    <span class="hljs-variable">$cache</span>-&gt;set(<span class="hljs-variable">$key</span>, <span class="hljs-variable">$data</span>);
+}
+
+<span class="hljs-comment">// $data está disponible aquí</span>
+</code></pre>
+<h2>Componentes de Caché  <span id="cache-components"></span><a href="#cache-components" class="hashlink">&para;</a></h2><p>El almacenamiento de datos en caché depende de los llamados <em>cache components</em> (componentes de caché) los cuales
+representan diferentes tipos de almacenamiento en caché, como por ejemplo en memoria, en archivos o en base de datos.</p>
+<p>Los Componentes de Caché están normalmente registrados como <a href="guide-structure-application-components.html">componentes de la aplicación</a> para que de esta forma puedan
+ser configurados y accesibles globalmente. El siguiente código muestra cómo configurar el componente de aplicación
+<code>cache</code> para usar <a href="http://memcached.org/">memcached</a> con dos servidores caché:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\MemCache'</span>,
+        <span class="hljs-string">'servers'</span> =&gt; [
+            [
+                <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'server1'</span>,
+                <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>,
+                <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">100</span>,
+            ],
+            [
+                <span class="hljs-string">'host'</span> =&gt; <span class="hljs-string">'server2'</span>,
+                <span class="hljs-string">'port'</span> =&gt; <span class="hljs-number">11211</span>,
+                <span class="hljs-string">'weight'</span> =&gt; <span class="hljs-number">50</span>,
+            ],
+        ],
+    ],
+],
+</code></pre>
+<p>Puedes acceder al componente de caché usando la expresión  <code>Yii::$app-&gt;cache</code>.</p>
+<p>Debido a que todos los componentes de caché soportan el mismo conjunto de APIs, podrías cambiar el componente de caché
+subyacente por otro diferente mediante su reconfiguración en la configuración de la aplicación sin tener que modificar
+el código que utiliza la caché. Por ejemplo, podrías modificar la configuración anterior para usar <span class="broken-link">yii\caching\ApcCache</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\ApcCache'</span>,
+    ],
+],
+</code></pre>
+<blockquote class="tip"><p><strong>Tip: </strong>Puedes registrar múltiples componentes de aplicación de caché. El componente llamado <code>cache</code> es usado por defecto por muchas clases caché-dependiente (ej. <span class="broken-link">yii\web\UrlManager</span>).</p>
+</blockquote>
+<h3>Almacenamientos de Caché Soportados  <span id="supported-cache-storage"></span><a href="#supported-cache-storage" class="hashlink">&para;</a></h3><p>Yii proporciona varios componentes de caché que pueden almacenar datos en diferentes medios. A continuación
+se muestra un listado con los componentes de caché disponibles:</p>
+<ul>
+<li><span class="broken-link">yii\caching\ApcCache</span>: utiliza la extensión de PHP <a href="http://php.net/manual/es/book.apc.php">APC</a>. Esta opción puede ser considerada como la más rápida de entre todas las disponibles para una aplicación centralizada. (ej. un servidor, no dedicado al balance de carga, etc).</li>
+<li><span class="broken-link">yii\caching\DbCache</span>: utiliza una tabla de base de datos para almacenar los datos. Por defecto, se creará y usará como base de datos <a href="http://sqlite.org/">SQLite3</a> en el directorio runtime. Se puede especificar explícitamente que base de datos va a ser utilizada configurando la propiedad <code>db</code>.</li>
+<li><span class="broken-link">yii\caching\DummyCache</span>: dummy cache (caché tonta) que no almacena en caché nada. El propósito de este componente es simplificar el código necesario para chequear la disponibilidad de caché. Por ejemplo, durante el desarrollo o si el servidor no tiene soporte de caché actualmente, puede utilizarse este componente de caché. Cuando este disponible un soporte en caché, puede cambiarse el componente correspondiente. En ambos casos, puede utilizarse el mismo código <code>Yii::$app-&gt;cache-&gt;get($key)</code> para recuperar un dato sin la preocupación de que <code>Yii::$app-&gt;cache</code> pueda ser <code>null</code>.</li>
+<li><span class="broken-link">yii\caching\FileCache</span>: utiliza un fichero estándar para almacenar los datos. Esto es adecuado para almacenar grandes bloques de datos (como páginas).</li>
+<li><span class="broken-link">yii\caching\MemCache</span>: utiliza las extensiones de PHP <a href="http://php.net/manual/es/book.memcache.php">memcache</a> y <a href="http://php.net/manual/es/book.memcached.php">memcached</a>. Esta opción puede ser considerada como la más rápida cuando la caché es manejada en una aplicación distribuida (ej. con varios servidores, con balance de carga, etc..)</li>
+<li><span class="broken-link">yii\redis\Cache</span>: implementa un componente de caché basado en <a href="http://redis.io/">Redis</a> que almacenan pares clave-valor (requiere la versión 2.6.12 de redis).</li>
+<li><span class="broken-link">yii\caching\WinCache</span>: utiliza la extensión de PHP <a href="http://iis.net/downloads/microsoft/wincache-extension">WinCache</a> (<a href="http://php.net/manual/es/book.wincache.php">ver también</a>).</li>
+<li><span class="broken-link">yii\caching\XCache</span>: utiliza la extensión de PHP <a href="http://xcache.lighttpd.net/">XCache</a>.</li>
+<li><span class="broken-link">yii\caching\ZendDataCache</span>: utiliza <a href="http://files.zend.com/help/Zend-Server-6/zend-server.htm#data_cache_component.htm">Zend Data Cache</a> como el medio fundamental de caché.</li>
+</ul>
+<blockquote class="tip"><p><strong>Tip: </strong>Puedes utilizar diferentes tipos de almacenamiento de caché en la misma aplicación. Una estrategia común es la de usar almacenamiento de caché en memoria para almacenar datos que son pequeños pero que son utilizados constantemente (ej. datos estadísticos), y utilizar el almacenamiento de caché en archivos o en base de datos para guardar datos que son grandes y utilizados con menor frecuencia (ej. contenido de página).</p>
+</blockquote>
+<h2>API de Caché  <span id="cache-apis"></span><a href="#cache-apis" class="hashlink">&para;</a></h2><p>Todos los componentes de almacenamiento de caché provienen de la misma clase "padre" <span class="broken-link">yii\caching\Cache</span> y por lo tanto soportan la siguiente API:</p>
+<ul>
+<li><span class="broken-link">yii\caching\Cache::get()</span>: recupera un elemento de datos de la memoria caché con una clave especificada.
+Un valor nulo será devuelto si el elemento de datos no ha sido encontrado en la memoria caché o si ha expirado o ha sido invalidado.</li>
+<li><span class="broken-link">yii\caching\Cache::set()</span>: almacena un elemento de datos identificado por una clave en la memoria caché.</li>
+<li><span class="broken-link">yii\caching\Cache::add()</span>: almacena un elemento de datos identificado por una clave en la memoria caché si la clave no se encuentra en la memoria caché.</li>
+<li><span class="broken-link">yii\caching\Cache::mget()</span>: recupera varios elementos de datos de la memoria caché con las claves especificadas.</li>
+<li><span class="broken-link">yii\caching\Cache::mset()</span>: almacena múltiples elementos de datos en la memoria caché. Cada elemento se identifica por una clave.</li>
+<li><span class="broken-link">yii\caching\Cache::madd()</span>: almacena múltiples elementos de datos en la memoria caché. Cada elemento se identifica con una clave. Si una clave ya existe en la caché, el elemento será omitido.</li>
+<li><span class="broken-link">yii\caching\Cache::exists()</span>: devuelve un valor que indica si la clave especificada se encuentra en la memoria caché.</li>
+<li><span class="broken-link">yii\caching\Cache::delete()</span>: elimina un elemento de datos identificado por una clave de la caché.</li>
+<li><span class="broken-link">yii\caching\Cache::flush()</span>: elimina todos los elementos de datos de la cache.</li>
+</ul>
+<blockquote class="note"><p><strong>Note: </strong>No Almacenes el valor boolean <code>false</code> en caché directamente porque el método <span class="broken-link">yii\caching\Cache::get()</span> devuelve
+el valor <code>false</code> para indicar que el dato no ha sido encontrado en la caché. Puedes poner <code>false</code> dentro de un array y cachear
+este array para evitar este problema.</p>
+</blockquote>
+<p>Algunos sistemas de almacenamiento de caché, como por ejemplo MemCache, APC, pueden recuperar múltiples valores almacenados en modo de lote (batch), lo que puede reducir considerablemente la sobrecarga que implica la recuperación de datos almacenados en la caché. Las API <span class="broken-link">yii\caching\Cache::mget()</span> y  <span class="broken-link">yii\caching\Cache::madd()</span>
+se proporcionan para utilizar esta característica. En el caso de que el sistema de memoria caché no lo soportara, ésta sería simulada.</p>
+<p>Puesto que <span class="broken-link">yii\caching\Cache</span> implementa <code>ArrayAccess</code>, un componente de caché puede ser usado como un array.
+El siguiente código muestra unos ejemplos:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$cache</span>[<span class="hljs-string">'var1'</span>] = <span class="hljs-variable">$value1</span>;  <span class="hljs-comment">// equivalente a: $cache-&gt;set('var1', $value1);</span>
+<span class="hljs-variable">$value2</span> = <span class="hljs-variable">$cache</span>[<span class="hljs-string">'var2'</span>];  <span class="hljs-comment">// equivalente a: $value2 = $cache-&gt;get('var2');</span>
+</code></pre>
+<h3>Claves de Caché  <span id="cache-keys"></span><a href="#cache-keys" class="hashlink">&para;</a></h3><p>Cada elemento de datos almacenado en caché se identifica por una clave. Cuando se almacena un elemento de datos en la memoria caché, se debe especificar una clave. Más tarde, cuando se recupera el elemento de datos de la memoria caché, se debe proporcionar la clave correspondiente.</p>
+<p>Puedes utilizar una cadena o un valor arbitrario como una clave de caché. Cuando una clave no es una cadena de texto, ésta será automáticamente serializada en una cadena.</p>
+<p>Una estrategia común para definir una clave de caché es incluir en ella todos los factores determinantes en términos de un array. Por ejemplo, <span class="broken-link">yii\db\Schema</span> utiliza la siguiente clave para almacenar en caché la información del esquema de una tabla de base de datos:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-keyword">__CLASS__</span>,              <span class="hljs-comment">// nombre de la clase del esquema</span>
+    <span class="hljs-variable">$this</span>-&gt;db-&gt;dsn,         <span class="hljs-comment">// nombre del origen de datos de la conexión BD</span>
+    <span class="hljs-variable">$this</span>-&gt;db-&gt;username,    <span class="hljs-comment">// usuario para la conexión BD</span>
+    <span class="hljs-variable">$name</span>,                  <span class="hljs-comment">// nombre de la tabla</span>
+];
+</code></pre>
+<p>Como puedes ver, la clave incluye toda la información necesaria para especificar de una forma exclusiva una tabla de base de datos.</p>
+<p>Cuando en un mismo almacenamiento en caché es utilizado por diferentes aplicaciones, se debería especificar un prefijo único para las claves de la caché por cada una de las aplicaciones para así evitar conflictos. Esto puede hacerse mediante la configuración de la propiedad <span class="broken-link">yii\caching\Cache::keyPrefix</span>. Por ejemplo, en la configuración de la aplicación podrías escribir el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'components'</span> =&gt; [
+    <span class="hljs-string">'cache'</span> =&gt; [
+        <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\caching\ApcCache'</span>,
+        <span class="hljs-string">'keyPrefix'</span> =&gt; <span class="hljs-string">'myapp'</span>,       <span class="hljs-comment">// un prefijo de clave de caché único</span>
+    ],
+],
+</code></pre>
+<p>Para garantizar la interoperabilidad, deberían utilizarse sólo caracteres alfanuméricos.</p>
+<h3>Caducidad de Caché  <span id="cache-expiration"></span><a href="#cache-expiration" class="hashlink">&para;</a></h3><p>Un elemento de datos almacenado en la memoria caché permanecerá en ella para siempre, a menos que sea removida de alguna manera debido a alguna directiva de caché (ej. el espacio de almacenamiento en caché está lleno y los datos más antiguos se eliminan). Para cambiar este comportamiento, podrías proporcionar un parámetro de caducidad al llamar <span class="broken-link">yii\caching\Cache::set()</span> para guardar el elemento de datos. El parámetro nos indica por cuántos segundos el elemento se mantendrá válido en memoria caché. Cuando llames <span class="broken-link">yii\caching\Cache::get()</span> para recuperar el elemento, si el tiempo de caducidad ha pasado, el método devolverá <code>false</code>, indicando que el elemento de datos no ha sido encontrado en la memoria caché. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// guardar los datos en memoria caché al menos 45 segundos</span>
+<span class="hljs-variable">$cache</span>-&gt;set(<span class="hljs-variable">$key</span>, <span class="hljs-variable">$data</span>, <span class="hljs-number">45</span>);
+
+sleep(<span class="hljs-number">50</span>);
+
+<span class="hljs-variable">$data</span> = <span class="hljs-variable">$cache</span>-&gt;get(<span class="hljs-variable">$key</span>);
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$data</span> === <span class="hljs-keyword">false</span>) {
+    <span class="hljs-comment">// $data ha caducado o no ha sido encontrado en la memoria caché</span>
+}
+</code></pre>
+<h3>Dependencias de Caché  <span id="cache-dependencies"></span><a href="#cache-dependencies" class="hashlink">&para;</a></h3><p>Además de configurar el tiempo de caducidad, los datos almacenados en caché pueden también ser invalidados conforme a algunos cambios en la caché de dependencias. Por ejemplo, <span class="broken-link">yii\caching\FileDependency</span> representa la dependencia del tiempo de modificación del archivo. Cuando esta dependencia cambia, significa que el archivo correspondiente ha cambiado. Como resultado, cualquier contenido anticuado que sea encontrado en la caché debería ser invalidado y la llamada a <span class="broken-link">yii\caching\Cache::get()</span> debería retornar falso.</p>
+<p>Una dependencia es representada como una instancia de <span class="broken-link">yii\caching\Dependency</span> o su clase hija. Cuando llamas <span class="broken-link">yii\caching\Cache::set()</span> para almacenar un elemento de datos en la caché, puedes pasar el objeto de dependencia asociado. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Crear una dependencia sobre el tiempo de modificación del archivo example.txt.</span>
+<span class="hljs-variable">$dependency</span> = <span class="hljs-keyword">new</span> \yii\caching\FileDependency([<span class="hljs-string">'fileName'</span> =&gt; <span class="hljs-string">'example.txt'</span>]);
+
+<span class="hljs-comment">// Los datos expirarán en 30 segundos.</span>
+<span class="hljs-comment">// También podría ser invalidada antes si example.txt es modificado.</span>
+<span class="hljs-variable">$cache</span>-&gt;set(<span class="hljs-variable">$key</span>, <span class="hljs-variable">$data</span>, <span class="hljs-number">30</span>, <span class="hljs-variable">$dependency</span>);
+
+<span class="hljs-comment">// La caché comprobará si los datos han expirado.</span>
+<span class="hljs-comment">// También comprobará si la dependencia ha cambiado.</span>
+<span class="hljs-comment">// Devolverá `false` si se encuentran algunas de esas condiciones.</span>
+<span class="hljs-variable">$data</span> = <span class="hljs-variable">$cache</span>-&gt;get(<span class="hljs-variable">$key</span>);
+</code></pre>
+<p>Aquí abajo se muestra un sumario de las dependencias disponibles:</p>
+<ul>
+<li><span class="broken-link">yii\caching\ChainedDependency</span>: la dependencia cambia si cualquiera de las dependencias en la cadena cambia.</li>
+<li><span class="broken-link">yii\caching\DbDependency</span>: la dependencia cambia si el resultado de la consulta de la sentencia SQL especificada cambia.</li>
+<li><span class="broken-link">yii\caching\ExpressionDependency</span>: la dependencia cambia si el resultado de la expresión de PHP especificada cambia.</li>
+<li><span class="broken-link">yii\caching\FileDependency</span>:  la dependencia cambia si se modifica la última fecha de modificación del archivo.</li>
+<li><span class="broken-link">yii\caching\TagDependency</span>: marca un elemento de datos en caché con un nombre de grupo. Puedes invalidar los elementos de datos almacenados en caché
+con el mismo nombre del grupo a la vez llamando a <span class="broken-link">yii\caching\TagDependency::invalidate()</span>.</li>
+</ul>
+<h2>Consultas en Caché  <span id="query-caching"></span><a href="#query-caching" class="hashlink">&para;</a></h2><p>Las consultas en caché es una característica especial de caché construido sobre el almacenamiento de caché de datos. Se
+proporciona para almacenar en caché el resultado de consultas a la base de datos.</p>
+<p>Las consultas en caché requieren una <span class="broken-link">yii\db\Connection</span> y un componente de aplicación caché válido. El uso básico de las consultas en memoria caché es el siguiente, asumiendo que <code>db</code> es una instancia de <span class="broken-link">yii\db\Connection</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = <span class="hljs-variable">$db</span>-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+
+    <span class="hljs-comment">// el resultado de la consulta SQL será servida de la caché</span>
+    <span class="hljs-comment">// si el cacheo de consultas está habilitado y el resultado de la consulta se encuentra en la caché</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;queryOne();
+
+});
+</code></pre>
+<p>El cacheo de consultas puede ser usado tanto para <a href="guide-db-dao.html">DAO</a> como para <a href="guide-db-active-record.html">ActiveRecord</a>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = Customer::getDb()-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> Customer::find()-&gt;where([<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>])-&gt;one();
+});
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Algunos DBMS (ej. <a href="http://dev.mysql.com/doc/refman/5.1/en/query-cache.html">MySQL</a>) también soporta el almacenamiento en caché desde el mismo servidor de la BD. Puedes optar por utilizar cualquiera de los mecanismos de memoria caché. El almacenamiento en caché de consultas previamente descrito tiene la ventaja que de que se puede especificar dependencias de caché de una forma flexible y son potencialmente mucho más eficientes.</p>
+</blockquote>
+<h3>Configuraciones  <span id="query-caching-configs"></span><a href="#query-caching-configs" class="hashlink">&para;</a></h3><p>Las consultas en caché tienen tres opciones configurables globales a través de <span class="broken-link">yii\db\Connection</span>:</p>
+<ul>
+<li><span class="broken-link">yii\db\Connection::enableQueryCache</span>: activa o desactiva el cacheo de consultas.
+Por defecto es <code>true</code>. Tenga en cuenta que para activar el cacheo de consultas, también necesitas tener una caché válida, especificada por <span class="broken-link">yii\db\Connection::queryCache</span>.</li>
+<li><span class="broken-link">yii\db\Connection::queryCacheDuration</span>: representa el número de segundos que un resultado de la consulta permanecerá válida en la memoria caché. Puedes usar 0 para indicar que el resultado de la consulta debe permanecer en la caché para siempre. Esta propiedad es el valor usado por defecto cuando <span class="broken-link">yii\db\Connection::cache()</span> es llamada sin especificar una duración.</li>
+<li><span class="broken-link">yii\db\Connection::queryCache</span>: representa el ID del componente de aplicación de caché.
+Por defecto es <code>'cache'</code>. El almacenamiento en caché de consultas se habilita sólo si hay un componente de la aplicación de caché válida.</li>
+</ul>
+<h3>Usos  <span id="query-caching-usages"></span><a href="#query-caching-usages" class="hashlink">&para;</a></h3><p>Puedes usar <span class="broken-link">yii\db\Connection::cache()</span> si tienes multiples consultas SQL que necesitas a aprovechar el cacheo de consultas. El uso es de la siguiente manera,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$duration</span> = <span class="hljs-number">60</span>;     <span class="hljs-comment">// resultado de la consulta de caché durante 60 segundos.</span>
+<span class="hljs-variable">$dependency</span> = ...;  <span class="hljs-comment">// dependencia opcional</span>
+
+<span class="hljs-variable">$result</span> = <span class="hljs-variable">$db</span>-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+
+    <span class="hljs-comment">// ... realiza consultas SQL aquí ...</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$result</span>;
+
+}, <span class="hljs-variable">$duration</span>, <span class="hljs-variable">$dependency</span>);
+</code></pre>
+<p>Cualquier consulta SQL en una función anónima será cacheada durante el tiempo indicado con la dependencia especificada.
+Si el resultado de la consulta se encuentra válida en la caché, la consulta se omitirá y el resultado se servirá de la caché en su lugar. Si no especificar el parámetro <code>$duration</code>, el valor <span class="broken-link">yii\db\Connection::queryCacheDuration</span> será usado en su lugar.</p>
+<p>A veces dentro de <code>cache()</code>, puedes querer desactivar el cacheo de consultas para algunas consultas especificas. Puedes usar <span class="broken-link">yii\db\Connection::noCache()</span> en este caso.</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = <span class="hljs-variable">$db</span>-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+
+    <span class="hljs-comment">// consultas SQL que usan el cacheo de consultas</span>
+
+    <span class="hljs-variable">$db</span>-&gt;noCache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+
+        <span class="hljs-comment">// consultas SQL que no usan el cacheo de consultas</span>
+
+    });
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$result</span>;
+});
+</code></pre>
+<p>Si lo deseas puedes usar el cacheo de consultas para una simple consulta, puedes llamar a <span class="broken-link">yii\db\Command::cache()</span> cuando construyas el comando. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// usa el cacheo de consultas y asigna la duración de la consulta de caché por 60 segundos</span>
+<span class="hljs-variable">$customer</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;cache(<span class="hljs-number">60</span>)-&gt;queryOne();
+</code></pre>
+<p>También puedes usar <span class="broken-link">yii\db\Command::noCache()</span> para desactivar el cacheo de consultas de un simple comando. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$result</span> = <span class="hljs-variable">$db</span>-&gt;cache(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+
+    <span class="hljs-comment">// consultas SQL que usan cacheo de consultas</span>
+
+    <span class="hljs-comment">// no usa cacheo de consultas para este comando</span>
+    <span class="hljs-variable">$customer</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM customer WHERE id=1'</span>)-&gt;noCache()-&gt;queryOne();
+
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$result</span>;
+});
+</code></pre>
+<h3>Limitaciones  <span id="query-caching-limitations"></span><a href="#query-caching-limitations" class="hashlink">&para;</a></h3><p>El almacenamiento en caché de consultas no funciona con los resultados de consulta que contienen controladores de recursos.
+Por ejemplo, cuando se utiliza el tipo de columna <code>BLOB</code> en algunos DBMS, el resultado de la consulta devolverá un recurso para manejar los datos de la columna.</p>
+<p>Algunos sistemas de almacenamiento caché tienen limitación de tamaño. Por ejemplo, memcache limita el tamaño máximo de cada entrada a 1MB. Por lo tanto, si el tamaño de un resultado de la consulta excede ese límite, el almacenamiento en caché fallará.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Alias - Conceptos clave - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w286" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w286-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w286-collapse" class="collapse navbar-collapse"><ul id="w287" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-270" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-270" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-271" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-271" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-272" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-272" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-273" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-273" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item active" href="#navigation-274" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-274" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item active" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-275" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-275" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-276" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-276" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-277" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-277" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-278" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-278" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-279" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-279" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-280" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-280" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-281" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-281" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-282" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-282" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-283" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-283" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-284" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-284" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-285" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-285" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Alias <span id="alias"></span><a href="#alias" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#defining-aliases">Definir Alias</a></li>
+<li><a href="#resolving-aliases">Resolución de Alias</a></li>
+<li><a href="#using-aliases">Usando Alias</a></li>
+<li><a href="#predefined-aliases">Alias Predefinidos</a></li>
+<li><a href="#extension-aliases">Alias en Extensiones</a></li></ol></div>
+<p>Loa alias son utilizados para representar rutas o URLs de manera que no tengas que escribir explícitamente rutas absolutas o URLs en tu
+proyecto. Un alias debe comenzar con el signo <code>@</code> para ser diferenciado de una ruta normal de archivo y de URLs. Los alias definidos
+sin el <code>@</code> del principio, serán prefijados con el signo <code>@</code>.</p>
+<p>Yii trae disponibles varios alias predefinidos. Por ejemplo, el alias <code>@yii</code> representa la ruta de instalación del
+framework Yii; <code>@web</code> representa la URL base para la aplicación Web ejecutándose.</p>
+<h2>Definir Alias  <span id="defining-aliases"></span><a href="#defining-aliases" class="hashlink">&para;</a></h2><p>Para definir un alias puedes llamar a <span class="broken-link">Yii::setAlias()</span> para una determinada ruta de archivo o URL. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// un alias de una ruta de archivos</span>
+Yii::setAlias(<span class="hljs-string">'@foo'</span>, <span class="hljs-string">'/path/to/foo'</span>);
+
+<span class="hljs-comment">// una alias de un URL</span>
+Yii::setAlias(<span class="hljs-string">'@bar'</span>, <span class="hljs-string">'http://www.example.com'</span>);
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Una ruta de archivo o URL en alias NO debe necesariamente referirse a un archivo o recurso existente.</p>
+</blockquote>
+<p>Dado un alias, puedes derivar un nuevo alias (sin necesidad de llamar <span class="broken-link">Yii::setAlias()</span>) anexando una barra diagonal <code>/</code>
+seguida por uno o varios segmentos de la ruta. Llamamos los alias definidos a través de <span class="broken-link">Yii::setAlias()</span>
+<em>alias de raíz</em> (root alias), mientras que los alias derivados de ellos <em>alias derivados</em> (derived aliases). Por ejemplo,
+<code>@foo</code> es un alias de raíz, mientras que <code>@foo/bar/file.php</code> es un alias derivado.</p>
+<p>Puedes definir un alias usando otro alias (ya sea un alias de raíz o derivado):</p>
+<pre><code class="hljs php language-php">Yii::setAlias(<span class="hljs-string">'@foobar'</span>, <span class="hljs-string">'@foo/bar'</span>);
+</code></pre>
+<p>Los alias de raíz están usualmente definidos durante la etapa <a href="guide-runtime-bootstrapping.html">bootstrapping</a> de la aplicación.
+Por ejemplo, puedes llamar a <span class="broken-link">Yii::setAlias()</span> en el <a href="guide-structure-entry-scripts.html">script de entrada</a>.
+Por conveniencia, <a href="guide-structure-applications.html">Application</a> provee una propiedad modificable llamada <code>aliases</code> que puedes
+configurar en la <a href="guide-concept-configurations.html">configuración</a> de la aplicación, como por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'aliases'</span> =&gt; [
+        <span class="hljs-string">'@foo'</span> =&gt; <span class="hljs-string">'/path/to/foo'</span>,
+        <span class="hljs-string">'@bar'</span> =&gt; <span class="hljs-string">'http://www.example.com'</span>,
+    ],
+];
+</code></pre>
+<h2>Resolución de Alias  <span id="resolving-aliases"></span><a href="#resolving-aliases" class="hashlink">&para;</a></h2><p>Puedes llamar <span class="broken-link">Yii::getAlias()</span> para resolver un alias de raíz en la ruta o URL que representa. El mismo método puede
+además resolver un alias derivado en su correspondiente ruta de archivo o URL. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> Yii::getAlias(<span class="hljs-string">'@foo'</span>);               <span class="hljs-comment">// muestra: /path/to/foo</span>
+<span class="hljs-keyword">echo</span> Yii::getAlias(<span class="hljs-string">'@bar'</span>);               <span class="hljs-comment">// muestra: http://www.example.com</span>
+<span class="hljs-keyword">echo</span> Yii::getAlias(<span class="hljs-string">'@foo/bar/file.php'</span>);  <span class="hljs-comment">// muestra: /path/to/foo/bar/file.php</span>
+</code></pre>
+<p>La ruta de archivo/URL representado por un alias derivado está determinado por la sustitución de la parte de su alias raíz
+con su correspondiente ruta/Url en el alias derivado.</p>
+<blockquote class="note"><p><strong>Note: </strong>El método <span class="broken-link">Yii::getAlias()</span> no comprueba si la ruta/URL resultante hacer referencia a un archivo o recurso existente.</p>
+</blockquote>
+<p>Un alias de raíz puede contener carácteres <code>/</code>. El método <span class="broken-link">Yii::getAlias()</span> es lo suficientemente inteligente para saber
+qué parte de un alias es un alias de raíz y por lo tanto determinar correctamente la correspondiente ruta de archivo o URL.
+Por ejemplo,</p>
+<pre><code class="hljs php language-php">Yii::setAlias(<span class="hljs-string">'@foo'</span>, <span class="hljs-string">'/path/to/foo'</span>);
+Yii::setAlias(<span class="hljs-string">'@foo/bar'</span>, <span class="hljs-string">'/path2/bar'</span>);
+Yii::getAlias(<span class="hljs-string">'@foo/test/file.php'</span>);  <span class="hljs-comment">// muestra: /path/to/foo/test/file.php</span>
+Yii::getAlias(<span class="hljs-string">'@foo/bar/file.php'</span>);   <span class="hljs-comment">// muestra: /path2/bar/file.php</span>
+</code></pre>
+<p>Si <code>@foo/bar</code> no está definido como un alias de raíz, la última declaración mostraría <code>/path/to/foo/bar/file.php</code>.</p>
+<h2>Usando Alias  <span id="using-aliases"></span><a href="#using-aliases" class="hashlink">&para;</a></h2><p>Los alias son utilizados en muchos lugares en Yii sin necesidad de llamar <span class="broken-link">Yii::getAlias()</span> para convertirlos
+en rutas/URLs. Por ejemplo, <span class="broken-link">yii\caching\FileCache::cachePath</span> puede aceptar tanto una ruta de archivo como un alias
+que represente la ruta de archivo, gracias al prefijo <code>@</code> el cual permite diferenciar una ruta de archivo
+de un alias.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">caching</span>\<span class="hljs-title">FileCache</span>;
+
+<span class="hljs-variable">$cache</span> = <span class="hljs-keyword">new</span> FileCache([
+    <span class="hljs-string">'cachePath'</span> =&gt; <span class="hljs-string">'@runtime/cache'</span>,
+]);
+</code></pre>
+<p>Por favor, presta atención a la documentación API para ver si una propiedad o el parámetro de un método soporta alias.</p>
+<h2>Alias Predefinidos  <span id="predefined-aliases"></span><a href="#predefined-aliases" class="hashlink">&para;</a></h2><p>Yii predefine un conjunto de alias para aliviar la necesidad de hacer referencia a rutas de archivo o URLs que son
+utilizadas regularmente. La siguiente es la lista de alias predefinidos por Yii:</p>
+<ul>
+<li><code>@yii</code>: el directorio donde el archivo <code>BaseYii.php</code> se encuentra (también llamado el directorio del framework).</li>
+<li><code>@app</code>: la <span class="broken-link">yii\base\Application::basePath</span> de la aplicación que se está ejecutando actualmente.</li>
+<li><code>@runtime</code>: la <span class="broken-link">yii\base\Application::runtimePath</span> de la aplicación en ejecución. Por defecto <code>@app/runtime</code>.</li>
+<li><code>@webroot</code>: el directorio raíz Web de la aplicación Web se está ejecutando actualmente.</li>
+<li><code>@web</code>: la URL base de la aplicación web se ejecuta actualmente. Tiene el mismo valor que <span class="broken-link">yii\web\Request::baseUrl</span>.</li>
+<li><code>@vendor</code>: el <span class="broken-link">yii\base\Application::vendorPath</span>. Por defecto <code>@app/vendor</code>.</li>
+<li><code>@bower</code>, el directorio raíz que contiene <a href="http://bower.io/">paquetes bower</a>. Por defecto <code>@vendor/bower</code>.</li>
+<li><code>@npm</code>, el directorio raíz que contiene <a href="https://www.npmjs.org/">paquetes npm</a>. Por defecto <code>@vendor/npm</code>.</li>
+</ul>
+<p>El alias <code>@yii</code> se define cuando incluyes el archivo <code>Yii.php</code> en tu <a href="guide-structure-entry-scripts.html">script de entrada</a>,
+mientras que el resto de los alias están definidos en el constructor de la aplicación cuando se aplica la
+<a href="guide-concept-configurations.html">configuración</a> de la aplicación.</p>
+<h2>Alias en Extensiones  <span id="extension-aliases"></span><a href="#extension-aliases" class="hashlink">&para;</a></h2><p>Un alias se define automáticamente por cada <a href="guide-structure-extensions.html">extensión</a> que ha sido instalada a través de Composer.
+El alias es nombrado tras el <code>namespace</code> de raíz de la extensión instalada tal y como está declarada en su archivo <code>composer.json</code>,
+y representa el directorio raíz de la extensión. Por ejemplo, si instalas la extensión <code>yiisoft/yii2-jui</code>, tendrás
+automáticamente definido el alias <code>@yii/jui</code> durante la etapa <a href="guide-runtime-bootstrapping.html">bootstrapping</a> de la aplicación:</p>
+<pre><code class="hljs php language-php">Yii::setAlias(<span class="hljs-string">'@yii/jui'</span>, <span class="hljs-string">'VendorPath/yiisoft/yii2-jui'</span>);
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

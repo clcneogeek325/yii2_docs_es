@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Html - Clases auxiliares - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1456" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1456-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1456-collapse" class="collapse navbar-collapse"><ul id="w1457" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1440" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1440" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-1441" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1441" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-1442" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1442" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-1443" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1443" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1444" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1444" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-1445" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1445" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1446" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1446" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1447" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1447" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1448" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1448" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1449" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1449" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1450" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1450" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1451" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1451" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1452" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1452" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1453" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1453" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1454" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1454" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item active" href="#navigation-1455" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1455" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item active" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Clase auxiliar Html (Html helper) <span id="clase-auxiliar-html-html-helper"></span><a href="#clase-auxiliar-html-html-helper" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#basics">Lo fundamental</a></li>
+<li><a href="#encoding-and-decoding-content">Codificación y Decodificación del contenido</a></li>
+<li><a href="#forms">Formularios</a></li>
+<li><a href="#styles-and-scripts">Estilos y scripts</a></li>
+<li><a href="#hyperlinks">Enlaces</a></li>
+<li><a href="#images">Imagenes</a></li>
+<li><a href="#lists">Listas</a></li></ol></div>
+<p>Todas las aplicaciones web generan grandes cantidades de marcado HTML (HTML markup). Si el marcado es estático, se
+puede realizar de forma efectiva
+<a href="http://php.net/manual/es/language.basic-syntax.phpmode.php">mezclando PHP y HTML en un mismo archivo</a> pero cuando se
+generan dinámicamente empieza a complicarse su gestión sin ayuda extra. Yii ofrece esta ayuda en forma de una clase auxiliar Html
+que proporciona un conjunto de métodos estáticos para gestionar las etiquetas HTML más comúnmente usadas, sus opciones y contenidos.</p>
+<blockquote class="note"><p><strong>Note: </strong>Si el marcado es casi estático, es preferible usar HTML directamente. No es necesario encapsularlo todo con
+llamadas a la clase auxiliar Html.</p>
+</blockquote>
+<h2>Lo fundamental  <span id="basics"></span><a href="#basics" class="hashlink">&para;</a></h2><p>Teniendo en cuenta que la construcción de HTML dinámico mediante la concatenación de cadenas de texto se complica
+rápidamente, Yii proporciona un conjunto de métodos para manipular las opciones de etiquetas y la construcción de las
+mismas basadas en estas opciones.</p>
+<h3>Generación de etiquetas  <span id="generating-tags"></span><a href="#generating-tags" class="hashlink">&para;</a></h3><p>El código de generación de etiquetas es similar al siguiente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::tag(<span class="hljs-string">'p'</span>, Html::encode(<span class="hljs-variable">$user</span>-&gt;name), [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'username'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>El primer argumento es el nombre de la etiqueta. El segundo es el contenido que se ubicará entre la etiqueta de
+apertura y la de cierre. Hay que tener en cuenta que estamos usando <code>Html::encode</code>. Esto es debido a que el contenido
+no se codifica automáticamente para permitir usar HTML cuando se necesite. La tercera opción es un array de opciones
+HTML o, en otras palabras, los atributos de las etiquetas. En este array la clave representa el nombre del atributo
+como podría ser <code>class</code>, <code>href</code> o <code>target</code> y el valor es su valor.</p>
+<p>El código anterior generará el siguiente HTML:</p>
+<pre><code class="hljs xml language-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"username"</span>&gt;</span>samdark<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<p>Si se necesita solo la apertura o el cierre de una etiqueta, se pueden usar los métodos <code>Html::beginTag()</code> y
+<code>Html::endTag()</code>.</p>
+<p>Las opciones se usan en muchos métodos de la clase auxiliar Html y en varios widgets. En todos estos casos hay cierta
+gestión adicional que se debe conocer:</p>
+<ul>
+<li>Si un valor es <code>null</code>, el correspondiente atributo no se renderizará.</li>
+<li>Los atributos cuyos valores son de tipo booleano serán tratados como
+<a href="http://www.w3.org/TR/html5/infrastructure.html#boolean-attributes">atributos booleanos</a>.</li>
+<li>Los valores de los atributos se codificarán en HTML usando <span class="broken-link">yii\helpers\Html::encode()</span>.</li>
+<li>El atributo "data" puede recibir un array. En este caso, se "expandirá" y se renderizará una lista de atributos
+<code>data</code> ej. <code>'data' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii']</code> se convierte en <code>data-id="1" data-name="yii"</code>.</li>
+<li>El atributo "data" puede recibir un JSON. Se gestionará de la misma manera que un array ej.
+<code>'data' =&gt; ['params' =&gt; ['id' =&gt; 1, 'name' =&gt; 'yii'], 'status' =&gt; 'ok']</code> se convierte en
+<code>data-params='{"id":1,"name":"yii"}' data-status="ok"</code>.</li>
+</ul>
+<h3>Formación de clases y estilos dinámicamente  <span id="forming-css"></span><a href="#forming-css" class="hashlink">&para;</a></h3><p>Cuando se construyen opciones para etiquetas HTML, a menudo nos encontramos con valores predeterminados que hay que
+modificar. Para añadir o eliminar clases CSS se puede usar el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$options</span> = [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'btn btn-default'</span>];
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$type</span> === <span class="hljs-string">'success'</span>) {
+    Html::removeCssClass(<span class="hljs-variable">$options</span>, <span class="hljs-string">'btn-default'</span>);
+    Html::addCssClass(<span class="hljs-variable">$options</span>, <span class="hljs-string">'btn-success'</span>);
+}
+
+<span class="hljs-keyword">echo</span> Html::tag(<span class="hljs-string">'div'</span>, <span class="hljs-string">'Pwede na'</span>, <span class="hljs-variable">$options</span>);
+
+<span class="hljs-comment">// cuando $type sea 'success' se renderizará</span>
+<span class="hljs-comment">// &lt;div class="btn btn-success"&gt;Pwede na&lt;/div&gt;</span>
+</code></pre>
+<p>Para hacer lo mismo con los estilos para el atributo <code>style</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$options</span> = [<span class="hljs-string">'style'</span> =&gt; [<span class="hljs-string">'width'</span> =&gt; <span class="hljs-string">'100px'</span>, <span class="hljs-string">'height'</span> =&gt; <span class="hljs-string">'100px'</span>]];
+
+<span class="hljs-comment">// devuelve style="width: 100px; height: 200px; position: absolute;"</span>
+Html::addCssStyle(<span class="hljs-variable">$options</span>, <span class="hljs-string">'height: 200px; positon: absolute;'</span>);
+
+<span class="hljs-comment">// devuelve style="position: absolute;"</span>
+Html::removeCssStyle(<span class="hljs-variable">$options</span>, [<span class="hljs-string">'width'</span>, <span class="hljs-string">'height'</span>]);
+</code></pre>
+<p>Cuando se usa <span class="broken-link">yii\helpers\Html::addCssStyle()</span> se puede especificar si un array de pares clave-valor
+corresponde a nombres y valores de la propiedad CSS correspondiente o a una cadena de texto como por ejemplo
+<code>width: 100px; height: 200px;</code>. Estos formatos se pueden "hacer" y "deshacer" usando
+<span class="broken-link">yii\helpers\Html::cssStyleFromArray()</span> y
+<span class="broken-link">yii\helpers\Html::cssStyleToArray()</span>. El método
+<span class="broken-link">yii\helpers\Html::removeCssStyle()</span> acepta un array de propiedades que se eliminarán. Si sólo se
+eliminara una propiedad, se puede especificar como una cadena de texto.</p>
+<h2>Codificación y Decodificación del contenido  <span id="encoding-and-decoding-content"></span><a href="#encoding-and-decoding-content" class="hashlink">&para;</a></h2><p>Para que el contenido se muestre correctamente y de forma segura con caracteres especiales HTML el contenido debe ser
+codificado. En PHP esto se hace con <a href="http://www.php.net/manual/es/function.htmlspecialchars.php">htmlspecialchars</a> y
+<a href="http://www.php.net/manual/es/function.htmlspecialchars-decode.php">htmlspecialchars_decode</a>. El problema con el uso
+de estos métodos directamente es que se tiene que especificar la codificación y opciones extra cada vez. Ya que las
+opciones siempre son las mismas y la codificación debe coincidir con la de la aplicación para prevenir problemas de
+seguridad, Yii proporciona dos métodos simples y compactos:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$userName</span> = Html::encode(<span class="hljs-variable">$user</span>-&gt;name);
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$userName</span>;
+
+<span class="hljs-variable">$decodedUserName</span> = Html::decode(<span class="hljs-variable">$userName</span>);
+</code></pre>
+<h2>Formularios  <span id="forms"></span><a href="#forms" class="hashlink">&para;</a></h2><p>El trato con el marcado de formularios es una tarea repetitiva y propensa a errores. Por esto hay un grupo de métodos
+para ayudar a gestionarlos.</p>
+<blockquote class="note"><p><strong>Note: </strong>hay que considerar la opción de usar <span class="broken-link">yii\widgets\ActiveForm</span> en caso de que se gestionen
+formularios que requieran validaciones.</p>
+</blockquote>
+<h3>Creando formularios  <span id="creating-forms"></span><a href="#creating-forms" class="hashlink">&para;</a></h3><p>Se puede abrir un formulario con el método <span class="broken-link">yii\helpers\Html::beginForm()</span> como se muestra a
+continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::beginForm([<span class="hljs-string">'order/update'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$id</span>], <span class="hljs-string">'post'</span>, [<span class="hljs-string">'enctype'</span> =&gt; <span class="hljs-string">'multipart/form-data'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>El primer argumento es la URL a la que se enviarán los datos del formulario. Se puede especificar en formato de ruta
+de Yii con los parámetros aceptados por <span class="broken-link">yii\helpers\Url::to()</span>. El segundo es el método que se usará.
+<code>post</code> es el método predeterminado. El tercero es un array de opciones para la etiqueta <code>form</code>. En este caso cambiamos
+el método de codificación del formulario de <code>data</code> en una petición POST a <code>multipart/form-data</code>. Esto se requiere
+cuando se quieren subir archivos.</p>
+<p>El cierre de la etiqueta <code>form</code> es simple:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::endForm() <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<h3>Botones  <span id="buttons"></span><a href="#buttons" class="hashlink">&para;</a></h3><p>Para generar botones se puede usar el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::button(<span class="hljs-string">'Press me!'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'teaser'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::submitButton(<span class="hljs-string">'Submit'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'submit'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::resetButton(<span class="hljs-string">'Reset'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'reset'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>El primer argumento para los tres métodos es el título del botón y el segundo son las opciones. El título no está
+codificado pero si se usan datos recibidos por el usuario, deben codificarse mediante
+<span class="broken-link">yii\helpers\Html::encode()</span>.</p>
+<h3>Inputs  <span id="input-fields"></span><a href="#input-fields" class="hashlink">&para;</a></h3><p>Hay dos grupos en los métodos input. Unos empiezan con <code>active</code> y se llaman inputs activos y los otros no empiezan
+así. Los inputs activos obtienen datos del modelo y del atributo especificado y los datos de los inputs normales se
+especifica directamente.</p>
+<p>Los métodos más genéricos son:</p>
+<pre><code class="hljs php language-php">type, input name, input value, options
+<span class="hljs-preprocessor">&lt;?</span>= Html::input(<span class="hljs-string">'text'</span>, <span class="hljs-string">'username'</span>, <span class="hljs-variable">$user</span>-&gt;name, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-variable">$username</span>]) <span class="hljs-preprocessor">?&gt;</span>
+
+type, model, model attribute name, options
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeInput(<span class="hljs-string">'text'</span>, <span class="hljs-variable">$user</span>, <span class="hljs-string">'name'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-variable">$username</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>Si se conoce el tipo de input de antemano, es conveniente usar los atajos de los métodos:</p>
+<ul>
+<li><span class="broken-link">yii\helpers\Html::buttonInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::submitInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::resetInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::textInput()</span>, <span class="broken-link">yii\helpers\Html::activeTextInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::hiddenInput()</span>, <span class="broken-link">yii\helpers\Html::activeHiddenInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::passwordInput()</span> / <span class="broken-link">yii\helpers\Html::activePasswordInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::fileInput()</span>, <span class="broken-link">yii\helpers\Html::activeFileInput()</span></li>
+<li><span class="broken-link">yii\helpers\Html::textarea()</span>, <span class="broken-link">yii\helpers\Html::activeTextarea()</span></li>
+</ul>
+<p>Los botones de opción (Radios) y las casillas de verificación (checkboxes) se especifican de forma un poco diferente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::radio(<span class="hljs-string">'agree'</span>, <span class="hljs-keyword">true</span>, [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'I agree'</span>]);
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeRadio(<span class="hljs-variable">$model</span>, <span class="hljs-string">'agree'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'agreement'</span>])
+
+<span class="hljs-preprocessor">&lt;?</span>= Html::checkbox(<span class="hljs-string">'agree'</span>, <span class="hljs-keyword">true</span>, [<span class="hljs-string">'label'</span> =&gt; <span class="hljs-string">'I agree'</span>]);
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeCheckbox(<span class="hljs-variable">$model</span>, <span class="hljs-string">'agree'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'agreement'</span>])
+</code></pre>
+<p>Las listas desplegables (dropdown list) se pueden renderizar como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::dropDownList(<span class="hljs-string">'list'</span>, <span class="hljs-variable">$currentUserId</span>, ArrayHelper::map(<span class="hljs-variable">$userModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeDropDownList(<span class="hljs-variable">$users</span>, <span class="hljs-string">'id'</span>, ArrayHelper::map(<span class="hljs-variable">$userModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+
+<span class="hljs-preprocessor">&lt;?</span>= Html::listBox(<span class="hljs-string">'list'</span>, <span class="hljs-variable">$currentUserId</span>, ArrayHelper::map(<span class="hljs-variable">$userModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeListBox(<span class="hljs-variable">$users</span>, <span class="hljs-string">'id'</span>, ArrayHelper::map(<span class="hljs-variable">$userModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>El primer argumento es el nombre del input, el segundo es el valor seleccionado actualmente y el tercero es el array
+de pares clave-valor donde la clave es la lista de valores y el valor del array es la lista a mostrar.</p>
+<p>Si se quiere habilitar la selección múltiple, se puede usar la lista seleccionable (checkbox list):</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::checkboxList(<span class="hljs-string">'roles'</span>, [<span class="hljs-number">16</span>, <span class="hljs-number">42</span>], ArrayHelper::map(<span class="hljs-variable">$roleModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeCheckboxList(<span class="hljs-variable">$user</span>, <span class="hljs-string">'role'</span>, ArrayHelper::map(<span class="hljs-variable">$roleModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>Si no, se puede usar la lista de opciones (radio list):</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::radioList(<span class="hljs-string">'roles'</span>, [<span class="hljs-number">16</span>, <span class="hljs-number">42</span>], ArrayHelper::map(<span class="hljs-variable">$roleModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeRadioList(<span class="hljs-variable">$user</span>, <span class="hljs-string">'role'</span>, ArrayHelper::map(<span class="hljs-variable">$roleModels</span>, <span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>)) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<h3>Etiquetas y Errores  <span id="labels-and-errors"></span><a href="#labels-and-errors" class="hashlink">&para;</a></h3><p>De forma parecida que en los inputs hay dos métodos para generar etiquetas. El activo que obtiene los datos del modelo y
+el no-activo que acepta los datos directamente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::label(<span class="hljs-string">'User name'</span>, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'label username'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+<span class="hljs-preprocessor">&lt;?</span>= Html::activeLabel(<span class="hljs-variable">$user</span>, <span class="hljs-string">'username'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'label username'</span>])
+</code></pre>
+<p>Para mostrar los errores del formulario de un modelo o modelos a modo de resumen puedes usar:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::errorSummary(<span class="hljs-variable">$posts</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'errors'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>Para mostrar un error individual:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::error(<span class="hljs-variable">$post</span>, <span class="hljs-string">'title'</span>, [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'error'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<h3>Input Names y Values  <span id="input-names-and-values"></span><a href="#input-names-and-values" class="hashlink">&para;</a></h3><p>Existen métodos para obtener names, IDs y values para los campos de entrada (inputs) basados en el modelo. Estos se
+usan principalmente internamente pero a veces pueden resultar prácticos:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// Post[title]</span>
+<span class="hljs-keyword">echo</span> Html::getInputName(<span class="hljs-variable">$post</span>, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// post-title</span>
+<span class="hljs-keyword">echo</span> Html::getInputId(<span class="hljs-variable">$post</span>, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// mi primer post</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeValue(<span class="hljs-variable">$post</span>, <span class="hljs-string">'title'</span>);
+
+<span class="hljs-comment">// $post-&gt;authors[0]</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeValue(<span class="hljs-variable">$post</span>, <span class="hljs-string">'[0]authors[0]'</span>);
+</code></pre>
+<p>En el ejemplo anterior, el primer argumento es el modelo y el segundo es un atributo de expresión. En su forma más
+simple es su nombre de atributo pero podría ser un nombre de atributo prefijado y/o añadido como sufijo con los
+indices de un array, esto se usa principalmente para mostrar inputs en formatos de tablas:</p>
+<ul>
+<li><code>[0]content</code> se usa en campos de entrada de datos en formato de tablas para representar el atributo "content" para
+el primer modelo del input en formato de tabla;</li>
+<li><code>dates[0]</code> representa el primer elemento del array del atributo "dates";</li>
+<li><code>[0]dates[0]</code> representa el primer elemento del array del atributo "dates" para el primer modelo en formato de tabla.</li>
+</ul>
+<p>Para obtener el nombre de atributo sin sufijos o prefijos se puede usar el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// dates</span>
+<span class="hljs-keyword">echo</span> Html::getAttributeName(<span class="hljs-string">'dates[0]'</span>);
+</code></pre>
+<h2>Estilos y scripts  <span id="styles-and-scripts"></span><a href="#styles-and-scripts" class="hashlink">&para;</a></h2><p>Existen dos métodos para generar etiquetas que envuelvan estilos y scripts incrustados (embebbed):</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::style(<span class="hljs-string">'.danger { color: #f00; }'</span>) <span class="hljs-preprocessor">?&gt;</span>
+
+Genera
+
+&lt;style&gt;.danger { color: <span class="hljs-comment">#f00; }&lt;/style&gt;</span>
+
+<span class="hljs-preprocessor">&lt;?</span>= Html::script(<span class="hljs-string">'alert("Hello!");'</span>, [<span class="hljs-string">'defer'</span> =&gt; <span class="hljs-keyword">true</span>]);
+
+Genera
+
+&lt;script defer&gt;alert(<span class="hljs-string">"Hello!"</span>);&lt;/script&gt;
+</code></pre>
+<p>Si se quiere enlazar un estilo externo desde un archivo CSS:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::cssFile(<span class="hljs-string">'@web/css/ie5.css'</span>, [<span class="hljs-string">'condition'</span> =&gt; <span class="hljs-string">'IE 5'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+
+genera
+
+&lt;!--[<span class="hljs-keyword">if</span> IE <span class="hljs-number">5</span>]&gt;
+    &lt;link href=<span class="hljs-string">"http://example.com/css/ie5.css"</span> /&gt;
+&lt;![<span class="hljs-keyword">endif</span>]--&gt;
+</code></pre>
+<p>El primer argumento es la URL. El segundo es un array de opciones. Adicionalmente, para regular las opciones se puede
+especificar:</p>
+<ul>
+<li><code>condition</code> para envolver <code>&lt;link</code> con los comentarios condicionales con condiciones especificas. Esperamos que sean
+necesarios los comentarios condicionales ;)</li>
+<li><code>noscript</code> se puede establecer como <code>true</code> para envolver <code>&lt;link</code> con la etiqueta <code>&lt;noscript&gt;</code> por lo que el sólo se
+incluirá si el navegador no soporta JavaScript o si lo ha deshabilitado el usuario.</li>
+</ul>
+<p>Para enlazar un archivo JavaScript:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::jsFile(<span class="hljs-string">'@web/js/main.js'</span>) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>Es igual que con las CSS, el primer argumento especifica el enlace al fichero que se quiere incluir. Las opciones se
+pueden pasar como segundo argumento. En las opciones se puede especificar <code>condition</code> del mismo modo que se puede usar
+para <code>cssFile</code>.</p>
+<h2>Enlaces  <span id="hyperlinks"></span><a href="#hyperlinks" class="hashlink">&para;</a></h2><p>Existe un método para generar hipervínculos a conveniencia:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::a(<span class="hljs-string">'Profile'</span>, [<span class="hljs-string">'user/view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$id</span>], [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'profile-link'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>El primer argumento es el título. No está codificado por lo que si se usan datos enviados por el usuario se tienen que
+codificar usando <code>Html::encode()</code>. El segundo argumento es el que se introducirá en <code>href</code> de la etiqueta <code>&lt;a</code>. Se
+puede consultar <a href="guide-helper-url.html">Url::to()</a> para obtener más detalles de los valores que acepta. El tercer argumento es
+un array de las propiedades de la etiqueta.</p>
+<p>Si se requiere generar enlaces de tipo <code>mailto</code> se puede usar el siguiente código:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::mailto(<span class="hljs-string">'Contact us'</span>, <span class="hljs-string">'admin@example.com'</span>) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<h2>Imagenes  <span id="images"></span><a href="#images" class="hashlink">&para;</a></h2><p>Para generar una etiqueta de tipo imagen se puede usar el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::img(<span class="hljs-string">'@web/images/logo.png'</span>, [<span class="hljs-string">'alt'</span> =&gt; <span class="hljs-string">'My logo'</span>]) <span class="hljs-preprocessor">?&gt;</span>
+
+genera
+
+&lt;img src=<span class="hljs-string">"http://example.com/images/logo.png"</span> alt=<span class="hljs-string">"My logo"</span> /&gt;
+</code></pre>
+<p>Aparte de los <a href="guide-concept-aliases.html">alias</a> el primer argumento puede aceptar rutas, parámetros y URLs. Del mismo modo
+que <a href="guide-helper-url.html">Url::to()</a>.</p>
+<h2>Listas  <span id="lists"></span><a href="#lists" class="hashlink">&para;</a></h2><p>Las listas desordenadas se puede generar como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?</span>= Html::ul(<span class="hljs-variable">$posts</span>, [<span class="hljs-string">'item'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$item</span>, <span class="hljs-variable">$index</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> Html::tag(
+        <span class="hljs-string">'li'</span>,
+        <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'post'</span>, [<span class="hljs-string">'item'</span> =&gt; <span class="hljs-variable">$item</span>]),
+        [<span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'post'</span>]
+    );
+}]) <span class="hljs-preprocessor">?&gt;</span>
+</code></pre>
+<p>Para generar listas ordenadas se puede usar <code>Html::ol()</code> en su lugar.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

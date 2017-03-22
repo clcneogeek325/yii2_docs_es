@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Objeto de acceso a datos - Trabajar con bases de datos - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1186" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1186-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1186-collapse" class="collapse navbar-collapse"><ul id="w1187" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1170" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1170" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-1171" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1171" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-1172" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1172" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-1173" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1173" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1174" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1174" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item active" href="#navigation-1175" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1175" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1176" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1176" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1177" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1177" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1178" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1178" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1179" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1179" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1180" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1180" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1181" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1181" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1182" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1182" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1183" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1183" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1184" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1184" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1185" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1185" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Objetos de Acceso a Bases de Datos <span id="objetos-de-acceso-a-bases-de-datos"></span><a href="#objetos-de-acceso-a-bases-de-datos" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-db-connections">Creando Conexiones DB</a></li>
+<li><a href="#executing-sql-queries">Ejecutando Consultas SQL</a></li>
+<li><a href="#quoting-table-and-column-names">Entrecomillado de Tablas y Nombres de Columna</a></li>
+<li><a href="#performing-transactions">Realización de Transacciones</a></li>
+<li><a href="#read-write-splitting">Replicación y División Lectura-Escritura</a></li>
+<li><a href="#database-schema">Trabajando con Esquemas de Bases de Datos</a></li></ol></div>
+<p>Construido sobre <a href="http://php.net/manual/es/book.pdo.php">PDO</a>, Yii DAO (Objetos de Acceso a Bases de Datos) proporciona una
+API orientada a objetos para el acceso a bases de datos relacionales. Es el fundamento para otros métodos de acceso a bases de datos
+más avanzados, incluyendo el <a href="guide-db-query-builder.html">constructor de consultas</a> y <a href="guide-db-active-record.html">active record</a>.</p>
+<p>Al utilizar Yii DAO, principalmente vas a tratar con SQLs planos y arrays PHP. Como resultado, esta es la manera más eficiente
+de acceder a las bases de datos. Sin embargo, como la sintaxis puede variar para las diferentes bases de datos, utilizando
+Yii DAO también significa que tienes que tienes que tomar un esfuerzo adicional para crear una aplicación de database-agnostic.</p>
+<p>Yii DAO soporta las siguientes bases de datos:</p>
+<ul>
+<li><a href="http://www.mysql.com/">MySQL</a></li>
+<li><a href="https://mariadb.com/">MariaDB</a></li>
+<li><a href="http://sqlite.org/">SQLite</a></li>
+<li><a href="http://www.postgresql.org/">PostgreSQL</a>: versión 8.4 o superior.</li>
+<li><a href="http://www.cubrid.org/">CUBRID</a>: versión 9.3 o superior.</li>
+<li><a href="http://www.oracle.com/us/products/database/overview/index.html">Oracle</a></li>
+<li><a href="https://www.microsoft.com/en-us/sqlserver/default.aspx">MSSQL</a>: versión 2008 o superior.</li>
+</ul>
+<h2>Creando Conexiones DB  <span id="creating-db-connections"></span><a href="#creating-db-connections" class="hashlink">&para;</a></h2><p>Para acceder a una base de datos, primero necesitas conectarte a tu bases de datos mediante la creación
+de una instancia de <span class="broken-link">yii\db\Connection</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span> = <span class="hljs-keyword">new</span> yii\db\Connection([
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=example'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+]);
+</code></pre>
+<p>Debido a una conexión DB a menudo necesita ser accedido en diferentes lugares, una práctica común es
+configurarlo en términos de un <a href="guide-structure-application-components.html">componente de aplicación</a> como
+se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'mysql:host=localhost;dbname=example'</span>,
+            <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+            <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+            <span class="hljs-string">'charset'</span> =&gt; <span class="hljs-string">'utf8'</span>,
+        ],
+    ],
+    <span class="hljs-comment">// ...</span>
+];
+</code></pre>
+<p>Puedes acceder a la conexión DB mediante la expresión <code>Yii::$app-&gt;db</code>.</p>
+<blockquote class="tip"><p><strong>Tip: </strong>Puedes configurar múltiples componentes de aplicación DB si tu aplicación necesita acceder a múltiples bases de datos.</p>
+</blockquote>
+<p>Cuando configuras una conexión DB, deberías siempre especificar el Nombre de Origen de Datos (DSN) mediante la
+propiedad <span class="broken-link">yii\db\Connection::dsn</span>. El formato del DSN varia para cada diferente base de datos. Por favor consulte el
+<a href="http://www.php.net/manual/es/function.PDO-construct.php">manual de PHP</a> para más detalles. Abajo están algunos ejemplos:</p>
+<ul>
+<li>MySQL, MariaDB: <code>mysql:host=localhost;dbname=mydatabase</code></li>
+<li>SQLite: <code>sqlite:/path/to/database/file</code></li>
+<li>PostgreSQL: <code>pgsql:host=localhost;port=5432;dbname=mydatabase</code></li>
+<li>CUBRID: <code>cubrid:dbname=demodb;host=localhost;port=33000</code></li>
+<li>MS SQL Server (mediante sqlsrv driver): <code>sqlsrv:Server=localhost;Database=mydatabase</code></li>
+<li>MS SQL Server (mediante dblib driver): <code>dblib:host=localhost;dbname=mydatabase</code></li>
+<li>MS SQL Server (mediante mssql driver): <code>mssql:host=localhost;dbname=mydatabase</code></li>
+<li>Oracle: <code>oci:dbname=//localhost:1521/mydatabase</code></li>
+</ul>
+<p>Nota que si estás conectándote con una base de datos mediante ODBC, deberías configurar la propiedad <span class="broken-link">yii\db\Connection::driverName</span>
+para que Yii pueda conocer el tipo de base de datos actual. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-string">'db'</span> =&gt; [
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+    <span class="hljs-string">'driverName'</span> =&gt; <span class="hljs-string">'mysql'</span>,
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'odbc:Driver={MySQL};Server=localhost;Database=test'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'root'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+],
+</code></pre>
+<p>Además de la propiedad <span class="broken-link">yii\db\Connection::dsn</span>, a menudo es necesario configurar el <span class="broken-link">yii\db\Connection::username</span>
+y <span class="broken-link">yii\db\Connection::password</span>. Por favor consulta <span class="broken-link">yii\db\Connection</span> para ver la lista completa de propiedades configurables.</p>
+<blockquote class="info"><p><strong>Info: </strong>Cuando se crea una instancia de conexión DB, la conexión actual a la base de datos no se establece hasta que
+  ejecutes el primer SQL o llames explícitamente al método <span class="broken-link">yii\db\Connection::open()</span>.</p>
+</blockquote>
+<h2>Ejecutando Consultas SQL  <span id="executing-sql-queries"></span><a href="#executing-sql-queries" class="hashlink">&para;</a></h2><p>Una vez tienes instanciada una conexión a la base de datos, se pueden ejecutar consultas SQL tomando
+los siguientes pasos:</p>
+<ol>
+<li>Crea un <span class="broken-link">yii\db\Command</span> con SQL plano;</li>
+<li>Vincula parámetros (opcional);</li>
+<li>Llama a uno de los métodos de ejecución SQL con <span class="broken-link">yii\db\Command</span>.</li>
+</ol>
+<p>El siguiente ejemplo muestra varias maneras de obtener datos de una base de datos:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span> = <span class="hljs-keyword">new</span> yii\db\Connection(...);
+
+<span class="hljs-comment">// retorna un conjunto de filas. Cada fila es un array asociativo de columnas de nombres y valores.</span>
+<span class="hljs-comment">// un array vacío es retornado si no hay resultados</span>
+<span class="hljs-variable">$posts</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post'</span>)
+            -&gt;queryAll();
+
+<span class="hljs-comment">// retorna una sola fila (la primera fila)</span>
+<span class="hljs-comment">// `false` es retornado si no hay resultados</span>
+<span class="hljs-variable">$post</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=1'</span>)
+           -&gt;queryOne();
+
+<span class="hljs-comment">// retorna una sola columna (la primera columna)</span>
+<span class="hljs-comment">// un array vacío es retornado si no hay resultados</span>
+<span class="hljs-variable">$titles</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT title FROM post'</span>)
+             -&gt;queryColumn();
+
+<span class="hljs-comment">// retorna un escalar</span>
+<span class="hljs-comment">// `false` es retornado si no hay resultados</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT COUNT(*) FROM post'</span>)
+             -&gt;queryScalar();
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Para preservar la precisión, los datos obtenidos de las bases de datos son todos representados como cadenas, incluso si el tipo de columna correspondiente
+a la base de datos es numérico.</p>
+</blockquote>
+<blockquote class="tip"><p><strong>Tip: </strong>Si necesitas ejecutar una consulta SQL inmediatamente después de establecer una conexión (ej., para establecer una zona horaria o un conjunto de caracteres),
+puedes hacerlo con el evento <span class="broken-link">yii\db\Connection::EVENT_AFTER_OPEN</span>. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+            <span class="hljs-comment">// ...</span>
+            <span class="hljs-string">'on afterOpen'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$event</span>)</span> </span>{
+                <span class="hljs-comment">// $event-&gt;sender se refiere a la conexión DB</span>
+                <span class="hljs-variable">$event</span>-&gt;sender-&gt;createCommand(<span class="hljs-string">"SET time_zone = 'UTC'"</span>)-&gt;execute();
+            }
+        ],
+    ],
+    <span class="hljs-comment">// ...</span>
+];
+</code></pre>
+</blockquote>
+<h3>Parámetros Vinculados (Binding Parameters)  <span id="binding-parameters"></span><a href="#binding-parameters" class="hashlink">&para;</a></h3><p>Cuando creamos un comando DB para un SQL con parámetros, nosotros deberíamos casi siempre aprovechar el uso de los parámetros vinculados
+para prevenir los ataques de inyección de SQL. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$post</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id AND status=:status'</span>)
+           -&gt;bindValue(<span class="hljs-string">':id'</span>, <span class="hljs-variable">$_GET</span>[<span class="hljs-string">'id'</span>])
+           -&gt;bindValue(<span class="hljs-string">':status'</span>, <span class="hljs-number">1</span>)
+           -&gt;queryOne();
+</code></pre>
+<p>En la sentencia SQL, puedes incrustar uno o múltiples parámetros placeholders (ej. <code>:id</code> en el ejemplo anterior). Un parámetro
+placeholder debería ser una cadena que empiece con dos puntos. A continuación puedes llamar a uno de los siguientes métodos para
+unir los valores de los parámetros vinculados:</p>
+<ul>
+<li><span class="broken-link">yii\db\Command::bindValue()</span>: une un solo parámetro</li>
+<li><span class="broken-link">yii\db\Command::bindValues()</span>: une múltiples parámetros en una sola llamada</li>
+<li><span class="broken-link">yii\db\Command::bindParam()</span>: similar a <span class="broken-link">yii\db\Command::bindValue()</span> pero también
+soporta las referencias de parámetros vinculados.</li>
+</ul>
+<p>El siguiente ejemplo muestra formas alternativas de vincular parámetros:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$params</span> = [<span class="hljs-string">':id'</span> =&gt; <span class="hljs-variable">$_GET</span>[<span class="hljs-string">'id'</span>], <span class="hljs-string">':status'</span> =&gt; <span class="hljs-number">1</span>];
+
+<span class="hljs-variable">$post</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id AND status=:status'</span>)
+           -&gt;bindValues(<span class="hljs-variable">$params</span>)
+           -&gt;queryOne();
+
+<span class="hljs-variable">$post</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id AND status=:status'</span>, <span class="hljs-variable">$params</span>)
+           -&gt;queryOne();
+</code></pre>
+<p>La vinculación parámetros es implementada mediante <a href="http://php.net/manual/es/mysqli.quickstart.prepared-statements.php">sentencias preparadas (prepared statements)</a>.
+Además de prevenir ataques de inyección de SQL, también puede mejorar el rendimiento preparando una sola vez una sentencia SQL y ejecutándola múltiples veces con diferentes
+parámetros. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$command</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id'</span>);
+
+<span class="hljs-variable">$post1</span> = <span class="hljs-variable">$command</span>-&gt;bindValue(<span class="hljs-string">':id'</span>, <span class="hljs-number">1</span>)-&gt;queryOne();
+<span class="hljs-variable">$post2</span> = <span class="hljs-variable">$command</span>-&gt;bindValue(<span class="hljs-string">':id'</span>, <span class="hljs-number">2</span>)-&gt;queryOne();
+</code></pre>
+<p>Porque <span class="broken-link">yii\db\Command::bindParam()</span> soporta parámetros vinculados por referencias, el código de arriba también
+puede ser escrito como lo siguiente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$command</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM post WHERE id=:id'</span>)
+              -&gt;bindParam(<span class="hljs-string">':id'</span>, <span class="hljs-variable">$id</span>);
+
+<span class="hljs-variable">$id</span> = <span class="hljs-number">1</span>;
+<span class="hljs-variable">$post1</span> = <span class="hljs-variable">$command</span>-&gt;queryOne();
+
+<span class="hljs-variable">$id</span> = <span class="hljs-number">2</span>;
+<span class="hljs-variable">$post2</span> = <span class="hljs-variable">$command</span>-&gt;queryOne();
+</code></pre>
+<p>Observe que vincula el placeholder a la variable <code>$id</code> antes de la ejecución, y entonces cambia el valor de esa variable
+antes de cada subsiguiente ejecución (esto se hace a menudo con bucles). Ejecutando consultas de esta manera puede ser
+bastante más eficiente que ejecutar una nueva consulta para cada valor diferente del parámetro.</p>
+<h3>Ejecutando Consultas Non-SELECT  <span id="non-select-queries"></span><a href="#non-select-queries" class="hashlink">&para;</a></h3><p>El método <code>queryXyz()</code> introducidos en las secciones previas todos tratan con consultas SELECT los cuales recogen los
+datos de la base de datos. Para las consultas que no devuelven datos, deberías llamar a el método <span class="broken-link">yii\db\Command::execute()</span>
+en su lugar. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'UPDATE post SET status=1 WHERE id=1'</span>)
+   -&gt;execute();
+</code></pre>
+<p>El método <span class="broken-link">yii\db\Command::execute()</span> retorna el número de filas afectadas por la ejecución SQL.</p>
+<p>Para consultas INSERT, UPDATE y DELETE, en vez de escribir SQLs planos, puedes llamar a <span class="broken-link">yii\db\Command::insert()</span>,
+<span class="broken-link">yii\db\Command::update()</span>, <span class="broken-link">yii\db\Command::delete()</span>, respectivamente, construyen los correspondientes
+SQLs. Estos métodos entrecomillan adecuadamente las tablas y los nombres de columnas y los valores de los parámetros vinculados.
+Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// INSERT (table name, column values)</span>
+<span class="hljs-variable">$db</span>-&gt;createCommand()-&gt;insert(<span class="hljs-string">'user'</span>, [
+    <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'Sam'</span>,
+    <span class="hljs-string">'age'</span> =&gt; <span class="hljs-number">30</span>,
+])-&gt;execute();
+
+<span class="hljs-comment">// UPDATE (table name, column values, condition)</span>
+<span class="hljs-variable">$db</span>-&gt;createCommand()-&gt;update(<span class="hljs-string">'user'</span>, [<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>], <span class="hljs-string">'age &gt; 30'</span>)-&gt;execute();
+
+<span class="hljs-comment">// DELETE (table name, condition)</span>
+<span class="hljs-variable">$db</span>-&gt;createCommand()-&gt;delete(<span class="hljs-string">'user'</span>, <span class="hljs-string">'status = 0'</span>)-&gt;execute();
+</code></pre>
+<p>Puedes también llamar a <span class="broken-link">yii\db\Command::batchInsert()</span> para insertar múltiples filas de una sola vez,
+que es mucho más eficiente que insertar una fila de cada vez:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// table name, column names, column values</span>
+<span class="hljs-variable">$db</span>-&gt;createCommand()-&gt;batchInsert(<span class="hljs-string">'user'</span>, [<span class="hljs-string">'name'</span>, <span class="hljs-string">'age'</span>], [
+    [<span class="hljs-string">'Tom'</span>, <span class="hljs-number">30</span>],
+    [<span class="hljs-string">'Jane'</span>, <span class="hljs-number">20</span>],
+    [<span class="hljs-string">'Linda'</span>, <span class="hljs-number">25</span>],
+])-&gt;execute();
+</code></pre>
+<h2>Entrecomillado de Tablas y Nombres de Columna  <span id="quoting-table-and-column-names"></span><a href="#quoting-table-and-column-names" class="hashlink">&para;</a></h2><p>Al escribir código de database-agnostic, entrecomillar correctamente los nombres de las tablas y las columnas es a menudo
+un dolor de cabeza porque las diferentes bases de datos tienen diferentes reglas para entrecomillar los nombres. Para
+solventar este problema, puedes usar la siguiente sintaxis de entrecomillado introducido por Yii:</p>
+<ul>
+<li><code>[[column name]]</code>: encierra con dobles corchetes el nombre de una columna que debe ser entrecomillado;</li>
+<li><code>{{table name}}</code>: encierra con dobles llaves el nombre de una tabla que debe ser entrecomillado.</li>
+</ul>
+<p>Yii DAO automáticamente convertirá tales construcciones en un SQL con los correspondientes entrecomillados de los nombres de las columnas o tablas.
+Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ejecuta esta SQL para MySQL: SELECT COUNT(`id`) FROM `employee`</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">"SELECT COUNT([[id]]) FROM {{employee}}"</span>)
+            -&gt;queryScalar();
+</code></pre>
+<h3>Usadno Prefijos de Tabla  <span id="using-table-prefix"></span><a href="#using-table-prefix" class="hashlink">&para;</a></h3><p>Si la mayoría de tus tablas de BD utilizan algún prefijo común en sus tablas, puedes usar la función de prefijo de tabla soportado
+por Yii DAO.</p>
+<p>Primero, especifica el prefijo de tabla mediante la propiedad <span class="broken-link">yii\db\Connection::tablePrefix</span>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// ...</span>
+        <span class="hljs-string">'db'</span> =&gt; [
+            <span class="hljs-comment">// ...</span>
+            <span class="hljs-string">'tablePrefix'</span> =&gt; <span class="hljs-string">'tbl_'</span>,
+        ],
+    ],
+];
+</code></pre>
+<p>Luego en tu código, siempre que lo necesites para hacer referencia a una tabla cuyo nombre tiene un prefijo, utiliza la sintaxis
+<code>{{%table name}}</code>. El carácter porcentaje se sustituye con el prefijo de la tabla que has especificado en la configuración de
+la conexión DB. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// ejecuta esta SQL para MySQL: SELECT COUNT(`id`) FROM `tbl_employee`</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">"SELECT COUNT([[id]]) FROM {{%employee}}"</span>)
+            -&gt;queryScalar();
+</code></pre>
+<h2>Realización de Transacciones  <span id="performing-transactions"></span><a href="#performing-transactions" class="hashlink">&para;</a></h2><p>Cuando se ejecutan múltiples consultas relacionadas en una secuencia, puede que se tengan que envolver en una
+transacción para asegurar la integridad de los datos y la consistencia de tu base de datos. Si cualquiera de las consultas
+falla, la base de datos debe ser revertida al estado anterior como si ninguna de estas consultas se haya ejecutado.</p>
+<p>El siguiente código muestra una manera típica de usar transacciones:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span>-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql1</span>)-&gt;execute();
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql2</span>)-&gt;execute();
+    <span class="hljs-comment">// ... ejecutando otras sentencias SQL</span>
+});
+</code></pre>
+<p>El código de arriba es equivalente a lo siguiente:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$transaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql1</span>)-&gt;execute();
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql2</span>)-&gt;execute();
+    <span class="hljs-comment">// ... ejecutando otras sentencias SQL</span>
+
+    <span class="hljs-variable">$transaction</span>-&gt;commit();
+
+} <span class="hljs-keyword">catch</span>(\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+}
+</code></pre>
+<p>Al llamar al método <span class="broken-link">yii\db\Connection::beginTransaction()</span>, se inicia una nueva transacción.
+La transacción se representa como un objeto <span class="broken-link">yii\db\Transaction</span> almacenado en la variable <code>$transaction</code>. Luego,
+las consultas que se ejecutan están encerrados en un bloque <code>try...catch...</code>. Si todas las consultas son ejecutadas satisfactoriamente,
+el método <span class="broken-link">yii\db\Transaction::commit()</span> es llamado para confirmar la transacción. De lo contrario, una excepción
+se disparará y se capturará, y el método <span class="broken-link">yii\db\Transaction::rollBack()</span> es llamado para revertir
+los cambios hechos por las consultas antes de que fallara la consulta en la transacción.</p>
+<h3>Especificando los Niveles de Aislamiento  <span id="specifying-isolation-levels"></span><a href="#specifying-isolation-levels" class="hashlink">&para;</a></h3><p>Yii también soporta la configuración de [niveles de aislamiento] para tus transacciones. Por defecto, cuando comienza una  nueva transacción,
+utilizará el nivel de aislamiento definido por tu sistema de base de datos. Se puede sobrescribir el nivel de aislamiento por defecto de la
+siguiente manera,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$isolationLevel</span> = \yii\db\Transaction::REPEATABLE_READ;
+
+<span class="hljs-variable">$db</span>-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    ....
+}, <span class="hljs-variable">$isolationLevel</span>);
+
+<span class="hljs-comment">// or alternatively</span>
+
+<span class="hljs-variable">$transaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction(<span class="hljs-variable">$isolationLevel</span>);
+</code></pre>
+<p>Yii proporciona cuatro constantes para los niveles de aislamiento más comunes:</p>
+<ul>
+<li><span class="broken-link">\yii\db\Transaction::READ_UNCOMMITTED</span> - el nivel más bajo, pueden ocurrir lecturas Dirty, lecturas
+Non-repeatable y Phantoms.</li>
+<li><span class="broken-link">\yii\db\Transaction::READ_COMMITTED</span> - evita lecturas Dirty.</li>
+<li><span class="broken-link">\yii\db\Transaction::REPEATABLE_READ</span> - evita lecturas Dirty y lecturas Non-repeatable.</li>
+<li><span class="broken-link">\yii\db\Transaction::SERIALIZABLE</span> - el nivel más fuerte, evita todos los problemas nombrados anteriormente.</li>
+</ul>
+<p>Además de usar las constantes de arriba para especificar los niveles de aislamiento, puedes también usar cadenas con
+una sintaxis valida soportada por el DBMS que estés usando. Por ejemplo, en PostgreSQL, puedes utilizar <code>SERIALIZABLE READ ONLY DEFERRABLE</code>.</p>
+<p>Tenga en cuenta que algunos DBMS permiten configuraciones de niveles de aislamiento solo a nivel de conexión. Las transacciones subsiguientes
+recibirá el mismo nivel de aislamiento , incluso si no se especifica ninguna. Al utilizar esta característica
+es posible que necesites ajustar el nivel de aislamiento para todas las transacciones de forma explícitamente para evitar conflictos
+en las configuraciones.
+En el momento de escribir esto, solo MSSQL y SQLite serán afectadas.</p>
+<blockquote class="note"><p><strong>Note: </strong>SQLite solo soporta dos niveles de aislamiento, por lo que solo se puede usar <code>READ UNCOMMITTED</code> y
+<code>SERIALIZABLE</code>. El uso de otros niveles causará el lanzamiento de una excepción.</p>
+</blockquote>
+<blockquote class="note"><p><strong>Note: </strong>PostgreSQL no permite configurar el nivel de aislamiento antes que la transacción empiece por lo que no se
+  puede especificar el nivel de aislamiento directamente cuando empieza la transacción. Se tiene que llamar a
+  <span class="broken-link">yii\db\Transaction::setIsolationLevel()</span> después de que la transacción haya empezado.</p>
+</blockquote>
+<h3>Transacciones Anidadas  <span id="nesting-transactions"></span><a href="#nesting-transactions" class="hashlink">&para;</a></h3><p>Si tu DBMS soporta Savepoint, puedes anidar múltiples transacciones como a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$db</span>-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-comment">// outer transaction</span>
+
+    <span class="hljs-variable">$db</span>-&gt;transaction(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+        <span class="hljs-comment">// inner transaction</span>
+    });
+});
+</code></pre>
+<p>O alternativamente,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$outerTransaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql1</span>)-&gt;execute();
+
+    <span class="hljs-variable">$innerTransaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-variable">$sql2</span>)-&gt;execute();
+        <span class="hljs-variable">$innerTransaction</span>-&gt;commit();
+    } <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+        <span class="hljs-variable">$innerTransaction</span>-&gt;rollBack();
+    }
+
+    <span class="hljs-variable">$outerTransaction</span>-&gt;commit();
+} <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$outerTransaction</span>-&gt;rollBack();
+}
+</code></pre>
+<h2>Replicación y División Lectura-Escritura  <span id="read-write-splitting"></span><a href="#read-write-splitting" class="hashlink">&para;</a></h2><p>Muchos DBMS soportan <a href="http://en.wikipedia.org/wiki/Replication_(computing)#Database_replication">replicación de bases de datos</a> para tener
+una mejor disponibilidad de la base de datos y un mejor tiempo de respuesta del servidor. Con la replicación de bases
+de datos, los datos están replicados en los llamados <em>servidores maestros</em> (master servers) y <em>servidores esclavos</em>
+(slave servers). Todas las escrituras y actualizaciones deben hacerse en el servidor maestro, mientras que las lecturas
+se efectuarán en los servidores esclavos.</p>
+<p>Para aprovechar las ventajas de la replicación de la base de datos y lograr una división de lecuta-escritura, se puede configurar
+el componente <span class="broken-link">yii\db\Connection</span> como se muestra a continuación:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+
+    <span class="hljs-comment">// configuración para el maestro</span>
+    <span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for master server'</span>,
+    <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'master'</span>,
+    <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+
+    <span class="hljs-comment">// configuración para los esclavos</span>
+    <span class="hljs-string">'slaveConfig'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'slave'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-comment">// utiliza un tiempo de espera de conexión más pequeña</span>
+            PDO::ATTR_TIMEOUT =&gt; <span class="hljs-number">10</span>,
+        ],
+    ],
+
+    <span class="hljs-comment">// listado de configuraciones de esclavos</span>
+    <span class="hljs-string">'slaves'</span> =&gt; [
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 1'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 2'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 3'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 4'</span>],
+    ],
+]
+</code></pre>
+<p>La configuración anterior especifica una configuración con un único maestro y múltiples esclavos. Uno de los esclavos
+se conectará y se usará para ejecutar consultas de lectura, mientras que el maestro se usará para realizar consultas de
+escritura. De este modo la división de lectura-escritura se logra automáticamente con esta configuración, Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// crea una instancia de Connection usando la configuración anterior</span>
+<span class="hljs-variable">$db</span> = Yii::createObject(<span class="hljs-variable">$config</span>);
+
+<span class="hljs-comment">// consulta contra uno de los esclavos</span>
+<span class="hljs-variable">$rows</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM user LIMIT 10'</span>)-&gt;queryAll();
+
+<span class="hljs-comment">// consulta contra el maestro</span>
+<span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">"UPDATE user SET username='demo' WHERE id=1"</span>)-&gt;execute();
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>Las consultas realizadas llamando a <span class="broken-link">yii\db\Command::execute()</span> se consideran consultas de escritura,
+  mientras que todas las demás se ejecutan mediante alguno de los métodos "query" de <span class="broken-link">yii\db\Command</span> son consultas
+  de lectura. Se puede obtener la conexión de esclavo activa mediante <code>$db-&gt;slave</code>.</p>
+</blockquote>
+<p>El componente <code>Connection</code> soporta el balanceo de carga y la conmutación de errores entre esclavos. Cuando se realiza
+una consulta de lectura por primera vez, el componente <code>Connection</code> elegirá un esclavo aleatorio e intentará realizar
+una conexión a este. Si el esclavo se encuentra "muerto", se intentará con otro. Si no está disponible ningún esclavo, se conectará al maestro. Configurando una <span class="broken-link">yii\db\Connection::serverStatusCache</span>, se recordarán los servidores
+"muertos" por lo que no se intentará volver a conectar a ellos durante
+<span class="broken-link">yii\db\Connection::serverRetryInterval</span>.</p>
+<blockquote class="info"><p><strong>Info: </strong>En la configuración anterior, se especifica un tiempo de espera (timeout) de conexión de 10 segundos
+  para cada esclavo. Esto significa que si no se puede conectar a un esclavo en 10 segundos, este será considerado
+  como "muerto". Se puede ajustar el parámetro basado en el entorno actual.</p>
+</blockquote>
+<p>También se pueden configurar múltiples maestros con múltiples esclavos. Por ejemplo,</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\db\Connection'</span>,
+
+    <span class="hljs-comment">// configuracion habitual para los maestros</span>
+    <span class="hljs-string">'masterConfig'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'master'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-comment">// utilizar un tiempo de espera de conexión más pequeña</span>
+            PDO::ATTR_TIMEOUT =&gt; <span class="hljs-number">10</span>,
+        ],
+    ],
+
+    <span class="hljs-comment">// listado de configuraciones de maestros</span>
+    <span class="hljs-string">'masters'</span> =&gt; [
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for master server 1'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for master server 2'</span>],
+    ],
+
+    <span class="hljs-comment">// configuración habitual para esclavos</span>
+    <span class="hljs-string">'slaveConfig'</span> =&gt; [
+        <span class="hljs-string">'username'</span> =&gt; <span class="hljs-string">'slave'</span>,
+        <span class="hljs-string">'password'</span> =&gt; <span class="hljs-string">''</span>,
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-comment">// utilizar un tiempo de espera de conexión más pequeña</span>
+            PDO::ATTR_TIMEOUT =&gt; <span class="hljs-number">10</span>,
+        ],
+    ],
+
+    <span class="hljs-comment">// listado de configuración de esclavos</span>
+    <span class="hljs-string">'slaves'</span> =&gt; [
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 1'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 2'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 3'</span>],
+        [<span class="hljs-string">'dsn'</span> =&gt; <span class="hljs-string">'dsn for slave server 4'</span>],
+    ],
+]
+</code></pre>
+<p>La configuración anterior especifica dos maestros y cuatro esclavos. El componente <code>Connection</code> también da soporte al
+balanceo de carga y la conmutación de errores entre maestros igual que hace con los esclavos. La diferencia es que
+cuando no se encuentra ningún maestro disponible se lanza una excepción.</p>
+<blockquote class="note"><p><strong>Note: </strong>cuando se usa la propiedad <span class="broken-link">yii\db\Connection::masters</span> para configurar uno o múltiples maestros, se
+  ignorarán todas las otras propiedades que especifiquen una conexión de base de datos
+  (ej. <code>dsn</code>, <code>username</code>, <code>password</code>), junto con el mismo objeto <code>Connection</code>.</p>
+</blockquote>
+<p>Por defecto. las transacciones usan la conexión del maestro. Y dentro de una transacción, todas las operaciones de DB usarán
+la conexión del maestro. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// la transacción empieza con la conexión al maestro</span>
+<span class="hljs-variable">$transaction</span> = <span class="hljs-variable">$db</span>-&gt;beginTransaction();
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// las dos consultas se ejecutan contra el maestro</span>
+    <span class="hljs-variable">$rows</span> = <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM user LIMIT 10'</span>)-&gt;queryAll();
+    <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">"UPDATE user SET username='demo' WHERE id=1"</span>)-&gt;execute();
+
+    <span class="hljs-variable">$transaction</span>-&gt;commit();
+} <span class="hljs-keyword">catch</span>(\<span class="hljs-keyword">Exception</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$transaction</span>-&gt;rollBack();
+    <span class="hljs-keyword">throw</span> <span class="hljs-variable">$e</span>;
+}
+</code></pre>
+<p>Si se quiere empezar la transacción con una conexión a un esclavo, se debe hacer explícitamente como se muestra a
+continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$transaction</span> = <span class="hljs-variable">$db</span>-&gt;slave-&gt;beginTransaction();
+</code></pre>
+<p>A veces, se puede querer forzar el uso de una conexión maestra para realizar una consulta de lectura. Se puede lograr
+usando el método <code>useMaster()</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$rows</span> = <span class="hljs-variable">$db</span>-&gt;useMaster(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$db</span>)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$db</span>-&gt;createCommand(<span class="hljs-string">'SELECT * FROM user LIMIT 10'</span>)-&gt;queryAll();
+});
+</code></pre>
+<p>También se puede utilizar directamente estableciendo <code>$db-&gt;enableSlaves</code> a <code>false</code> para que se redirijan todas las
+consultas a la conexión del maestro.</p>
+<h2>Trabajando con Esquemas de Bases de Datos  <span id="database-schema"></span><a href="#database-schema" class="hashlink">&para;</a></h2><p>Yii DAO proporciona todo un conjunto de métodos que permites manipular el esquema de tu base de datos, tal como
+crear nuevas tablas, borrar una columna de una tabla, etc. Estos métodos son listados a continuación:</p>
+<ul>
+<li><span class="broken-link">yii\db\Command::createTable()</span>: crea una tabla</li>
+<li><span class="broken-link">yii\db\Command::renameTable()</span>: renombra una tabla</li>
+<li><span class="broken-link">yii\db\Command::dropTable()</span>: remueve una tabla</li>
+<li><span class="broken-link">yii\db\Command::truncateTable()</span>: remueve todas las filas de una tabla</li>
+<li><span class="broken-link">yii\db\Command::addColumn()</span>: añade una columna</li>
+<li><span class="broken-link">yii\db\Command::renameColumn()</span>: renombra una columna</li>
+<li><span class="broken-link">yii\db\Command::dropColumn()</span>: remueve una columna</li>
+<li><span class="broken-link">yii\db\Command::alterColumn()</span>: altera una columna</li>
+<li><span class="broken-link">yii\db\Command::addPrimaryKey()</span>: añade una clave primaria</li>
+<li><span class="broken-link">yii\db\Command::dropPrimaryKey()</span>: remueve una clave primaria</li>
+<li><span class="broken-link">yii\db\Command::addForeignKey()</span>: añade una clave ajena</li>
+<li><span class="broken-link">yii\db\Command::dropForeignKey()</span>: remueve una clave ajena</li>
+<li><span class="broken-link">yii\db\Command::createIndex()</span>: crea un indice</li>
+<li><span class="broken-link">yii\db\Command::dropIndex()</span>: remueve un indice</li>
+</ul>
+<p>Estos métodos puedes ser usados como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// CREATE TABLE</span>
+<span class="hljs-variable">$db</span>-&gt;createCommand()-&gt;createTable(<span class="hljs-string">'post'</span>, [
+    <span class="hljs-string">'id'</span> =&gt; <span class="hljs-string">'pk'</span>,
+    <span class="hljs-string">'title'</span> =&gt; <span class="hljs-string">'string'</span>,
+    <span class="hljs-string">'text'</span> =&gt; <span class="hljs-string">'text'</span>,
+]);
+</code></pre>
+<p>También puedes recuperar la información de definición de una tabla a través
+del método <span class="broken-link">yii\db\Connection::getTableSchema()</span> de una conexión DB. Por ejemplo,</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$table</span> = <span class="hljs-variable">$db</span>-&gt;getTableSchema(<span class="hljs-string">'post'</span>);
+</code></pre>
+<p>El método retorna un objeto <span class="broken-link">yii\db\TableSchema</span> que contiene la información sobre las columnas de las tablas,
+claves primarias, claves ajenas, etc. Toda esta información principalmente es utilizada por el
+<a href="guide-db-query-builder.html">constructor de consultas</a> y <a href="guide-db-active-record.html">active record</a> para ayudar a
+escribir código database-agnostic.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

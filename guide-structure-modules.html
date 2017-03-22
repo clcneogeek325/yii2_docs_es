@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Módulos - Estructura de una aplicación - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1474" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1474-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1474-collapse" class="collapse navbar-collapse"><ul id="w1475" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1458" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1458" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-1459" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1459" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item active" href="#navigation-1460" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1460" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item active" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-1461" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1461" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1462" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1462" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-1463" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1463" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1464" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1464" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1465" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1465" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1466" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1466" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1467" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1467" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1468" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1468" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1469" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1469" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1470" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1470" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1471" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1471" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1472" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1472" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1473" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1473" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Módulos <span id="modulos"></span><a href="#modulos" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#creating-modules">Creación de Módulos</a></li>
+<li><a href="#using-modules">Uso de los Módulos</a></li>
+<li><a href="#nested-modules">Módulos anidados</a></li>
+<li><a href="#best-practices">Mejores Prácticas</a></li></ol></div>
+<p>Los módulos son unidades de software independientes que consisten en <a href="guide-structure-models.html">modelos</a>, 
+<a href="guide-structure-views.html">vistas</a>, <a href="guide-structure-controllers.html">controladores</a>, y otros componentes de apoyo. Los usuarios 
+finales pueden acceder a los controladores de un módulo cuando éste está instalado en la 
+<a href="guide-structure-applications.html">aplicación</a>. Por éstas razones, los módulos a menudo se considerados como 
+mini-aplicaciones. Los módulos difieren de las <a href="guide-structure-applications.html">aplicaciones</a> en que los módulos no pueden 
+ser desplegados solos y tienen que residir dentro de aplicaciones.</p>
+<h2>Creación de Módulos <span id="creating-modules"></span><a href="#creating-modules" class="hashlink">&para;</a></h2><p>Un módulo está organizado de tal manera que contiene un directorio llamado <span class="broken-link">yii\base\Module::basePath</span> del 
+módulo. Dentro de este directorio, hay subdirectorios tales como 'controllers', 'models', 'views', que contienen 
+controladores, modelos, vistas y otro código, exactamente como una aplicación. El siguiente ejemplo muestra el 
+contenido dentro de un módulo:</p>
+<pre><code class="hljs javascript">forum/
+    Module.php                   archivo clase módulo
+    controllers/                 contiene archivos de la clase controlador
+        DefaultController.php    archivo clase controlador por defecto
+    models/                      contiene los archivos de clase modelo
+    views/                       contiene las vistas de controlador y los archivos de diseño
+        layouts/                 contiene los archivos de diseño de las vistas
+        <span class="hljs-keyword">default</span>/                 contiene los archivos de vista del DefaultController
+            index.php            archivo de vista del index
+</code></pre>
+<h3>Clases Módulo  <span id="module-classes"></span><a href="#module-classes" class="hashlink">&para;</a></h3><p>Cada módulo debe tener una única clase módulo que extiende a <span class="broken-link">yii\base\Module</span>. La clase debe encontrarse 
+directamente debajo del <span class="broken-link">yii\base\Module::basePath</span> y debe ser <a href="guide-concept-autoloading.html">autocargable</a>. 
+Cuando se está accediendo a un módulo, se creará una única instancia de la clase módulo correspondiente. Como en las 
+<a href="guide-structure-applications.html">instancias de aplicación</a>, las instancias de módulo se utilizan para compartir datos y 
+componentes de código dentro de los módulos.</p>
+<p>El siguiente ejemplo muestra como podría ser una clase módulo.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">forum</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+
+        <span class="hljs-variable">$this</span>-&gt;params[<span class="hljs-string">'foo'</span>] = <span class="hljs-string">'bar'</span>;
+        <span class="hljs-comment">// ...  otro código de inicialización ...</span>
+    }
+}
+</code></pre>
+<p>Si el método 'init()' contiene mucho código de inicialización de las propiedades del módulo, también se puede guardar 
+en términos de configuración y cargarlo con el siguiente código ‘init()’:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">parent</span>::init();
+    <span class="hljs-comment">// inicializa el módulo con la configuración cargada desde config.php</span>
+    \Yii::configure(<span class="hljs-variable">$this</span>, <span class="hljs-keyword">require</span>(<span class="hljs-keyword">__DIR__</span> . <span class="hljs-string">'/config.php'</span>));
+}
+</code></pre>
+<p>donde el archivo de configuración ‘config.php’ puede contener el siguiente contenido, similar al de 
+<a href="guide-structure-applications.html#application-configurations">configuraciones de aplicación</a>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-comment">// lista de configuraciones de componente</span>
+    ],
+    <span class="hljs-string">'params'</span> =&gt; [
+        <span class="hljs-comment">// lista de parámetros</span>
+    ],
+];
+</code></pre>
+<h3>Controladores en Módulos  <span id="controllers-in-modules"></span><a href="#controllers-in-modules" class="hashlink">&para;</a></h3><p>Cuando se crean controladores en un modelo, una convención es poner las clases controlador debajo del sub-espacio de 
+nombres de ‘controllers’ del espacio de nombres de la clase módulo. Esto también significa que los archivos de la 
+clase controlador deben ponerse en el directorio ‘controllers’ dentro del <span class="broken-link">yii\base\Module::basePath</span> del 
+módulo. Por ejemplo, para crear un controlador ‘post’ en el módulo ‘forum’ mostrado en la última subdivisión, se debe 
+declarar la clase controlador de la siguiente manera:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">forum</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Se puede personalizar el espacio de nombres de las clases controlador configurando la propiedad 
+<span class="broken-link">yii\base\Module::controllerNamespace</span>. En el caso que alguno de los controladores esté fuera del espacio de 
+nombres, se puede hacer accesible configurando la propiedad <span class="broken-link">yii\base\Module::controllerMap</span>, similar a 
+<a href="guide-structure-applications.html#controller-map">como se hace en una aplicación</a>.</p>
+<h3>Vistas en Módulos  <span id="views-in-modules"></span><a href="#views-in-modules" class="hashlink">&para;</a></h3><p>Las vistas en un módulo deben alojarse en el directorio ‘views’ dentro del módulo del 
+<span class="broken-link">yii\base\Module::basePath</span>. Las vistas renderizadas por un controlador en el módulo, deben alojarse en el 
+directorio ‘views/ControllerID’, donde el ‘ControllerID’ hace referencia al 
+<a href="guide-structure-controllers.html#routes">ID del controlador</a>. Por ejemplo, si la clase controlador es ‘PostController’, el 
+directorio sería ‘views/post’ dentro del <span class="broken-link">yii\base\Module::basePath</span> del módulo.</p>
+<p>Un modulo puede especificar un <a href="guide-structure-views.html#layouts">layout</a> que se aplica a las vistas renderizadas por los 
+controladores del módulo. El layout debe alojarse en el directorio ‘views/layouts’ por defecto, y se puede configurar 
+la propiedad <span class="broken-link">yii\base\Module::layout</span> para apuntar al nombre del layout. Si no se configura la propiedad ‘layout’, 
+se usar el layout de la aplicación.</p>
+<h2>Uso de los Módulos  <span id="using-modules"></span><a href="#using-modules" class="hashlink">&para;</a></h2><p>Para usar un módulo en una aplicación, simplemente se tiene que configurar la aplicación añadiendo el módulo en la 
+propiedad <span class="broken-link">yii\base\Application::modules</span> de la aplicación. El siguiente ejemplo de la 
+<a href="guide-structure-applications.html#application-configurations">configuración de la aplicación</a> usa el modelo ‘forum’:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-string">'forum'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\modules\forum\Module'</span>,
+            <span class="hljs-comment">// ... otras configuraciones para el módulo ...</span>
+        ],
+    ],
+]
+</code></pre>
+<p>La propiedad <span class="broken-link">yii\base\Application::modules</span> contiene un array de configuraciones de módulo.  Cada clave del 
+array representa un <em>ID de módulo</em> que identifica de forma única el módulo de entre todos los módulos de la 
+aplicación, y el correspondiente valor del array es la <a href="guide-concept-configurations.html">configuración</a> para crear el módulo.</p>
+<h3>Rutas  <span id="routes"></span><a href="#routes" class="hashlink">&para;</a></h3><p>De Igual manera que el acceso a los controladores en una aplicación, las <a href="guide-structure-controllers.html#routes">rutas</a> se 
+utiliza para dirigirse a los controladores en un módulo. Una ruta para un controlador dentro de un módulo debe empezar 
+con el ID del módulo seguido por el ID del controlador y el ID de la acción. Por ejemplo, si una aplicación usa un 
+módulo llamado ‘forum’, la ruta ‘forum/post/index’ representaría la acción ‘index’ del controlador ‘post’ en el 
+módulo. Si la ruta sólo contiene el ID del módulo, entonces la propiedad <span class="broken-link">yii\base\Module::defaultRoute</span> que por 
+defecto es ‘default’, determinara que controlador/acción debe usarse. Esto significa que la ruta ‘forum’ representaría 
+el controlador ‘default’ en el módulo ‘forum’.</p>
+<h3>Acceder a los Módulos  <span id="accessing-modules"></span><a href="#accessing-modules" class="hashlink">&para;</a></h3><p>Dentro de un módulo, se puede necesitar obtener la instancia de la <a href="#module-classes">clase módulo</a> para poder acceder 
+al ID del módulo, componentes del módulo, etc. Se puede hacer usando la siguiente declaración:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$module</span> = MyModuleClass::getInstance();
+</code></pre>
+<p>Dónde ‘MyModuleClass’ hace referencia al nombre de la clase módulo en la que estemos interesados. El método 
+‘getInstance()’ devolverá la instancia actualmente solicitada de la clase módulo. Si no se solicita el módulo, el 
+método devolverá nulo. Hay que tener en cuenta que si se crea una nueva instancia del módulo, esta será diferente a la 
+creada por Yii en respuesta a la solicitud.</p>
+<blockquote class="info"><p><strong>Info: </strong>Cuando se desarrolla un módulo, no se debe dar por sentado que el módulo usará un ID fijo. Esto se debe 
+  a que un módulo puede asociarse a un ID arbitrario cuando se usa en una aplicación o dentro de otro módulo. Para 
+  obtener el ID del módulo, primero se debe usar el código del anterior ejemplo para obtener la instancia y luego el 
+  ID mediante ‘$modeule-&gt;id’.</p>
+</blockquote>
+<p>También se puede acceder a la instancia de un módulo usando las siguientes declaraciones:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// obtiene el modulo hijo cuyo ID es “forum”</span>
+<span class="hljs-variable">$module</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;getModule(<span class="hljs-string">'forum'</span>);
+
+<span class="hljs-comment">// obtiene el módulo al que pertenece la petición actual</span>
+<span class="hljs-variable">$module</span> = \Yii::<span class="hljs-variable">$app</span>-&gt;controller-&gt;module;
+</code></pre>
+<p>El primer ejemplo sólo es útil cuando conocemos el ID del módulo, mientras que el segundo es mejor usarlo cuando 
+conocemos los controladores que se están solicitando.</p>
+<p>Una vez obtenida la instancia del módulo, se puede acceder a parámetros o componentes registrados con el módulo. Por 
+ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-variable">$maxPostCount</span> = <span class="hljs-variable">$module</span>-&gt;params[<span class="hljs-string">'maxPostCount'</span>];
+</code></pre>
+<h3>Bootstrapping Módulos  <span id="bootstrapping-modules"></span><a href="#bootstrapping-modules" class="hashlink">&para;</a></h3><p>Puede darse el caso en que necesitemos que un módulo se ejecute en cada petición. El módulo <span class="broken-link">yii\debug\Module</span> 
+es un ejemplo. Para hacerlo, tenemos que listar los IDs de los módulos en la propiedad 
+<span class="broken-link">yii\base\Application::bootstrap</span> de la aplicación.</p>
+<p>Por ejemplo, la siguiente configuración de aplicación se asegura de que el módulo ‘debug’ siempre se cargue:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'bootstrap'</span> =&gt; [
+        <span class="hljs-string">'debug'</span>,
+    ],
+
+    <span class="hljs-string">'modules'</span> =&gt; [
+        <span class="hljs-string">'debug'</span> =&gt; <span class="hljs-string">'yii\debug\Module'</span>,
+    ],
+]
+</code></pre>
+<h2>Módulos anidados  <span id="nested-modules"></span><a href="#nested-modules" class="hashlink">&para;</a></h2><p>Los módulos pueden ser anidados sin límite de niveles. Es decir, un módulo puede contener un módulo y éste a la vez 
+contener otro módulo. Nombramos <em>padre</em> al primero mientras que al segundo lo nombramos <em>hijo</em>. Los módulos hijo se 
+tienen que declarar en la propiedad <span class="broken-link">yii\base\Module::modules</span> de sus módulos padre. Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">modules</span>\<span class="hljs-title">forum</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> <span class="hljs-keyword">extends</span> \<span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Module</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+
+        <span class="hljs-variable">$this</span>-&gt;modules = [
+            <span class="hljs-string">'admin'</span> =&gt; [
+                <span class="hljs-comment">// debe considerarse usar un nombre de espacios más corto!</span>
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\modules\forum\modules\admin\Module'</span>,
+            ],
+        ];
+    }
+}
+</code></pre>
+<p>En un controlador dentro de un módulo anidado, la ruta debe incluir el ID de todos los módulos antecesores. Por 
+ejemplo, la ruta ‘forum/admin/dashboard/index’ representa la acción ‘index’ del controlador ‘dashboard’ en el módulo 
+‘admin’ que es el módulo hijo del módulo ‘forum’. </p>
+<blockquote class="info"><p><strong>Info: </strong>El método <span class="broken-link">yii\base\Module::getModule()</span> sólo devuelve el módulo hijo que pertenece 
+directamente a su padre. La propiedad <span class="broken-link">yii\base\Application::loadedModules</span> contiene una lista de los módulos 
+cargados, incluyendo los hijos directos y los anidados, indexados por sus nombres de clase.</p>
+</blockquote>
+<h2>Mejores Prácticas  <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>Es mejor usar los módulos en grandes aplicaciones en las que sus funcionalidades puedan ser divididas en diferentes 
+grupos, cada uno compuesto por funcionalidades directamente relacionadas. Cada grupo de funcionalidades se puede 
+desarrollar como un módulo que puede ser desarrollado y mantenido por un programador o equipo específico.</p>
+<p>Los módulos también son una buena manera de reutilizar código a nivel de grupo de funcionalidades. Algunas 
+funcionalidades de uso común, tales como la gestión de usuarios o la gestión de comentarios, pueden ser desarrollados 
+como módulos para que puedan ser fácilmente reutilizados en futuros proyectos.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

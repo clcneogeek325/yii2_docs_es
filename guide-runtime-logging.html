@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Registro de anotaciones - Gestión de las peticiones - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1150" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1150-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1150-collapse" class="collapse navbar-collapse"><ul id="w1151" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1134" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1134" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-1135" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1135" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-1136" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1136" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item active" href="#navigation-1137" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1137" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item active" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1138" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1138" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-1139" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1139" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1140" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1140" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1141" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1141" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1142" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1142" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1143" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1143" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1144" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1144" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1145" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1145" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1146" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1146" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1147" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1147" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1148" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1148" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1149" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1149" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Registro de anotaciones <span id="registro-de-anotaciones"></span><a href="#registro-de-anotaciones" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#log-messages">Anotación de Messages</a></li>
+<li><a href="#log-targets">Destino de Registros</a></li>
+<li><a href="#performance-profiling">Perfilado de Rendimiento</a></li></ol></div>
+<p>Yii proporciona un poderoso framework dedicado al registro de anotaciones (logging) que es altamente personalizable y
+extensible. Usando este framework se pueden guardar fácilmente anotaciones (logs) de varios tipos de mensajes,
+filtrarlos, y unificarlos en diferentes destinos que pueden ser archivos, bases de datos o emails.</p>
+<p>Usar el framework de registro de anotaciones de Yii involucra los siguientes pasos:</p>
+<ul>
+<li>Registrar <a href="#log-messages">mensajes de las anotaciones</a> en distintos lugares del código;</li>
+<li>Configurar los <a href="#log-targets">destinos de las anotaciones</a> en la configuración de la aplicación para filtrar y
+exportar los mensajes de las anotaciones;</li>
+<li>Examinar los mensajes filtrados de los las anotaciones exportadas para diferentes destinos
+(ej. <a href="guide-tool-debugger.html">Yii debugger</a>).</li>
+</ul>
+<p>En esta sección, se describirán principalmente los dos primeros pasos.</p>
+<h2>Anotación de Messages  <span id="log-messages"></span><a href="#log-messages" class="hashlink">&para;</a></h2><p>Registrar mensajes de anotación es tan simple como llamar a uno de los siguientes métodos de registro de anotaciones.</p>
+<ul>
+<li><span class="broken-link">Yii::trace()</span>: registra un mensaje para trazar el funcionamiento de una sección de código. Se usa principalmente
+para tareas de desarrollo.</li>
+<li><span class="broken-link">Yii::info()</span>: registra un mensaje que transmite información útil.</li>
+<li><span class="broken-link">Yii::warning()</span>: registra un mensaje de advertencia que indica que ha sucedido algo inesperado.</li>
+<li><span class="broken-link">Yii::error()</span>: registra un error fatal que debe ser investigado tan pronto como sea posible.</li>
+</ul>
+<p>Estos métodos registran mensajes de varios <em>niveles de severidad</em> y <em>categorías</em>. Comparten el mismo registro de
+función <code>function ($message, $category = 'application')</code>, donde <code>$message</code> representa el mensaje del registro que
+tiene que ser registrado, mientras que <code>$category</code> es la categoría del registro de mensaje. El código del siguiente
+ejemplo registra la huella del mensaje para la categoría <code>application</code>:</p>
+<pre><code class="hljs php language-php">Yii::trace(<span class="hljs-string">'start calculating average revenue'</span>);
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>Los mensajes de registro pueden ser tanto cadenas de texto como datos complejos, como arrays u objetos.
+  Es responsabilidad de los <a href="#log-targets">destinos de registros</a> tratar los mensajes de registro de manera apropiada.
+  De forma predeterminada, si un mensaje de registro no es una cadena de texto, se exporta como si fuera un string
+  llamando a <span class="broken-link">yii\helpers\VarDumper::export()</span>.</p>
+</blockquote>
+<p>Para organizar mejor y filtrar los mensajes de registro, se recomienda especificar una categoría apropiada para cada
+mensaje de registro. Se puede elegir un sistema de nombres jerárquicos por categorías que facilite a los
+<a href="#log-targets">destino de registros</a> el filtrado de mensajes basándose en categorías. Una manera simple pero
+efectiva de organizarlos es usar la constante predefinida (magic constant) de PHP <code>__METHOD__</code> como nombre de
+categoría. Además este es el enfoque que se usa en el código del núcleo (core) del framework Yii. Por ejemplo,</p>
+<pre><code class="hljs php language-php">Yii::trace(<span class="hljs-string">'start calculating average revenue'</span>, <span class="hljs-keyword">__METHOD__</span>);
+</code></pre>
+<p>La constante <code>__METHOD__</code> equivale al nombre del método (con el prefijo del nombre completo del nombre de clase) donde
+se encuentra la constante. Por ejemplo, es igual a la cadena <code>'app\controllers\RevenueController::calculate'</code> si la
+linea anterior de código se llamara dentro de este método.</p>
+<blockquote class="info"><p><strong>Info: </strong>Los métodos de registro de anotaciones descritos anteriormente en realidad son accesos directos al
+  método <span class="broken-link">yii\log\Logger::log()</span> del <span class="broken-link">yii\log\Logger</span> que es un singleton accesible a través
+  de la expresión <code>Yii::getLogger()</code>. Cuando se hayan registrado suficientes mensajes o cuando la aplicación haya
+  finalizado, el objeto de registro llamará <span class="broken-link">yii\log\Dispatcher</span> para enviar los mensajes de
+  registro registrados a los <a href="#log-targets">destiinos de registros</a>.</p>
+</blockquote>
+<h2>Destino de Registros  <span id="log-targets"></span><a href="#log-targets" class="hashlink">&para;</a></h2><p>Un destino de registro es una instancia de la clase <span class="broken-link">yii\log\Target</span> o de una clase hija. Este filtra los
+mensajes de registro por sus niveles de severidad y sus categorías y después los exporta a algún medio. Por ejemplo,
+un <span class="broken-link">yii\log\DbTarget</span> exporta los mensajes de registro filtrados a una tabla de base de datos,
+mientras que un <span class="broken-link">yii\log\EmailTarget</span> exporta los mensajes de registro a una dirección de correo
+electrónico específica.</p>
+<p>Se pueden registrar múltiples destinos de registros en una aplicación configurándolos en la
+<a href="guide-structure-application-components.html">aplicación de componente</a> <code>log</code> dentro de la configuración de aplicación, como
+en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-comment">// el componente log tiene que cargarse durante el proceso de bootstrapping</span>
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'targets'</span> =&gt; [
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\DbTarget'</span>,
+                    <span class="hljs-string">'levels'</span> =&gt; [<span class="hljs-string">'error'</span>, <span class="hljs-string">'warning'</span>],
+                ],
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\EmailTarget'</span>,
+                    <span class="hljs-string">'levels'</span> =&gt; [<span class="hljs-string">'error'</span>],
+                    <span class="hljs-string">'categories'</span> =&gt; [<span class="hljs-string">'yii\db\*'</span>],
+                    <span class="hljs-string">'message'</span> =&gt; [
+                       <span class="hljs-string">'from'</span> =&gt; [<span class="hljs-string">'log@example.com'</span>],
+                       <span class="hljs-string">'to'</span> =&gt; [<span class="hljs-string">'admin@example.com'</span>, <span class="hljs-string">'developer@example.com'</span>],
+                       <span class="hljs-string">'subject'</span> =&gt; <span class="hljs-string">'Database errors at example.com'</span>,
+                    ],
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>El componente <code>log</code> debe cargarse durante el proceso de <a href="guide-runtime-bootstrapping.html">bootstrapping</a> para que
+pueda enviar los mensajes de registro a los destinos inmediatamente. Este es el motivo por el que se lista en el
+array <code>bootstrap</code> como se muestra más arriba.</p>
+</blockquote>
+<p>En el anterior código, se registran dos destinos de registros en la propiedad <span class="broken-link">yii\log\Dispatcher::targets</span></p>
+<ul>
+<li>el primer destino gestiona los errores y las advertencias y las guarda en una tabla de la base de datos;</li>
+<li>el segundo destino gestiona mensajes los mensajes de error de las categorías cuyos nombres empiecen por
+<code>yii\db\</code> y los envía por email a las direcciones <code>admin@example.com</code> y <code>developer@example.com</code>.</li>
+</ul>
+<p>Yii incluye los siguientes destinos. En la API de documentación se pueden referencias a estas clases e
+información de configuración y uso.</p>
+<ul>
+<li><span class="broken-link">yii\log\DbTarget</span>: almacena los mensajes de registro en una tabla de la base de datos.</li>
+<li><span class="broken-link">yii\log\EmailTarget</span>: envía los mensajes de registro a direcciones de correo preestablecidas.</li>
+<li><span class="broken-link">yii\log\FileTarget</span>: guarda los menajes de registro en archivos.</li>
+<li><span class="broken-link">yii\log\SyslogTarget</span>: guarda los mensajes de registro en el syslog llamando a la función PHP <code>syslog()</code>.</li>
+</ul>
+<p>A continuación, se describirá las características más comunes de todos los destinos de registros.</p>
+<h3>Filtrado de Mensajes  <span id="message-filtering"></span><a href="#message-filtering" class="hashlink">&para;</a></h3><p>Se pueden configurar las propiedades <span class="broken-link">yii\log\Target::levels</span> y <span class="broken-link">yii\log\Target::categories</span>
+para cada destino de registros, con estas se especifican los niveles de severidad y las categorías de mensajes que
+deberán procesar sus destinos.</p>
+<p>La propiedad <span class="broken-link">yii\log\Target::levels</span> es un array que consta de uno o varios de los siguientes valores:</p>
+<ul>
+<li><code>error</code>: correspondiente a los mensajes registrados por <span class="broken-link">Yii::error()</span>.</li>
+<li><code>warning</code>: correspondiente a los mensajes registrados por <span class="broken-link">Yii::warning()</span>.</li>
+<li><code>info</code>: correspondiente a los mensajes registrados por <span class="broken-link">Yii::info()</span>.</li>
+<li><code>trace</code>: correspondiente a los mensajes registrados por <span class="broken-link">Yii::trace()</span>.</li>
+<li><code>profile</code>: correspondiente a los mensajes registrados por <span class="broken-link">Yii::beginProfile()</span> y <span class="broken-link">Yii::endProfile()</span>, que se
+explicará más detalladamente en la subsección <a href="#performance-profiling">Perfiles</a>.</li>
+</ul>
+<p>Si no se especifica la propiedad <span class="broken-link">yii\log\Target::levels</span>, significa que el destino procesará los
+mensajes de <em>cualquier</em> nivel de severidad.</p>
+<p>La propiedad <span class="broken-link">yii\log\Target::categories</span> es un array que consta de categorías de mensaje o patrones. El
+destino sólo procesará mensajes de las categorías que se puedan encontrar o si coinciden con algún patrón listado
+en el array. Un patrón de categoría es un nombre de categoría al que se le añade un asterisco <code>*</code> al final. Un nombre
+de categoría coincide con un patrón si empieza por el mismo prefijo que el patrón. Por ejemplo,
+<code>yii\db\Command::execute</code> y <code>yii\db\Command::query</code> que se usan como nombres de categoría para los mensajes
+registrados en la clase <span class="broken-link">yii\db\Command</span>, coinciden con el patrón <code>yii\db\*</code>.</p>
+<p>Si no se especifica la propiedad <span class="broken-link">yii\log\Target::categories</span>, significa que el destino procesará
+los mensajes de <em>todas</em> las categorías.</p>
+<p>Además añadiendo las categorías en listas blancas (whitelisting) mediante la propiedad
+<span class="broken-link">yii\log\Target::categories</span>, también se pueden añadir ciertas categorías en listas negras (blacklist)
+configurando la propiedad <span class="broken-link">yii\log\Target::except</span>. Si se encuentra la categoría de un mensaje o coincide
+algún patrón con esta propiedad, NO será procesada por el destino.</p>
+<p>La siguiente configuración de destinos especifica que el destino solo debe procesar los mensajes de error y
+de advertencia de las categorías que coincidan con alguno de los siguientes patrones <code>yii\db\*</code> o
+<code>yii\web\HttpException:*</code>, pero no con <code>yii\web\HttpException:404</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'levels'</span> =&gt; [<span class="hljs-string">'error'</span>, <span class="hljs-string">'warning'</span>],
+    <span class="hljs-string">'categories'</span> =&gt; [
+        <span class="hljs-string">'yii\db\*'</span>,
+        <span class="hljs-string">'yii\web\HttpException:*'</span>,
+    ],
+    <span class="hljs-string">'except'</span> =&gt; [
+        <span class="hljs-string">'yii\web\HttpException:404'</span>,
+    ],
+]
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>Cuando se captura una excepción de tipo HTTP por el <a href="guide-runtime-handling-errors.html">gestor de errores</a>, se
+  registrará un mensaje de error con el nombre de categoría con formato <code>yii\web\HttpException:ErrorCode</code>. Por
+  ejemplo, la excepción <span class="broken-link">yii\web\NotFoundHttpException</span> causará un mensaje de error del tipo
+  <code>yii\web\HttpException:404</code>.</p>
+</blockquote>
+<h3>Formato de los Mensajes  <span id="message-formatting"></span><a href="#message-formatting" class="hashlink">&para;</a></h3><p>Los destinos exportan los mensajes de registro filtrados en cierto formato. Por ejemplo, is se instala un
+destino de registros de la calse <span class="broken-link">yii\log\FileTarget</span>, encontraremos un registro similar en el archivo de
+registro <code>runtime/log/app.log</code>:</p>
+<pre><code class="hljs markdown">2014-10-04 18:10:15 [<span class="hljs-link_label">::1</span>][<span class="hljs-link_reference"></span>][<span class="hljs-link_label">-</span>][<span class="hljs-link_reference">trace</span>][<span class="hljs-link_label">yii\base\Module::getModule</span>] Loading module: debug
+</code></pre>
+<p>De forma predeterminada los mensajes de registro se formatearan por <span class="broken-link">yii\log\Target::formatMessage()</span> como en el
+siguiente ejemplo:</p>
+<pre><code class="hljs markdown">Timestamp [<span class="hljs-link_label">IP address</span>][<span class="hljs-link_reference">User ID</span>][<span class="hljs-link_label">Session ID</span>][<span class="hljs-link_reference">Severity Level</span>][<span class="hljs-link_label">Category</span>] Message Text
+</code></pre>
+<p>Se puede personalizar el formato configurando la propiedad <span class="broken-link">yii\log\Target::prefix</span> que es un PHP ejecutable y
+devuelve un prefijo de mensaje personalizado. Por ejemplo, el siguiente código configura un destino de registro
+anteponiendo a cada mensaje de registro el ID de usuario (se eliminan la dirección IP y el ID por razones de
+privacidad).</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'prefix'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$message</span>)</span> </span>{
+        <span class="hljs-variable">$user</span> = Yii::<span class="hljs-variable">$app</span>-&gt;has(<span class="hljs-string">'user'</span>, <span class="hljs-keyword">true</span>) ? Yii::<span class="hljs-variable">$app</span>-&gt;get(<span class="hljs-string">'user'</span>) : <span class="hljs-keyword">null</span>;
+        <span class="hljs-variable">$userID</span> = <span class="hljs-variable">$user</span> ? <span class="hljs-variable">$user</span>-&gt;getId(<span class="hljs-keyword">false</span>) : <span class="hljs-string">'-'</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"[$userID]"</span>;
+    }
+]
+</code></pre>
+<p>Además de prefijos de mensaje, destinos de registros también añaden alguna información de contexto en cada lote
+de mensajes de registro. De forma predeterminada, se incluyen los valores de las siguientes variables globales de
+PHP: <code>$_GET</code>, <code>$_POST</code>, <code>$_FILES</code>, <code>$_COOKIE</code>, <code>$_SESSION</code> y <code>$_SERVER</code>. Se puede ajustar el comportamiento
+configurando la propiedad <span class="broken-link">yii\log\Target::logVars</span> con los nombres de las variables globales que se quieran incluir
+con el destino del registro. Por ejemplo, la siguiente configuración de destino de registros especifica que
+sólo se añadirá al mensaje de registro el valor de la variable <code>$_SERVER</code>.</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'logVars'</span> =&gt; [<span class="hljs-string">'_SERVER'</span>],
+]
+</code></pre>
+<p>Se puede configurar <code>logVars</code> para que sea un array vacío para deshabilitar totalmente la inclusión de información de
+contexto. O si se desea implementar un método propio de proporcionar información de contexto se puede sobrescribir el
+método <span class="broken-link">yii\log\Target::getContextMessage()</span>.</p>
+<h3>Nivel de Seguimiento de Mensajes  <span id="trace-level"></span><a href="#trace-level" class="hashlink">&para;</a></h3><p>Durante el desarrollo, a veces se quiere visualizar de donde proviene cada mensaje de registro. Se puede lograr
+configurando la propiedad <span class="broken-link">yii\log\Dispatcher::traceLevel</span> del componente <code>log</code> como en el siguiente
+ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'traceLevel'</span> =&gt; YII_DEBUG ? <span class="hljs-number">3</span> : <span class="hljs-number">0</span>,
+            <span class="hljs-string">'targets'</span> =&gt; [...],
+        ],
+    ],
+];
+</code></pre>
+<p>La configuración de aplicación anterior establece el <span class="broken-link">yii\log\Dispatcher::traceLevel</span> para que sea 3 si
+<code>YII_DEBUG</code> esta habilitado y 0 si esta deshabilitado. Esto significa que si <code>YII_DEBUG</code> esta habilitado, a cada
+mensaje de registro se le añadirán como mucho 3 niveles de la pila de llamadas del mensaje que se este registrando; y
+si <code>YII_DEBUG</code> está deshabilitado, no se incluirá información de la pila de llamadas.</p>
+<blockquote class="info"><p><strong>Info: </strong>Obtener información de la pila de llamadas no es trivial. Por lo tanto, sólo se debe usar esta
+  característica durante el desarrollo o cuando se depura la aplicación.</p>
+</blockquote>
+<h3>Liberación (Flushing) y Exportación de Mensajes  <span id="flushing-exporting"></span><a href="#flushing-exporting" class="hashlink">&para;</a></h3><p>Como se ha comentado anteriormente, los mensajes de registro se mantienen en un array por el
+<span class="broken-link">yii\log\Logger</span>. Para limitar el consumo de memoria de este array, el componente encargado del
+registro de mensajes enviará los mensajes registrados a los <a href="#log-targets">destinos de registros</a> cada vez que el
+array acumule un cierto número de mensajes de registro. Se puede personalizar el número configurando la propiedad
+<span class="broken-link">yii\log\Dispatcher::flushInterval</span> del componente <code>log</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'flushInterval'</span> =&gt; <span class="hljs-number">100</span>,   <span class="hljs-comment">// el valor predeterminado es 1000</span>
+            <span class="hljs-string">'targets'</span> =&gt; [...],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>También se produce la liberación de mensajes cuando la aplicación finaliza, esto asegura que los
+  destinos de los registros reciban los mensajes de registro.</p>
+</blockquote>
+<p>Cuando el <span class="broken-link">yii\log\Logger</span> libera los mensajes de registro enviándolos a los
+<a href="#log-targets">destinos de registros</a>, estos no se exportan inmediatamente. La exportación de mensajes solo se
+produce cuando un destino de registros acumula un cierto número de mensajes filtrados. Se puede personalizar este
+número configurando la propiedad <span class="broken-link">yii\log\Target::exportInterval</span> de un
+<a href="#log-targets">destinos de registros</a> individual, como se muestra a continuación,</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+    <span class="hljs-string">'exportInterval'</span> =&gt; <span class="hljs-number">100</span>,  <span class="hljs-comment">// el valor predeterminado es 1000</span>
+]
+</code></pre>
+<p>Debido al nivel de configuración de la liberación y exportación de mensajes, de forma predeterminada cuando se llama a
+<code>Yii::trace()</code> o cualquier otro método de registro de mensajes, NO veremos el registro de mensaje inmediatamente en
+los destinos de registros. Esto podría ser un problema para algunas aplicaciones de consola de ejecución
+prolongada (long-running). Para hacer que los mensajes de registro aparezcan inmediatamente en los destinos de
+registro se deben establecer <span class="broken-link">yii\log\Dispatcher::flushInterval</span> y
+<span class="broken-link">yii\log\Target::exportInterval</span> para que tengan valor 1 como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'flushInterval'</span> =&gt; <span class="hljs-number">1</span>,
+            <span class="hljs-string">'targets'</span> =&gt; [
+                [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+                    <span class="hljs-string">'exportInterval'</span> =&gt; <span class="hljs-number">1</span>,
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>El uso frecuente de liberación y exportación puede degradar el rendimiento de la aplicación.</p>
+</blockquote>
+<h3>Conmutación de Destinos de Registros  <span id="toggling-log-targets"></span><a href="#toggling-log-targets" class="hashlink">&para;</a></h3><p>Se puede habilitar o deshabilitar un destino de registro configuración su propiedad
+<span class="broken-link">yii\log\Target::enabled</span>. Esto se puede llevar a cabo a mediante la configuración del destino de
+registros o con la siguiente declaración PHP de código:</p>
+<pre><code class="hljs php language-php">Yii::<span class="hljs-variable">$app</span>-&gt;log-&gt;targets[<span class="hljs-string">'file'</span>]-&gt;enabled = <span class="hljs-keyword">false</span>;
+</code></pre>
+<p>El código anterior requiere que se asocie un destino como <code>file</code>, como se muestra a continuación usando las
+claves de texto en el array <code>targets</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">return</span> [
+    <span class="hljs-string">'bootstrap'</span> =&gt; [<span class="hljs-string">'log'</span>],
+    <span class="hljs-string">'components'</span> =&gt; [
+        <span class="hljs-string">'log'</span> =&gt; [
+            <span class="hljs-string">'targets'</span> =&gt; [
+                <span class="hljs-string">'file'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\FileTarget'</span>,
+                ],
+                <span class="hljs-string">'db'</span> =&gt; [
+                    <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\log\DbTarget'</span>,
+                ],
+            ],
+        ],
+    ],
+];
+</code></pre>
+<h3>Creación de Nuevos Destinos  <span id="new-targets"></span><a href="#new-targets" class="hashlink">&para;</a></h3><p>La creación de nuevas clases de destinos de registro es muy simple. Se necesita implementar el método
+<span class="broken-link">yii\log\Target::export()</span> enviando el contenido del array <span class="broken-link">yii\log\Target::messages</span> al medio designado. Se puede
+llamar al método <span class="broken-link">yii\log\Target::formatMessage()</span> para formatear los mensajes. Se pueden encontrar más detalles de
+destinos de registros en las clases incluidas en la distribución de Yii.</p>
+<h2>Perfilado de Rendimiento  <span id="performance-profiling"></span><a href="#performance-profiling" class="hashlink">&para;</a></h2><p>El Perfilado de rendimiento es un tipo especial de registro de mensajes que se usa para medir el tiempo que tardan en
+ejecutarse ciertos bloques de código y encontrar donde están los cuellos de botella de rendimiento. Por ejemplo, la
+clase <span class="broken-link">yii\db\Command</span> utiliza el perfilado de rendimiento para encontrar conocer el tiempo que tarda cada consulta
+a la base de datos.</p>
+<p>Para usar el perfilado de rendimiento, primero debemos identificar los bloques de código que tienen que ser
+perfilados, para poder enmarcar su contenido como en el siguiente ejemplo:</p>
+<pre><code class="hljs php language-php">\Yii::beginProfile(<span class="hljs-string">'myBenchmark'</span>);
+
+... Empieza el perfilado del bloque de código ...
+
+\Yii::endProfile(<span class="hljs-string">'myBenchmark'</span>);
+</code></pre>
+<p>Donde <code>myBenchmark</code> representa un token único para identificar el bloque de código. Después cuando se examine el
+resulte del perfilado, se podrá usar este token para encontrar el tiempo que ha necesitado el correspondiente bloque
+de código.</p>
+<p>Es importante asegurarse de que los pares de <code>beginProfile</code> y <code>endProfile</code> estén bien anidados. Por ejemplo,</p>
+<pre><code class="hljs php language-php">\Yii::beginProfile(<span class="hljs-string">'block1'</span>);
+
+    <span class="hljs-comment">// código que será perfilado</span>
+
+    \Yii::beginProfile(<span class="hljs-string">'block2'</span>);
+        <span class="hljs-comment">// más código para perfilar</span>
+    \Yii::endProfile(<span class="hljs-string">'block2'</span>);
+
+\Yii::endProfile(<span class="hljs-string">'block1'</span>);
+</code></pre>
+<p>Si nos dejamos el <code>\Yii::endProfile('block1')</code> o lo intercambiamos <code>\Yii::endProfile('block1')</code> con
+<code>\Yii::endProfile('block2')</code>, el perfilado de rendimiento no funcionará.</p>
+<p>Se registra un mensaje de registro con el nivel de severidad <code>profile</code> para cada bloque de código que se haya
+perfilado. Se puede configurar el <a href="#log-targets">destino del registro</a> para reunir todos los mensajes y exportarlos.
+El <a href="guide-tool-debugger.html">depurador de Yii</a> incluye un panel de perfilado de rendimiento que muestra los resultados de
+perfilado.</p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

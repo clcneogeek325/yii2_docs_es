@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Controladores - Estructura de una aplicación - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w1384" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1384-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w1384-collapse" class="collapse navbar-collapse"><ul id="w1385" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-1368" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-1368" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-1369" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-1369" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item active" href="#navigation-1370" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-1370" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item active" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-1371" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-1371" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-1372" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-1372" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-1373" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-1373" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-1374" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-1374" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-1375" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-1375" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-1376" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-1376" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-1377" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-1377" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-1378" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-1378" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-1379" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-1379" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-1380" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-1380" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-1381" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-1381" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-1382" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-1382" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-1383" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-1383" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Controladores <span id="controladores"></span><a href="#controladores" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#actions">Acciones</a></li>
+<li><a href="#routes">Routes</a></li>
+<li><a href="#creating-controllers">Creando Controladores</a></li>
+<li><a href="#creating-actions">Creando Acciones</a></li>
+<li><a href="#controller-lifecycle">Ciclo de Vida del Controlador</a></li>
+<li><a href="#best-practices">Buenas Prácticas</a></li></ol></div>
+<p>Los controladores son parte del patrón o arquitectura <a href="http://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador">MVC</a>.
+Son objetos que extienden de <span class="broken-link">yii\base\Controller</span> y se encargan de procesar los <code>requests</code> (consultas)
+generando <code>responses</code> (respuestas). Particularmente, después de tomar el control desde las <a href="guide-structure-applications.html">aplicaciones</a>,
+los controladores analizarán los datos que entran en el <code>request</code>, los pasan a los <a href="guide-structure-models.html">modelos</a>, inyectan los
+modelos resultantes a las <a href="guide-structure-views.html">vistas</a>, y finalmente generan los <code>responses</code> (respuestas) de salida.</p>
+<h2>Acciones  <span id="actions"></span><a href="#actions" class="hashlink">&para;</a></h2><p>Los Controladores están compuestos por <em>acciones</em> que son las unidades más básicas a las que los usuarios pueden
+dirigirse y solicitar ejecución. Un controlador puede tener una o múltiples acciones.</p>
+<p>El siguiente ejemplo muestra un controlador <code>post</code> con dos acciones: <code>view</code> y <code>create</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">app</span>\<span class="hljs-title">models</span>\<span class="hljs-title">Post</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">NotFoundHttpException</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>)</span>
+    </span>{
+        <span class="hljs-variable">$model</span> = Post::findOne(<span class="hljs-variable">$id</span>);
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span> === <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NotFoundHttpException;
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'view'</span>, [
+            <span class="hljs-string">'model'</span> =&gt; <span class="hljs-variable">$model</span>,
+        ]);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionCreate</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$model</span> = <span class="hljs-keyword">new</span> Post;
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$model</span>-&gt;load(Yii::<span class="hljs-variable">$app</span>-&gt;request-&gt;post()) &amp;&amp; <span class="hljs-variable">$model</span>-&gt;save()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;redirect([<span class="hljs-string">'view'</span>, <span class="hljs-string">'id'</span> =&gt; <span class="hljs-variable">$model</span>-&gt;id]);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'create'</span>, [
+                <span class="hljs-string">'model'</span> =&gt; <span class="hljs-variable">$model</span>,
+            ]);
+        }
+    }
+}
+</code></pre>
+<p>En la acción <code>view</code> (definida en el método <code>actionView()</code>), el código primero carga el <a href="guide-structure-models.html">modelo</a>
+de acuerdo el ID del modelo solicitado; Si el modelo es cargado satisfactoriamente, lo mostrará usando una <a href="guide-structure-views.html">vista</a>
+llamada <code>view</code>. Si no, arrojará una excepción.</p>
+<p>En la acción <code>create</code> (definida por el método <code>actionCreate()</code>), el código es similar. Primero intenta poblar 
+el <a href="guide-structure-models.html">modelo</a> usando datos del <code>request</code> y guardarlo. Si ambas cosas suceden correctamente, se redireccionará
+el navegador a la acción <code>view</code> con el ID del modelo recientemente creado. De otro modo mostrará
+la vista <code>create</code> a través de la cual el usuario puede completar los campos necesarios.</p>
+<h2>Routes  <span id="routes"></span><a href="#routes" class="hashlink">&para;</a></h2><p>Los usuarios ejecutan las acciones a través de las llamadas <em>routes</em> (rutas). una ruta es una cadena que consiste en las siguientes partes:</p>
+<ul>
+<li>un ID de módulo: este existe solamente si el controlador pertenece a un <a href="guide-structure-modules.html">módulo</a> que no es de la aplicación;</li>
+<li>un ID de controlador: una cadena que identifica exclusivamente al controlador entre todos los controladores dentro de la misma aplicación
+(o el mismo módulo si el controlador pertenece a uno);</li>
+<li>un ID de acción: una cadena que identifica exclusivamente a la acción entre todas las acciones del mismo controlador.</li>
+</ul>
+<p>Las rutas pueden usar el siguiente formato:</p>
+<pre><code class="hljs ">ControllerID/ActionID
+</code></pre>
+<p>o el siguiente formato si el controlador pertenece a un módulo:</p>
+<pre><code class="hljs php language-php">ModuleID/ControllerID/ActionID
+</code></pre>
+<p>Entonces si un usuario solicita la URL <code>http://hostname/index.php?r=site/index</code>, la acción <code>index</code> del controlador <code>site</code>
+será ejecutado. Para más detalles acerca de cómo las son resueltas en acciones, por favor consulta
+la sección <a href="guide-runtime-routing.html">Routing</a>.</p>
+<h2>Creando Controladores  <span id="creating-controllers"></span><a href="#creating-controllers" class="hashlink">&para;</a></h2><p>En <span class="broken-link">yii\web\Application</span>, los controladores deben extender de <span class="broken-link">yii\web\Controller</span> o cualquier
+clase hija. De forma similar los controladores de <span class="broken-link">yii\console\Application</span>, deben extender
+de <span class="broken-link">yii\console\Controller</span> o cualquier clase hija de esta. El siguiente código define un controlador <code>site</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+}
+</code></pre>
+<h3>IDs de Controladores  <span id="controller-ids"></span><a href="#controller-ids" class="hashlink">&para;</a></h3><p>Normalmente, un controlador está diseñado para manejar los <code>requests</code> de acuerdo a un tipo de recurso.
+Por esta razón, los IDs de controladores son a menudo sustantivos de los tipos de recurso que están manejando.
+Por ejemplo, podrías utilizar <code>article</code> como el ID de un controlador que maneja datos de artículos.</p>
+<p>Por defecto, los IDs de controladores deberían contener sólo estos caracteres: letras del Inglés en minúscula, dígitos,
+guiones bajos y medios, y barras. Por ejemplo, <code>article</code>, <code>post-comment</code>, <code>admin/post-comment</code> son todos
+IDs de controladores válidos, mientras que <code>article?</code>, <code>PostComment</code>, <code>admin\post</code> no lo son.</p>
+<p>Los guiones en un ID de controlador son utilizados para separar palabras, mientras que las barras diagonales lo son para
+organizar los controladores en sub-directorios.</p>
+<h3>Nombres de Clases de Controladores  <span id="controller-class-naming"></span><a href="#controller-class-naming" class="hashlink">&para;</a></h3><p>Los nombres de clases de controladores pueden ser derivados de los IDs de acuerdo a las siguientes reglas:</p>
+<ul>
+<li>Transforma la primera letra de cada palabra separada por guiones en mayúscula. Nota que si el ID del controlador
+contiene barras, esta regla sólo aplica a la porción después de la última barra dentro del ID.</li>
+<li>Elimina guiones y reemplaza cualquier barra diagonal por barras invertidas.</li>
+<li>Agrega el sufijo <code>Controller</code>.</li>
+<li>Agrega al principio el <span class="broken-link">yii\base\Application::controllerNamespace</span>.</li>
+</ul>
+<p>A continuación mostramos algunos ejemplos, asumiendo que el <span class="broken-link">yii\base\Application::controllerNamespace</span>
+toma el valor por defecto: <code>app\controllers</code>:</p>
+<ul>
+<li><code>article</code> deriva en <code>app\controllers\ArticleController</code>;</li>
+<li><code>post-comment</code> deriva en <code>app\controllers\PostCommentController</code>;</li>
+<li><code>admin/post-comment</code> deriva en <code>app\controllers\admin\PostCommentController</code>.</li>
+</ul>
+<p>Las clases de controladores deben ser <a href="guide-concept-autoloading.html">autocargables</a>. Por esta razón, en los ejemplos anteriores,
+la clase del controlador <code>article</code> debe ser guardada en un archivo cuyo alias <a href="guide-concept-aliases.html">alias</a>
+es <code>@app/controllers/ArticleController.php</code>; mientras que el controlador <code>admin/post-comment</code> debería estar
+en <code>@app/controllers/admin/PostCommentController.php</code>.</p>
+<blockquote class="info"><p><strong>Info: </strong>En el último ejemplo, <code>admin/post-comment</code>, demuestra cómo puedes poner un controlador bajo un sub-directorio
+  del <span class="broken-link">yii\base\Application::controllerNamespace</span>. Esto es útil cuando quieres organizar
+  tus controladores en varias categorías pero sin utilizar <a href="guide-structure-modules.html">módulos</a>.</p>
+</blockquote>
+<h3>Controller Map  <span id="controller-map"></span><a href="#controller-map" class="hashlink">&para;</a></h3><p>Puedes configurar <span class="broken-link">yii\base\Application::controllerMap</span> (mapeo de controladores) para superar las restricciones
+de los IDs de controladores y sus nombres de clase descritos arriba. Esto es principalmente útil cuando estás utilizando un
+controlador de terceros del cual no tienes control alguno sobre sus nombres de clase.</p>
+<p>Puedes configurar <span class="broken-link">yii\base\Application::controllerMap</span> en la
+<a href="guide-structure-applications.html#application-configurations">configuración de la aplicación</a> de la siguiente manera:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'controllerMap'</span> =&gt; [
+        [
+            <span class="hljs-comment">// declara el controlador "account" usando un nombre de clase</span>
+            <span class="hljs-string">'account'</span> =&gt; <span class="hljs-string">'app\controllers\UserController'</span>,
+
+            <span class="hljs-comment">// declara el controlador "article" utilizando un array de configuración</span>
+            <span class="hljs-string">'article'</span> =&gt; [
+                <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'app\controllers\PostController'</span>,
+                <span class="hljs-string">'enableCsrfValidation'</span> =&gt; <span class="hljs-keyword">false</span>,
+            ],
+        ],
+    ],
+]
+</code></pre>
+<h3>Controller por Defecto  <span id="default-controller"></span><a href="#default-controller" class="hashlink">&para;</a></h3><p>Cada aplicación tiene un controlador por defecto especificado a través de la propiedad <span class="broken-link">yii\base\Application::defaultRoute</span>.
+Cuando un <code>request</code> no especifica una <a href="#ids-routes">ruta</a>, se utilizará la ruta especificada en esta propiedad.
+Para <span class="broken-link">yii\web\Application</span>, el valor es <code>'site'</code>, mientras que para <span class="broken-link">yii\console\Application</span>
+es <code>help</code>. Por lo tanto, si la URL es <code>http://hostname/index.php</code>, significa que el <code>request</code> será manejado por el controlador <code>site</code>.</p>
+<p>Puedes cambiar el controlador por defecto con la siguiente <a href="guide-structure-applications.html#application-configurations">configuración de la aplicación</a>:</p>
+<pre><code class="hljs php language-php">[
+    <span class="hljs-string">'defaultRoute'</span> =&gt; <span class="hljs-string">'main'</span>,
+]
+</code></pre>
+<h2>Creando Acciones  <span id="creating-actions"></span><a href="#creating-actions" class="hashlink">&para;</a></h2><p>Crear acciones puede ser tan simple como definir un llamado <em>método de acción</em> en una clase controlador. Un método de acción es
+un método <em>public</em> cuyo nombre comienza con la palabra <code>action</code>. El valor de retorno de uno de estos métodos representa
+los datos de respuesta (response) a ser enviado a los usuarios. El siguiente código define dos acciones: <code>index</code> y <code>hello-world</code>:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionIndex</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'index'</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionHelloWorld</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Hola Mundo!'</span>;
+    }
+}
+</code></pre>
+<h3>IDs de Acciones  <span id="action-ids"></span><a href="#action-ids" class="hashlink">&para;</a></h3><p>Una acción está a menudo diseñada para realizar una manipulación particular de un recurso. Por esta razón,
+los IDs de acciones son usualmente verbos, como <code>view</code> (ver), <code>update</code> (actualizar), etc.</p>
+<p>Por defecto, los IDs de acciones deberían contener estos caracteres solamente: letras en Inglés en minúsculas, dígitos,
+guiones bajos y barras. Los guiones en un ID de acción son utilizados para separar palabras. Por ejemplo,
+<code>view</code>, <code>update2</code>, <code>comment-post</code> son todos IDs válidos, mientras que <code>view?</code> y <code>Update</code> no lo son.</p>
+<p>Puedes crear acciones de dos maneras: acciones en línea (inline) o acciones independientes (standalone). Una acción en línea
+es definida como un método en la clase del controlador, mientras que una acción independiente es una clase que extiende
+<span class="broken-link">yii\base\Action</span> o sus clases hijas. Las acciones en línea son más fáciles de crear y por lo tanto preferidas
+si no tienes intenciones de volver a utilizarlas. Las acciones independientes, por otro lado, son principalmente
+creadas para ser reutilizadas en otros controladores o para ser redistribuidas como <a href="guide-structure-extensions.html">extensiones</a>.</p>
+<h3>Acciones en Línea  <span id="inline-actions"></span><a href="#inline-actions" class="hashlink">&para;</a></h3><p>Como acciones en línea nos referimos a acciones que son definidas en términos de métodos como acabamos de describir.</p>
+<p>Los nombre de métodos de acciones derivan de los IDs de acuerdo al siguiente criterio:</p>
+<ul>
+<li>Transforma la primera letra de cada palabra del ID de la acción a mayúscula;</li>
+<li>Elimina guiones;</li>
+<li>Prefija la palabra <code>action</code>.</li>
+</ul>
+<p>Por ejemplo, <code>index</code> se vuelve <code>actionIndex</code>, y <code>hello-world</code> se vuelve <code>actionHelloWorld</code>.</p>
+<blockquote class="note"><p><strong>Note: </strong>Los nombres de los métodos de acción son <em>case-sensitive</em> (distinguen entre minúsculas y mayúsculas). Si tienes un
+  método llamado <code>ActionIndex</code>, no será considerado como un método de acción, y como resultado, solicitar la acción <code>index</code>
+  resultará en una excepción. También ten en cuenta que los métodos de acción deben ser <code>public</code>. Un método <code>private</code> o <code>protected</code>
+  NO define un método de acción.</p>
+</blockquote>
+<p>Las acciones en línea son las más comúnmente definidas ya que requieren muy poco esfuerzo de creación. De todos modos,
+si planeas reutilizar la misma acción en diferentes lugares, o quieres redistribuir una acción,
+deberías considerar definirla como un <em>acción independiente</em>.</p>
+<h3>Acciones Independientes  <span id="standalone-actions"></span><a href="#standalone-actions" class="hashlink">&para;</a></h3><p>Las acciones independientes son acciones definidas en términos de clases de acción que extienden de <span class="broken-link">yii\base\Action</span> o cualquiera de sus clases hijas.
+Por ejemplo, en Yii se encuentran las clases <span class="broken-link">yii\web\ViewAction</span> y <span class="broken-link">yii\web\ErrorAction</span>, de las cuales ambas son acciones independientes.</p>
+<p>Para utilizar una acción independiente, debes declararla en el <em>action map</em> (mapeo de acciones) sobrescribiendo el método
+<span class="broken-link">yii\base\Controller::actions()</span> en tu controlador de la siguiente manera:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actions</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-comment">// declara la acción "error" utilizando un nombre de clase</span>
+        <span class="hljs-string">'error'</span> =&gt; <span class="hljs-string">'yii\web\ErrorAction'</span>,
+
+        <span class="hljs-comment">// declara la acción "view" utilizando un array de configuración</span>
+        <span class="hljs-string">'view'</span> =&gt; [
+            <span class="hljs-string">'class'</span> =&gt; <span class="hljs-string">'yii\web\ViewAction'</span>,
+            <span class="hljs-string">'viewPrefix'</span> =&gt; <span class="hljs-string">''</span>,
+        ],
+    ];
+}
+</code></pre>
+<p>Como puedes ver, el método <code>actions()</code> debe devolver un array cuyas claves son los IDs de acciones y sus valores los nombres
+de clases de acciones o <a href="guide-concept-configurations.html">configuraciones</a>. Al contrario de acciones en línea, los IDs de acciones independientes
+pueden contener caracteres arbitrarios, mientras sean declarados en el método <code>actions()</code>.</p>
+<p>Para crear una acción independiente, debes extender de <span class="broken-link">yii\base\Action</span> o una clase hija, e implementar un
+método <code>public</code> llamado <code>run()</code>. El rol del método <code>run()</code> es similar al de un método de acción. Por ejemplo:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">components</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">base</span>\<span class="hljs-title">Action</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorldAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Action</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hola Mundo!"</span>;
+    }
+}
+</code></pre>
+<h3>Resultados de Acción  <span id="action-results"></span><a href="#action-results" class="hashlink">&para;</a></h3><p>El valor de retorno de una método de acción o del método <code>run()</code> de una acción independiente son significativos. Este se refiere
+al resultado de la acción correspondiente.</p>
+<p>El valor devuelto puede ser un objeto <a href="guide-runtime-responses.html">response</a> que será enviado como respuesta a
+los usuarios.</p>
+<ul>
+<li>Para <span class="broken-link">yii\web\Application</span>, el valor de retorno pueden ser también datos arbitrarios que serán
+asignados a <span class="broken-link">yii\web\Response::data</span> y más adelante convertidos a una cadena representando el cuerpo de la respuesta.</li>
+<li>Para <span class="broken-link">yii\console\Application</span>, el valor de retorno puede ser también un entero representando
+el <span class="broken-link">yii\console\Response::exitStatus</span> de la ejecución del comando.</li>
+</ul>
+<p>En los ejemplos mostrados arriba, los resultados de las acciones son todas cadenas que serán tratadas como el cuerpo de la respuesta
+a ser enviado a los usuarios. El siguiente ejemplo demuestra cómo una acción puede redirigir el navegador del usuario a una nueva URL
+devolviendo un objeto <code>response</code> (debido a que el método <span class="broken-link">yii\web\Controller::redirect()</span> devuelve
+un objeto <code>response</code>):</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionForward</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-comment">// redirige el navegador del usuario a http://example.com</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;redirect(<span class="hljs-string">'http://example.com'</span>);
+}
+</code></pre>
+<h3>Parámetros de Acción  <span id="action-parameters"></span><a href="#action-parameters" class="hashlink">&para;</a></h3><p>Los métodos de acción para acciones en línea y el método <code>run()</code> de acciones independientes pueden tomar parámetros,
+llamados <em>parámetros de acción</em>. Sus valores son obtenidos del <code>request</code>. Para <span class="broken-link">yii\web\Application</span>,
+el valor de cada parámetro de acción es tomado desde <code>$_GET</code> usando el nombre del parámetro como su clave;
+para <span class="broken-link">yii\console\Application</span>, estos corresponden a los argumentos de la línea de comandos.</p>
+<p>En el siguiente ejemplo, la acción <code>view</code> (una acción en línea) declara dos parámetros: <code>$id</code> y <code>$version</code>.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(<span class="hljs-variable">$id</span>, <span class="hljs-variable">$version</span> = null)</span>
+    </span>{
+        <span class="hljs-comment">// ...</span>
+    }
+}
+</code></pre>
+<p>Los parámetros de acción serán poblados como se muestra a continuación para distintos <code>requests</code>:</p>
+<ul>
+<li><code>http://hostname/index.php?r=post/view&amp;id=123</code>: el parámetro <code>$id</code> tomará el valor
+<code>'123'</code>,  mientras que <code>$version</code> queda como <code>null</code> debido a que no hay un parámetro <code>version</code> en la URL.</li>
+<li><code>http://hostname/index.php?r=post/view&amp;id=123&amp;version=2</code>: los parámetros <code>$id</code> y <code>$version</code> serán llenados con
+<code>'123'</code> y <code>'2'</code>, respectivamente.</li>
+<li><code>http://hostname/index.php?r=post/view</code>: se lanzará una excepción <span class="broken-link">yii\web\BadRequestHttpException</span>
+dado que el parámetro <code>$id</code> es requerido pero no es provisto en el <code>request</code>.</li>
+<li><code>http://hostname/index.php?r=post/view&amp;id[]=123</code>: una excepción <span class="broken-link">yii\web\BadRequestHttpException</span> será lanzada
+porque el parámetro <code>$id</code> está recibiendo un valor inesperado, el array <code>['123']</code>.</li>
+</ul>
+<p>Si quieres que un parámetro de acción acepte un array como valor, deberías utilizar el <code>type-hinting</code> (especificación de tipo) <code>array</code>,
+como a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionView</span><span class="hljs-params">(array <span class="hljs-variable">$id</span>, <span class="hljs-variable">$version</span> = null)</span>
+</span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>Ahora si el <code>request</code> es <code>http://hostname/index.php?r=post/view&amp;id[]=123</code>, el parámetro <code>$id</code> tomará el valor
+de <code>['123']</code>. Si el <code>request</code> es <code>http://hostname/index.php?r=post/view&amp;id=123</code>, el parámetro <code>$id</code> recibirá aún
+el mismo array como valor ya que el valor escalar <code>'123'</code> será convertido automáticamente en array.</p>
+<p>Los ejemplos de arriba muestran principalmente como funcionan los parámetros de acción de una aplicación Web. Para aplicaciones de consola,
+por favor consulta la sección <a href="guide-tutorial-console.html">Comandos de Consola</a> para más detalles.</p>
+<h3>Acción por Defecto  <span id="default-action"></span><a href="#default-action" class="hashlink">&para;</a></h3><p>Cada controlador tiene una acción por defecto especificada a través de la propiedad <span class="broken-link">yii\base\Controller::defaultAction</span>.
+Cuando una <a href="#ids-routes">ruta</a> contiene sólo el ID del controlador, implica que se está solicitando la acción por defecto
+del controlador especificado.</p>
+<p>Por defecto, la acción por defecto (valga la redundancia) definida es <code>index</code>. Si quieres cambiar dicho valor, simplemente sobrescribe
+esta propiedad en la clase del controlador, como se muestra a continuación:</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">app</span>\<span class="hljs-title">controllers</span>;
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">web</span>\<span class="hljs-title">Controller</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SiteController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$defaultAction</span> = <span class="hljs-string">'home'</span>;
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionHome</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$this</span>-&gt;render(<span class="hljs-string">'home'</span>);
+    }
+}
+</code></pre>
+<h2>Ciclo de Vida del Controlador  <span id="controller-lifecycle"></span><a href="#controller-lifecycle" class="hashlink">&para;</a></h2><p>Cuando se procesa un <code>request</code>, la <a href="guide-structure-applications.html">aplicación</a> creará un controlador
+basado en la <a href="#routes">ruta</a> solicitada. El controlador entonces irá a través del siguiente ciclo de vida
+para completar el <code>request</code>:</p>
+<ol>
+<li>El método <span class="broken-link">yii\base\Controller::init()</span> es llamado después de que el controlador es creado y configurado.</li>
+<li>El controlador crea un objecto <code>action</code> basado en el ID de acción solicitado:<ul>
+<li>Si el ID de la acción no es especificado, el <span class="broken-link">yii\base\Controller::defaultAction</span> será utilizado.</li>
+<li>Si el ID de la acción es encontrado en el <span class="broken-link">yii\base\Controller::actions()</span>, una acción independiente
+será creada;</li>
+<li>Si el ID de la acción es coincide con un método de acción, una acción en línea será creada;</li>
+<li>De otra manera, se lanzará una excepción <span class="broken-link">yii\base\InvalidRouteException</span>.</li>
+</ul>
+</li>
+<li>El controlador llama secuencialmente al método <code>beforeAction()</code> de la aplicación, al del módulo (si el controlador
+pertenece a uno) y al del controlador.<ul>
+<li>Si alguna de las llamadas devuelve <code>false</code>, el resto de los llamados subsiguientes a <code>beforeAction()</code> serán saltados y
+la ejecución de la acción será cancelada.</li>
+<li>Por defecto, cada llamada al método <code>beforeAction()</code> lanzará un evento <code>beforeAction</code> al cual le puedes conectar un manejador.</li>
+</ul>
+</li>
+<li>El controlador ejecuta la acción:<ul>
+<li>Los parámetros de la acción serán analizados y poblados con los datos del <code>request</code>;</li>
+</ul>
+</li>
+<li>El controlador llama secuencialmente al método <code>afterAction()</code> del controlador, del módulo (si el controlador
+pertenece a uno) y de la aplicación.<ul>
+<li>Por defecto, cada llamada al método <code>afterAction()</code> lanzará un evento <code>afterAction</code> al cual le puedes conectar un manejador.</li>
+</ul>
+</li>
+<li>La aplicación tomará el resultado de la acción y lo asignará al <a href="guide-runtime-responses.html">response</a>.</li>
+</ol>
+<h2>Buenas Prácticas  <span id="best-practices"></span><a href="#best-practices" class="hashlink">&para;</a></h2><p>En una aplicación bien diseñada, los controladores son a menudo muy pequeños con cada acción conteniendo unas pocas líneas de código.
+Si tu controlador se torna muy complejo, es usualmente un indicador de que deberías realizar una refactorización y mover algo de
+código a otras clases.</p>
+<p>En resumen, los controladores</p>
+<ul>
+<li>pueden acceder a los datos del <a href="guide-runtime-requests.html">request</a>;</li>
+<li>puede llamar a métodos del <a href="guide-structure-models.html">modelo</a> y otros componentes con data del <code>request</code>;</li>
+<li>pueden utilizar <a href="guide-structure-views.html">vistas</a> para componer <code>responses</code>;</li>
+<li>NO debe procesar datos del `request - esto debe ser realizado en los <a href="guide-structure-models.html">modelos</a>;</li>
+<li>deberían evitar insertar HTML o cualquier código de presentación - para esto están las <a href="guide-structure-views.html">vistas</a>.</li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:19 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>Proveedores de datos - Visualizar datos - The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w250" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w250-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w250-collapse" class="collapse navbar-collapse"><ul id="w251" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-234" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-234" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-235" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-235" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-236" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-236" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-237" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-237" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-238" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-238" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-239" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-239" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-240" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-240" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item active" href="#navigation-241" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-241" class="submenu panel-collapse collapse in"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item active" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-242" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-242" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-243" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-243" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-244" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-244" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-245" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-245" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-246" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-246" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-247" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-247" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-248" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-248" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-249" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-249" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Data Providers <span id="data-providers"></span><a href="#data-providers" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#active-data-provider">Active Data Provider</a></li>
+<li><a href="#sql-data-provider">SQL Data Provider</a></li>
+<li><a href="#array-data-provider">Array Data Provider</a></li>
+<li><a href="#working-with-keys">Working with Data Keys</a></li>
+<li><a href="#custom-data-provider">Creating Custom Data Provider</a></li></ol></div>
+<p>In the <a href="guide-output-pagination.html">Pagination</a> and <a href="guide-output-sorting.html">Sorting</a> sections, we have described how to
+allow end users to choose a particular page of data to display and sort them by some columns. Because the task
+of paginating and sorting data is very common, Yii provides a set of <em>data provider</em> classes to encapsulate it.</p>
+<p>A data provider is a class implementing <span class="broken-link">yii\data\DataProviderInterface</span>. It mainly supports retrieving paginated
+and sorted data. It is usually used to work with <a href="guide-output-data-widgets.html">data widgets</a> so that end users can 
+interactively paginate and sort data. </p>
+<p>The following data provider classes are included in the Yii releases:</p>
+<ul>
+<li><span class="broken-link">yii\data\ActiveDataProvider</span>: uses <span class="broken-link">yii\db\Query</span> or <span class="broken-link">yii\db\ActiveQuery</span> to query data from databases
+and return them in terms of arrays or <a href="guide-db-active-record.html">Active Record</a> instances.</li>
+<li><span class="broken-link">yii\data\SqlDataProvider</span>: executes a SQL statement and returns database data as arrays.</li>
+<li><span class="broken-link">yii\data\ArrayDataProvider</span>: takes a big array and returns a slice of it based on the paginating and sorting
+specifications.</li>
+</ul>
+<p>The usage of all these data providers share the following common pattern:</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// create the data provider by configuring its pagination and sort properties</span>
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> XyzDataProvider([
+    <span class="hljs-string">'pagination'</span> =&gt; [...],
+    <span class="hljs-string">'sort'</span> =&gt; [...],
+]);
+
+<span class="hljs-comment">// retrieves paginated and sorted data</span>
+<span class="hljs-variable">$models</span> = <span class="hljs-variable">$provider</span>-&gt;getModels();
+
+<span class="hljs-comment">// get the number of data items in the current page</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-variable">$provider</span>-&gt;getCount();
+
+<span class="hljs-comment">// get the total number of data items across all pages</span>
+<span class="hljs-variable">$totalCount</span> = <span class="hljs-variable">$provider</span>-&gt;getTotalCount();
+</code></pre>
+<p>You specify the pagination and sorting behaviors of a data provider by configuring its 
+<span class="broken-link">yii\data\BaseDataProvider::pagination</span> and <span class="broken-link">yii\data\BaseDataProvider::sort</span> properties
+which correspond to the configurations for <span class="broken-link">yii\data\Pagination</span> and <span class="broken-link">yii\data\Sort</span>, respectively.
+You may also configure them to be <code>false</code> to disable pagination and/or sorting features.</p>
+<p><a href="guide-output-data-widgets.html">Data widgets</a>, such as <span class="broken-link">yii\grid\GridView</span>, have a property named <code>dataProvider</code> which
+can take a data provider instance and display the data it provides. For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">echo</span> yii\grid\GridView::widget([
+    <span class="hljs-string">'dataProvider'</span> =&gt; <span class="hljs-variable">$dataProvider</span>,
+]);
+</code></pre>
+<p>These data providers mainly vary in the way how the data source is specified. In the following subsections,
+we will explain the detailed usage of each of these data providers.</p>
+<h2>Active Data Provider  <span id="active-data-provider"></span><a href="#active-data-provider" class="hashlink">&para;</a></h2><p>To use <span class="broken-link">yii\data\ActiveDataProvider</span>, you should configure its <span class="broken-link">yii\data\ActiveDataProvider::query</span> property.
+It can take either a <span class="broken-link">yii\db\Query</span> or <span class="broken-link">yii\db\ActiveQuery</span> object. If the former, the data returned will be arrays;
+if the latter, the data returned can be either arrays or <a href="guide-db-active-record.html">Active Record</a> instances.
+For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+<span class="hljs-variable">$query</span> = Post::find()-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; <span class="hljs-variable">$query</span>,
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">10</span>,
+    ],
+    <span class="hljs-string">'sort'</span> =&gt; [
+        <span class="hljs-string">'defaultOrder'</span> =&gt; [
+            <span class="hljs-string">'created_at'</span> =&gt; SORT_DESC,
+            <span class="hljs-string">'title'</span> =&gt; SORT_ASC, 
+        ]
+    ],
+]);
+
+<span class="hljs-comment">// returns an array of Post objects</span>
+<span class="hljs-variable">$posts</span> = <span class="hljs-variable">$provider</span>-&gt;getModels();
+</code></pre>
+<p>If <code>$query</code> in the above example is created using the following code, then the data provider will return raw arrays.</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">db</span>\<span class="hljs-title">Query</span>;
+
+<span class="hljs-variable">$query</span> = (<span class="hljs-keyword">new</span> Query())-&gt;from(<span class="hljs-string">'post'</span>)-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]); 
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>If a query already specifies the <code>orderBy</code> clause, the new ordering instructions given by end users
+  (through the <code>sort</code> configuration) will be appended to the existing <code>orderBy</code> clause. Any existing <code>limit</code>
+  and <code>offset</code> clauses will be overwritten by the pagination request from end users (through the <code>pagination</code> configuration). </p>
+</blockquote>
+<p>By default, <span class="broken-link">yii\data\ActiveDataProvider</span> uses the <code>db</code> application component as the database connection. You may
+use a different database connection by configuring the <span class="broken-link">yii\data\ActiveDataProvider::db</span> property.</p>
+<h2>SQL Data Provider  <span id="sql-data-provider"></span><a href="#sql-data-provider" class="hashlink">&para;</a></h2><p><span class="broken-link">yii\data\SqlDataProvider</span> works with a raw SQL statement which is used to fetch the needed
+data. Based on the specifications of <span class="broken-link">yii\data\SqlDataProvider::sort</span> and 
+<span class="broken-link">yii\data\SqlDataProvider::pagination</span>, the provider will adjust the <code>ORDER BY</code> and <code>LIMIT</code>
+clauses of the SQL statement accordingly to fetch only the requested page of data in the desired order.</p>
+<p>To use <span class="broken-link">yii\data\SqlDataProvider</span>, you should specify the <span class="broken-link">yii\data\SqlDataProvider::sql</span> property as well
+as the <span class="broken-link">yii\data\SqlDataProvider::totalCount</span> property. For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">SqlDataProvider</span>;
+
+<span class="hljs-variable">$count</span> = Yii::<span class="hljs-variable">$app</span>-&gt;db-&gt;createCommand(<span class="hljs-string">'
+    SELECT COUNT(*) FROM post WHERE status=:status
+'</span>, [<span class="hljs-string">':status'</span> =&gt; <span class="hljs-number">1</span>])-&gt;queryScalar();
+
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> SqlDataProvider([
+    <span class="hljs-string">'sql'</span> =&gt; <span class="hljs-string">'SELECT * FROM post WHERE status=:status'</span>,
+    <span class="hljs-string">'params'</span> =&gt; [<span class="hljs-string">':status'</span> =&gt; <span class="hljs-number">1</span>],
+    <span class="hljs-string">'totalCount'</span> =&gt; <span class="hljs-variable">$count</span>,
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">10</span>,
+    ],
+    <span class="hljs-string">'sort'</span> =&gt; [
+        <span class="hljs-string">'attributes'</span> =&gt; [
+            <span class="hljs-string">'title'</span>,
+            <span class="hljs-string">'view_count'</span>,
+            <span class="hljs-string">'created_at'</span>,
+        ],
+    ],
+]);
+
+<span class="hljs-comment">// returns an array of data rows</span>
+<span class="hljs-variable">$models</span> = <span class="hljs-variable">$provider</span>-&gt;getModels();
+</code></pre>
+<blockquote class="info"><p><strong>Info: </strong>The <span class="broken-link">yii\data\SqlDataProvider::totalCount</span> property is required only if you need to
+  paginate the data. This is because the SQL statement specified via <span class="broken-link">yii\data\SqlDataProvider::sql</span>
+  will be modified by the provider to return only the currently requested page of data. The provider still
+  needs to know the total number of data items in order to correctly calculate the number of pages available.</p>
+</blockquote>
+<h2>Array Data Provider  <span id="array-data-provider"></span><a href="#array-data-provider" class="hashlink">&para;</a></h2><p><span class="broken-link">yii\data\ArrayDataProvider</span> is best used when working with a big array. The provider allows you to return
+a page of the array data sorted by one or multiple columns. To use <span class="broken-link">yii\data\ArrayDataProvider</span>, you should
+specify the <span class="broken-link">yii\data\ArrayDataProvider::allModels</span> property as the big array.
+Elements in the big array can be either associative arrays
+(e.g. query results of <a href="guide-db-dao.html">DAO</a>) or objects (e.g. <a href="guide-db-active-record.html">Active Record</a> instances).
+For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ArrayDataProvider</span>;
+
+<span class="hljs-variable">$data</span> = [
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name 1'</span>, ...],
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name 2'</span>, ...],
+    ...
+    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">100</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'name 100'</span>, ...],
+];
+
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> ArrayDataProvider([
+    <span class="hljs-string">'allModels'</span> =&gt; <span class="hljs-variable">$data</span>,
+    <span class="hljs-string">'pagination'</span> =&gt; [
+        <span class="hljs-string">'pageSize'</span> =&gt; <span class="hljs-number">10</span>,
+    ],
+    <span class="hljs-string">'sort'</span> =&gt; [
+        <span class="hljs-string">'attributes'</span> =&gt; [<span class="hljs-string">'id'</span>, <span class="hljs-string">'name'</span>],
+    ],
+]);
+
+<span class="hljs-comment">// get the rows in the currently requested page</span>
+<span class="hljs-variable">$rows</span> = <span class="hljs-variable">$provider</span>-&gt;getModels();
+</code></pre>
+<blockquote class="note"><p><strong>Note: </strong>Compared to <a href="#active-data-provider">Active Data Provider</a> and <a href="#sql-data-provider">SQL Data Provider</a>,
+  array data provider is less efficient because it requires loading <em>all</em> data into the memory.</p>
+</blockquote>
+<h2>Working with Data Keys  <span id="working-with-keys"></span><a href="#working-with-keys" class="hashlink">&para;</a></h2><p>When using the data items returned by a data provider, you often need to identify each data item with a unique key.
+For example, if the data items represent customer information, you may want to use the customer ID as the key
+for each customer data. Data providers can return a list of such keys corresponding with the data items returned 
+by <span class="broken-link">yii\data\DataProviderInterface::getModels()</span>. For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">ActiveDataProvider</span>;
+
+<span class="hljs-variable">$query</span> = Post::find()-&gt;where([<span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>]);
+
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; <span class="hljs-variable">$query</span>,
+]);
+
+<span class="hljs-comment">// returns an array of Post objects</span>
+<span class="hljs-variable">$posts</span> = <span class="hljs-variable">$provider</span>-&gt;getModels();
+
+<span class="hljs-comment">// returns the primary key values corresponding to $posts</span>
+<span class="hljs-variable">$ids</span> = <span class="hljs-variable">$provider</span>-&gt;getKeys();
+</code></pre>
+<p>In the above example, because you provide to <span class="broken-link">yii\data\ActiveDataProvider</span> an <span class="broken-link">yii\db\ActiveQuery</span> object,
+it is intelligent enough to return primary key values as the keys. You may also explicitly specify how the key
+values should be calculated by configuring <span class="broken-link">yii\data\ActiveDataProvider::key</span> with a column name or
+a callable calculating key values. For example,</p>
+<pre><code class="hljs php language-php"><span class="hljs-comment">// use "slug" column as key values</span>
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; Post::find(),
+    <span class="hljs-string">'key'</span> =&gt; <span class="hljs-string">'slug'</span>,
+]);
+
+<span class="hljs-comment">// use the result of md5(id) as key values</span>
+<span class="hljs-variable">$provider</span> = <span class="hljs-keyword">new</span> ActiveDataProvider([
+    <span class="hljs-string">'query'</span> =&gt; Post::find(),
+    <span class="hljs-string">'key'</span> =&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(<span class="hljs-variable">$model</span>)</span> </span>{
+        <span class="hljs-keyword">return</span> md5(<span class="hljs-variable">$model</span>-&gt;id);
+    }
+]);
+</code></pre>
+<h2>Creating Custom Data Provider  <span id="custom-data-provider"></span><a href="#custom-data-provider" class="hashlink">&para;</a></h2><p>To create your own custom data provider classes, you should implement <span class="broken-link">yii\data\DataProviderInterface</span>.
+An easier way is to extend from <span class="broken-link">yii\data\BaseDataProvider</span> which allows you to focus on the core data provider
+logic. In particular, you mainly need to implement the following methods:</p>
+<ul>
+<li><span class="broken-link">yii\data\BaseDataProvider::prepareModels()</span>: prepares the data models that will be made 
+available in the current page and returns them as an array.</li>
+<li><span class="broken-link">yii\data\BaseDataProvider::prepareKeys()</span>: accepts an array of currently available data models
+and returns keys associated with them.</li>
+<li><span class="broken-link">yii\data\BaseDataProvider::prepareTotalCount()</span>: returns a value indicating the total number 
+of data models in the data provider.</li>
+</ul>
+<p>Below is an example of a data provider that reads CSV data efficiently:</p>
+<pre><code class="hljs php language-php"><span class="hljs-preprocessor">&lt;?php</span>
+<span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">data</span>\<span class="hljs-title">BaseDataProvider</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CsvDataProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseDataProvider</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string name of the CSV file to read
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$filename</span>;
+    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string|callable name of the key column or a callable returning it
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$key</span>;
+    
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> SplFileObject
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$fileObject</span>; <span class="hljs-comment">// SplFileObject is very convenient for seeking to particular line in a file</span>
+    
+ 
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">parent</span>::init();
+        
+        <span class="hljs-comment">// open file</span>
+        <span class="hljs-variable">$this</span>-&gt;fileObject = <span class="hljs-keyword">new</span> SplFileObject(<span class="hljs-variable">$this</span>-&gt;filename);
+    }
+ 
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareModels</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$models</span> = [];
+        <span class="hljs-variable">$pagination</span> = <span class="hljs-variable">$this</span>-&gt;getPagination();
+ 
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$pagination</span> === <span class="hljs-keyword">false</span>) {
+            <span class="hljs-comment">// in case there's no pagination, read all lines</span>
+            <span class="hljs-keyword">while</span> (!<span class="hljs-variable">$this</span>-&gt;fileObject-&gt;eof()) {
+                <span class="hljs-variable">$models</span>[] = <span class="hljs-variable">$this</span>-&gt;fileObject-&gt;fgetcsv();
+                <span class="hljs-variable">$this</span>-&gt;fileObject-&gt;next();
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// in case there's pagination, read only a single page</span>
+            <span class="hljs-variable">$pagination</span>-&gt;totalCount = <span class="hljs-variable">$this</span>-&gt;getTotalCount();
+            <span class="hljs-variable">$this</span>-&gt;fileObject-&gt;seek(<span class="hljs-variable">$pagination</span>-&gt;getOffset());
+            <span class="hljs-variable">$limit</span> = <span class="hljs-variable">$pagination</span>-&gt;getLimit();
+ 
+            <span class="hljs-keyword">for</span> (<span class="hljs-variable">$count</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$count</span> &lt; <span class="hljs-variable">$limit</span>; ++<span class="hljs-variable">$count</span>) {
+                <span class="hljs-variable">$models</span>[] = <span class="hljs-variable">$this</span>-&gt;fileObject-&gt;fgetcsv();
+                <span class="hljs-variable">$this</span>-&gt;fileObject-&gt;next();
+            }
+        }
+ 
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$models</span>;
+    }
+ 
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareKeys</span><span class="hljs-params">(<span class="hljs-variable">$models</span>)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$this</span>-&gt;key !== <span class="hljs-keyword">null</span>) {
+            <span class="hljs-variable">$keys</span> = [];
+ 
+            <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$models</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$model</span>) {
+                <span class="hljs-keyword">if</span> (is_string(<span class="hljs-variable">$this</span>-&gt;key)) {
+                    <span class="hljs-variable">$keys</span>[] = <span class="hljs-variable">$model</span>[<span class="hljs-variable">$this</span>-&gt;key];
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-variable">$keys</span>[] = call_user_func(<span class="hljs-variable">$this</span>-&gt;key, <span class="hljs-variable">$model</span>);
+                }
+            }
+ 
+            <span class="hljs-keyword">return</span> <span class="hljs-variable">$keys</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> array_keys(<span class="hljs-variable">$models</span>);
+        }
+    }
+ 
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@inheritdoc</span>
+     */</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prepareTotalCount</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-variable">$count</span> = <span class="hljs-number">0</span>;
+ 
+        <span class="hljs-keyword">while</span> (!<span class="hljs-variable">$this</span>-&gt;fileObject-&gt;eof()) {
+            <span class="hljs-variable">$this</span>-&gt;fileObject-&gt;next();
+            ++<span class="hljs-variable">$count</span>;
+        }
+ 
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$count</span>;
+    }
+}
+</code></pre>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
