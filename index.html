@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/ef5db663/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/c596327a/solarized_light.css" rel="stylesheet">
+<link href="./assets/956f8f39/style.css" rel="stylesheet">
+<script src="./assets/2f771e29/jquery.js"></script>
+<script src="./assets/ef5db663/js/bootstrap.js"></script>
+<script src="./assets/b35220fb/jssearch.js"></script>    <title>The Definitive Guide to Yii 2.0</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w808" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w808-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./guide-index.html">The Definitive Guide to Yii 2.0</a></div><div id="w808-collapse" class="collapse navbar-collapse"><ul id="w809" class="navbar-nav nav"><li><a href="./guide-README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-792" data-toggle="collapse" data-parent="#navigation">Introducción <b class="caret"></b></a><div id="navigation-792" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-intro-yii.html">Acerca de Yii</a>
+<a class="list-group-item" href="./guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></div>
+<a class="list-group-item" href="#navigation-793" data-toggle="collapse" data-parent="#navigation">Primeros pasos <b class="caret"></b></a><div id="navigation-793" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-start-installation.html">Instalar Yii</a>
+<a class="list-group-item" href="./guide-start-workflow.html">Funcionamiento de aplicaciones</a>
+<a class="list-group-item" href="./guide-start-hello.html">Hola a todos</a>
+<a class="list-group-item" href="./guide-start-forms.html">Trabajar con formularios</a>
+<a class="list-group-item" href="./guide-start-databases.html">Trabajar con bases de datos</a>
+<a class="list-group-item" href="./guide-start-gii.html">Generar códigos con Gii</a>
+<a class="list-group-item" href="./guide-start-looking-ahead.html">Adentrarse en Yii</a></div>
+<a class="list-group-item" href="#navigation-794" data-toggle="collapse" data-parent="#navigation">Estructura de una aplicación <b class="caret"></b></a><div id="navigation-794" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-structure-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-structure-entry-scripts.html">Script de entrada</a>
+<a class="list-group-item" href="./guide-structure-applications.html">Aplicaciones</a>
+<a class="list-group-item" href="./guide-structure-application-components.html">Componentes de una aplicación</a>
+<a class="list-group-item" href="./guide-structure-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-structure-models.html">Modelos</a>
+<a class="list-group-item" href="./guide-structure-views.html">Vistas</a>
+<a class="list-group-item" href="./guide-structure-filters.html">Filtros</a>
+<a class="list-group-item" href="./guide-structure-widgets.html">Widgets</a>
+<a class="list-group-item" href="./guide-structure-modules.html">Módulos</a>
+<a class="list-group-item" href="./guide-structure-assets.html">Assets</a>
+<a class="list-group-item" href="./guide-structure-extensions.html">Extensiones</a></div>
+<a class="list-group-item" href="#navigation-795" data-toggle="collapse" data-parent="#navigation">Gestión de las peticiones <b class="caret"></b></a><div id="navigation-795" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-runtime-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-runtime-bootstrapping.html">Bootstrapping</a>
+<a class="list-group-item" href="./guide-runtime-routing.html">Routing y Creación de las URL</a>
+<a class="list-group-item" href="./guide-runtime-requests.html">Peticiones (Requests)</a>
+<a class="list-group-item" href="./guide-runtime-responses.html">Respuestas (Responses)</a>
+<a class="list-group-item" href="./guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a>
+<a class="list-group-item" href="./guide-runtime-handling-errors.html">Gestión de errores</a>
+<a class="list-group-item" href="./guide-runtime-logging.html">Registro de anotaciones</a></div>
+<a class="list-group-item" href="#navigation-796" data-toggle="collapse" data-parent="#navigation">Conceptos clave <b class="caret"></b></a><div id="navigation-796" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-concept-components.html">Componentes</a>
+<a class="list-group-item" href="./guide-concept-properties.html">Propiedades</a>
+<a class="list-group-item" href="./guide-concept-events.html">Eventos</a>
+<a class="list-group-item" href="./guide-concept-behaviors.html">Comportamientos (Behaviors)</a>
+<a class="list-group-item" href="./guide-concept-configurations.html">Configuraciones</a>
+<a class="list-group-item" href="./guide-concept-aliases.html">Alias</a>
+<a class="list-group-item" href="./guide-concept-autoloading.html">Autocarga de clases</a>
+<a class="list-group-item" href="./guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a>
+<a class="list-group-item" href="./guide-concept-di-container.html">Contenedor de inyección de dependencia</a></div>
+<a class="list-group-item" href="#navigation-797" data-toggle="collapse" data-parent="#navigation">Trabajar con bases de datos <b class="caret"></b></a><div id="navigation-797" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-db-dao.html">Objeto de acceso a datos</a>
+<a class="list-group-item" href="./guide-db-query-builder.html">Constructor de consultas</a>
+<a class="list-group-item" href="./guide-db-active-record.html">Active Record</a>
+<a class="list-group-item" href="./guide-db-migrations.html">Migraciones</a>
+<a class="list-group-item" href="./guide-db-sphinx.html">Sphinx</a>
+<a class="list-group-item" href="./guide-db-redis.html">Redis</a>
+<a class="list-group-item" href="./guide-db-mongodb.html">MongoDB</a>
+<a class="list-group-item" href="./guide-db-elastic-search.html">ElasticSearch</a></div>
+<a class="list-group-item" href="#navigation-798" data-toggle="collapse" data-parent="#navigation">Obtener datos de los usuarios <b class="caret"></b></a><div id="navigation-798" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-input-forms.html">Crear formularios</a>
+<a class="list-group-item" href="./guide-input-validation.html">Validar datos</a>
+<a class="list-group-item" href="./guide-input-file-upload.html">Subir archivos</a>
+<a class="list-group-item" href="./guide-input-tabular-input.html">Recogida de tabular input</a>
+<a class="list-group-item" href="./guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></div>
+<a class="list-group-item" href="#navigation-799" data-toggle="collapse" data-parent="#navigation">Visualizar datos <b class="caret"></b></a><div id="navigation-799" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-output-formatting.html">Formato de datos</a>
+<a class="list-group-item" href="./guide-output-pagination.html">Paginación</a>
+<a class="list-group-item" href="./guide-output-sorting.html">Ordenación</a>
+<a class="list-group-item" href="./guide-output-data-providers.html">Proveedores de datos</a>
+<a class="list-group-item" href="./guide-output-data-widgets.html">Widgets de datos</a>
+<a class="list-group-item" href="./guide-output-client-scripts.html">Trabajar con scripts de cliente</a>
+<a class="list-group-item" href="./guide-output-theming.html">Temas</a></div>
+<a class="list-group-item" href="#navigation-800" data-toggle="collapse" data-parent="#navigation">Seguridad <b class="caret"></b></a><div id="navigation-800" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-security-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-security-authorization.html">Autorización</a>
+<a class="list-group-item" href="./guide-security-passwords.html">Trabajar con contraseñas</a>
+<a class="list-group-item" href="./guide-security-auth-clients.html">Autenticar Clientes</a>
+<a class="list-group-item" href="./guide-security-best-practices.html">Buenas prácticas</a></div>
+<a class="list-group-item" href="#navigation-801" data-toggle="collapse" data-parent="#navigation">Caché <b class="caret"></b></a><div id="navigation-801" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-caching-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-caching-data.html">Caché de datos</a>
+<a class="list-group-item" href="./guide-caching-fragment.html">Caché de fragmentos</a>
+<a class="list-group-item" href="./guide-caching-page.html">Caché de páginas</a>
+<a class="list-group-item" href="./guide-caching-http.html">Caché HTTP</a></div>
+<a class="list-group-item" href="#navigation-802" data-toggle="collapse" data-parent="#navigation">Servicios Web RESTful <b class="caret"></b></a><div id="navigation-802" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-rest-quick-start.html">Guía breve</a>
+<a class="list-group-item" href="./guide-rest-resources.html">Recursos (Resources)</a>
+<a class="list-group-item" href="./guide-rest-controllers.html">Controladores</a>
+<a class="list-group-item" href="./guide-rest-routing.html">Gestión de rutas</a>
+<a class="list-group-item" href="./guide-rest-response-formatting.html">Formateo de respuestas</a>
+<a class="list-group-item" href="./guide-rest-authentication.html">Autenticación</a>
+<a class="list-group-item" href="./guide-rest-rate-limiting.html">Límite de Rango</a>
+<a class="list-group-item" href="./guide-rest-versioning.html">Gestión de versiones</a>
+<a class="list-group-item" href="./guide-rest-error-handling.html">Gestión de errores</a></div>
+<a class="list-group-item" href="#navigation-803" data-toggle="collapse" data-parent="#navigation">Herramientas de Desarrollo <b class="caret"></b></a><div id="navigation-803" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a>
+<a class="list-group-item" href="./guide-tool-gii.html">Generación de códigos con Gii</a>
+<a class="list-group-item" href="./guide-tool-api-doc.html">Generación de documentación de API</a></div>
+<a class="list-group-item" href="#navigation-804" data-toggle="collapse" data-parent="#navigation">Pruebas <b class="caret"></b></a><div id="navigation-804" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-test-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-test-environment-setup.html">Configuración del entorno de pruebas</a>
+<a class="list-group-item" href="./guide-test-unit.html">Pruebas unitarias</a>
+<a class="list-group-item" href="./guide-test-functional.html">Pruebas funcionales</a>
+<a class="list-group-item" href="./guide-test-acceptance.html">Pruebas de aceptación</a>
+<a class="list-group-item" href="./guide-test-fixtures.html">Fixtures</a></div>
+<a class="list-group-item" href="#navigation-805" data-toggle="collapse" data-parent="#navigation">Temas especiales <b class="caret"></b></a><div id="navigation-805" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a>
+<a class="list-group-item" href="./guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a>
+<a class="list-group-item" href="./guide-tutorial-console.html">Comandos de consola</a>
+<a class="list-group-item" href="./guide-tutorial-core-validators.html">Validadores del núcleo</a>
+<a class="list-group-item" href="./guide-tutorial-i18n.html">Internacionalización</a>
+<a class="list-group-item" href="./guide-tutorial-mailing.html">Envío de correos electrónicos</a>
+<a class="list-group-item" href="./guide-tutorial-performance-tuning.html">Mejora del rendimiento</a>
+<a class="list-group-item" href="./guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a>
+<a class="list-group-item" href="./guide-tutorial-template-engines.html">Motores de plantillas</a>
+<a class="list-group-item" href="./guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></div>
+<a class="list-group-item" href="#navigation-806" data-toggle="collapse" data-parent="#navigation">Widgets <b class="caret"></b></a><div id="navigation-806" class="submenu panel-collapse collapse"><a class="list-group-item" href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a>
+<a class="list-group-item" href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></div>
+<a class="list-group-item" href="#navigation-807" data-toggle="collapse" data-parent="#navigation">Clases auxiliares <b class="caret"></b></a><div id="navigation-807" class="submenu panel-collapse collapse"><a class="list-group-item" href="./guide-helper-overview.html">Información general</a>
+<a class="list-group-item" href="./guide-helper-array.html">ArrayHelper</a>
+<a class="list-group-item" href="./guide-helper-html.html">Html</a>
+<a class="list-group-item" href="./guide-helper-url.html">Url</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1>Guía Definitiva de Yii 2.0 <span id="guia-definitiva-de-yii-20"></span><a href="#guia-definitiva-de-yii-20" class="hashlink">&para;</a></h1>
+<div class="toc"><ol><li><a href="#introduccion">Introducción</a></li>
+<li><a href="#primeros-pasos">Primeros pasos</a></li>
+<li><a href="#estructura-de-una-aplicacion">Estructura de una aplicación</a></li>
+<li><a href="#gestion-de-las-peticiones">Gestión de las peticiones</a></li>
+<li><a href="#conceptos-clave">Conceptos clave</a></li>
+<li><a href="#trabajar-con-bases-de-datos">Trabajar con bases de datos</a></li>
+<li><a href="#obtener-datos-de-los-usuarios">Obtener datos de los usuarios</a></li>
+<li><a href="#visualizar-datos">Visualizar datos</a></li>
+<li><a href="#seguridad">Seguridad</a></li>
+<li><a href="#cache">Caché</a></li>
+<li><a href="#servicios-web-restful">Servicios Web RESTful</a></li>
+<li><a href="#herramientas-de-desarrollo">Herramientas de Desarrollo</a></li>
+<li><a href="#pruebas">Pruebas</a></li>
+<li><a href="#temas-especiales">Temas especiales</a></li>
+<li><a href="#widgets">Widgets</a></li>
+<li><a href="#clases-auxiliares">Clases auxiliares</a></li></ol></div>
+<p>Este tutorial se publica bajo los <a href="http://www.yiiframework.com/doc/terms/">Términos de Documentación Yii</a>.</p>
+<p>Todos los derechos reservados.</p>
+<p>2014 (c) Yii Software LLC.</p>
+<h2>Introducción <span id="introduccion"></span><a href="#introduccion" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-intro-yii.html">Acerca de Yii</a></li>
+<li><a href="guide-intro-upgrade-from-v1.html">Actualizar desde Yii 1.1</a></li>
+</ul>
+<h2>Primeros pasos <span id="primeros-pasos"></span><a href="#primeros-pasos" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-start-installation.html">Instalar Yii</a></li>
+<li><a href="guide-start-workflow.html">Funcionamiento de aplicaciones</a></li>
+<li><a href="guide-start-hello.html">Hola a todos</a></li>
+<li><a href="guide-start-forms.html">Trabajar con formularios</a></li>
+<li><a href="guide-start-databases.html">Trabajar con bases de datos</a></li>
+<li><a href="guide-start-gii.html">Generar códigos con Gii</a></li>
+<li><a href="guide-start-looking-ahead.html">Adentrarse en Yii</a></li>
+</ul>
+<h2>Estructura de una aplicación <span id="estructura-de-una-aplicacion"></span><a href="#estructura-de-una-aplicacion" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-structure-overview.html">Información general</a></li>
+<li><a href="guide-structure-entry-scripts.html">Script de entrada</a></li>
+<li><a href="guide-structure-applications.html">Aplicaciones</a></li>
+<li><a href="guide-structure-application-components.html">Componentes de una aplicación</a></li>
+<li><a href="guide-structure-controllers.html">Controladores</a></li>
+<li><a href="guide-structure-models.html">Modelos</a></li>
+<li><a href="guide-structure-views.html">Vistas</a></li>
+<li><a href="guide-structure-filters.html">Filtros</a></li>
+<li><a href="guide-structure-widgets.html">Widgets</a></li>
+<li><a href="guide-structure-modules.html">Módulos</a></li>
+<li><a href="guide-structure-assets.html">Assets</a></li>
+<li><a href="guide-structure-extensions.html">Extensiones</a></li>
+</ul>
+<h2>Gestión de las peticiones <span id="gestion-de-las-peticiones"></span><a href="#gestion-de-las-peticiones" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-runtime-overview.html">Información general</a></li>
+<li><a href="guide-runtime-bootstrapping.html">Bootstrapping</a></li>
+<li><a href="guide-runtime-routing.html">Routing y Creación de las URL</a></li>
+<li><a href="guide-runtime-requests.html">Peticiones (Requests)</a></li>
+<li><a href="guide-runtime-responses.html">Respuestas (Responses)</a></li>
+<li><a href="guide-runtime-sessions-cookies.html">Sesiones (Sessions) y Cookies</a></li>
+<li><a href="guide-runtime-handling-errors.html">Gestión de errores</a></li>
+<li><a href="guide-runtime-logging.html">Registro de anotaciones</a></li>
+</ul>
+<h2>Conceptos clave <span id="conceptos-clave"></span><a href="#conceptos-clave" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-concept-components.html">Componentes</a></li>
+<li><a href="guide-concept-properties.html">Propiedades</a></li>
+<li><a href="guide-concept-events.html">Eventos</a></li>
+<li><a href="guide-concept-behaviors.html">Comportamientos (Behaviors)</a></li>
+<li><a href="guide-concept-configurations.html">Configuraciones</a></li>
+<li><a href="guide-concept-aliases.html">Alias</a></li>
+<li><a href="guide-concept-autoloading.html">Autocarga de clases</a></li>
+<li><a href="guide-concept-service-locator.html">Localizador de servicios (Service Locator)</a></li>
+<li><a href="guide-concept-di-container.html">Contenedor de inyección de dependencia</a></li>
+</ul>
+<h2>Trabajar con bases de datos <span id="trabajar-con-bases-de-datos"></span><a href="#trabajar-con-bases-de-datos" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-db-dao.html">Objeto de acceso a datos</a> - Conexión a una base de datos, consultas básicas, transacciones y
+manipulación de esquemas</li>
+<li><a href="guide-db-query-builder.html">Constructor de consultas</a> - Consulta de la base de datos utilizando una simple capa de
+abstracción</li>
+<li><strong>TBD</strong> <a href="guide-db-active-record.html">Active Record</a> - ORM Active Record, recuperación y manipulación de registros y
+definición de relaciones</li>
+<li><strong>TBD</strong> <a href="guide-db-migrations.html">Migraciones</a> - Control de versiones de bases de datos en el entorno de desarrollo en
+equipo</li>
+<li><strong>TBD</strong> <a href="guide-db-sphinx.html">Sphinx</a></li>
+<li><strong>TBD</strong> <a href="guide-db-redis.html">Redis</a></li>
+<li><strong>TBD</strong> <a href="guide-db-mongodb.html">MongoDB</a></li>
+<li><strong>TBD</strong> <a href="guide-db-elastic-search.html">ElasticSearch</a></li>
+</ul>
+<h2>Obtener datos de los usuarios <span id="obtener-datos-de-los-usuarios"></span><a href="#obtener-datos-de-los-usuarios" class="hashlink">&para;</a></h2><ul>
+<li><strong>TBD</strong> <a href="guide-input-forms.html">Crear formularios</a></li>
+<li><strong>TBD</strong> <a href="guide-input-validation.html">Validar datos</a></li>
+<li><strong>TBD</strong> <a href="guide-input-file-upload.html">Subir archivos</a></li>
+<li><strong>TBD</strong> <a href="guide-input-tabular-input.html">Recogida de tabular input</a></li>
+<li><strong>TBD</strong> <a href="guide-input-multiple-models.html">Obtener datos para múltiples modelos</a></li>
+</ul>
+<h2>Visualizar datos <span id="visualizar-datos"></span><a href="#visualizar-datos" class="hashlink">&para;</a></h2><ul>
+<li><strong>TBD</strong> <a href="guide-output-formatting.html">Formato de datos</a></li>
+<li><strong>TBD</strong> <a href="guide-output-pagination.html">Paginación</a></li>
+<li><strong>TBD</strong> <a href="guide-output-sorting.html">Ordenación</a></li>
+<li><strong>TBD</strong> <a href="guide-output-data-providers.html">Proveedores de datos</a></li>
+<li><strong>TBD</strong> <a href="guide-output-data-widgets.html">Widgets de datos</a></li>
+<li><strong>TBD</strong> <a href="guide-output-client-scripts.html">Trabajar con scripts de cliente</a></li>
+<li><a href="guide-output-theming.html">Temas</a></li>
+</ul>
+<h2>Seguridad <span id="seguridad"></span><a href="#seguridad" class="hashlink">&para;</a></h2><ul>
+<li><strong>TBD</strong> <a href="guide-security-authentication.html">Autenticación</a></li>
+<li><strong>TBD</strong> <a href="guide-security-authorization.html">Autorización</a></li>
+<li><strong>TBD</strong> <a href="guide-security-passwords.html">Trabajar con contraseñas</a></li>
+<li><strong>TBD</strong> <a href="guide-security-auth-clients.html">Autenticar Clientes</a></li>
+<li><strong>TBD</strong> <a href="guide-security-best-practices.html">Buenas prácticas</a></li>
+</ul>
+<h2>Caché <span id="cache"></span><a href="#cache" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-caching-overview.html">Información general</a></li>
+<li><a href="guide-caching-data.html">Caché de datos</a></li>
+<li><a href="guide-caching-fragment.html">Caché de fragmentos</a></li>
+<li><a href="guide-caching-page.html">Caché de páginas</a></li>
+<li><a href="guide-caching-http.html">Caché HTTP</a></li>
+</ul>
+<h2>Servicios Web RESTful <span id="servicios-web-restful"></span><a href="#servicios-web-restful" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-rest-quick-start.html">Guía breve</a></li>
+<li><a href="guide-rest-resources.html">Recursos (Resources)</a></li>
+<li><a href="guide-rest-controllers.html">Controladores</a></li>
+<li><a href="guide-rest-routing.html">Gestión de rutas</a></li>
+<li><a href="guide-rest-response-formatting.html">Formateo de respuestas</a></li>
+<li><a href="guide-rest-authentication.html">Autenticación</a></li>
+<li><a href="guide-rest-rate-limiting.html">Límite de Rango</a></li>
+<li><a href="guide-rest-versioning.html">Gestión de versiones</a></li>
+<li><a href="guide-rest-error-handling.html">Gestión de errores</a></li>
+</ul>
+<h2>Herramientas de Desarrollo <span id="herramientas-de-desarrollo"></span><a href="#herramientas-de-desarrollo" class="hashlink">&para;</a></h2><ul>
+<li><a href="https://github.com/yiisoft/yii2-debug/blob/master/docs/guide-es/README.md">Depurador y Barra de Herramientas de Depuración</a></li>
+<li><strong>TBD</strong> <a href="guide-tool-gii.html">Generación de códigos con Gii</a></li>
+<li><strong>TBD</strong> <a href="guide-tool-api-doc.html">Generación de documentación de API</a></li>
+</ul>
+<h2>Pruebas <span id="pruebas"></span><a href="#pruebas" class="hashlink">&para;</a></h2><ul>
+<li><strong>TBD</strong> <a href="guide-test-overview.html">Información general</a></li>
+<li><strong>TBD</strong> <a href="guide-test-environment-setup.html">Configuración del entorno de pruebas</a></li>
+<li><strong>TBD</strong> <a href="guide-test-unit.html">Pruebas unitarias</a></li>
+<li><strong>TBD</strong> <a href="guide-test-functional.html">Pruebas funcionales</a></li>
+<li><strong>TBD</strong> <a href="guide-test-acceptance.html">Pruebas de aceptación</a></li>
+<li><strong>TBD</strong> <a href="guide-test-fixtures.html">Fixtures</a></li>
+</ul>
+<h2>Temas especiales <span id="temas-especiales"></span><a href="#temas-especiales" class="hashlink">&para;</a></h2><ul>
+<li><strong>TBD</strong> <a href="guide-tutorial-advanced-app.html">Plantilla aplicación avanzada</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-start-from-scratch.html">Creación de una aplicación desde cero</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-console.html">Comandos de consola</a></li>
+<li><a href="guide-tutorial-core-validators.html">Validadores del núcleo</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-i18n.html">Internacionalización</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-mailing.html">Envío de correos electrónicos</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-performance-tuning.html">Mejora del rendimiento</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-shared-hosting.html">Entorno de alojamiento compartido</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-template-engines.html">Motores de plantillas</a></li>
+<li><strong>TBD</strong> <a href="guide-tutorial-yii-integration.html">Trabajar con Código de Terceros</a></li>
+</ul>
+<h2>Widgets <span id="widgets"></span><a href="#widgets" class="hashlink">&para;</a></h2><ul>
+<li>GridView: <strong>TBD</strong> link to demo page</li>
+<li>ListView: <strong>TBD</strong> link to demo page</li>
+<li>DetailView: <strong>TBD</strong> link to demo page</li>
+<li>ActiveForm: <strong>TBD</strong> link to demo page</li>
+<li>Pjax: <strong>TBD</strong> link to demo page</li>
+<li>Menu: <strong>TBD</strong> link to demo page</li>
+<li>LinkPager: <strong>TBD</strong> link to demo page</li>
+<li>LinkSorter: <strong>TBD</strong> link to demo page</li>
+<li><a href="https://github.com/yiisoft/yii2-bootstrap/blob/master/docs/guide-es/README.md">Bootstrap Widgets</a></li>
+<li><a href="https://github.com/yiisoft/yii2-jui/blob/master/docs/guide-es/README.md">Jquery UI Widgets</a></li>
+</ul>
+<h2>Clases auxiliares <span id="clases-auxiliares"></span><a href="#clases-auxiliares" class="hashlink">&para;</a></h2><ul>
+<li><a href="guide-helper-overview.html">Información general</a></li>
+<li><a href="guide-helper-array.html">ArrayHelper</a></li>
+<li><a href="guide-helper-html.html">Html</a></li>
+<li><a href="guide-helper-url.html">Url</a></li>
+</ul>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Wed, 22 Mar 2017 18:28:18 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
